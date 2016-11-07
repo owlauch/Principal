@@ -3,14 +3,41 @@ unit EditoraModel;
 interface
 
 type TEditoraModel = class
-  public
-    vId: Integer;
-    vRazaoSocial: String;
   private
-    property Id: Integer read vId write vId;
-    property RazaoSocial: String read vRazaoSocial write vRazaoSocial;
+    fId: Integer;
+    fRazaoSocial: String;
+  public
+    function GetId: Integer;
+    function GetRazaoSocial: String;
+    procedure SetId(const Value: Integer);
+    procedure SetRazaoSocial(const Value: String);
 end;
 
 implementation
 
-end.
+{ TEditoraModel }
+
+function TEditoraModel.GetId: Integer;
+begin
+result:=self.fId;
+end;
+
+
+function TEditoraModel.GetRazaoSocial: String;
+begin
+result:=self.fRazaoSocial;
+end;
+
+
+procedure TEditoraModel.SetId(const Value: Integer);
+begin
+self.fId:=value;
+end;
+
+
+procedure TEditoraModel.SetRazaoSocial(const Value: String);
+begin
+self.fRazaoSocial:=value;
+end;
+
+ end.

@@ -1,6 +1,5 @@
 unit Principal;
 
-//o que o coracao nao ve, a mente nao toca
 
 interface
 
