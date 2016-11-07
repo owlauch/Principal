@@ -35,14 +35,14 @@ uses
 
 begin
   Application.Initialize;
-  AApplication.CreateForm(TSDIAppForm, SDIAppForm);
-  AApplication.CreateForm(TCadastro, Cadastro);
-  AApplication.CreateForm(TAssociado, Associado);
-  AApplication.CreateForm(TDM, DM);
-  AApplication.CreateForm(TMenuPrincipal, MenuPrincipal);
-  AApplication.CreateForm(TAutor, Autor);
-  AApplication.CreateForm(TAcervo, Acervo);
-  AApplication.CreateForm(TEditora, Editora);
-  ion.Run;
+  Application.CreateForm(TSDIAppForm, SDIAppForm);
+  Application.CreateForm(TCadastro, Cadastro);
+  Application.CreateForm(TAssociado, Associado);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TMenuPrincipal, MenuPrincipal);
+  Application.CreateForm(TAutor, Autor);
+  Application.CreateForm(TAcervo, Acervo);
+  Application.CreateForm(TEditora, Editora);
+  Application.Run;
 end.
  

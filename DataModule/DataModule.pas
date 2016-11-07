@@ -44,6 +44,25 @@ type
     SQLQueryNROENDERECO: TSmallintField;
     SQLQueryCIDADE: TStringField;
     SQLQueryRUA: TStringField;
+    SQLDataSet1: TSQLDataSet;
+    DataSetProvider1: TDataSetProvider;
+    ClientDataSet1: TClientDataSet;
+    DataSource1: TDataSource;
+    SQLQuery1: TSQLQuery;
+    IntegerField3: TIntegerField;
+    StringField17: TStringField;
+    StringField18: TStringField;
+    StringField19: TStringField;
+    StringField20: TStringField;
+    StringField21: TStringField;
+    StringField22: TStringField;
+    SmallintField3: TSmallintField;
+    StringField23: TStringField;
+    StringField24: TStringField;
+    SQLDataSet1IDAUTOR: TIntegerField;
+    SQLDataSet1NOME: TStringField;
+    ClientDataSet1IDAUTOR: TIntegerField;
+    ClientDataSet1NOME: TStringField;
 
   private
     { Private declarations }

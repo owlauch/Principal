@@ -99,7 +99,7 @@ object Autor: TAutor
           end
           item
             Column = 0
-            Control = SpeedButton2
+            Control = Bgravar
             Row = 2
           end
           item
@@ -167,7 +167,7 @@ object Autor: TAutor
           ExplicitWidth = 100
           ExplicitHeight = 100
         end
-        object SpeedButton2: TSpeedButton
+        object Bgravar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 102
@@ -175,8 +175,10 @@ object Autor: TAutor
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'GRAVAR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BgravarClick
           ExplicitLeft = 11
         end
         object SpeedButton3: TSpeedButton
@@ -264,6 +266,9 @@ object Autor: TAutor
           end
           item
             Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
           end>
         TabOrder = 0
         object GridCadastro: TGridPanel
@@ -288,6 +293,9 @@ object Autor: TAutor
             item
               SizeStyle = ssAbsolute
               Value = 60.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
             end>
           TabOrder = 0
           object Pessoal: TGroupBox
@@ -325,13 +333,13 @@ object Autor: TAutor
               ControlCollection = <
                 item
                   Column = 0
-                  Control = Label1
+                  Control = Nome
                   Row = 0
                 end
                 item
                   Column = 1
                   ColumnSpan = 2
-                  Control = Edit2
+                  Control = EditNome
                   Row = 0
                 end>
               RowCollection = <
@@ -340,34 +348,29 @@ object Autor: TAutor
                   Value = 31.000000000000000000
                 end>
               TabOrder = 0
-              object Label1: TLabel
+              object Nome: TLabel
                 AlignWithMargins = True
-                Left = 36
+                Left = 40
                 Top = 3
-                Width = 31
+                Width = 27
                 Height = 25
                 Align = alRight
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'Nome'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
                 ExplicitHeight = 13
               end
-              object Edit2: TEdit
+              object EditNome: TEdit
                 AlignWithMargins = True
                 Left = 73
                 Top = 3
                 Width = 208
                 Height = 25
                 Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                DragMode = dmAutomatic
-                MaxLength = 20
                 TabOrder = 0
-                Text = 'Edit1'
+                ExplicitWidth = 50
                 ExplicitHeight = 21
               end
             end
@@ -381,6 +384,7 @@ object Autor: TAutor
           Height = 284
           Align = alClient
           Anchors = []
+          DataSource = DM.DataSource1
           DrawingStyle = gdsGradient
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
@@ -397,6 +401,9 @@ object Autor: TAutor
             item
               Expanded = False
               FieldName = 'NOME'
+              PickList.Strings = (
+                'SELECT NOME FROM AUTOR ORDER BY NOME')
+              Width = 200
               Visible = True
             end>
         end
@@ -440,10 +447,10 @@ object Autor: TAutor
             Height = 16
             Align = alClient
             BiDiMode = bdRightToLeft
-            Caption = 'Label10'
+            Caption = 'Pesquisar'
             ParentBiDiMode = False
-            ExplicitLeft = 37
-            ExplicitWidth = 37
+            ExplicitLeft = 28
+            ExplicitWidth = 46
             ExplicitHeight = 13
           end
           object Edit10: TEdit
@@ -453,8 +460,8 @@ object Autor: TAutor
             Height = 22
             Align = alClient
             TabOrder = 0
-            Text = 'Edit10'
-            ExplicitHeight = 21
+            ExplicitLeft = 80
+            ExplicitTop = 0
           end
         end
       end

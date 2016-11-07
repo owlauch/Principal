@@ -90,7 +90,7 @@ object Cadastro: TCadastro
           end
           item
             Column = 0
-            Control = SpeedButton3
+            Control = BAutor
             Row = 4
           end
           item
@@ -174,7 +174,7 @@ object Cadastro: TCadastro
           ExplicitWidth = 10
           ExplicitHeight = 100
         end
-        object SpeedButton3: TSpeedButton
+        object BAutor: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 224
@@ -185,6 +185,7 @@ object Cadastro: TCadastro
           Caption = 'AUTOR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BAutorClick
           ExplicitTop = 247
           ExplicitWidth = 10
           ExplicitHeight = 100

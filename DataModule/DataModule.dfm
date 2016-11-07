@@ -207,4 +207,113 @@ object DM: TDM
       Size = 100
     end
   end
+  object SQLDataSet1: TSQLDataSet
+    SchemaName = 'sysdba'
+    Active = True
+    CommandText = 'select * from Autor'
+    DbxCommandType = 'Dbx.SQL'
+    DataSource = DataSource1
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = BIBLIOTECA
+    Left = 160
+    Top = 88
+    object SQLDataSet1IDAUTOR: TIntegerField
+      FieldName = 'IDAUTOR'
+      Required = True
+    end
+    object SQLDataSet1NOME: TStringField
+      FieldName = 'NOME'
+      Required = True
+      Size = 100
+    end
+  end
+  object DataSetProvider1: TDataSetProvider
+    DataSet = SQLDataSet1
+    ResolveToDataSet = True
+    Options = [poAutoRefresh, poUseQuoteChar]
+    Left = 160
+    Top = 152
+  end
+  object ClientDataSet1: TClientDataSet
+    Active = True
+    Aggregates = <>
+    AggregatesActive = True
+    Params = <>
+    ProviderName = 'DataSetProvider1'
+    Left = 160
+    Top = 216
+    object ClientDataSet1IDAUTOR: TIntegerField
+      FieldName = 'IDAUTOR'
+      Required = True
+    end
+    object ClientDataSet1NOME: TStringField
+      FieldName = 'NOME'
+      Required = True
+      Size = 100
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Left = 160
+    Top = 272
+  end
+  object SQLQuery1: TSQLQuery
+    SchemaName = 'SYSDBA'
+    GetMetadata = True
+    NumericMapping = True
+    ObjectView = True
+    Active = True
+    DataSource = DataSource1
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT *  FROM ASSOCIADO')
+    SQLConnection = BIBLIOTECA
+    Left = 168
+    Top = 328
+    object IntegerField3: TIntegerField
+      FieldName = 'IDASSOCIADO'
+      Required = True
+    end
+    object StringField17: TStringField
+      FieldName = 'NOME'
+      Required = True
+      Size = 100
+    end
+    object StringField18: TStringField
+      FieldName = 'EMAIL'
+      Size = 100
+    end
+    object StringField19: TStringField
+      FieldName = 'TELEFONE'
+      FixedChar = True
+      Size = 14
+    end
+    object StringField20: TStringField
+      FieldName = 'UF'
+      FixedChar = True
+      Size = 2
+    end
+    object StringField21: TStringField
+      FieldName = 'CEP'
+      FixedChar = True
+      Size = 9
+    end
+    object StringField22: TStringField
+      FieldName = 'BAIRRO'
+      Size = 30
+    end
+    object SmallintField3: TSmallintField
+      FieldName = 'NROENDERECO'
+    end
+    object StringField23: TStringField
+      FieldName = 'CIDADE'
+      Size = 30
+    end
+    object StringField24: TStringField
+      FieldName = 'RUA'
+      Size = 100
+    end
+  end
 end
