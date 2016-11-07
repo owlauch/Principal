@@ -63,8 +63,6 @@
         SizeStyle = ssAuto
       end>
     TabOrder = 0
-    ExplicitLeft = -16
-    ExplicitTop = -39
     object PanelMenu: TPanel
       AlignWithMargins = True
       Left = 6
@@ -162,6 +160,7 @@
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'VOLTAR'
           Layout = blGlyphRight
           Margin = 1
           ExplicitTop = 85
@@ -752,7 +751,6 @@
           Height = 149
           Align = alClient
           Anchors = []
-          DataSource = DM.DSAcervo
           DrawingStyle = gdsGradient
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
@@ -764,7 +762,6 @@
             item
               Expanded = False
               FieldName = 'IDACERVO'
-              Width = -1
               Visible = False
             end
             item
@@ -788,19 +785,16 @@
             item
               Expanded = False
               FieldName = 'LOCALEDICAO'
-              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'ISBN'
-              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'IDEDITORA'
-              Width = -1
               Visible = False
             end>
         end

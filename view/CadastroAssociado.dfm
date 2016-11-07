@@ -160,6 +160,7 @@
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'VOLTAR'
           Layout = blGlyphRight
           Margin = 1
           OnClick = SpeedButton1Click
@@ -175,6 +176,7 @@
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'GRAVAR'
           Layout = blGlyphRight
           Margin = 1
           OnClick = SpeedButton2Click
@@ -445,14 +447,14 @@
                 MaxLength = 13
                 TabOrder = 2
                 Text = '(  )    -    '
-                ExplicitWidth = 139
+                ExplicitHeight = 21
               end
               object Editemail: TEdit
                 AlignWithMargins = True
                 Left = 73
                 Top = 34
                 Width = 138
-                Height = 23
+                Height = 21
                 Align = alClient
                 TabOrder = 1
               end

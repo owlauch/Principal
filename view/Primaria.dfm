@@ -53,10 +53,6 @@ object MenuPrincipal: TMenuPrincipal
         Value = 400.000000000000000000
       end>
     TabOrder = 0
-    ExplicitLeft = 5
-    ExplicitTop = 5
-    ExplicitWidth = 610
-    ExplicitHeight = 400
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 6
@@ -69,7 +65,6 @@ object MenuPrincipal: TMenuPrincipal
       Margins.Bottom = 5
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 115
       object GridPanel1: TGridPanel
         Left = 1
         Top = 1
@@ -129,7 +124,6 @@ object MenuPrincipal: TMenuPrincipal
             Value = 12.500418065862120000
           end>
         TabOrder = 0
-        ExplicitWidth = 113
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
@@ -140,7 +134,8 @@ object MenuPrincipal: TMenuPrincipal
           Alignment = taCenter
           Caption = 'MENU'
           Layout = tlCenter
-          ExplicitLeft = 11
+          ExplicitWidth = 28
+          ExplicitHeight = 13
         end
         object SpeedButton1: TSpeedButton
           AlignWithMargins = True
@@ -149,7 +144,7 @@ object MenuPrincipal: TMenuPrincipal
           Width = 134
           Height = 42
           Align = alClient
-          Caption = 'Cadastro'
+          Caption = 'CADASTRO'
           Layout = blGlyphRight
           Margin = 1
           OnClick = SpeedButton1Click
@@ -163,7 +158,7 @@ object MenuPrincipal: TMenuPrincipal
           Height = 42
           Align = alClient
           Anchors = []
-          Caption = 'Lan'#231'amento'
+          Caption = 'LAN'#199'AMENTO'
           Layout = blGlyphRight
           Margin = 1
           ExplicitLeft = -1
@@ -179,7 +174,7 @@ object MenuPrincipal: TMenuPrincipal
           Height = 42
           Align = alClient
           Anchors = []
-          Caption = 'Consulta'
+          Caption = 'CONSULTA'
           Layout = blGlyphRight
           Margin = 1
           ExplicitTop = 247
@@ -200,8 +195,6 @@ object MenuPrincipal: TMenuPrincipal
       Margins.Bottom = 5
       Align = alClient
       TabOrder = 1
-      ExplicitLeft = 131
-      ExplicitWidth = 473
     end
   end
   object MainMenu1: TMainMenu

@@ -63,8 +63,6 @@ object Editora: TEditora
         SizeStyle = ssAuto
       end>
     TabOrder = 0
-    ExplicitLeft = -16
-    ExplicitTop = -39
     object PanelMenu: TPanel
       AlignWithMargins = True
       Left = 6
@@ -162,6 +160,7 @@ object Editora: TEditora
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'VOLTAR'
           Layout = blGlyphRight
           Margin = 1
           ExplicitTop = 85
@@ -382,7 +381,6 @@ object Editora: TEditora
           Height = 284
           Align = alClient
           Anchors = []
-          DataSource = DM.DSAutor
           DrawingStyle = gdsGradient
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET

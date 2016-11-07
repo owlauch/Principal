@@ -49,7 +49,6 @@ object Cadastro: TCadastro
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitHeight = 439
     object Panel1: TPanel
       Left = 1
       Top = 1
@@ -61,10 +60,6 @@ object Cadastro: TCadastro
       Margins.Bottom = 5
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 6
-      ExplicitTop = 6
-      ExplicitWidth = 146
-      ExplicitHeight = 427
       object GridPanel1: TGridPanel
         AlignWithMargins = True
         Left = 4
@@ -135,10 +130,6 @@ object Cadastro: TCadastro
             Value = 12.500418065862120000
           end>
         TabOrder = 0
-        ExplicitLeft = 1
-        ExplicitTop = 1
-        ExplicitWidth = 144
-        ExplicitHeight = 425
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
@@ -149,7 +140,6 @@ object Cadastro: TCadastro
           Alignment = taCenter
           Caption = 'CADASTROS'
           Layout = tlCenter
-          ExplicitTop = 56
           ExplicitWidth = 61
           ExplicitHeight = 13
         end
@@ -161,7 +151,7 @@ object Cadastro: TCadastro
           Height = 49
           Align = alClient
           Anchors = []
-          Caption = 'Acervo'
+          Caption = 'ACERVO'
           Layout = blGlyphRight
           Margin = 1
           ExplicitTop = 85
@@ -176,7 +166,7 @@ object Cadastro: TCadastro
           Height = 49
           Align = alClient
           Anchors = []
-          Caption = 'Associado'
+          Caption = 'ASSOCIADO'
           Layout = blGlyphRight
           Margin = 1
           OnClick = SpeedButton2Click
@@ -192,7 +182,7 @@ object Cadastro: TCadastro
           Height = 49
           Align = alClient
           Anchors = []
-          Caption = 'Autor'
+          Caption = 'AUTOR'
           Layout = blGlyphRight
           Margin = 1
           ExplicitTop = 247
@@ -207,7 +197,7 @@ object Cadastro: TCadastro
           Height = 49
           Align = alClient
           Anchors = []
-          Caption = 'Editora'
+          Caption = 'EDITORA'
           Layout = blGlyphRight
           Margin = 1
           ExplicitLeft = 11
@@ -222,6 +212,10 @@ object Cadastro: TCadastro
           Width = 140
           Height = 49
           Align = alClient
+          BiDiMode = bdRightToLeft
+          Caption = 'VOLTAR'
+          Margin = 1
+          ParentBiDiMode = False
           OnClick = SpeedButton5Click
           ExplicitLeft = 96
           ExplicitTop = 0
@@ -243,7 +237,6 @@ object Cadastro: TCadastro
       Align = alClient
       AutoSize = True
       TabOrder = 1
-      ExplicitHeight = 427
     end
   end
 end

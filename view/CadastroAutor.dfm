@@ -63,8 +63,6 @@ object Autor: TAutor
         SizeStyle = ssAuto
       end>
     TabOrder = 0
-    ExplicitLeft = -16
-    ExplicitTop = -39
     object PanelMenu: TPanel
       AlignWithMargins = True
       Left = 6
@@ -151,7 +149,6 @@ object Autor: TAutor
           Alignment = taCenter
           Caption = 'Autor'
           Layout = tlCenter
-          ExplicitTop = 48
           ExplicitWidth = 27
           ExplicitHeight = 13
         end
@@ -163,6 +160,7 @@ object Autor: TAutor
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'VOLTAR'
           Layout = blGlyphRight
           Margin = 1
           ExplicitTop = 85
@@ -292,8 +290,6 @@ object Autor: TAutor
               Value = 60.000000000000000000
             end>
           TabOrder = 0
-          ExplicitTop = 4
-          ExplicitHeight = 204
           object Pessoal: TGroupBox
             Left = 0
             Top = 0
@@ -302,7 +298,6 @@ object Autor: TAutor
             Align = alClient
             Caption = 'Pessoal'
             TabOrder = 0
-            ExplicitHeight = 90
             object GridPanelPessoal: TGridPanel
               AlignWithMargins = True
               Left = 5
@@ -345,7 +340,6 @@ object Autor: TAutor
                   Value = 31.000000000000000000
                 end>
               TabOrder = 0
-              ExplicitHeight = 47
               object Label1: TLabel
                 AlignWithMargins = True
                 Left = 36
@@ -387,7 +381,6 @@ object Autor: TAutor
           Height = 284
           Align = alClient
           Anchors = []
-          DataSource = DM.DSAutor
           DrawingStyle = gdsGradient
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
@@ -439,7 +432,6 @@ object Autor: TAutor
               Value = 100.000000000000000000
             end>
           TabOrder = 2
-          ExplicitTop = 208
           object Label10: TLabel
             AlignWithMargins = True
             Left = 6
@@ -462,7 +454,6 @@ object Autor: TAutor
             Align = alClient
             TabOrder = 0
             Text = 'Edit10'
-            ExplicitWidth = 362
             ExplicitHeight = 21
           end
         end
