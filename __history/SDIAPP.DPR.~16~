@@ -1,0 +1,24 @@
+program Sdiapp;
+
+uses
+  Forms,
+  Principal in 'view\Principal.PAS' {SDIAppForm},
+  CadastroPrincipal in 'view\CadastroPrincipal.pas' {Cadastro},
+  CadastroAssociado in 'view\CadastroAssociado.pas' {Associado},
+  DataModule in 'DataModule\DataModule.pas' {DM: TDataModule},
+  Primaria in 'view\Primaria.pas' {MenuPrincipal},
+  CadastroAutor in 'view\CadastroAutor.pas' {Autor};
+
+{$R *.RES}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TSDIAppForm, SDIAppForm);
+  Application.CreateForm(TCadastro, Cadastro);
+  Application.CreateForm(TAssociado, Associado);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TMenuPrincipal, MenuPrincipal);
+  Application.CreateForm(TAutor, Autor);
+  Application.Run;
+end.
+ 

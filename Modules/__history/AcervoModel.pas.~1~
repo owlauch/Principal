@@ -1,0 +1,30 @@
+unit AcervoModel;
+
+interface
+
+uses AutorModel, EditoraModel, PalavraChaveModel, generics.collections;
+
+type TAcervoModel = class
+  private
+    vId: Integer;
+    vTitulo: String;
+    vPrazoEntrega: Integer;
+    vDataEdicao: TDate;
+    vIsbn: String;
+    vAutor: TAutorModel;
+    vEditora: TEditoraModel;
+    vPalavraChave: TList<TPalavraChaveModel>;
+  public
+    property Id: Integer read vId write vId;
+    property Titulo: string read vTitulo write vTitulo;
+    property PrazoEntrega: Integer read vPrazoEntrega write vPrazoEntrega;
+    property DataEdicao: TDate read vDataEdicao write vDataEdicao;
+    property Isbn: string read vIsbn write vIsbn;
+    property Autor: TAutorModel read vAutor write vAutor;
+    property Editora: TEditoraModel read vEditora write vEditora;
+    property PalavrasChave: TList<TPalavraChaveModel> read vPalavraChave write vPalavraChave;
+end;
+
+implementation
+
+end.

@@ -1,0 +1,32 @@
+unit AssociadoModel;
+
+interface
+
+type TAssociadoModel = class
+  private
+    vId: Integer;
+    vNome: String;
+    vTelefone: String;
+    vEmail: String;
+    vRua: Integer;
+    vNroRua: String;
+    vBairro: String;
+    vCep: String;
+    vCidade: String;
+    vEstado: String;
+  public
+    property Id: Integer read vId write vId;
+    property Nome: string read vNome write vNome;
+    property Telefone: string read vTelefone write vTelefone;
+    property Email: string read vEmail write vEmail;
+    property Rua: integer read vRua write vRua;
+    property NroRua: string read vNroRua write vNroRua;
+    property Bairro: string read vBairro write vBairro;
+    property Cep: string read vCep write vCep;
+    property Cidade: string read vCidade write vCidade;
+    property Estado: string read vEstado write vEstado;
+end;
+
+implementation
+
+end.
