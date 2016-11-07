@@ -25,6 +25,15 @@
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="DAO"/>
     <File Path="DAO\AssociadoDAO.pas"/>
+    <File Path="DAO\AcervoDAO.pas"/>
+    <File Path="DAO\AutorDAO.pas"/>
+    <File Path="DAO\EditoraDAO.pas"/>
+    <File Path="DAO\EmprestimoDAO.pas"/>
+    <File Path="DAO\ExemplarDAO.pas"/>
+    <File Path="DAO\ItemEmprestimoDAO.pas"/>
+    <File Path="DAO\ListaEsperaDAO.pas"/>
+    <File Path="DAO\MultaDAO.pas"/>
+    <File Path="DAO\PalavraChaveDAO.pas"/>
     <File Path="DataModule"/>
     <File Path="DataModule\DataModule.pas"/>
     <File Path="DataModule\DataModule.dfm"/>

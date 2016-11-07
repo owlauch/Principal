@@ -20,20 +20,29 @@ uses
   ListaEsperaModel in 'Modules\ListaEsperaModel.pas',
   MultaModel in 'Modules\MultaModel.pas',
   PalavraChaveModel in 'Modules\PalavraChaveModel.pas',
-  AssociadoDAO in 'DAO\AssociadoDAO.pas';
+  AssociadoDAO in 'DAO\AssociadoDAO.pas',
+  AcervoDAO in 'DAO\AcervoDAO.pas',
+  AutorDAO in 'DAO\AutorDAO.pas',
+  EditoraDAO in 'DAO\EditoraDAO.pas',
+  EmprestimoDAO in 'DAO\EmprestimoDAO.pas',
+  ExemplarDAO in 'DAO\ExemplarDAO.pas',
+  ItemEmprestimoDAO in 'DAO\ItemEmprestimoDAO.pas',
+  ListaEsperaDAO in 'DAO\ListaEsperaDAO.pas',
+  MultaDAO in 'DAO\MultaDAO.pas',
+  PalavraChaveDAO in 'DAO\PalavraChaveDAO.pas';
 
 {$R *.RES}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TSDIAppForm, SDIAppForm);
-  Application.CreateForm(TCadastro, Cadastro);
-  Application.CreateForm(TAssociado, Associado);
-  Application.CreateForm(TDM, DM);
-  Application.CreateForm(TMenuPrincipal, MenuPrincipal);
-  Application.CreateForm(TAutor, Autor);
-  Application.CreateForm(TAcervo, Acervo);
-  Application.CreateForm(TEditora, Editora);
-  Application.Run;
+  AApplication.CreateForm(TSDIAppForm, SDIAppForm);
+  AApplication.CreateForm(TCadastro, Cadastro);
+  AApplication.CreateForm(TAssociado, Associado);
+  AApplication.CreateForm(TDM, DM);
+  AApplication.CreateForm(TMenuPrincipal, MenuPrincipal);
+  AApplication.CreateForm(TAutor, Autor);
+  AApplication.CreateForm(TAcervo, Acervo);
+  AApplication.CreateForm(TEditora, Editora);
+  ion.Run;
 end.
  

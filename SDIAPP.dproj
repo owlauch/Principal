@@ -84,6 +84,15 @@
 			<DCCReference Include="Modules\MultaModel.pas"/>
 			<DCCReference Include="Modules\PalavraChaveModel.pas"/>
 			<DCCReference Include="DAO\AssociadoDAO.pas"/>
+			<DCCReference Include="DAO\AcervoDAO.pas"/>
+			<DCCReference Include="DAO\AutorDAO.pas"/>
+			<DCCReference Include="DAO\EditoraDAO.pas"/>
+			<DCCReference Include="DAO\EmprestimoDAO.pas"/>
+			<DCCReference Include="DAO\ExemplarDAO.pas"/>
+			<DCCReference Include="DAO\ItemEmprestimoDAO.pas"/>
+			<DCCReference Include="DAO\ListaEsperaDAO.pas"/>
+			<DCCReference Include="DAO\MultaDAO.pas"/>
+			<DCCReference Include="DAO\PalavraChaveDAO.pas"/>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

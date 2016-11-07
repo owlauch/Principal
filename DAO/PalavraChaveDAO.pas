@@ -1,0 +1,7 @@
+unit PalavraChaveDAO;
+
+interface
+
+implementation
+
+end.
