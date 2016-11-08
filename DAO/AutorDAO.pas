@@ -15,6 +15,14 @@ implementation
 
 procedure TAutorDao.excluirAutor(id: integer);
 begin
+  DM.SQLQuery1.Close;
+  DM.SQLQuery1.SQL.Text:='DELETE FROM AUTOR WHERE idautor=:id';
+  DM.SQLQuery1.ParamByName('id').AsInteger:=id;
+  DM.SQLQuery1.ExecSQL;
+  DM.ClientDataSet1.Close;
+  DM.ClientDataSet1.Open;
+  DM.ClientDataSet1.Close;
+  DM.ClientDataSet1.Open;
 
 end;
 

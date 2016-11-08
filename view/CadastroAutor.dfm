@@ -104,13 +104,18 @@ object Autor: TAutor
           end
           item
             Column = 0
-            Control = SpeedButton3
+            Control = BExcluir
             Row = 3
           end
           item
             Column = 0
             Control = SpeedButton4
             Row = 4
+          end
+          item
+            Column = 0
+            Control = SpeedButton2
+            Row = 5
           end>
         ParentBackground = False
         RowCollection = <
@@ -147,9 +152,9 @@ object Autor: TAutor
           Height = 43
           Align = alClient
           Alignment = taCenter
-          Caption = 'Autor'
+          Caption = 'AUTOR'
           Layout = tlCenter
-          ExplicitWidth = 27
+          ExplicitWidth = 35
           ExplicitHeight = 13
         end
         object SpeedButton1: TSpeedButton
@@ -181,7 +186,7 @@ object Autor: TAutor
           OnClick = BgravarClick
           ExplicitLeft = 11
         end
-        object SpeedButton3: TSpeedButton
+        object BExcluir: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 151
@@ -189,8 +194,10 @@ object Autor: TAutor
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'EXCLUIR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BExcluirClick
           ExplicitLeft = 0
           ExplicitTop = 146
           ExplicitWidth = 71
@@ -205,9 +212,28 @@ object Autor: TAutor
           Align = alClient
           Anchors = []
           BiDiMode = bdLeftToRight
+          Caption = 'EDITAR'
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          ExplicitTop = 328
+          ExplicitWidth = 10
+          ExplicitHeight = 100
+        end
+        object SpeedButton2: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 249
+          Width = 134
+          Height = 43
+          Align = alClient
+          Anchors = []
+          BiDiMode = bdLeftToRight
+          Caption = 'LIMPAR'
+          Layout = blGlyphRight
+          Margin = 1
+          ParentBiDiMode = False
+          ExplicitLeft = 59
           ExplicitTop = 328
           ExplicitWidth = 10
           ExplicitHeight = 100
@@ -304,7 +330,7 @@ object Autor: TAutor
             Width = 440
             Height = 60
             Align = alClient
-            Caption = 'Pessoal'
+            Caption = 'Autor'
             TabOrder = 0
             object GridPanelPessoal: TGridPanel
               AlignWithMargins = True
@@ -370,7 +396,6 @@ object Autor: TAutor
                 Height = 25
                 Align = alClient
                 TabOrder = 0
-                ExplicitWidth = 50
                 ExplicitHeight = 21
               end
             end
@@ -460,8 +485,7 @@ object Autor: TAutor
             Height = 22
             Align = alClient
             TabOrder = 0
-            ExplicitLeft = 80
-            ExplicitTop = 0
+            ExplicitHeight = 21
           end
         end
       end

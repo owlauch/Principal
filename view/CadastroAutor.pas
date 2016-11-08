@@ -14,7 +14,7 @@ type
     Associado: TLabel;
     SpeedButton1: TSpeedButton;
     Bgravar: TSpeedButton;
-    SpeedButton3: TSpeedButton;
+    BExcluir: TSpeedButton;
     SpeedButton4: TSpeedButton;
     PanelVisualEdicao: TPanel;
     GridPrincipalcadastro: TGridPanel;
@@ -27,7 +27,9 @@ type
     Label10: TLabel;
     Edit10: TEdit;
     EditNome: TEdit;
+    SpeedButton2: TSpeedButton;
     procedure BgravarClick(Sender: TObject);
+    procedure BExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,7 +45,16 @@ uses AutorDAO, AutorModel;
 
 {$R *.dfm}
 
-procedure TAutor.BgravarClick(Sender: TObject);
+procedure TAutor.BExcluirClick(Sender: TObject);
+var
+ id : integer;
+ AutorDao:TAutorDao;
+begin
+  id:=DBGrid1.Fields[0].AsInteger;
+  autordao.excluirAutor(id);
+end;
+
+Procedure TAutor.BgravarClick(Sender: TObject);
 var
 autormodel:tAutorModel;
 autorDAO:tAutorDAO;
@@ -51,6 +62,7 @@ begin
  autormodel:=TAutorModel.Create;
  autormodel.setNome(EditNome.Text);
  autordao.inserirAutor(autormodel);
+ EditNome.Clear;
 end;
 
 end.

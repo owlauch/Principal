@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, Menus;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Menus, pngimage;
 
 type
   TMenuPrincipal = class(TForm)
@@ -16,10 +16,7 @@ type
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
     Panel2: TPanel;
-    MainMenu1: TMainMenu;
-    Arquivos1: TMenuItem;
-    Cadastro1: TMenuItem;
-    Ajuda1: TMenuItem;
+    Image1: TImage;
     procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }

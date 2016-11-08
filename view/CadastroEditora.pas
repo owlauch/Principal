@@ -27,6 +27,7 @@ type
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
     Edit10: TEdit;
+    SpeedButton5: TSpeedButton;
   private
     { Private declarations }
   public

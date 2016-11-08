@@ -111,6 +111,11 @@ object Editora: TEditora
             Column = 0
             Control = SpeedButton4
             Row = 4
+          end
+          item
+            Column = 0
+            Control = SpeedButton5
+            Row = 5
           end>
         ParentBackground = False
         RowCollection = <
@@ -147,9 +152,9 @@ object Editora: TEditora
           Height = 43
           Align = alClient
           Alignment = taCenter
-          Caption = 'Editora'
+          Caption = 'EDITORA'
           Layout = tlCenter
-          ExplicitWidth = 34
+          ExplicitWidth = 45
           ExplicitHeight = 13
         end
         object SpeedButton1: TSpeedButton
@@ -175,6 +180,7 @@ object Editora: TEditora
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'GRAVAR'
           Layout = blGlyphRight
           Margin = 1
           ExplicitLeft = 11
@@ -187,6 +193,7 @@ object Editora: TEditora
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'EXCLUIR'
           Layout = blGlyphRight
           Margin = 1
           ExplicitLeft = 0
@@ -203,9 +210,28 @@ object Editora: TEditora
           Align = alClient
           Anchors = []
           BiDiMode = bdLeftToRight
+          Caption = 'EDITAR'
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          ExplicitTop = 328
+          ExplicitWidth = 10
+          ExplicitHeight = 100
+        end
+        object SpeedButton5: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 249
+          Width = 134
+          Height = 43
+          Align = alClient
+          Anchors = []
+          BiDiMode = bdLeftToRight
+          Caption = 'LIMPAR'
+          Layout = blGlyphRight
+          Margin = 1
+          ParentBiDiMode = False
+          ExplicitLeft = 59
           ExplicitTop = 328
           ExplicitWidth = 10
           ExplicitHeight = 100
@@ -296,7 +322,7 @@ object Editora: TEditora
             Width = 440
             Height = 60
             Align = alClient
-            Caption = 'Pessoal'
+            Caption = 'Editora'
             TabOrder = 0
             object GridPanelPessoal: TGridPanel
               AlignWithMargins = True
@@ -342,13 +368,13 @@ object Editora: TEditora
               TabOrder = 0
               object Label1: TLabel
                 AlignWithMargins = True
-                Left = 36
+                Left = 10
                 Top = 3
-                Width = 31
+                Width = 57
                 Height = 25
                 Align = alRight
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'Raz'#227'oSocial'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
@@ -367,7 +393,6 @@ object Editora: TEditora
                 DragMode = dmAutomatic
                 MaxLength = 20
                 TabOrder = 0
-                Text = 'Edit1'
                 ExplicitHeight = 21
               end
             end
@@ -440,10 +465,10 @@ object Editora: TEditora
             Height = 16
             Align = alClient
             BiDiMode = bdRightToLeft
-            Caption = 'Label10'
+            Caption = 'Pesquisa'
             ParentBiDiMode = False
-            ExplicitLeft = 37
-            ExplicitWidth = 37
+            ExplicitLeft = 32
+            ExplicitWidth = 42
             ExplicitHeight = 13
           end
           object Edit10: TEdit
@@ -453,7 +478,6 @@ object Editora: TEditora
             Height = 22
             Align = alClient
             TabOrder = 0
-            Text = 'Edit10'
             ExplicitHeight = 21
           end
         end

@@ -111,6 +111,11 @@
             Column = 0
             Control = SpeedButton4
             Row = 4
+          end
+          item
+            Column = 0
+            Control = SpeedButton5
+            Row = 5
           end>
         ParentBackground = False
         RowCollection = <
@@ -208,9 +213,28 @@
           Align = alClient
           Anchors = []
           BiDiMode = bdLeftToRight
+          Caption = 'EDITAR'
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          ExplicitTop = 328
+          ExplicitWidth = 10
+          ExplicitHeight = 100
+        end
+        object SpeedButton5: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 249
+          Width = 134
+          Height = 43
+          Align = alClient
+          Anchors = []
+          BiDiMode = bdLeftToRight
+          Caption = 'LIMPAR'
+          Layout = blGlyphRight
+          Margin = 1
+          ParentBiDiMode = False
+          ExplicitLeft = 59
           ExplicitTop = 328
           ExplicitWidth = 10
           ExplicitHeight = 100

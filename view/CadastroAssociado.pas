@@ -45,6 +45,7 @@ type
     ComboBoxUf: TComboBox;
     MaskEditTelefone: TMaskEdit;
     Editemail: TEdit;
+    SpeedButton5: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
