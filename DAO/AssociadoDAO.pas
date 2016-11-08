@@ -11,7 +11,9 @@ uses DataModule,AssociadoModel,Dialogs;
 
 
 implementation
-
+ // *******TESTE DE COMITE OLIVIR*******
+  // *******TESTE DE COMITE OLIVIR*******
+   // *******TESTE DE COMITE OLIVIR*******
 uses  CadastroAssociado;
 
 procedure TAssociadoDao.excluirAssociado(id: integer);
@@ -27,7 +29,7 @@ begin
 end;
 
 procedure TAssociadoDao.inserirAssociado(AssociadoModel: TAssociadoModel);
-
+ // *******TESTE DE COMITE OLIVIR*******
 begin
 try
   DM.SQLQuery.Close;
