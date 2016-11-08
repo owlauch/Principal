@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/owlauch/Principal/!svn/ver/10/trunk/DAO
+END
+AutorDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/owlauch/Principal/!svn/ver/11/trunk/DAO/AutorDAO.pas
+END
+ListaEsperaDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/owlauch/Principal/!svn/ver/9/trunk/DAO/ListaEsperaDAO.pas
+END
+AssociadoDAO.dcu
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/owlauch/Principal/!svn/ver/10/trunk/DAO/AssociadoDAO.dcu
+END
+ExemplarDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/owlauch/Principal/!svn/ver/9/trunk/DAO/ExemplarDAO.pas
+END
+PalavraChaveDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/owlauch/Principal/!svn/ver/9/trunk/DAO/PalavraChaveDAO.pas
+END
+AcervoDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/owlauch/Principal/!svn/ver/9/trunk/DAO/AcervoDAO.pas
+END
+MultaDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/owlauch/Principal/!svn/ver/9/trunk/DAO/MultaDAO.pas
+END
+ItemEmprestimoDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/owlauch/Principal/!svn/ver/9/trunk/DAO/ItemEmprestimoDAO.pas
+END
+EmprestimoDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/owlauch/Principal/!svn/ver/9/trunk/DAO/EmprestimoDAO.pas
+END
+AssociadoDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/owlauch/Principal/!svn/ver/16/trunk/DAO/AssociadoDAO.pas
+END
+EditoraDAO.pas
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/owlauch/Principal/!svn/ver/13/trunk/DAO/EditoraDAO.pas
+END

@@ -1,0 +1,24 @@
+unit CadastroAcervo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TAcervo = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Acervo: TAcervo;
+
+implementation
+
+{$R *.dfm}
+
+end.

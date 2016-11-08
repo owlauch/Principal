@@ -1,0 +1,44 @@
+unit AssociadoDAO;
+
+
+interface
+uses DataModule,AssociadoModel,Dialogs;
+  type
+    TAssociadoDao=class
+     public
+      procedure inserirAssociado(AssociadoModel:TAssociadoModel);
+      procedure excluirAssociado(id : integer);
+    end;
+
+
+implementation
+
+uses  CadastroAssociado;
+
+procedure TAssociadoDao.excluirAssociado(id: integer);
+begin
+  DM.SQLQuery.Close;
+  DM.SQLQuery.SQL.Text:='DELETE FROM associado WHERE idassociado=:id';
+  DM.SQLQuery.ParamByName('id').AsInteger:=id;
+  DM.SQLQuery.ExecSQL;
+  DM.ClientDataSet.Close;
+  DM.ClientDataSet.Open;
+  DM.ClientDataSet.Close;
+  DM.ClientDataSet.Open;
+end;
+
+procedure TAssociadoDao.inserirAssociado(AssociadoModel: TAssociadoModel);
+
+begin
+ShowMessageFmt('%S',[associadomodel.GetNome]);
+  DM.SQLQuery.Close;
+  DM.SQLQuery.SQL.Text:='INSERT INTO associado(nome) VALUES(:nome)';
+  DM.SQLQuery.ParamByName('nome').AsString:=AssociadoModel.GetNome;
+  DM.SQLQuery.ExecSQL;
+  DM.ClientDataSet.Close;
+  DM.ClientDataSet.Open;
+  DM.ClientDataSet.Close;
+  DM.ClientDataSet.Open;
+end;
+
+end.

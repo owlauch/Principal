@@ -1,0 +1,42 @@
+unit AssociadoDAO;
+
+
+interface
+uses DataModule,AssociadoModel;
+  type
+    TAssociadoDao=class
+     public
+      procedure inserirAssociado(AssociadoModel:TAssociadoModel);
+      procedure excluirAssociado(id : integer);
+    end;
+
+
+implementation
+
+uses  CadastroAssociado;
+
+procedure TAssociadoDao.excluirAssociado(id: integer);
+begin
+  DM.BIBLIOTECA.Connected:=true;
+  DM.CRUDAssociado.Close;
+  DM.CRUDAssociado.SQL.Text:='DELETE FROM associado WHERE idassociado=:id';
+  DM.CRUDAssociado.ParamByName('id').AsInteger:=id;
+  DM.CRUDAssociado.ExecSQL;
+  DM.CRUDAssociado.Close;
+  DM.BIBLIOTECA.Connected:=false;
+end;
+
+procedure TAssociadoDao.inserirAssociado(AssociadoModel: TAssociadoModel);
+begin
+  DM.BIBLIOTECA.Connected:=true;
+  DM.CRUDAssociado.Close;
+  DM.CRUDAssociado.SQL.Text:='INSERT INTO associado(nome) VALUES(:nome)';
+  DM.CRUDAssociado.ParamByName('nome').AsString:=AssociadoModel.GetNome;
+  DM.CRUDAssociado.ExecSQL;
+  DM.CRUDAssociado.close;
+  DM.ClientDataSetAssociado.Close;
+  DM.ClientDataSetAssociado.Open;
+  DM.BIBLIOTECA.Connected:=false;
+end;
+
+end.

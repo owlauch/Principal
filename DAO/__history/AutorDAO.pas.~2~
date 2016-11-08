@@ -1,0 +1,38 @@
+unit AutorDAO;
+
+interface
+uses DataModule,AutorModel,Dialogs;
+type
+  TAutorDao = class
+  public
+      procedure inserirAutor(AutorModel:TAutorModel);
+      procedure excluirAutor(id : integer);
+  end;
+
+implementation
+
+{ TAutorDao }
+
+procedure TAutorDao.excluirAutor(id: integer);
+begin
+
+end;
+
+procedure TAutorDao.inserirAutor(AutorModel: TAutorModel);
+begin
+  try
+  DM.SQLQuery.Close;
+  DM.SQLQuery.SQL.Text:='INSERT INTO associado(nome) VALUES(:nome)';
+  DM.SQLQuery.ParamByName('nome').AsString:=AutorModel.GetNome;
+  DM.SQLQuery.ExecSQL;
+  DM.ClientDataSet.Close;
+  DM.ClientDataSet.Open;
+  DM.ClientDataSet.Close;
+  DM.ClientDataSet.Open;
+  ShowMessageFmt('O Associado %S Foi Registrado com sucesso',[autormodel.GetNome]);
+  finally
+
+  end;
+end;
+
+end.
