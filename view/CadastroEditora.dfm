@@ -13,6 +13,8 @@ object Editora: TEditora
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  ExplicitWidth = 320
+  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   object GridPricipal: TGridPanel
@@ -148,14 +150,12 @@ object Editora: TEditora
           AlignWithMargins = True
           Left = 4
           Top = 53
-          Width = 134
-          Height = 43
+          Width = 45
+          Height = 13
           Align = alClient
           Alignment = taCenter
           Caption = 'EDITORA'
           Layout = tlCenter
-          ExplicitWidth = 45
-          ExplicitHeight = 13
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True
@@ -375,14 +375,13 @@ object Editora: TEditora
                 Left = 10
                 Top = 3
                 Width = 57
-                Height = 25
+                Height = 13
                 Align = alRight
                 BiDiMode = bdRightToLeft
                 Caption = 'Raz'#227'oSocial'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitHeight = 13
               end
               object EditRazaosocial: TEdit
                 AlignWithMargins = True
@@ -465,17 +464,14 @@ object Editora: TEditora
           TabOrder = 2
           object Label10: TLabel
             AlignWithMargins = True
-            Left = 6
+            Left = 32
             Top = 4
-            Width = 68
-            Height = 16
+            Width = 42
+            Height = 13
             Align = alClient
             BiDiMode = bdRightToLeft
             Caption = 'Pesquisa'
             ParentBiDiMode = False
-            ExplicitLeft = 32
-            ExplicitWidth = 42
-            ExplicitHeight = 13
           end
           object EditPesquisar: TEdit
             Left = 78

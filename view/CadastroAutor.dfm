@@ -13,6 +13,8 @@ object Autor: TAutor
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  ExplicitWidth = 320
+  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   object GridPricipal: TGridPanel
@@ -148,14 +150,12 @@ object Autor: TAutor
           AlignWithMargins = True
           Left = 4
           Top = 53
-          Width = 134
-          Height = 43
+          Width = 35
+          Height = 13
           Align = alClient
           Alignment = taCenter
           Caption = 'AUTOR'
           Layout = tlCenter
-          ExplicitWidth = 35
-          ExplicitHeight = 13
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True
@@ -381,14 +381,13 @@ object Autor: TAutor
                 Left = 40
                 Top = 3
                 Width = 27
-                Height = 25
+                Height = 13
                 Align = alRight
                 BiDiMode = bdRightToLeft
                 Caption = 'Nome'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitHeight = 13
               end
               object EditNome: TEdit
                 AlignWithMargins = True
@@ -469,17 +468,14 @@ object Autor: TAutor
           TabOrder = 2
           object Label10: TLabel
             AlignWithMargins = True
-            Left = 6
+            Left = 28
             Top = 4
-            Width = 68
-            Height = 16
+            Width = 46
+            Height = 13
             Align = alClient
             BiDiMode = bdRightToLeft
             Caption = 'Pesquisar'
             ParentBiDiMode = False
-            ExplicitLeft = 28
-            ExplicitWidth = 46
-            ExplicitHeight = 13
           end
           object EditPesquisar: TEdit
             Left = 78

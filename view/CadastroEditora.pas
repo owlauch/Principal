@@ -53,6 +53,7 @@ procedure TEditora.BExcluirClick(Sender: TObject);
     id : integer;
     EditoraDAO:TEditoraDAO;
 begin
+  editoraDao:=TEditoraDao.Create;
   id:=DBGrid1.Fields[0].AsInteger;
   Editoradao.excluirEditora(id);
 end;
@@ -62,6 +63,7 @@ procedure TEditora.BGravarClick(Sender: TObject);
   Editoramodel:tEditoraModel;
   EditoraDAO:tEditoraDAO;
   begin
+  EditoraDAO:=tEditoraDAO.Create;
   Editoramodel:=TEditoraModel.Create;
   Editoramodel.setRazaosocial(EditRazaosocial.Text);
   Editoradao.inserirEditora(Editoramodel);
