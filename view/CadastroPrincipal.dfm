@@ -5,8 +5,8 @@ object Cadastro: TCadastro
   AutoSize = True
   BorderStyle = bsNone
   Caption = 'Cadastro'
-  ClientHeight = 459
-  ClientWidth = 626
+  ClientHeight = 410
+  ClientWidth = 620
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,8 +19,8 @@ object Cadastro: TCadastro
   object GridPricipal: TGridPanel
     Left = 0
     Top = 0
-    Width = 626
-    Height = 459
+    Width = 620
+    Height = 410
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
@@ -49,23 +49,29 @@ object Cadastro: TCadastro
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 626
+    ExplicitHeight = 459
     object Panel1: TPanel
+      AlignWithMargins = True
       Left = 1
       Top = 1
-      Width = 156
-      Height = 457
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      Width = 154
+      Height = 408
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
       Align = alClient
+      BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 156
+      ExplicitHeight = 457
       object GridPanel1: TGridPanel
         AlignWithMargins = True
-        Left = 4
-        Top = 4
+        Left = 3
+        Top = 3
         Width = 148
-        Height = 449
+        Height = 402
         Align = alClient
         Color = clGradientInactiveCaption
         ColumnCollection = <
@@ -80,12 +86,12 @@ object Cadastro: TCadastro
           end
           item
             Column = 0
-            Control = SpeedButton1
+            Control = BAcervo
             Row = 2
           end
           item
             Column = 0
-            Control = SpeedButton2
+            Control = BAssociado
             Row = 3
           end
           item
@@ -95,12 +101,12 @@ object Cadastro: TCadastro
           end
           item
             Column = 0
-            Control = SpeedButton4
+            Control = BEditora
             Row = 5
           end
           item
             Column = 0
-            Control = SpeedButton5
+            Control = BVoltar
             Row = 0
           end>
         ParentBackground = False
@@ -130,46 +136,51 @@ object Cadastro: TCadastro
             Value = 12.500418065862120000
           end>
         TabOrder = 0
+        ExplicitLeft = 4
+        ExplicitTop = 4
+        ExplicitHeight = 449
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
-          Top = 59
+          Top = 54
           Width = 140
-          Height = 49
+          Height = 43
           Align = alClient
           Alignment = taCenter
           Caption = 'CADASTROS'
           Layout = tlCenter
+          ExplicitTop = 59
           ExplicitWidth = 61
           ExplicitHeight = 13
         end
-        object SpeedButton1: TSpeedButton
+        object BAcervo: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 114
+          Top = 103
           Width = 140
-          Height = 49
+          Height = 43
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BAcervoClick
           ExplicitTop = 85
           ExplicitWidth = 100
           ExplicitHeight = 100
         end
-        object SpeedButton2: TSpeedButton
+        object BAssociado: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 169
+          Top = 152
           Width = 140
-          Height = 49
+          Height = 43
           Align = alClient
           Anchors = []
           Caption = 'ASSOCIADO'
           Layout = blGlyphRight
           Margin = 1
-          OnClick = SpeedButton2Click
+          OnClick = BAssociadoClick
           ExplicitTop = 166
           ExplicitWidth = 10
           ExplicitHeight = 100
@@ -177,9 +188,9 @@ object Cadastro: TCadastro
         object BAutor: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 224
+          Top = 201
           Width = 140
-          Height = 49
+          Height = 44
           Align = alClient
           Anchors = []
           Caption = 'AUTOR'
@@ -190,34 +201,35 @@ object Cadastro: TCadastro
           ExplicitWidth = 10
           ExplicitHeight = 100
         end
-        object SpeedButton4: TSpeedButton
+        object BEditora: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 279
+          Top = 251
           Width = 140
-          Height = 49
+          Height = 44
           Align = alClient
           Anchors = []
           Caption = 'EDITORA'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BEditoraClick
           ExplicitLeft = 11
           ExplicitTop = 264
           ExplicitWidth = 136
           ExplicitHeight = 46
         end
-        object SpeedButton5: TSpeedButton
+        object BVoltar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 4
           Width = 140
-          Height = 49
+          Height = 44
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'
           Margin = 1
           ParentBiDiMode = False
-          OnClick = SpeedButton5Click
+          OnClick = BVoltarClick
           ExplicitLeft = 96
           ExplicitTop = 0
           ExplicitWidth = 23
@@ -227,10 +239,10 @@ object Cadastro: TCadastro
     end
     object Panel2: TPanel
       AlignWithMargins = True
-      Left = 162
+      Left = 160
       Top = 6
-      Width = 458
-      Height = 447
+      Width = 454
+      Height = 398
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -238,6 +250,9 @@ object Cadastro: TCadastro
       Align = alClient
       AutoSize = True
       TabOrder = 1
+      ExplicitLeft = 162
+      ExplicitWidth = 458
+      ExplicitHeight = 447
     end
   end
 end

@@ -12,10 +12,10 @@ type
     PanelMenu: TPanel;
     GridPanel1: TGridPanel;
     Associado: TLabel;
-    SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    SpeedButton4: TSpeedButton;
+    BVoltar: TSpeedButton;
+    BGravar: TSpeedButton;
+    BExcluir: TSpeedButton;
+    BEditar: TSpeedButton;
     PanelVisualEdicao: TPanel;
     GridPrincipalcadastro: TGridPanel;
     DBGrid1: TDBGrid;
@@ -35,8 +35,9 @@ type
     Edit4: TEdit;
     Edit5: TEdit;
     Edit6: TEdit;
-    SpeedButton5: TSpeedButton;
+    Blimpar: TSpeedButton;
     DateTimePicker1: TDateTimePicker;
+    procedure BVoltarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,6 +49,16 @@ var
 
 implementation
 
+uses CadastroPrincipal, Principal;
+
 {$R *.dfm}
+
+procedure TAcervo.BVoltarClick(Sender: TObject);
+begin
+  Close;
+  Cadastro:=TCadastro.Create(self);
+  Cadastro.Parent:=SDIAppForm;
+  cadastro.Show;
+end;
 
 end.

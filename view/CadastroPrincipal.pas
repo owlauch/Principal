@@ -12,15 +12,17 @@ type
     Panel1: TPanel;
     GridPanel1: TGridPanel;
     Label1: TLabel;
-    SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
+    BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
     BAutor: TSpeedButton;
-    SpeedButton4: TSpeedButton;
+    BEditora: TSpeedButton;
     Panel2: TPanel;
-    SpeedButton5: TSpeedButton;
-    procedure SpeedButton2Click(Sender: TObject);
-    procedure SpeedButton5Click(Sender: TObject);
+    BVoltar: TSpeedButton;
+    procedure BAssociadoClick(Sender: TObject);
+    procedure BVoltarClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
+    procedure BAcervoClick(Sender: TObject);
+    procedure BEditoraClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,11 +34,21 @@ var
 
 implementation
 
-uses CadastroAssociado,Principal,Primaria, CadastroAutor;
+uses CadastroAssociado,Principal,Primaria, CadastroAutor, CadastroAcervo,
+  CadastroEditora;
 
 {$R *.dfm}
 
-procedure TCadastro.SpeedButton2Click(Sender: TObject);
+procedure TCadastro.BAcervoClick(Sender: TObject);
+begin
+  Close;
+  Acervo:=TAcervo.Create(self);
+  Acervo.Parent:=SDIAppForm;
+  Acervo.Show;
+
+end;
+
+procedure TCadastro.BAssociadoClick(Sender: TObject);
 begin
   Close;
   Associado:=TAssociado.Create(self);
@@ -52,7 +64,15 @@ begin
   Autor.Show;
 end;
 
-procedure TCadastro.SpeedButton5Click(Sender: TObject);
+procedure TCadastro.BEditoraClick(Sender: TObject);
+begin
+  close;
+  Editora:=TEditora.Create(self);
+  Editora.Parent:=SDIAppForm;
+  Editora.Show;
+end;
+
+procedure TCadastro.BVoltarClick(Sender: TObject);
 begin
   close;
   MenuPrincipal:=TMenuPrincipal.Create(self);

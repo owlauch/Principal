@@ -82,27 +82,27 @@ object Acervo: TAcervo
           end
           item
             Column = 0
-            Control = SpeedButton1
+            Control = BVoltar
             Row = 0
           end
           item
             Column = 0
-            Control = SpeedButton2
+            Control = BGravar
             Row = 2
           end
           item
             Column = 0
-            Control = SpeedButton3
+            Control = BExcluir
             Row = 3
           end
           item
             Column = 0
-            Control = SpeedButton4
+            Control = BEditar
             Row = 4
           end
           item
             Column = 0
-            Control = SpeedButton5
+            Control = Blimpar
             Row = 5
           end>
         ParentBackground = False
@@ -145,7 +145,7 @@ object Acervo: TAcervo
           ExplicitWidth = 41
           ExplicitHeight = 13
         end
-        object SpeedButton1: TSpeedButton
+        object BVoltar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 4
@@ -156,11 +156,12 @@ object Acervo: TAcervo
           Caption = 'VOLTAR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BVoltarClick
           ExplicitTop = 85
           ExplicitWidth = 100
           ExplicitHeight = 100
         end
-        object SpeedButton2: TSpeedButton
+        object BGravar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 102
@@ -173,7 +174,7 @@ object Acervo: TAcervo
           Margin = 1
           ExplicitLeft = 11
         end
-        object SpeedButton3: TSpeedButton
+        object BExcluir: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 151
@@ -189,7 +190,7 @@ object Acervo: TAcervo
           ExplicitWidth = 71
           ExplicitHeight = 41
         end
-        object SpeedButton4: TSpeedButton
+        object BEditar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 200
@@ -206,7 +207,7 @@ object Acervo: TAcervo
           ExplicitWidth = 10
           ExplicitHeight = 100
         end
-        object SpeedButton5: TSpeedButton
+        object Blimpar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 249
@@ -276,7 +277,7 @@ object Acervo: TAcervo
             Value = 30.000000000000000000
           end
           item
-            Value = 64.996911496899990000
+            Value = 64.996911496900000000
           end>
         TabOrder = 0
         object DBGrid1: TDBGrid

@@ -12,10 +12,10 @@ type
     PanelMenu: TPanel;
     GridPanel1: TGridPanel;
     Associado: TLabel;
-    SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    SpeedButton4: TSpeedButton;
+    BVoltar: TSpeedButton;
+    BGravar: TSpeedButton;
+    BExcluir: TSpeedButton;
+    BEditar: TSpeedButton;
     PanelVisualEdicao: TPanel;
     GridPrincipalcadastro: TGridPanel;
     GridCadastro: TGridPanel;
@@ -45,10 +45,10 @@ type
     ComboBoxUf: TComboBox;
     MaskEditTelefone: TMaskEdit;
     Editemail: TEdit;
-    SpeedButton5: TSpeedButton;
-    procedure SpeedButton1Click(Sender: TObject);
-    procedure SpeedButton2Click(Sender: TObject);
-    procedure SpeedButton3Click(Sender: TObject);
+    BLimpar: TSpeedButton;
+    procedure BVoltarClick(Sender: TObject);
+    procedure BGravarClick(Sender: TObject);
+    procedure BExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +65,7 @@ uses CadastroPrincipal,Principal,AssociadoModel,AssociadoDAO;
 {$R *.dfm}
 
 
-procedure TAssociado.SpeedButton1Click(Sender: TObject);
+procedure TAssociado.BVoltarClick(Sender: TObject);
 begin
   Close;
   Cadastro:=TCadastro.Create(self);
@@ -73,7 +73,7 @@ begin
   cadastro.Show;
 end;
 
-procedure TAssociado.SpeedButton2Click(Sender: TObject);
+procedure TAssociado.BGravarClick(Sender: TObject);
 var
   NET:TAssociadoModel;
   AssociadoDao:TAssociadoDao;
@@ -101,7 +101,7 @@ begin
 
 end;
 
-procedure TAssociado.SpeedButton3Click(Sender: TObject);
+procedure TAssociado.BExcluirClick(Sender: TObject);
  var
  id:integer;
  AssociadoDao:tAssociadoDao;

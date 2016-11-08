@@ -94,7 +94,7 @@ object Autor: TAutor
           end
           item
             Column = 0
-            Control = SpeedButton1
+            Control = BVoltar
             Row = 0
           end
           item
@@ -157,7 +157,7 @@ object Autor: TAutor
           ExplicitWidth = 35
           ExplicitHeight = 13
         end
-        object SpeedButton1: TSpeedButton
+        object BVoltar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 4
@@ -168,6 +168,7 @@ object Autor: TAutor
           Caption = 'VOLTAR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BVoltarClick
           ExplicitTop = 85
           ExplicitWidth = 100
           ExplicitHeight = 100

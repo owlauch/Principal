@@ -1,7 +1,10 @@
 object MenuPrincipal: TMenuPrincipal
-  AlignWithMargins = True
   Left = 0
   Top = 0
+  Margins.Left = 0
+  Margins.Top = 0
+  Margins.Right = 0
+  Margins.Bottom = 0
   Align = alClient
   AlphaBlend = True
   AutoSize = True
@@ -19,14 +22,15 @@ object MenuPrincipal: TMenuPrincipal
   PixelsPerInch = 96
   TextHeight = 13
   object GridPricipal: TGridPanel
+    AlignWithMargins = True
     Left = 0
     Top = 0
     Width = 620
     Height = 410
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
     Align = alClient
     ColumnCollection = <
       item
@@ -37,170 +41,42 @@ object MenuPrincipal: TMenuPrincipal
       end>
     ControlCollection = <
       item
-        Column = 0
-        Control = Panel1
+        Column = 1
+        Control = PanelImagem
         Row = 0
       end
       item
-        Column = 1
-        Control = Panel2
+        Column = 0
+        Control = PanelMenu
         Row = 0
       end>
     RowCollection = <
       item
-        SizeStyle = ssAbsolute
-        Value = 400.000000000000000000
+        Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitHeight = 390
-    object Panel1: TPanel
+    object PanelImagem: TPanel
       AlignWithMargins = True
-      Left = 6
+      Left = 160
       Top = 6
-      Width = 144
-      Height = 390
+      Width = 454
+      Height = 398
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
       Align = alClient
       TabOrder = 0
-      object GridPanel1: TGridPanel
-        Left = 1
-        Top = 1
-        Width = 142
-        Height = 388
-        Align = alClient
-        Color = clGradientInactiveCaption
-        ColumnCollection = <
-          item
-            Value = 100.000000000000000000
-          end>
-        ControlCollection = <
-          item
-            Column = 0
-            Control = Label1
-            Row = 1
-          end
-          item
-            Column = 0
-            Control = SpeedButton1
-            Row = 2
-          end
-          item
-            Column = 0
-            Control = SpeedButton2
-            Row = 3
-          end
-          item
-            Column = 0
-            Control = SpeedButton3
-            Row = 4
-          end>
-        ParentBackground = False
-        RowCollection = <
-          item
-            Value = 12.500163597711770000
-          end
-          item
-            Value = 12.498011377957820000
-          end
-          item
-            Value = 12.498393131032930000
-          end
-          item
-            Value = 12.499723224493830000
-          end
-          item
-            Value = 12.500894811425920000
-          end
-          item
-            Value = 12.501344865751650000
-          end
-          item
-            Value = 12.501050925763950000
-          end
-          item
-            Value = 12.500418065862120000
-          end>
-        TabOrder = 0
-        object Label1: TLabel
-          AlignWithMargins = True
-          Left = 4
-          Top = 52
-          Width = 134
-          Height = 42
-          Align = alClient
-          Alignment = taCenter
-          Caption = 'MENU'
-          Layout = tlCenter
-          ExplicitWidth = 28
-          ExplicitHeight = 13
-        end
-        object SpeedButton1: TSpeedButton
-          AlignWithMargins = True
-          Left = 4
-          Top = 100
-          Width = 134
-          Height = 42
-          Align = alClient
-          Caption = 'CADASTRO'
-          Layout = blGlyphRight
-          Margin = 1
-          OnClick = SpeedButton1Click
-          ExplicitWidth = 105
-        end
-        object SpeedButton2: TSpeedButton
-          AlignWithMargins = True
-          Left = 4
-          Top = 148
-          Width = 134
-          Height = 42
-          Align = alClient
-          Anchors = []
-          Caption = 'LAN'#199'AMENTO'
-          Layout = blGlyphRight
-          Margin = 1
-          ExplicitLeft = -1
-          ExplicitTop = 154
-          ExplicitWidth = 132
-          ExplicitHeight = 41
-        end
-        object SpeedButton3: TSpeedButton
-          AlignWithMargins = True
-          Left = 4
-          Top = 196
-          Width = 134
-          Height = 42
-          Align = alClient
-          Anchors = []
-          Caption = 'CONSULTA'
-          Layout = blGlyphRight
-          Margin = 1
-          ExplicitTop = 247
-          ExplicitWidth = 10
-          ExplicitHeight = 100
-        end
-      end
-    end
-    object Panel2: TPanel
-      AlignWithMargins = True
-      Left = 160
-      Top = 6
-      Width = 454
-      Height = 390
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
-      Align = alClient
-      TabOrder = 1
+      ExplicitHeight = 390
       object Image1: TImage
         AlignWithMargins = True
-        Left = 4
+        Left = 1
         Top = 4
-        Width = 446
-        Height = 382
+        Width = 452
+        Height = 393
+        Margins.Left = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alClient
         AutoSize = True
         Picture.Data = {
@@ -440,6 +316,145 @@ object MenuPrincipal: TMenuPrincipal
         ExplicitTop = 144
         ExplicitWidth = 105
         ExplicitHeight = 105
+      end
+    end
+    object PanelMenu: TPanel
+      AlignWithMargins = True
+      Left = 6
+      Top = 6
+      Width = 144
+      Height = 398
+      Margins.Left = 5
+      Margins.Top = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alClient
+      Anchors = []
+      TabOrder = 1
+      ExplicitWidth = 434
+      ExplicitHeight = 378
+      object GridPanel1: TGridPanel
+        Left = 1
+        Top = 1
+        Width = 142
+        Height = 396
+        Align = alClient
+        Color = clGradientInactiveCaption
+        ColumnCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = Associado
+            Row = 1
+          end
+          item
+            Column = 0
+            Control = BCadastro
+            Row = 2
+          end
+          item
+            Column = 0
+            Control = BLancamento
+            Row = 3
+          end
+          item
+            Column = 0
+            Control = BConsulta
+            Row = 4
+          end>
+        ParentBackground = False
+        RowCollection = <
+          item
+            Value = 12.500163597711770000
+          end
+          item
+            Value = 12.498011377957820000
+          end
+          item
+            Value = 12.498393131032930000
+          end
+          item
+            Value = 12.499723224493830000
+          end
+          item
+            Value = 12.500894811425920000
+          end
+          item
+            Value = 12.501344865751650000
+          end
+          item
+            Value = 12.501050925763950000
+          end
+          item
+            Value = 12.500418065862120000
+          end>
+        TabOrder = 0
+        ExplicitWidth = 432
+        ExplicitHeight = 376
+        object Associado: TLabel
+          AlignWithMargins = True
+          Left = 4
+          Top = 53
+          Width = 134
+          Height = 43
+          Align = alClient
+          Alignment = taCenter
+          Caption = 'MENU'
+          Layout = tlCenter
+          ExplicitTop = 52
+          ExplicitWidth = 28
+          ExplicitHeight = 13
+        end
+        object BCadastro: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 102
+          Width = 134
+          Height = 43
+          Align = alClient
+          Anchors = []
+          Caption = 'CADASTRO'
+          Layout = blGlyphRight
+          Margin = 1
+          OnClick = BCadastroClick
+          ExplicitLeft = 11
+        end
+        object BLancamento: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 151
+          Width = 134
+          Height = 43
+          Align = alClient
+          Anchors = []
+          Caption = 'LAN'#199'AMENTO'
+          Layout = blGlyphRight
+          Margin = 1
+          ExplicitLeft = 0
+          ExplicitTop = 146
+          ExplicitWidth = 71
+          ExplicitHeight = 41
+        end
+        object BConsulta: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 200
+          Width = 134
+          Height = 43
+          Align = alClient
+          Anchors = []
+          BiDiMode = bdLeftToRight
+          Caption = 'CONSULTA'
+          Layout = blGlyphRight
+          Margin = 1
+          ParentBiDiMode = False
+          ExplicitTop = 328
+          ExplicitWidth = 10
+          ExplicitHeight = 100
+        end
       end
     end
   end

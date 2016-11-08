@@ -9,15 +9,15 @@ uses
 type
   TMenuPrincipal = class(TForm)
     GridPricipal: TGridPanel;
-    Panel1: TPanel;
-    GridPanel1: TGridPanel;
-    Label1: TLabel;
-    SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    Panel2: TPanel;
+    PanelImagem: TPanel;
     Image1: TImage;
-    procedure SpeedButton1Click(Sender: TObject);
+    PanelMenu: TPanel;
+    GridPanel1: TGridPanel;
+    Associado: TLabel;
+    BCadastro: TSpeedButton;
+    BLancamento: TSpeedButton;
+    BConsulta: TSpeedButton;
+    procedure BCadastroClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,7 +33,7 @@ implementation
 uses Principal,CadastroPrincipal;
 
 
-procedure TMenuPrincipal.SpeedButton1Click(Sender: TObject);
+procedure TMenuPrincipal.BCadastroClick(Sender: TObject);
 begin
   Close;
   Cadastro:=TCadastro.Create(self);
@@ -41,4 +41,5 @@ begin
   cadastro.Show;
 end;
 
-end.
+
+End.

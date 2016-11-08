@@ -12,7 +12,7 @@ type
     PanelMenu: TPanel;
     GridPanel1: TGridPanel;
     Associado: TLabel;
-    SpeedButton1: TSpeedButton;
+    BVoltar: TSpeedButton;
     Bgravar: TSpeedButton;
     BExcluir: TSpeedButton;
     SpeedButton4: TSpeedButton;
@@ -30,6 +30,7 @@ type
     SpeedButton2: TSpeedButton;
     procedure BgravarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
+    procedure BVoltarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +42,7 @@ var
 
 implementation
 
-uses AutorDAO, AutorModel;
+uses AutorDAO, AutorModel, CadastroPrincipal, Principal;
 
 {$R *.dfm}
 
@@ -63,6 +64,14 @@ begin
  autormodel.setNome(EditNome.Text);
  autordao.inserirAutor(autormodel);
  EditNome.Clear;
+end;
+
+procedure TAutor.BVoltarClick(Sender: TObject);
+begin
+  Close;
+  Cadastro:=TCadastro.Create(self);
+  Cadastro.Parent:=SDIAppForm;
+  cadastro.Show;
 end;
 
 end.
