@@ -25,12 +25,13 @@ type
     DBGrid1: TDBGrid;
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
-    Edit10: TEdit;
+    EditPesquisar: TEdit;
     EditNome: TEdit;
     SpeedButton2: TSpeedButton;
     procedure BgravarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,6 +73,12 @@ begin
   Cadastro:=TCadastro.Create(self);
   Cadastro.Parent:=SDIAppForm;
   cadastro.Show;
+end;
+
+procedure TAutor.SpeedButton2Click(Sender: TObject);
+begin
+  EditNome.Clear;
+  EditPesquisar.Clear;
 end;
 
 end.

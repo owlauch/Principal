@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls;
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule;
 
 type
   TEditora = class(TForm)
@@ -22,13 +22,16 @@ type
     Pessoal: TGroupBox;
     GridPanelPessoal: TGridPanel;
     Label1: TLabel;
-    Edit2: TEdit;
+    EditRazaosocial: TEdit;
     DBGrid1: TDBGrid;
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
-    Edit10: TEdit;
+    EditPesquisar: TEdit;
     BLimpar: TSpeedButton;
     procedure BVoltarClick(Sender: TObject);
+    procedure BExcluirClick(Sender: TObject);
+    procedure BGravarClick(Sender: TObject);
+    procedure BLimparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,10 +43,36 @@ var
 
 implementation
 
-uses CadastroPrincipal, Principal;
+uses CadastroPrincipal, Principal, EditoraDAO, EditoraModel;
 
 
 {$R *.dfm}
+
+procedure TEditora.BExcluirClick(Sender: TObject);
+  var
+    id : integer;
+    EditoraDAO:TEditoraDAO;
+begin
+  id:=DBGrid1.Fields[0].AsInteger;
+  Editoradao.excluirEditora(id);
+end;
+
+procedure TEditora.BGravarClick(Sender: TObject);
+  var
+  Editoramodel:tEditoraModel;
+  EditoraDAO:tEditoraDAO;
+  begin
+  Editoramodel:=TEditoraModel.Create;
+  Editoramodel.setRazaosocial(EditRazaosocial.Text);
+  Editoradao.inserirEditora(Editoramodel);
+  EditRazaosocial.Clear;
+end;
+
+procedure TEditora.BLimparClick(Sender: TObject);
+begin
+  EditRazaosocial.Clear;
+  EditPesquisar.Clear;
+end;
 
 procedure TEditora.BvoltarClick(Sender: TObject);
 begin

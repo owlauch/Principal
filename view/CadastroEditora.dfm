@@ -184,6 +184,7 @@ object Editora: TEditora
           Caption = 'GRAVAR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BGravarClick
           ExplicitLeft = 11
         end
         object BExcluir: TSpeedButton
@@ -197,6 +198,7 @@ object Editora: TEditora
           Caption = 'EXCLUIR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BExcluirClick
           ExplicitLeft = 0
           ExplicitTop = 146
           ExplicitWidth = 71
@@ -232,6 +234,7 @@ object Editora: TEditora
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          OnClick = BLimparClick
           ExplicitLeft = 59
           ExplicitTop = 328
           ExplicitWidth = 10
@@ -358,7 +361,7 @@ object Editora: TEditora
                 item
                   Column = 1
                   ColumnSpan = 2
-                  Control = Edit2
+                  Control = EditRazaosocial
                   Row = 0
                 end>
               RowCollection = <
@@ -381,7 +384,7 @@ object Editora: TEditora
                 Layout = tlCenter
                 ExplicitHeight = 13
               end
-              object Edit2: TEdit
+              object EditRazaosocial: TEdit
                 AlignWithMargins = True
                 Left = 73
                 Top = 3
@@ -407,7 +410,9 @@ object Editora: TEditora
           Height = 284
           Align = alClient
           Anchors = []
+          DataSource = DM.DataSource2
           DrawingStyle = gdsGradient
+          ReadOnly = True
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -417,12 +422,12 @@ object Editora: TEditora
           Columns = <
             item
               Expanded = False
-              FieldName = 'IDAUTOR'
+              FieldName = 'IDEDITORA'
               Visible = False
             end
             item
               Expanded = False
-              FieldName = 'NOME'
+              FieldName = 'RAZAOSOCIAL'
               Visible = True
             end>
         end
@@ -449,7 +454,7 @@ object Editora: TEditora
             end
             item
               Column = 1
-              Control = Edit10
+              Control = EditPesquisar
               Row = 0
             end>
           Padding.Left = 1
@@ -472,14 +477,15 @@ object Editora: TEditora
             ExplicitWidth = 42
             ExplicitHeight = 13
           end
-          object Edit10: TEdit
+          object EditPesquisar: TEdit
             Left = 78
             Top = 1
             Width = 361
             Height = 22
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 21
+            ExplicitLeft = 80
+            ExplicitTop = 2
           end
         end
       end

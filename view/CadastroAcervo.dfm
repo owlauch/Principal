@@ -220,10 +220,8 @@ object Acervo: TAcervo
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
-          ExplicitLeft = 59
-          ExplicitTop = 328
-          ExplicitWidth = 10
-          ExplicitHeight = 100
+          OnClick = BlimparClick
+          ExplicitLeft = 11
         end
       end
     end
@@ -277,7 +275,7 @@ object Acervo: TAcervo
             Value = 30.000000000000000000
           end
           item
-            Value = 64.996911496900000000
+            Value = 64.996911496899990000
           end>
         TabOrder = 0
         object DBGrid1: TDBGrid
@@ -367,7 +365,6 @@ object Acervo: TAcervo
               Value = 100.000000000000000000
             end>
           TabOrder = 1
-          ExplicitTop = 208
           object Label10: TLabel
             AlignWithMargins = True
             Left = 6
@@ -466,34 +463,24 @@ object Acervo: TAcervo
               item
                 Column = 1
                 ColumnSpan = 2
-                Control = Edit1
-                Row = 0
-              end
-              item
-                Column = 4
-                Control = Edit2
+                Control = EditTitulo
                 Row = 0
               end
               item
                 Column = 3
                 ColumnSpan = 2
-                Control = Edit4
+                Control = EditLocalEdicao
                 Row = 1
               end
               item
                 Column = 1
                 ColumnSpan = 2
-                Control = Edit5
-                Row = 2
-              end
-              item
-                Column = 4
-                Control = Edit6
+                Control = EditIsbn
                 Row = 2
               end
               item
                 Column = 1
-                Control = DateTimePicker1
+                Control = DateTimePickerEdicao
                 Row = 1
               end>
             RowCollection = <
@@ -518,7 +505,7 @@ object Acervo: TAcervo
               Caption = 'Titulo'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 36
+              ExplicitLeft = 22
               ExplicitWidth = 26
               ExplicitHeight = 13
             end
@@ -533,7 +520,7 @@ object Acervo: TAcervo
               Caption = 'Editora'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 242
+              ExplicitLeft = 234
               ExplicitWidth = 34
               ExplicitHeight = 13
             end
@@ -548,7 +535,7 @@ object Acervo: TAcervo
               Caption = 'QTD'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 255
+              ExplicitLeft = 247
               ExplicitWidth = 21
               ExplicitHeight = 13
             end
@@ -578,7 +565,7 @@ object Acervo: TAcervo
               Caption = 'Edi'#231#227'o'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 31
+              ExplicitLeft = 17
               ExplicitWidth = 31
               ExplicitHeight = 13
             end
@@ -593,11 +580,11 @@ object Acervo: TAcervo
               Caption = 'ISBN'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 39
+              ExplicitLeft = 25
               ExplicitWidth = 23
               ExplicitHeight = 13
             end
-            object Edit1: TEdit
+            object EditTitulo: TEdit
               AlignWithMargins = True
               Left = 54
               Top = 4
@@ -605,59 +592,29 @@ object Acervo: TAcervo
               Height = 26
               Align = alClient
               TabOrder = 0
-              ExplicitLeft = 68
-              ExplicitWidth = 144
               ExplicitHeight = 21
             end
-            object Edit2: TEdit
-              AlignWithMargins = True
-              Left = 274
-              Top = 4
-              Width = 154
-              Height = 26
-              Align = alClient
-              TabOrder = 1
-              ExplicitLeft = 282
-              ExplicitWidth = 146
-              ExplicitHeight = 21
-            end
-            object Edit4: TEdit
+            object EditLocalEdicao: TEdit
               AlignWithMargins = True
               Left = 224
               Top = 36
               Width = 204
               Height = 26
               Align = alClient
-              TabOrder = 2
-              ExplicitLeft = 282
-              ExplicitWidth = 146
+              TabOrder = 1
               ExplicitHeight = 21
             end
-            object Edit5: TEdit
+            object EditIsbn: TEdit
               AlignWithMargins = True
               Left = 54
               Top = 68
               Width = 164
               Height = 27
               Align = alClient
-              TabOrder = 3
-              ExplicitLeft = 68
-              ExplicitWidth = 144
+              TabOrder = 2
               ExplicitHeight = 21
             end
-            object Edit6: TEdit
-              AlignWithMargins = True
-              Left = 274
-              Top = 68
-              Width = 154
-              Height = 27
-              Align = alClient
-              TabOrder = 4
-              ExplicitLeft = 282
-              ExplicitWidth = 146
-              ExplicitHeight = 21
-            end
-            object DateTimePicker1: TDateTimePicker
+            object DateTimePickerEdicao: TDateTimePicker
               AlignWithMargins = True
               Left = 54
               Top = 36
@@ -665,10 +622,46 @@ object Acervo: TAcervo
               Height = 21
               Date = 42682.379632870370000000
               Time = 42682.379632870370000000
-              TabOrder = 5
+              TabOrder = 3
             end
           end
         end
+      end
+      object ComboBoxQtd: TComboBox
+        Left = 285
+        Top = 33
+        Width = 52
+        Height = 21
+        TabOrder = 1
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5'
+          '6'
+          '7'
+          '8'
+          '9'
+          '10'
+          '11'
+          '12'
+          '13'
+          '14'
+          '15'
+          '16'
+          '17'
+          '18'
+          '19'
+          '20')
+      end
+      object ComboBoxEditora: TComboBox
+        Left = 285
+        Top = 92
+        Width = 145
+        Height = 21
+        TabOrder = 2
       end
     end
   end

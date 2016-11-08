@@ -49,20 +49,35 @@ type
     ClientDataSet1: TClientDataSet;
     DataSource1: TDataSource;
     SQLQuery1: TSQLQuery;
-    IntegerField3: TIntegerField;
-    StringField17: TStringField;
-    StringField18: TStringField;
-    StringField19: TStringField;
-    StringField20: TStringField;
-    StringField21: TStringField;
-    StringField22: TStringField;
-    SmallintField3: TSmallintField;
-    StringField23: TStringField;
-    StringField24: TStringField;
     SQLDataSet1IDAUTOR: TIntegerField;
     SQLDataSet1NOME: TStringField;
     ClientDataSet1IDAUTOR: TIntegerField;
     ClientDataSet1NOME: TStringField;
+    SQLDataSet2: TSQLDataSet;
+    DataSetProvider2: TDataSetProvider;
+    ClientDataSet2: TClientDataSet;
+    DataSource2: TDataSource;
+    SQLQuery2: TSQLQuery;
+    SQLDataSet2IDEDITORA: TIntegerField;
+    SQLDataSet2RAZAOSOCIAL: TStringField;
+    ClientDataSet2IDEDITORA: TIntegerField;
+    ClientDataSet2RAZAOSOCIAL: TStringField;
+    SQLQuery2IDEDITORA: TIntegerField;
+    SQLQuery2RAZAOSOCIAL: TStringField;
+    SQLQuery1IDAUTOR: TIntegerField;
+    SQLQuery1NOME: TStringField;
+    SQLDataSet3: TSQLDataSet;
+    IntegerField1: TIntegerField;
+    StringField1: TStringField;
+    DataSetProvider3: TDataSetProvider;
+    ClientDataSet3: TClientDataSet;
+    IntegerField2: TIntegerField;
+    StringField2: TStringField;
+    DataSource3: TDataSource;
+    SQLQuery3: TSQLQuery;
+    IntegerField3: TIntegerField;
+    StringField3: TStringField;
+
 
   private
     { Private declarations }
@@ -76,6 +91,7 @@ var
 implementation
 
 {$R *.dfm}
+
 
 
 end.

@@ -234,6 +234,7 @@ object Autor: TAutor
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          OnClick = SpeedButton2Click
           ExplicitLeft = 59
           ExplicitTop = 328
           ExplicitWidth = 10
@@ -412,6 +413,7 @@ object Autor: TAutor
           Anchors = []
           DataSource = DM.DataSource1
           DrawingStyle = gdsGradient
+          ReadOnly = True
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -456,7 +458,7 @@ object Autor: TAutor
             end
             item
               Column = 1
-              Control = Edit10
+              Control = EditPesquisar
               Row = 0
             end>
           Padding.Left = 1
@@ -479,7 +481,7 @@ object Autor: TAutor
             ExplicitWidth = 46
             ExplicitHeight = 13
           end
-          object Edit10: TEdit
+          object EditPesquisar: TEdit
             Left = 78
             Top = 1
             Width = 361
