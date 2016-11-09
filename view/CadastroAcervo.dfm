@@ -350,7 +350,6 @@ object Acervo: TAcervo
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
-          OnClick = BlimparClick
           ExplicitLeft = 11
         end
       end
@@ -792,6 +791,8 @@ object Acervo: TAcervo
         Width = 145
         Height = 21
         TabOrder = 2
+        OnDrawItem = ComboBoxEditoraDrawItem
+        OnKeyDown = ComboBoxEditoraKeyDown
       end
     end
   end

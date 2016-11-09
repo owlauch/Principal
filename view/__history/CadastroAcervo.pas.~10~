@@ -40,8 +40,6 @@ type
     procedure BVoltarClick(Sender: TObject);
     procedure ComboBoxEditoraKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure ComboBoxEditoraDrawItem(Control: TWinControl; Index: Integer;
-      Rect: TRect; State: TOwnerDrawState);
   private
     { Private declarations }
   public
@@ -67,9 +65,8 @@ begin
   cadastro.Show;
 end;
 
-
-procedure TAcervo.ComboBoxEditoraDrawItem(Control: TWinControl; Index: Integer;
-  Rect: TRect; State: TOwnerDrawState);
+procedure TAcervo.ComboBoxEditoraKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
   dm.sqldataset3.First;
   while not dm.sqldataset3.eof do
