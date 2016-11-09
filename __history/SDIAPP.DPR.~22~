@@ -1,0 +1,40 @@
+program Sdiapp;
+
+uses
+  Forms,
+  Principal in 'view\Principal.PAS' {SDIAppForm},
+  CadastroPrincipal in 'view\CadastroPrincipal.pas' {Cadastro},
+  CadastroAssociado in 'view\CadastroAssociado.pas' {Associado},
+  DataModule in 'DataModule\DataModule.pas' {DM: TDataModule},
+  Primaria in 'view\Primaria.pas' {MenuPrincipal},
+  CadastroAutor in 'view\CadastroAutor.pas' {Autor},
+  CadastroAcervo in 'view\CadastroAcervo.pas' {Acervo},
+  CadastroEditora in 'view\CadastroEditora.pas' {Editora},
+  AcervoModel in 'Modules\AcervoModel.pas',
+  AssociadoModel in 'Modules\AssociadoModel.pas',
+  AutorModel in 'Modules\AutorModel.pas',
+  EditoraModel in 'Modules\EditoraModel.pas',
+  EmprestimoModel in 'Modules\EmprestimoModel.pas',
+  ExemplarModel in 'Modules\ExemplarModel.pas',
+  ItemEmprestimoModel in 'Modules\ItemEmprestimoModel.pas',
+  ListaEsperaModel in 'Modules\ListaEsperaModel.pas',
+  MultaModel in 'Modules\MultaModel.pas',
+  PalavraChaveModel in 'Modules\PalavraChaveModel.pas',
+  AssociadoDAO in 'DAO\AssociadoDAO.pas',
+  AcervoDAO in 'DAO\AcervoDAO.pas';
+
+{$R *.RES}
+
+begin
+  Application.Initialize;
+  AApplication.CreateForm(TSDIAppForm, SDIAppForm);
+  AApplication.CreateForm(TCadastro, Cadastro);
+  AApplication.CreateForm(TAssociado, Associado);
+  AApplication.CreateForm(TDM, DM);
+  AApplication.CreateForm(TMenuPrincipal, MenuPrincipal);
+  Application.CreateForm(TAutor, Autor);
+  Application.CreateForm(TAcervo, Acervo);
+  Application.CreateForm(TEditora, Editora);
+  cation.Run;
+end.
+ 

@@ -1,0 +1,37 @@
+unit Principal;
+
+interface
+
+uses Windows, Classes, Graphics, Forms, Controls, Menus,Primaria,
+  Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, ImgList, StdActns,
+  ActnList, ToolWin,Cadastroprincipal;
+
+type
+  TSDIAppForm = class(TForm)
+    MainMenu1: TMainMenu;
+    Arquivos1: TMenuItem;
+    Cadastro1: TMenuItem;
+    Ajuda1: TMenuItem;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  SDIAppForm: TSDIAppForm;
+
+implementation
+
+
+{$R *.dfm}
+
+
+procedure TSDIAppForm.FormCreate(Sender: TObject);
+begin
+  primaria.
+end;
+
+
+end.

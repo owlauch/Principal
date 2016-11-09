@@ -1,0 +1,210 @@
+object SDIAppForm: TSDIAppForm
+  Left = 197
+  Top = 111
+  Caption = 'SDI Application'
+  ClientHeight = 434
+  ClientWidth = 655
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'System'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 16
+  object GridPricipal: TGridPanel
+    AlignWithMargins = True
+    Left = 5
+    Top = 5
+    Width = 645
+    Height = 424
+    Margins.Left = 5
+    Margins.Top = 5
+    Margins.Right = 5
+    Margins.Bottom = 5
+    Align = alClient
+    ColumnCollection = <
+      item
+        Value = 25.000008940695650000
+      end
+      item
+        Value = 74.999991059304350000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = Panel1
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = Panel2
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    TabOrder = 0
+    ExplicitLeft = 104
+    ExplicitTop = 144
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Panel1: TPanel
+      AlignWithMargins = True
+      Left = 6
+      Top = 6
+      Width = 148
+      Height = 412
+      Margins.Left = 5
+      Margins.Top = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alClient
+      TabOrder = 0
+      ExplicitLeft = 88
+      ExplicitTop = 200
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object GridPanel1: TGridPanel
+        Left = 1
+        Top = 1
+        Width = 146
+        Height = 410
+        Align = alClient
+        ColumnCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = Label1
+            Row = 0
+          end
+          item
+            Column = 0
+            Control = SpeedButton1
+            Row = 1
+          end
+          item
+            Column = 0
+            Control = SpeedButton2
+            Row = 2
+          end
+          item
+            Column = 0
+            Control = SpeedButton3
+            Row = 3
+          end
+          item
+            Column = 0
+            Control = SpeedButton4
+            Row = 4
+          end>
+        RowCollection = <
+          item
+            Value = 19.999990802121930000
+          end
+          item
+            Value = 19.999997603285040000
+          end
+          item
+            Value = 20.000006431195890000
+          end
+          item
+            Value = 20.000004630160370000
+          end
+          item
+            Value = 20.000000533236760000
+          end>
+        TabOrder = 0
+        ExplicitLeft = 8
+        ExplicitTop = 160
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+        DesignSize = (
+          146
+          410)
+        object Label1: TLabel
+          Left = 51
+          Top = 33
+          Width = 44
+          Height = 16
+          Anchors = []
+          Caption = 'Label1'
+          ExplicitLeft = 104
+          ExplicitTop = 200
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 61
+          Top = 111
+          Width = 23
+          Height = 22
+          Anchors = []
+          ExplicitLeft = 64
+          ExplicitTop = 96
+        end
+        object SpeedButton2: TSpeedButton
+          Left = 61
+          Top = 192
+          Width = 23
+          Height = 22
+          Anchors = []
+          ExplicitLeft = 48
+          ExplicitTop = 200
+        end
+        object SpeedButton3: TSpeedButton
+          Left = 61
+          Top = 273
+          Width = 23
+          Height = 22
+          Anchors = []
+          ExplicitLeft = 48
+          ExplicitTop = 200
+        end
+        object SpeedButton4: TSpeedButton
+          Left = 61
+          Top = 356
+          Width = 23
+          Height = 22
+          Anchors = []
+          ExplicitLeft = 48
+          ExplicitTop = 200
+        end
+      end
+    end
+    object Panel2: TPanel
+      AlignWithMargins = True
+      Left = 164
+      Top = 6
+      Width = 465
+      Height = 412
+      Margins.Left = 5
+      Margins.Top = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alClient
+      TabOrder = 1
+      ExplicitLeft = 166
+      ExplicitTop = 1
+      ExplicitWidth = 468
+      ExplicitHeight = 426
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 280
+    Top = 65528
+    object Arquivos1: TMenuItem
+      Caption = 'Arquivos'
+    end
+    object Cadastro1: TMenuItem
+      Caption = 'Cadastro'
+    end
+    object Ajuda1: TMenuItem
+      Caption = 'Ajuda'
+    end
+  end
+end

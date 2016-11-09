@@ -1,0 +1,41 @@
+unit Primaria;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Menus,Principal, CadastroPrincipal;
+
+type
+  TMenuPrincipal = class(TForm)
+    GridPricipal: TGridPanel;
+    Panel1: TPanel;
+    GridPanel1: TGridPanel;
+    Label1: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    Panel2: TPanel;
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MenuPrincipal:Tmenuprincipal;
+
+implementation
+{$R *.dfm}
+
+
+procedure TMenuPrincipal.SpeedButton1Click(Sender: TObject);
+begin
+  Close;
+  Cadastro:=TCadastro.Create(self);
+  Cadastro.Parent:=Form1;
+  cadastro.Show;
+end;
+
+end.

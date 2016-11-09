@@ -1,0 +1,256 @@
+object Cadastro: TCadastro
+  Left = 0
+  Top = 0
+  Align = alClient
+  AutoSize = True
+  BorderStyle = bsNone
+  Caption = 'Cadastro'
+  ClientHeight = 410
+  ClientWidth = 620
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GridPricipal: TGridPanel
+    Left = 0
+    Top = 0
+    Width = 620
+    Height = 410
+    Margins.Left = 5
+    Margins.Top = 5
+    Margins.Right = 5
+    Margins.Bottom = 5
+    Align = alClient
+    ColumnCollection = <
+      item
+        Value = 25.000008940695650000
+      end
+      item
+        Value = 74.999991059304350000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = Panel1
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = Panel2
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    TabOrder = 0
+    ExplicitWidth = 626
+    ExplicitHeight = 459
+    object Panel1: TPanel
+      AlignWithMargins = True
+      Left = 1
+      Top = 1
+      Width = 154
+      Height = 408
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitWidth = 156
+      ExplicitHeight = 457
+      object GridPanel1: TGridPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 148
+        Height = 402
+        Align = alClient
+        Color = clGradientInactiveCaption
+        ColumnCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = Label1
+            Row = 1
+          end
+          item
+            Column = 0
+            Control = SpeedButton1
+            Row = 2
+          end
+          item
+            Column = 0
+            Control = SpeedButton2
+            Row = 3
+          end
+          item
+            Column = 0
+            Control = BAutor
+            Row = 4
+          end
+          item
+            Column = 0
+            Control = SpeedButton4
+            Row = 5
+          end
+          item
+            Column = 0
+            Control = BVoltar
+            Row = 0
+          end>
+        ParentBackground = False
+        RowCollection = <
+          item
+            Value = 12.500163597711770000
+          end
+          item
+            Value = 12.498011377957820000
+          end
+          item
+            Value = 12.498393131032930000
+          end
+          item
+            Value = 12.499723224493830000
+          end
+          item
+            Value = 12.500894811425920000
+          end
+          item
+            Value = 12.501344865751650000
+          end
+          item
+            Value = 12.501050925763950000
+          end
+          item
+            Value = 12.500418065862120000
+          end>
+        TabOrder = 0
+        ExplicitLeft = 4
+        ExplicitTop = 4
+        ExplicitHeight = 449
+        object Label1: TLabel
+          AlignWithMargins = True
+          Left = 4
+          Top = 54
+          Width = 140
+          Height = 43
+          Align = alClient
+          Alignment = taCenter
+          Caption = 'CADASTROS'
+          Layout = tlCenter
+          ExplicitTop = 59
+          ExplicitWidth = 61
+          ExplicitHeight = 13
+        end
+        object SpeedButton1: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 103
+          Width = 140
+          Height = 43
+          Align = alClient
+          Anchors = []
+          Caption = 'ACERVO'
+          Layout = blGlyphRight
+          Margin = 1
+          ExplicitTop = 85
+          ExplicitWidth = 100
+          ExplicitHeight = 100
+        end
+        object SpeedButton2: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 152
+          Width = 140
+          Height = 43
+          Align = alClient
+          Anchors = []
+          Caption = 'ASSOCIADO'
+          Layout = blGlyphRight
+          Margin = 1
+          OnClick = SpeedButton2Click
+          ExplicitTop = 166
+          ExplicitWidth = 10
+          ExplicitHeight = 100
+        end
+        object BAutor: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 201
+          Width = 140
+          Height = 44
+          Align = alClient
+          Anchors = []
+          Caption = 'AUTOR'
+          Layout = blGlyphRight
+          Margin = 1
+          OnClick = BAutorClick
+          ExplicitTop = 247
+          ExplicitWidth = 10
+          ExplicitHeight = 100
+        end
+        object SpeedButton4: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 251
+          Width = 140
+          Height = 44
+          Align = alClient
+          Anchors = []
+          Caption = 'EDITORA'
+          Layout = blGlyphRight
+          Margin = 1
+          ExplicitLeft = 11
+          ExplicitTop = 264
+          ExplicitWidth = 136
+          ExplicitHeight = 46
+        end
+        object BVoltar: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 4
+          Width = 140
+          Height = 44
+          Align = alClient
+          BiDiMode = bdRightToLeft
+          Caption = 'VOLTAR'
+          Margin = 1
+          ParentBiDiMode = False
+          OnClick = BVoltarClick
+          ExplicitLeft = 96
+          ExplicitTop = 0
+          ExplicitWidth = 23
+          ExplicitHeight = 22
+        end
+      end
+    end
+    object Panel2: TPanel
+      AlignWithMargins = True
+      Left = 160
+      Top = 6
+      Width = 454
+      Height = 398
+      Margins.Left = 5
+      Margins.Top = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alClient
+      AutoSize = True
+      TabOrder = 1
+      ExplicitLeft = 162
+      ExplicitWidth = 458
+      ExplicitHeight = 447
+    end
+  end
+end
