@@ -94,23 +94,28 @@
           end
           item
             Column = 0
-            Control = SpeedButton1
+            Control = BVoltar
             Row = 0
           end
           item
             Column = 0
-            Control = SpeedButton2
+            Control = BGravar
             Row = 2
           end
           item
             Column = 0
-            Control = SpeedButton3
+            Control = BExcluir
             Row = 3
           end
           item
             Column = 0
-            Control = SpeedButton4
+            Control = BEditar
             Row = 4
+          end
+          item
+            Column = 0
+            Control = BLimpar
+            Row = 5
           end>
         ParentBackground = False
         RowCollection = <
@@ -152,7 +157,7 @@
           ExplicitWidth = 60
           ExplicitHeight = 13
         end
-        object SpeedButton1: TSpeedButton
+        object BVoltar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 4
@@ -160,14 +165,15 @@
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'VOLTAR'
           Layout = blGlyphRight
           Margin = 1
-          OnClick = SpeedButton1Click
+          OnClick = BVoltarClick
           ExplicitTop = 85
           ExplicitWidth = 100
           ExplicitHeight = 100
         end
-        object SpeedButton2: TSpeedButton
+        object BGravar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 102
@@ -175,12 +181,13 @@
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'GRAVAR'
           Layout = blGlyphRight
           Margin = 1
-          OnClick = SpeedButton2Click
+          OnClick = BGravarClick
           ExplicitLeft = 11
         end
-        object SpeedButton3: TSpeedButton
+        object BExcluir: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 151
@@ -188,14 +195,16 @@
           Height = 43
           Align = alClient
           Anchors = []
+          Caption = 'EXCLUIR'
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BExcluirClick
           ExplicitLeft = 0
           ExplicitTop = 146
           ExplicitWidth = 71
           ExplicitHeight = 41
         end
-        object SpeedButton4: TSpeedButton
+        object BEditar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 200
@@ -204,9 +213,28 @@
           Align = alClient
           Anchors = []
           BiDiMode = bdLeftToRight
+          Caption = 'EDITAR'
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          ExplicitTop = 328
+          ExplicitWidth = 10
+          ExplicitHeight = 100
+        end
+        object BLimpar: TSpeedButton
+          AlignWithMargins = True
+          Left = 4
+          Top = 249
+          Width = 134
+          Height = 43
+          Align = alClient
+          Anchors = []
+          BiDiMode = bdLeftToRight
+          Caption = 'LIMPAR'
+          Layout = blGlyphRight
+          Margin = 1
+          ParentBiDiMode = False
+          ExplicitLeft = 59
           ExplicitTop = 328
           ExplicitWidth = 10
           ExplicitHeight = 100
@@ -265,6 +293,9 @@
           end
           item
             Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
           end>
         TabOrder = 0
         object GridCadastro: TGridPanel
@@ -298,6 +329,9 @@
             item
               SizeStyle = ssAbsolute
               Value = 110.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
             end>
           TabOrder = 0
           object Pessoal: TGroupBox
@@ -350,18 +384,18 @@
                 end
                 item
                   Column = 1
-                  Control = Edit1
-                  Row = 1
+                  ColumnSpan = 2
+                  Control = EditName
+                  Row = 0
                 end
                 item
                   Column = 3
-                  Control = Edit3
+                  Control = MaskEditTelefone
                   Row = 1
                 end
                 item
-                  Column = 1
-                  ColumnSpan = 2
-                  Control = EditName
+                  Column = 2
+                  Control = Editemail
                   Row = 0
                 end>
               RowCollection = <
@@ -376,13 +410,13 @@
               TabOrder = 0
               object Label1: TLabel
                 AlignWithMargins = True
-                Left = 36
+                Left = 40
                 Top = 3
-                Width = 31
+                Width = 27
                 Height = 25
                 Align = alRight
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'Nome'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
@@ -390,13 +424,13 @@
               end
               object Label2: TLabel
                 AlignWithMargins = True
-                Left = 36
+                Left = 39
                 Top = 34
-                Width = 31
+                Width = 28
                 Height = 25
                 Align = alRight
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'E-Mail'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
@@ -404,49 +438,17 @@
               end
               object Label3: TLabel
                 AlignWithMargins = True
-                Left = 250
+                Left = 239
                 Top = 34
-                Width = 31
+                Width = 42
                 Height = 25
                 Align = alRight
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'Telefone'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
                 ExplicitHeight = 13
-              end
-              object Edit1: TEdit
-                AlignWithMargins = True
-                Left = 73
-                Top = 34
-                Width = 138
-                Height = 25
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                DragMode = dmAutomatic
-                MaxLength = 20
-                TabOrder = 0
-                Text = 'Edit1'
-                ExplicitHeight = 21
-              end
-              object Edit3: TEdit
-                AlignWithMargins = True
-                Left = 287
-                Top = 34
-                Width = 140
-                Height = 25
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                DragMode = dmAutomatic
-                MaxLength = 20
-                TabOrder = 1
-                Text = 'Edit1'
-                ExplicitHeight = 21
               end
               object EditName: TEdit
                 AlignWithMargins = True
@@ -455,12 +457,30 @@
                 Width = 208
                 Height = 25
                 Align = alClient
-                TabOrder = 2
-                Text = 'EditName'
-                ExplicitLeft = 152
-                ExplicitTop = 32
-                ExplicitWidth = 121
+                TabOrder = 0
                 ExplicitHeight = 21
+              end
+              object MaskEditTelefone: TMaskEdit
+                AlignWithMargins = True
+                Left = 287
+                Top = 34
+                Width = 140
+                Height = 25
+                Align = alClient
+                EditMask = '!\(99\)0000-0000;1;_'
+                MaxLength = 13
+                TabOrder = 2
+                Text = '(  )    -    '
+                ExplicitHeight = 21
+              end
+              object Editemail: TEdit
+                AlignWithMargins = True
+                Left = 73
+                Top = 34
+                Width = 138
+                Height = 21
+                Align = alClient
+                TabOrder = 1
               end
             end
           end
@@ -528,34 +548,34 @@
                   Row = 2
                 end
                 item
-                  Column = 1
-                  Control = Edit4
-                  Row = 0
-                end
-                item
                   Column = 3
-                  Control = Edit5
+                  Control = EditCidade
                   Row = 0
                 end
                 item
                   Column = 1
-                  Control = Edit6
+                  Control = EditCEP
                   Row = 1
                 end
                 item
                   Column = 3
-                  Control = Edit7
+                  Control = EditBairro
                   Row = 1
                 end
                 item
                   Column = 1
-                  Control = Edit8
+                  Control = EditRua
                   Row = 2
                 end
                 item
                   Column = 3
-                  Control = Edit9
+                  Control = EditNumero
                   Row = 2
+                end
+                item
+                  Column = 1
+                  Control = ComboBoxUf
+                  Row = 0
                 end>
               RowCollection = <
                 item
@@ -569,9 +589,6 @@
                 item
                   SizeStyle = ssAbsolute
                   Value = 27.000000000000000000
-                end
-                item
-                  SizeStyle = ssAuto
                 end>
               TabOrder = 0
               object Label4: TLabel
@@ -582,11 +599,11 @@
                 Height = 21
                 Align = alClient
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'UF'
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitLeft = 36
-                ExplicitWidth = 31
+                ExplicitLeft = 54
+                ExplicitWidth = 13
                 ExplicitHeight = 13
               end
               object Label5: TLabel
@@ -597,11 +614,11 @@
                 Height = 21
                 Align = alClient
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'Cidade'
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitLeft = 250
-                ExplicitWidth = 31
+                ExplicitLeft = 248
+                ExplicitWidth = 33
                 ExplicitHeight = 13
               end
               object Label6: TLabel
@@ -612,11 +629,11 @@
                 Height = 21
                 Align = alClient
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'Bairro'
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitLeft = 250
-                ExplicitWidth = 31
+                ExplicitLeft = 253
+                ExplicitWidth = 28
                 ExplicitHeight = 13
               end
               object Label7: TLabel
@@ -627,11 +644,11 @@
                 Height = 21
                 Align = alClient
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'N'#186
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitLeft = 250
-                ExplicitWidth = 31
+                ExplicitLeft = 269
+                ExplicitWidth = 12
                 ExplicitHeight = 13
               end
               object Label8: TLabel
@@ -642,11 +659,11 @@
                 Height = 21
                 Align = alClient
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'CEP'
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitLeft = 36
-                ExplicitWidth = 31
+                ExplicitLeft = 48
+                ExplicitWidth = 19
                 ExplicitHeight = 13
               end
               object Label9: TLabel
@@ -657,27 +674,14 @@
                 Height = 21
                 Align = alClient
                 BiDiMode = bdRightToLeft
-                Caption = 'Label1'
+                Caption = 'Rua'
                 ParentBiDiMode = False
                 Layout = tlCenter
-                ExplicitLeft = 36
-                ExplicitWidth = 31
+                ExplicitLeft = 48
+                ExplicitWidth = 19
                 ExplicitHeight = 13
               end
-              object Edit4: TEdit
-                AlignWithMargins = True
-                Left = 73
-                Top = 3
-                Width = 138
-                Height = 21
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                TabOrder = 0
-                Text = 'edit1'
-              end
-              object Edit5: TEdit
+              object EditCidade: TEdit
                 AlignWithMargins = True
                 Left = 287
                 Top = 3
@@ -688,9 +692,8 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 1
-                Text = 'edit1'
               end
-              object Edit6: TEdit
+              object EditCEP: TEdit
                 AlignWithMargins = True
                 Left = 73
                 Top = 30
@@ -701,9 +704,8 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 2
-                Text = 'edit1'
               end
-              object Edit7: TEdit
+              object EditBairro: TEdit
                 AlignWithMargins = True
                 Left = 287
                 Top = 30
@@ -714,9 +716,8 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 3
-                Text = 'edit1'
               end
-              object Edit8: TEdit
+              object EditRua: TEdit
                 AlignWithMargins = True
                 Left = 73
                 Top = 57
@@ -727,9 +728,8 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 4
-                Text = 'edit1'
               end
-              object Edit9: TEdit
+              object EditNumero: TEdit
                 AlignWithMargins = True
                 Left = 287
                 Top = 57
@@ -740,7 +740,19 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 5
-                Text = 'edit1'
+              end
+              object ComboBoxUf: TComboBox
+                AlignWithMargins = True
+                Left = 73
+                Top = 3
+                Width = 69
+                Height = 21
+                Align = alLeft
+                TabOrder = 0
+                Items.Strings = (
+                  'PR'
+                  'SC'
+                  'SP')
               end
             end
           end
@@ -753,8 +765,9 @@
           Height = 149
           Align = alClient
           Anchors = []
-          DataSource = DM.DSAssociado
+          DataSource = DM.DataSource
           DrawingStyle = gdsGradient
+          ReadOnly = True
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -765,7 +778,6 @@
             item
               Expanded = False
               FieldName = 'IDASSOCIADO'
-              Width = -1
               Visible = False
             end
             item
@@ -863,10 +875,10 @@
             Height = 16
             Align = alClient
             BiDiMode = bdRightToLeft
-            Caption = 'Label10'
+            Caption = 'Pesquisa'
             ParentBiDiMode = False
-            ExplicitLeft = 37
-            ExplicitWidth = 37
+            ExplicitLeft = 32
+            ExplicitWidth = 42
             ExplicitHeight = 13
           end
           object Edit10: TEdit
@@ -876,7 +888,6 @@
             Height = 22
             Align = alClient
             TabOrder = 0
-            Text = 'Edit10'
             ExplicitHeight = 21
           end
         end
