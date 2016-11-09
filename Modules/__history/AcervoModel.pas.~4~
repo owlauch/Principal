@@ -11,7 +11,7 @@ type TAcervoModel = class
     fPrazoEntrega: Integer;
     fDataEdicao: TDate;
     fIsbn: String;
-    fqtdeexemplar :Integer;
+    fqtdeexemplar :integer;
     flocalEdicao:string;
     fAutor: TAutorModel;
     fEditora: integer;
@@ -55,7 +55,7 @@ begin
   result:=self.fDataEdicao;
 end;
 
-function TAcervoModel.GetEditora: integer;
+function TAcervoModel.GetEditora: TEditoraModel;
 begin
  result:=self.fEditora;
 end;
@@ -105,7 +105,7 @@ begin
   self.fDataEdicao:=value;
 end;
 
-procedure TAcervoModel.SetEditora(const Value: integer);
+procedure TAcervoModel.SetEditora(const Value: TEditoraModel);
 begin
    self.fEditora:=value;
 end;

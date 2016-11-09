@@ -225,6 +225,7 @@ object Acervo: TAcervo
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BGravarClick
           ExplicitHeight = 102934
         end
         object BExcluir: TSpeedButton
@@ -265,6 +266,7 @@ object Acervo: TAcervo
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BExcluirClick
         end
         object BEditar: TSpeedButton
           AlignWithMargins = True
@@ -392,7 +394,7 @@ object Acervo: TAcervo
           end
           item
             Column = 0
-            Control = GroupBox1
+            Control = PainelAcervo
             Row = 0
           end>
         RowCollection = <
@@ -415,6 +417,7 @@ object Acervo: TAcervo
           Height = 228
           Align = alClient
           Anchors = []
+          DataSource = DM.DataSource3
           DrawingStyle = gdsGradient
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
@@ -426,40 +429,44 @@ object Acervo: TAcervo
             item
               Expanded = False
               FieldName = 'IDACERVO'
-              Visible = False
-            end
-            item
-              Expanded = False
-              FieldName = 'TITULO'
-              Width = 300
+              Width = 100
               Visible = True
             end
             item
               Expanded = False
-              FieldName = 'Qtde'
-              Width = 30
+              FieldName = 'TITULO'
+              Width = 100
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'QTDEEXEMPLAR'
+              Width = 100
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'DATAEDICAO'
-              Width = 80
+              Width = 100
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'LOCALEDICAO'
-              Visible = False
+              Width = 100
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'ISBN'
-              Visible = False
+              Width = 100
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'IDEDITORA'
-              Visible = False
+              Width = 100
+              Visible = True
             end>
         end
         object GridPanelFiltro: TGridPanel
@@ -518,7 +525,7 @@ object Acervo: TAcervo
             ExplicitHeight = 21
           end
         end
-        object GroupBox1: TGroupBox
+        object PainelAcervo: TGroupBox
           Left = 0
           Top = 0
           Width = 446
@@ -611,6 +618,16 @@ object Acervo: TAcervo
                 Column = 1
                 Control = DateTimePickerEdicao
                 Row = 1
+              end
+              item
+                Column = 4
+                Control = ComboBoxQtd
+                Row = 0
+              end
+              item
+                Column = 4
+                Control = Combo
+                Row = 2
               end>
             RowCollection = <
               item
@@ -753,46 +770,54 @@ object Acervo: TAcervo
               Time = 42682.379632870370000000
               TabOrder = 3
             end
+            object ComboBoxQtd: TComboBox
+              AlignWithMargins = True
+              Left = 274
+              Top = 4
+              Width = 58
+              Height = 21
+              Align = alLeft
+              BiDiMode = bdLeftToRight
+              ParentBiDiMode = False
+              TabOrder = 4
+              Items.Strings = (
+                '0'
+                '1'
+                '2'
+                '3'
+                '4'
+                '5'
+                '6'
+                '7'
+                '8'
+                '9'
+                '10'
+                '11'
+                '12'
+                '13'
+                '14'
+                '15'
+                '16'
+                '17'
+                '18'
+                '19'
+                '20')
+            end
+            object Combo: TComboBox
+              AlignWithMargins = True
+              Left = 274
+              Top = 68
+              Width = 154
+              Height = 21
+              Align = alClient
+              TabOrder = 5
+              OnEnter = ComboEnter
+              ExplicitLeft = 285
+              ExplicitTop = 106
+              ExplicitWidth = 145
+            end
           end
         end
-      end
-      object ComboBoxQtd: TComboBox
-        Left = 285
-        Top = 33
-        Width = 52
-        Height = 21
-        TabOrder = 1
-        Items.Strings = (
-          '0'
-          '1'
-          '2'
-          '3'
-          '4'
-          '5'
-          '6'
-          '7'
-          '8'
-          '9'
-          '10'
-          '11'
-          '12'
-          '13'
-          '14'
-          '15'
-          '16'
-          '17'
-          '18'
-          '19'
-          '20')
-      end
-      object ComboBoxEditora: TComboBox
-        Left = 285
-        Top = 92
-        Width = 145
-        Height = 21
-        TabOrder = 2
-        OnDrawItem = ComboBoxEditoraDrawItem
-        OnKeyDown = ComboBoxEditoraKeyDown
       end
     end
   end

@@ -492,6 +492,9 @@ object Acervo: TAcervo
           RowCollection = <
             item
               Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
             end>
           TabOrder = 1
           object Label10: TLabel
@@ -611,6 +614,11 @@ object Acervo: TAcervo
                 Column = 1
                 Control = DateTimePickerEdicao
                 Row = 1
+              end
+              item
+                Column = 4
+                Control = DBLookupComboBox1
+                Row = 2
               end>
             RowCollection = <
               item
@@ -753,6 +761,20 @@ object Acervo: TAcervo
               Time = 42682.379632870370000000
               TabOrder = 3
             end
+            object DBLookupComboBox1: TDBLookupComboBox
+              AlignWithMargins = True
+              Left = 274
+              Top = 68
+              Width = 154
+              Height = 21
+              Align = alClient
+              DataField = 'RAZAOSOCIAL'
+              DataSource = DM.DataSource3
+              TabOrder = 4
+              ExplicitLeft = 283
+              ExplicitTop = 82
+              ExplicitWidth = 74
+            end
           end
         end
       end
@@ -784,15 +806,6 @@ object Acervo: TAcervo
           '18'
           '19'
           '20')
-      end
-      object ComboBoxEditora: TComboBox
-        Left = 285
-        Top = 92
-        Width = 145
-        Height = 21
-        TabOrder = 2
-        OnChange = ComboBoxEditoraChange
-        OnSelect = ComboBoxEditoraSelect
       end
     end
   end

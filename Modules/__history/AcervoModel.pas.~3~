@@ -11,28 +11,22 @@ type TAcervoModel = class
     fPrazoEntrega: Integer;
     fDataEdicao: TDate;
     fIsbn: String;
-    fqtdeexemplar :Integer;
-    flocalEdicao:string;
     fAutor: TAutorModel;
-    fEditora: integer;
+    fEditora: TEditoraModel;
     fPalavraChave: TList<TPalavraChaveModel>;
 
   public
     function GetAutor: TAutorModel;
-    function Getqtdeexemplar:integer;
-    function GetLocalEdicao:String;
     function GetDataEdicao: TDate;
-    function GetEditora: integer;
+    function GetEditora: TEditoraModel;
     function GetId: Integer;
     function GetIsbn: string;
     function GetPalavraChave: TList<TPalavraChaveModel>;
     function GetPrazoEntrega: Integer;
     function GetTitulo: string;
     procedure SetAutor(const Value: TAutorModel);
-    procedure Setqtdeexemplar(const Value: integer);
-    procedure SetLocalEdicao (const Value: String);
     procedure SetDataEdicao(const Value: TDate);
-    procedure SetEditora(const Value: Integer);
+    procedure SetEditora(const Value: TEditoraModel);
     procedure SetId(const Value: Integer);
     procedure SetIsbn(const Value: string);
     procedure SetPalavraChave(const Value: TList<TPalavraChaveModel>);
@@ -55,7 +49,7 @@ begin
   result:=self.fDataEdicao;
 end;
 
-function TAcervoModel.GetEditora: integer;
+function TAcervoModel.GetEditora: TEditoraModel;
 begin
  result:=self.fEditora;
 end;
@@ -70,11 +64,6 @@ begin
  result:=self.fIsbn;
 end;
 
-function TAcervoModel.GetLocalEdicao: String;
-begin
- result:=self.flocalEdicao;
-end;
-
 function TAcervoModel.GetPalavraChave: TList<TPalavraChaveModel>;
 begin
   result:=self.fPalavraChave;
@@ -83,11 +72,6 @@ end;
 function TAcervoModel.GetPrazoEntrega: Integer;
 begin
   result:=self.fPrazoEntrega;
-end;
-
-function TAcervoModel.Getqtdeexemplar: integer;
-begin
- result:=self.fqtdeexemplar;
 end;
 
 function TAcervoModel.GetTitulo: string;
@@ -105,7 +89,7 @@ begin
   self.fDataEdicao:=value;
 end;
 
-procedure TAcervoModel.SetEditora(const Value: integer);
+procedure TAcervoModel.SetEditora(const Value: TEditoraModel);
 begin
    self.fEditora:=value;
 end;
@@ -120,11 +104,6 @@ begin
    self.fIsbn:=value;
 end;
 
-procedure TAcervoModel.SetLocalEdicao(const Value: String);
-begin
-  self.flocalEdicao:=value;
-end;
-
 procedure TAcervoModel.SetPalavraChave(const Value: TList<TPalavraChaveModel>);
 begin
    self.fPalavraChave:=value;
@@ -133,11 +112,6 @@ end;
 procedure TAcervoModel.SetPrazoEntrega(const Value: Integer);
 begin
   self.fPrazoEntrega:=value;
-end;
-
-procedure TAcervoModel.Setqtdeexemplar(const Value: integer);
-begin
- self.fqtdeexemplar:=value;
 end;
 
 procedure TAcervoModel.SetTitulo(const Value: string);

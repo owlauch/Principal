@@ -11,7 +11,7 @@ type TAcervoModel = class
     fPrazoEntrega: Integer;
     fDataEdicao: TDate;
     fIsbn: String;
-    fqtdeexemplar :Integer;
+    fqtdeexemplar :integer;
     flocalEdicao:string;
     fAutor: TAutorModel;
     fEditora: integer;

@@ -14,14 +14,7 @@ implementation
 
 procedure TAcervoDao.excluirAcervo(id: integer);
 begin
-  DM.SQLQuery3.Close;
-  DM.SQLQuery3.SQL.Text:='DELETE FROM acervo WHERE idacervo=:id';
-  DM.SQLQuery3.ParamByName('id').AsInteger:=id;
-  DM.SQLQuery3.ExecSQL;
-  DM.ClientDataSet3.Close;
-  DM.ClientDataSet3.Open;
-  DM.ClientDataSet3.Close;
-  DM.ClientDataSet3.Open;
+
 end;
 
 procedure TAcervoDao.inserirAcervo(AcervoModel: TAcervoModel);
@@ -34,7 +27,7 @@ try
   DM.SQLQuery3.ParamByName('dataedicao').AsDate:=AcervoModel.GetDataEdicao;
   DM.SQLQuery3.ParamByName('localedicao').AsString:=AcervoModel.GetLocalEdicao;
   DM.SQLQuery3.ParamByName('isbn').AsString:=AcervoModel.GetIsbn;
-  DM.SQLQuery3.ParamByName('IDEDITORA').AsINTEGER:=AcervoModel.GetEditora;
+  DM.SQLQuery3.ParamByName('IDEDITORA').AsINTEGER:=AcervoModel.GetIDEDITORA;
   DM.SQLQuery3.ExecSQL;
   DM.ClientDataSet3.Close;
   DM.ClientDataSet3.Open;

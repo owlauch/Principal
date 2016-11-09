@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule, ComCtrls;
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule, ComCtrls,
+  DBCtrls;
 
 type
   TAcervo = class(TForm)
@@ -22,7 +23,7 @@ type
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
     Edit10: TEdit;
-    GroupBox1: TGroupBox;
+    PainelAcervo: TGroupBox;
     GridCadastroAcervo: TGridPanel;
     Label1: TLabel;
     Label2: TLabel;
@@ -36,10 +37,9 @@ type
     Blimpar: TSpeedButton;
     DateTimePickerEdicao: TDateTimePicker;
     ComboBoxQtd: TComboBox;
-    ComboBoxEditora: TComboBox;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure BVoltarClick(Sender: TObject);
-    procedure ComboBoxEditoraKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
+    procedure BGravarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,11 +51,29 @@ var
 
 implementation
 
-uses CadastroPrincipal, Principal;
+uses CadastroPrincipal, Principal, AcervoDAO, AcervoModel;
 
 {$R *.dfm}
 
 
+
+procedure TAcervo.BGravarClick(Sender: TObject);
+var
+  AcervoModel:TAcervoModel;
+  AcervoDao:TAcervoDao;
+begin
+  acervoModel:=TAcervoModel.Create;
+  acervoDao:=TAcervoDao.Create;
+  acervomodel.SetTitulo(EditTitulo.Text);
+  acervomodel.Setqtdeexemplar(StrToInt(ComboBoxQtd.Text));
+  AcervoModel.SetDataEdicao(DateTimePickerEdicao.DateTime);
+  AcervoModel.SetLocalEdicao(EditLocalEdicao.Text);
+  AcervoModel.SetIsbn(EditIsbn.Text);
+  AcervoModel.SetEditora(strtoint(DBLookupComboBox1.Text));
+  ShowMessageFmt('%s',[AcervoModel.GetEditora]);
+ // AcervoDao.inserirAcervo(AcervoModel);
+
+end;
 
 procedure TAcervo.BVoltarClick(Sender: TObject);
 begin
@@ -63,17 +81,6 @@ begin
   Cadastro:=TCadastro.Create(self);
   Cadastro.Parent:=SDIAppForm;
   cadastro.Show;
-end;
-
-procedure TAcervo.ComboBoxEditoraKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
-  dm.sqldataset3.First;
-  while not dm.sqldataset3.eof do
-  begin
-    comboboxeditora.Items.Add(dm.sqldataset3.fieldbyname('razaosocial').AsString);
-    dm.SQLDataSet3.next;
-  end;
 end;
 
 end.

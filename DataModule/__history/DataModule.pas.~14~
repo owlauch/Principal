@@ -67,26 +67,16 @@ type
     SQLQuery1IDAUTOR: TIntegerField;
     SQLQuery1NOME: TStringField;
     SQLDataSet3: TSQLDataSet;
+    IntegerField1: TIntegerField;
+    StringField1: TStringField;
     DataSetProvider3: TDataSetProvider;
     ClientDataSet3: TClientDataSet;
+    IntegerField2: TIntegerField;
+    StringField2: TStringField;
     DataSource3: TDataSource;
     SQLQuery3: TSQLQuery;
     IntegerField3: TIntegerField;
     StringField3: TStringField;
-    SQLDataSet3IDACERVO: TIntegerField;
-    SQLDataSet3TITULO: TStringField;
-    SQLDataSet3QTDEEXEMPLAR: TSmallintField;
-    SQLDataSet3DATAEDICAO: TDateField;
-    SQLDataSet3LOCALEDICAO: TStringField;
-    SQLDataSet3ISBN: TStringField;
-    SQLDataSet3IDEDITORA: TIntegerField;
-    ClientDataSet3IDACERVO: TIntegerField;
-    ClientDataSet3TITULO: TStringField;
-    ClientDataSet3QTDEEXEMPLAR: TSmallintField;
-    ClientDataSet3DATAEDICAO: TDateField;
-    ClientDataSet3LOCALEDICAO: TStringField;
-    ClientDataSet3ISBN: TStringField;
-    ClientDataSet3IDEDITORA: TIntegerField;
 
 
   private

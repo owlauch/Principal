@@ -108,6 +108,7 @@ procedure TAssociado.BExcluirClick(Sender: TObject);
 begin
   id:=DBGrid1.Fields[0].AsInteger;
   AssociadoDao.excluirAssociado(id);
+  //ShowMessageFmt('%d',[id]);
 end;
 
 end.

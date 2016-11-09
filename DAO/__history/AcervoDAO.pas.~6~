@@ -14,14 +14,7 @@ implementation
 
 procedure TAcervoDao.excluirAcervo(id: integer);
 begin
-  DM.SQLQuery3.Close;
-  DM.SQLQuery3.SQL.Text:='DELETE FROM acervo WHERE idacervo=:id';
-  DM.SQLQuery3.ParamByName('id').AsInteger:=id;
-  DM.SQLQuery3.ExecSQL;
-  DM.ClientDataSet3.Close;
-  DM.ClientDataSet3.Open;
-  DM.ClientDataSet3.Close;
-  DM.ClientDataSet3.Open;
+
 end;
 
 procedure TAcervoDao.inserirAcervo(AcervoModel: TAcervoModel);

@@ -392,7 +392,7 @@ object Acervo: TAcervo
           end
           item
             Column = 0
-            Control = GroupBox1
+            Control = PainelAcervo
             Row = 0
           end>
         RowCollection = <
@@ -518,7 +518,7 @@ object Acervo: TAcervo
             ExplicitHeight = 21
           end
         end
-        object GroupBox1: TGroupBox
+        object PainelAcervo: TGroupBox
           Left = 0
           Top = 0
           Width = 446
@@ -611,6 +611,16 @@ object Acervo: TAcervo
                 Column = 1
                 Control = DateTimePickerEdicao
                 Row = 1
+              end
+              item
+                Column = 4
+                Control = ComboBoxQtd
+                Row = 0
+              end
+              item
+                Column = 4
+                Control = DBComboBox1
+                Row = 2
               end>
             RowCollection = <
               item
@@ -753,45 +763,54 @@ object Acervo: TAcervo
               Time = 42682.379632870370000000
               TabOrder = 3
             end
+            object ComboBoxQtd: TComboBox
+              AlignWithMargins = True
+              Left = 274
+              Top = 4
+              Width = 58
+              Height = 21
+              Align = alLeft
+              BiDiMode = bdLeftToRight
+              ParentBiDiMode = False
+              TabOrder = 4
+              Items.Strings = (
+                '0'
+                '1'
+                '2'
+                '3'
+                '4'
+                '5'
+                '6'
+                '7'
+                '8'
+                '9'
+                '10'
+                '11'
+                '12'
+                '13'
+                '14'
+                '15'
+                '16'
+                '17'
+                '18'
+                '19'
+                '20')
+            end
+            object DBComboBox1: TDBComboBox
+              AlignWithMargins = True
+              Left = 274
+              Top = 68
+              Width = 154
+              Height = 21
+              Align = alClient
+              Anchors = []
+              TabOrder = 5
+              ExplicitLeft = 7
+              ExplicitTop = 20
+              ExplicitWidth = 432
+            end
           end
         end
-      end
-      object ComboBoxQtd: TComboBox
-        Left = 285
-        Top = 33
-        Width = 52
-        Height = 21
-        TabOrder = 1
-        Items.Strings = (
-          '0'
-          '1'
-          '2'
-          '3'
-          '4'
-          '5'
-          '6'
-          '7'
-          '8'
-          '9'
-          '10'
-          '11'
-          '12'
-          '13'
-          '14'
-          '15'
-          '16'
-          '17'
-          '18'
-          '19'
-          '20')
-      end
-      object ComboBoxEditora: TComboBox
-        Left = 285
-        Top = 92
-        Width = 145
-        Height = 21
-        TabOrder = 2
-        OnKeyDown = ComboBoxEditoraKeyDown
       end
     end
   end

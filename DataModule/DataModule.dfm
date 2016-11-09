@@ -39,7 +39,7 @@ object DM: TDM
       'BAIRRO, CEP, CIDADE, EMAIL, IDASSOCIADO, NOME, NROENDERECO, RUA,' +
       ' TELEFONE, UF'
     SQLConnection = BIBLIOTECA
-    Left = 104
+    Left = 48
     Top = 88
     object SQLDataSetIDASSOCIADO: TIntegerField
       FieldName = 'IDASSOCIADO'
@@ -89,7 +89,7 @@ object DM: TDM
     DataSet = SQLDataSet
     ResolveToDataSet = True
     Options = [poAutoRefresh, poUseQuoteChar]
-    Left = 104
+    Left = 48
     Top = 152
   end
   object ClientDataSet: TClientDataSet
@@ -98,7 +98,7 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DataSetProvider'
-    Left = 104
+    Left = 48
     Top = 216
     object ClientDataSetIDASSOCIADO: TIntegerField
       FieldName = 'IDASSOCIADO'
@@ -146,7 +146,7 @@ object DM: TDM
   end
   object DataSource: TDataSource
     DataSet = ClientDataSet
-    Left = 104
+    Left = 48
     Top = 272
   end
   object SQLQuery: TSQLQuery
@@ -161,7 +161,7 @@ object DM: TDM
     SQL.Strings = (
       'SELECT *  FROM ASSOCIADO')
     SQLConnection = BIBLIOTECA
-    Left = 112
+    Left = 56
     Top = 328
     object SQLQueryIDASSOCIADO: TIntegerField
       FieldName = 'IDASSOCIADO'
@@ -290,7 +290,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 224
+    Left = 256
     Top = 88
     object SQLDataSet2IDEDITORA: TIntegerField
       FieldName = 'IDEDITORA'
@@ -306,8 +306,8 @@ object DM: TDM
     DataSet = SQLDataSet2
     ResolveToDataSet = True
     Options = [poAutoRefresh, poUseQuoteChar]
-    Left = 224
-    Top = 160
+    Left = 256
+    Top = 152
   end
   object ClientDataSet2: TClientDataSet
     Active = True
@@ -315,7 +315,7 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DataSetProvider2'
-    Left = 224
+    Left = 256
     Top = 216
     object ClientDataSet2IDEDITORA: TIntegerField
       FieldName = 'IDEDITORA'
@@ -329,7 +329,7 @@ object DM: TDM
   end
   object DataSource2: TDataSource
     DataSet = ClientDataSet2
-    Left = 224
+    Left = 256
     Top = 272
   end
   object SQLQuery2: TSQLQuery
@@ -337,13 +337,14 @@ object DM: TDM
     GetMetadata = True
     NumericMapping = True
     ObjectView = True
+    Active = True
     DataSource = DataSource2
     MaxBlobSize = -1
     Params = <>
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 224
+    Left = 256
     Top = 328
     object SQLQuery2IDEDITORA: TIntegerField
       FieldName = 'IDEDITORA'
@@ -358,51 +359,96 @@ object DM: TDM
   object SQLDataSet3: TSQLDataSet
     SchemaName = 'sysdba'
     Active = True
-    CommandText = 'select * from EDITORA'
+    CommandText = 'select * from ACERVO'
     DbxCommandType = 'Dbx.SQL'
     DataSource = DataSource3
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 280
+    Left = 368
     Top = 88
-    object IntegerField1: TIntegerField
-      FieldName = 'IDEDITORA'
+    object SQLDataSet3IDACERVO: TIntegerField
+      FieldName = 'IDACERVO'
       Required = True
     end
-    object StringField1: TStringField
-      FieldName = 'RAZAOSOCIAL'
+    object SQLDataSet3TITULO: TStringField
+      FieldName = 'TITULO'
       Required = True
       Size = 100
+    end
+    object SQLDataSet3QTDEEXEMPLAR: TSmallintField
+      FieldName = 'QTDEEXEMPLAR'
+      Required = True
+    end
+    object SQLDataSet3DATAEDICAO: TDateField
+      FieldName = 'DATAEDICAO'
+      Required = True
+    end
+    object SQLDataSet3LOCALEDICAO: TStringField
+      FieldName = 'LOCALEDICAO'
+      Required = True
+      Size = 30
+    end
+    object SQLDataSet3ISBN: TStringField
+      FieldName = 'ISBN'
+      Required = True
+      Size = 30
+    end
+    object SQLDataSet3IDEDITORA: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
     end
   end
   object DataSetProvider3: TDataSetProvider
     DataSet = SQLDataSet3
     ResolveToDataSet = True
     Options = [poAutoRefresh, poUseQuoteChar]
-    Left = 280
+    Left = 368
     Top = 152
   end
   object ClientDataSet3: TClientDataSet
+    Active = True
     Aggregates = <>
     AggregatesActive = True
     Params = <>
     ProviderName = 'DataSetProvider3'
-    Left = 288
+    Left = 368
     Top = 216
-    object IntegerField2: TIntegerField
-      FieldName = 'IDEDITORA'
+    object ClientDataSet3IDACERVO: TIntegerField
+      FieldName = 'IDACERVO'
       Required = True
     end
-    object StringField2: TStringField
-      FieldName = 'RAZAOSOCIAL'
+    object ClientDataSet3TITULO: TStringField
+      FieldName = 'TITULO'
       Required = True
       Size = 100
+    end
+    object ClientDataSet3QTDEEXEMPLAR: TSmallintField
+      FieldName = 'QTDEEXEMPLAR'
+      Required = True
+    end
+    object ClientDataSet3DATAEDICAO: TDateField
+      FieldName = 'DATAEDICAO'
+      Required = True
+    end
+    object ClientDataSet3LOCALEDICAO: TStringField
+      FieldName = 'LOCALEDICAO'
+      Required = True
+      Size = 30
+    end
+    object ClientDataSet3ISBN: TStringField
+      FieldName = 'ISBN'
+      Required = True
+      Size = 30
+    end
+    object ClientDataSet3IDEDITORA: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
     end
   end
   object DataSource3: TDataSource
     DataSet = ClientDataSet3
-    Left = 288
+    Left = 368
     Top = 272
   end
   object SQLQuery3: TSQLQuery
@@ -410,13 +456,14 @@ object DM: TDM
     GetMetadata = True
     NumericMapping = True
     ObjectView = True
+    Active = True
     DataSource = DataSource3
     MaxBlobSize = -1
     Params = <>
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 296
+    Left = 368
     Top = 328
     object IntegerField3: TIntegerField
       FieldName = 'IDEDITORA'

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, ComCtrls,
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule, ComCtrls,
   DBCtrls;
 
 type
@@ -40,8 +40,8 @@ type
     Combo: TComboBox;
     procedure BVoltarClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
-    procedure ComboEnter(Sender: TObject);
-    procedure BExcluirClick(Sender: TObject);
+    procedure ComboDrawItem(Control: TWinControl; Index: Integer; Rect: TRect;
+      State: TOwnerDrawState);
   private
     { Private declarations }
   public
@@ -50,7 +50,6 @@ type
 
 var
   Acervo: TAcervo;
-    id: Integer;
 
 implementation
 
@@ -59,15 +58,6 @@ uses CadastroPrincipal, Principal, AcervoDAO, AcervoModel,dataModule;
 {$R *.dfm}
 
 
-
-procedure TAcervo.BExcluirClick(Sender: TObject);
- var
- id2:integer;
- AcervoDao:tAcervoDao;
-begin
-  id2:=DBGrid1.Fields[0].AsInteger;
-  AcervoDao.excluirAcervo(id2);
-end;
 
 procedure TAcervo.BGravarClick(Sender: TObject);
 var
@@ -81,8 +71,7 @@ begin
   AcervoModel.SetDataEdicao(DateTimePickerEdicao.DateTime);
   AcervoModel.SetLocalEdicao(EditLocalEdicao.Text);
   AcervoModel.SetIsbn(EditIsbn.Text);
-  AcervoModel.SetEditora(ID);
-  AcervoDao.inserirAcervo(AcervoModel);
+  //AcervoDao.inserirAcervo(AcervoModel);
 
 end;
 
@@ -94,8 +83,10 @@ begin
   cadastro.Show;
 end;
 
-procedure TAcervo.ComboEnter(Sender: TObject);
+procedure TAcervo.ComboDrawItem(Control: TWinControl; Index: Integer;
+  Rect: TRect; State: TOwnerDrawState);
 var
+  id: Integer;
   s: string;
 begin
   combo.Items.Clear;
@@ -112,4 +103,4 @@ begin
   end;
 end;
 
-End.
+end.
