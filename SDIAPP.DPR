@@ -30,7 +30,8 @@ uses
   ListaEsperaDAO in 'DAO\ListaEsperaDAO.pas',
   MultaDAO in 'DAO\MultaDAO.pas',
   PalavraChaveDAO in 'DAO\PalavraChaveDAO.pas',
-  Consulta_Principal in 'view\Consulta_Principal.pas' {ConsultaPrincipal};
+  Consulta_Principal in 'view\Consulta_Principal.pas' {ConsultaPrincipal},
+  Consulta_Acervo in 'view\Consulta_Acervo.pas' {ConsultaAcervo};
 
 {$R *.RES}
 
@@ -45,6 +46,7 @@ begin
   Application.CreateForm(TAcervo, Acervo);
   Application.CreateForm(TEditora, Editora);
   Application.CreateForm(TConsultaPrincipal, ConsultaPrincipal);
-  application.Run;
+  Application.CreateForm(TConsultaAcervo, ConsultaAcervo);
+  Application.Run;
 end.
  

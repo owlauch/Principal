@@ -1,4 +1,4 @@
-unit Consulta_Principal;
+unit Consulta_Acervo;
 
 interface
 
@@ -7,14 +7,17 @@ uses
   Dialogs, Buttons, StdCtrls, ExtCtrls;
 
 type
-  TConsultaPrincipal = class(TForm)
+  TConsultaAcervo = class(TForm)
     GridPricipal: TGridPanel;
     Panel1: TPanel;
     GridPanel1: TGridPanel;
     Label1: TLabel;
     BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
     BVoltar: TSpeedButton;
     Panel2: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
   private
     { Private declarations }
   public
@@ -22,7 +25,7 @@ type
   end;
 
 var
-  ConsultaPrincipal: TConsultaPrincipal;
+  ConsultaAcervo: TConsultaAcervo;
 
 implementation
 

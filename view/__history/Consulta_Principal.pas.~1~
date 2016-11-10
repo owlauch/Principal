@@ -13,6 +13,9 @@ type
     GridPanel1: TGridPanel;
     Label1: TLabel;
     BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
+    BAutor: TSpeedButton;
+    BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
     Panel2: TPanel;
   private
