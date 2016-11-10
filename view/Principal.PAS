@@ -97,6 +97,7 @@ begin
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
 
+
 end;
 
 

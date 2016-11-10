@@ -63,11 +63,14 @@ var
   devolucaodao:TDevolucaodao;
   date:TDate;
 begin
+
   devolucaodao:=TDevolucaodao.Create;
   id:=DBGrid1.Fields[0].AsInteger;
+  date:=DBGrid1.Fields[1].asDateTime;
   ShowMessageFmt('%s',[DateToStr(date)]);
-  date:=StrToDate(DBGrid1.Fields[1].Text);
   devolucaodao.devolverArcevo(id,date);
+
+
 end;
 
 end.

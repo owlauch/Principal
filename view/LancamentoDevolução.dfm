@@ -911,24 +911,21 @@
                 item
                   Expanded = False
                   FieldName = 'IDEMPRESTIMO'
-                  Visible = False
+                  Visible = True
                 end
                 item
                   Expanded = False
-                  FieldName = 'DEVOLUCAO'
-                  Width = 65
+                  FieldName = 'DATADEVOLUCAO'
                   Visible = True
                 end
                 item
                   Expanded = False
                   FieldName = 'ASSOCIADO'
-                  Width = 130
                   Visible = True
                 end
                 item
                   Expanded = False
                   FieldName = 'TITULO'
-                  Width = 130
                   Visible = True
                 end
                 item
