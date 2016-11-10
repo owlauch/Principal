@@ -55,10 +55,6 @@ type
     procedure BVoltarClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
-    procedure BAcervoClick(Sender: TObject);
-    procedure BAssociadoClick(Sender: TObject);
-    procedure BAutorClick(Sender: TObject);
-    procedure BEditoraClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,18 +66,17 @@ var
 
 implementation
 
-uses CadastroPrincipal,Principal,AssociadoModel,AssociadoDAO, Primaria,
-  CadastroAcervo, CadastroAutor, CadastroEditora;
+uses CadastroPrincipal,Principal,AssociadoModel,AssociadoDAO;
 
 {$R *.dfm}
 
 
 procedure TAssociado.BVoltarClick(Sender: TObject);
 begin
-  close;
-  MenuPrincipal:=TMenuPrincipal.Create(self);
-  MenuPrincipal.Parent:=SDIAppForm;
-  menuPrincipal.Show;
+  Close;
+  Cadastro:=TCadastro.Create(self);
+  cadastro.Parent:=SDIAppForm;
+  cadastro.Show;
 end;
 
 procedure TAssociado.BGravarClick(Sender: TObject);
@@ -110,38 +105,6 @@ begin
   EditCidade.Clear;
   EditRua.Clear;
 
-end;
-
-procedure TAssociado.BAcervoClick(Sender: TObject);
-begin
-  Close;
-  Acervo:=TAcervo.Create(self);
-  Acervo.Parent:=SDIAppForm;
-  Acervo.Show;
-end;
-
-procedure TAssociado.BAssociadoClick(Sender: TObject);
-begin
-  Close;
-  Associado:=TAssociado.Create(self);
-  Associado.Parent:=SDIAppForm;
-  Associado.Show;
-end;
-
-procedure TAssociado.BAutorClick(Sender: TObject);
-begin
-  Close;
-  Autor:=TAutor.Create(self);
-  Autor.Parent:=SDIAppForm;
-  Autor.Show;
-end;
-
-procedure TAssociado.BEditoraClick(Sender: TObject);
-begin
-  close;
-  Editora:=TEditora.Create(self);
-  Editora.Parent:=SDIAppForm;
-  Editora.Show;
 end;
 
 procedure TAssociado.BExcluirClick(Sender: TObject);

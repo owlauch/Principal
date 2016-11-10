@@ -57,8 +57,6 @@ type
     procedure BExcluirClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
     procedure BAssociadoClick(Sender: TObject);
-    procedure BAutorClick(Sender: TObject);
-    procedure BEditoraClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -126,22 +124,6 @@ begin
   Associado:=TAssociado.Create(self);
   Associado.Parent:=SDIAppForm;
   Associado.Show;
-end;
-
-procedure TAssociado.BAutorClick(Sender: TObject);
-begin
-  Close;
-  Autor:=TAutor.Create(self);
-  Autor.Parent:=SDIAppForm;
-  Autor.Show;
-end;
-
-procedure TAssociado.BEditoraClick(Sender: TObject);
-begin
-  close;
-  Editora:=TEditora.Create(self);
-  Editora.Parent:=SDIAppForm;
-  Editora.Show;
 end;
 
 procedure TAssociado.BExcluirClick(Sender: TObject);

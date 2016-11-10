@@ -45,6 +45,7 @@ begin
   Acervo:=TAcervo.Create(self);
   Acervo.Parent:=SDIAppForm;
   Acervo.Show;
+
 end;
 
 procedure TCadastro.BAssociadoClick(Sender: TObject);

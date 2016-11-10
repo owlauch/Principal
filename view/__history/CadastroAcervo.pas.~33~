@@ -43,7 +43,6 @@ type
     BAutor: TSpeedButton;
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
-    Label7: TLabel;
     procedure BVoltarClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
     procedure ComboEnter(Sender: TObject);

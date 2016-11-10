@@ -790,10 +790,6 @@ object Cadastro: TCadastro
           Layout = blGlyphRight
           Margin = 1
           OnClick = BEditoraClick
-          ExplicitLeft = 11
-          ExplicitTop = 264
-          ExplicitWidth = 136
-          ExplicitHeight = 46
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True

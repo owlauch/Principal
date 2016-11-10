@@ -17,7 +17,6 @@ type
     BCadastro: TSpeedButton;
     BLancamento: TSpeedButton;
     BConsulta: TSpeedButton;
-    SpeedButtonSair: TSpeedButton;
     procedure BCadastroClick(Sender: TObject);
   private
     { Private declarations }
