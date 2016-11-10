@@ -21,6 +21,7 @@
     <Transaction>2016/11/04 14:28:23.000.373,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAutor.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
     <Transaction>2016/11/04 14:49:21.000.643,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAcervo.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
     <Transaction>2016/11/04 15:38:28.000.658,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroEditora.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
+    <Transaction>2016/11/10 15:10:57.144,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\Consulta_Principal.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="DAO"/>
@@ -63,5 +64,7 @@
     <File Path="view\Primaria.dfm"/>
     <File Path="view\Principal.PAS"/>
     <File Path="view\Principal.dfm"/>
+    <File Path="view\Consulta_Principal.pas"/>
+    <File Path="view\Consulta_Principal.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

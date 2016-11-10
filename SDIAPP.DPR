@@ -29,7 +29,8 @@ uses
   ItemEmprestimoDAO in 'DAO\ItemEmprestimoDAO.pas',
   ListaEsperaDAO in 'DAO\ListaEsperaDAO.pas',
   MultaDAO in 'DAO\MultaDAO.pas',
-  PalavraChaveDAO in 'DAO\PalavraChaveDAO.pas';
+  PalavraChaveDAO in 'DAO\PalavraChaveDAO.pas',
+  Consulta_Principal in 'view\Consulta_Principal.pas' {ConsultaPrincipal};
 
 {$R *.RES}
 
@@ -43,6 +44,7 @@ begin
   Application.CreateForm(TAutor, Autor);
   Application.CreateForm(TAcervo, Acervo);
   Application.CreateForm(TEditora, Editora);
-  Application.Run;
+  Application.CreateForm(TConsultaPrincipal, ConsultaPrincipal);
+  application.Run;
 end.
  
