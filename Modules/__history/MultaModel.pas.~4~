@@ -1,0 +1,18 @@
+unit MultaModel;
+
+interface
+
+type TMultaModel = class
+  private
+    fDataInicioVigencia: TDate;
+    fValorBase: Real;
+  public
+    property DataInicioVigencia: TDate read GetDataInicioVigencia write SetDataInicioVigencia;
+    property ValorBase: Real read GetValorBase write SetValorBase;
+end;
+
+
+implementation
+
+end.
+

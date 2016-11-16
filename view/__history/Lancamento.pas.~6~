@@ -1,0 +1,43 @@
+unit Lancamento;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Primaria, Principal;
+
+type
+  Tlacamento = class(TForm)
+    GridPricipal: TGridPanel;
+    Panel1: TPanel;
+    GridPanel1: TGridPanel;
+    Label1: TLabel;
+    BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
+    BVoltar: TSpeedButton;
+    Panel2: TPanel;
+    procedure BVoltarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  lacamento: Tlacamento;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tlacamento.BVoltarClick(Sender: TObject);
+begin
+begin
+  close;
+  MenuPrincipal:=TMenuPrincipal.Create(self);
+  MenuPrincipal.Parent:=SDIAppForm;
+  menuPrincipal.Show;
+end;
+end;
+
+end.

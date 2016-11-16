@@ -1,0 +1,71 @@
+unit Lancamento;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Principal, Grids, DBGrids, ComCtrls;
+
+type
+  Tlacamento = class(TForm)
+    GridPricipal: TGridPanel;
+    PanelVisualEdicao: TPanel;
+    GridPrincipalcadastro: TGridPanel;
+    DBGrid1: TDBGrid;
+    GridPanelFiltro: TGridPanel;
+    Label10: TLabel;
+    Edit10: TEdit;
+    PainelAcervo: TGroupBox;
+    GridCadastroAcervo: TGridPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    EditTitulo: TEdit;
+    EditLocalEdicao: TEdit;
+    EditIsbn: TEdit;
+    DateTimePickerEdicao: TDateTimePicker;
+    ComboBoxQtd: TComboBox;
+    Combo: TComboBox;
+    PanelMenu: TPanel;
+    GridPanel1: TGridPanel;
+    BGravar: TSpeedButton;
+    BExcluir: TSpeedButton;
+    BEditar: TSpeedButton;
+    Blimpar: TSpeedButton;
+    Panel1: TPanel;
+    GridPanel2: TGridPanel;
+    BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
+    BAutor: TSpeedButton;
+    BEditora: TSpeedButton;
+    BVoltar: TSpeedButton;
+    Label7: TLabel;
+    procedure BVoltarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  lacamento: Tlacamento;
+
+implementation
+
+{$R *.dfm}
+uses primaria;
+
+procedure Tlacamento.BVoltarClick(Sender: TObject);
+begin
+begin
+  close;
+  MenuPrincipal:=TMenuPrincipal.Create(self);
+  MenuPrincipal.Parent:=SDIAppForm;
+  menuPrincipal.Show;
+end;
+end;
+
+end.

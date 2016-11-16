@@ -1,0 +1,63 @@
+unit ItemEmprestimoModel;
+
+interface
+
+uses ExemplarModel, MultaModel;
+
+type TItemEmprestimoModel = class
+  private
+    fExemplar: TExemplarModel;
+    fDataDevolucao: TDate;
+    fDataVigenciaMulta: TMultaModel;
+    function GetDataDevolucao: TDate;
+  public
+    function GetDataVigenciaMulta: TMultaModel;
+    function GetExemplar: TExemplarModel;
+    procedure SetDataDevolucao(const Value: TDate);
+    procedure SetDataVigenciaMulta(const Value: TMultaModel);
+    procedure SetExemplar(const Value: TExemplarModel);
+end;
+
+implementation
+
+{ TItemEmprestimoModel }
+
+
+function TItemEmprestimoModel.GetDataDevolucao: TDate;
+begin
+  Result:=Self.fDataDevolucao;
+end;
+
+
+function TItemEmprestimoModel.GetDataVigenciaMulta: TMultaModel;
+begin
+  Result:=Self.fDataVigenciaMulta;
+end;
+
+
+function TItemEmprestimoModel.GetExemplar: TExemplarModel;
+begin
+  Result:=Self.fExemplar;
+end;
+
+
+procedure TItemEmprestimoModel.SetDataDevolucao(const Value: TDate);
+begin
+  Self.fDataDevolucao:=Value;
+end;
+
+
+procedure TItemEmprestimoModel.SetDataVigenciaMulta(const Value: TMultaModel);
+begin
+  Self.fDataVigenciaMulta:=Value;
+end;
+
+
+procedure TItemEmprestimoModel.SetExemplar(const Value: TExemplarModel);
+begin
+  Self.fExemplar:=Value;
+end;
+
+end.
+
+

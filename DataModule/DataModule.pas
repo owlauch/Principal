@@ -87,6 +87,19 @@ type
     ClientDataSet3LOCALEDICAO: TStringField;
     ClientDataSet3ISBN: TStringField;
     ClientDataSet3IDEDITORA: TIntegerField;
+    SQLDataSet4: TSQLDataSet;
+    DataSetProvider4: TDataSetProvider;
+    ClientDataSet4: TClientDataSet;
+    DataSource4: TDataSource;
+    SQLQuery4: TSQLQuery;
+    SQLDataSet4IDEMPRESTIMO: TIntegerField;
+    SQLDataSet4DATAEMPRESTIMO: TDateField;
+    SQLDataSet4IDASSOCIADO: TIntegerField;
+    ClientDataSet4IDEMPRESTIMO: TIntegerField;
+    ClientDataSet4DATAEMPRESTIMO: TDateField;
+    ClientDataSet4IDASSOCIADO: TIntegerField;
+    SQLQuery4IDEDITORA: TIntegerField;
+    SQLQuery4RAZAOSOCIAL: TStringField;
 
 
   private
@@ -101,7 +114,6 @@ var
 implementation
 
 {$R *.dfm}
-
 
 
 end.

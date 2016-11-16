@@ -1,0 +1,68 @@
+unit EmprestimoModel;
+
+interface
+
+uses AssociadoModel, ItemEmprestimoModel, generics.collections;
+
+type TEmprestimoModel = class
+  private
+     fId: Integer;
+     fDataEmprestimo: TDate;
+     fAssociado: TAssociadoModel;
+     fItemsEmprestimo: TList<TItemEmprestimoModel>;
+    function GetAssociado: TAssociadoModel;
+
+    function GetDataEmprestimo: TDate;
+    function GetId: Integer;
+    function GetItemsEmprestimo: TList<TItemEmprestimoModel>;
+    procedure SetAssociado(const Value: TAssociadoModel);
+    procedure SetDataEmprestimo(const Value: TDate);
+    procedure SetId(const Value: Integer);
+    procedure SetItemsEmprestimo(const Value: TList<TItemEmprestimoModel>);
+end;
+
+implementation
+
+
+function TEmprestimoModel.GetAssociado: TAssociadoModel;
+begin
+
+end;
+
+function TEmprestimoModel.GetDataEmprestimo: TDate;
+begin
+
+end;
+
+function TEmprestimoModel.GetId: Integer;
+begin
+
+end;
+
+function TEmprestimoModel.GetItemsEmprestimo: TList<TItemEmprestimoModel>;
+begin
+
+end;
+
+procedure TEmprestimoModel.SetAssociado(const Value: TAssociadoModel);
+begin
+
+end;
+
+procedure TEmprestimoModel.SetDataEmprestimo(const Value: TDate);
+begin
+
+end;
+
+procedure TEmprestimoModel.SetId(const Value: Integer);
+begin
+
+end;
+
+procedure TEmprestimoModel.SetItemsEmprestimo(const Value: TList<TItemEmprestimoModel>);
+begin
+
+end;
+
+
+

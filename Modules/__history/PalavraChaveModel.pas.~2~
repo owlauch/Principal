@@ -1,0 +1,16 @@
+unit PalavraChaveModel;
+
+interface
+
+type TPalavraChaveModel = class
+  private
+    fId: Integer;
+    fPalavraChave: String;
+  public
+    property Id: Integer read GetId write SetId;
+    property PalavraChave: String read GetPalavraChave write SetPalavraChave;
+end;
+
+implementation
+
+end.

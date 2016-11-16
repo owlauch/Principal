@@ -31,7 +31,9 @@ uses
   MultaDAO in 'DAO\MultaDAO.pas',
   PalavraChaveDAO in 'DAO\PalavraChaveDAO.pas',
   Consulta_Principal in 'view\Consulta_Principal.pas' {ConsultaPrincipal},
-  Consulta_Acervo in 'view\Consulta_Acervo.pas' {ConsultaAcervo};
+  Consulta_Acervo in 'view\Consulta_Acervo.pas' {ConsultaAcervo},
+  Lancamento in 'view\Lancamento.pas' {lacamento},
+  LancamentoEEmprestimo in 'view\LancamentoEEmprestimo.pas' {LancamentoEmprestimo};
 
 {$R *.RES}
 
@@ -47,6 +49,8 @@ begin
   Application.CreateForm(TEditora, Editora);
   Application.CreateForm(TConsultaPrincipal, ConsultaPrincipal);
   Application.CreateForm(TConsultaAcervo, ConsultaAcervo);
+  Application.CreateForm(Tlacamento, lacamento);
+  Application.CreateForm(TLancamentoEmprestimo, LancamentoEmprestimo);
   Application.Run;
 end.
  

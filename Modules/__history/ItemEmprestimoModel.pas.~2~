@@ -1,0 +1,20 @@
+unit ItemEmprestimoModel;
+
+interface
+
+uses ExemplarModel, MultaModel;
+
+type TItemEmprestimoModel = class
+  private
+    fExemplar: TExemplarModel;
+    fDataDevolucao: TDate;
+    fDataVigenciaMulta: TMultaModel;
+  public
+    property Exemplar: TExemplarModel read GetExemplar write SetExemplar;
+    property DataDevolucao: TDate read GetDataDevolucao write SetDataDevolucao;
+    property Multa: TMultaModel read GetDataVigenciaMulta write SetDataVigenciaMulta;
+end;
+
+implementation
+
+end.

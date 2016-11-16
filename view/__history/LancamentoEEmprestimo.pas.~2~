@@ -1,0 +1,36 @@
+unit LancamentoEEmprestimo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, StdCtrls, Buttons, ExtCtrls;
+
+type
+  TLancamentoEmprestimo = class(TForm)
+    GridPricipal: TGridPanel;
+    Panel1: TPanel;
+    GridPanel1: TGridPanel;
+    Label1: TLabel;
+    BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
+    BVoltar: TSpeedButton;
+    Panel2: TPanel;
+    Label2: TLabel;
+    ComboBox1: TComboBox;
+    Label3: TLabel;
+    DateTimePicker1: TDateTimePicker;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  LancamentoEmprestimo: TLancamentoEmprestimo;
+
+implementation
+
+{$R *.dfm}
+
+end.

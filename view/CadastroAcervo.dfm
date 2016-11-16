@@ -2,6 +2,7 @@ object Acervo: TAcervo
   Left = 0
   Top = 0
   Align = alClient
+  AutoSize = True
   BorderStyle = bsNone
   Caption = 'Acervo'
   ClientHeight = 410
@@ -372,8 +373,7 @@ object Acervo: TAcervo
               Caption = 'Titulo'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 22
-              ExplicitTop = 4
+              ExplicitLeft = 21
               ExplicitWidth = 26
               ExplicitHeight = 13
             end
@@ -388,7 +388,7 @@ object Acervo: TAcervo
               Caption = 'Editora'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 234
+              ExplicitLeft = 233
               ExplicitWidth = 34
               ExplicitHeight = 13
             end
@@ -403,8 +403,7 @@ object Acervo: TAcervo
               Caption = 'QTD'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 247
-              ExplicitTop = 4
+              ExplicitLeft = 246
               ExplicitWidth = 21
               ExplicitHeight = 13
             end
@@ -419,8 +418,7 @@ object Acervo: TAcervo
               Caption = 'Local Edi'#231#227'o'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 160
-              ExplicitTop = 31
+              ExplicitLeft = 159
               ExplicitWidth = 58
               ExplicitHeight = 13
             end
@@ -435,8 +433,7 @@ object Acervo: TAcervo
               Caption = 'Edi'#231#227'o'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 17
-              ExplicitTop = 31
+              ExplicitLeft = 16
               ExplicitWidth = 31
               ExplicitHeight = 13
             end
@@ -451,7 +448,7 @@ object Acervo: TAcervo
               Caption = 'ISBN'
               ParentBiDiMode = False
               Layout = tlCenter
-              ExplicitLeft = 25
+              ExplicitLeft = 24
               ExplicitWidth = 23
               ExplicitHeight = 13
             end
@@ -463,8 +460,6 @@ object Acervo: TAcervo
               Height = 21
               Align = alClient
               TabOrder = 0
-              ExplicitLeft = 54
-              ExplicitTop = 4
             end
             object EditLocalEdicao: TEdit
               AlignWithMargins = True
@@ -474,9 +469,6 @@ object Acervo: TAcervo
               Height = 21
               Align = alClient
               TabOrder = 1
-              ExplicitLeft = 224
-              ExplicitTop = 31
-              ExplicitWidth = 204
             end
             object EditIsbn: TEdit
               AlignWithMargins = True
@@ -486,7 +478,6 @@ object Acervo: TAcervo
               Height = 23
               Align = alClient
               TabOrder = 2
-              ExplicitLeft = 54
               ExplicitHeight = 21
             end
             object DateTimePickerEdicao: TDateTimePicker
@@ -531,8 +522,6 @@ object Acervo: TAcervo
                 '18'
                 '19'
                 '20')
-              ExplicitLeft = 274
-              ExplicitTop = 4
             end
             object Combo: TComboBox
               AlignWithMargins = True
@@ -543,8 +532,6 @@ object Acervo: TAcervo
               Align = alClient
               TabOrder = 5
               OnEnter = ComboEnter
-              ExplicitLeft = 274
-              ExplicitWidth = 154
             end
           end
         end
@@ -885,6 +872,13 @@ object Acervo: TAcervo
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
+          Enabled = False
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clPurple
+          Font.Height = -11
+          Font.Name = 'Sylfaen'
+          Font.Style = [fsBold]
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -1184,10 +1178,8 @@ object Acervo: TAcervo
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          ParentFont = False
           OnClick = BAcervoClick
-          ExplicitTop = 85
-          ExplicitWidth = 100
-          ExplicitHeight = 100
         end
         object BAssociado: TSpeedButton
           AlignWithMargins = True

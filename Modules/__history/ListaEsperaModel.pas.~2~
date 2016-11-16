@@ -1,0 +1,26 @@
+unit ListaEsperaModel;
+
+interface
+
+uses AssociadoModel, AcervoModel;
+
+type TListaEsperaModel = class
+  private
+    fId: Integer;
+    fDataAtendimento: TDate;
+    fDataReserva: TDate;
+    fHoraReserva: TTime;
+    fAssociado: TAssociadoModel;
+    fAcervo: TAcervoModel;
+  public
+    property Id: Integer read vId write vId;
+    property DataAtendimento: TDate read vDataAtendimento write vDataAtendimento;
+    property DataReserva: TDate read vDataReserva write vDataReserva;
+    property HoraReserva: TTime read vHoraReserva write vHoraReserva;
+    property Associado: TAssociadoModel read vAssociado write vAssociado;
+    property Acervo: TAcervoModel read vAcervo write vAcervo;
+end;
+
+implementation
+
+end.

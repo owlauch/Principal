@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, Menus, pngimage;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Menus, pngimage, Lancamento;
 
 type
   TMenuPrincipal = class(TForm)
@@ -19,6 +19,8 @@ type
     BConsulta: TSpeedButton;
     SpeedButtonSair: TSpeedButton;
     procedure BCadastroClick(Sender: TObject);
+    procedure BLancamentoClick(Sender: TObject);
+    //procedure BLancamentoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,4 +45,13 @@ begin
 end;
 
 
-End.
+procedure TMenuPrincipal.BLancamentoClick(Sender: TObject);
+begin
+  Close;
+  Lacamento:=TLacamento.Create(self);
+  Lacamento.Parent:=SDIAppForm;
+  Lacamento.Show;
+end;
+
+
+end.

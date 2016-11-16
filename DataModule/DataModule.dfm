@@ -13,7 +13,7 @@ object DM: TDM
       'drivername=FIREBIRD'
       'blobsize=-1'
       'commitretain=False'
-      'Database=C:\BDBIBLIOTECA.FDB'
+      'Database=localhost:C:\BDBIBLIOTECA.FDB'
       'localecode=0000'
       'password=masterkey'
       'rolename=RoleName'
@@ -365,7 +365,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 368
+    Left = 352
     Top = 88
     object SQLDataSet3IDACERVO: TIntegerField
       FieldName = 'IDACERVO'
@@ -403,7 +403,7 @@ object DM: TDM
     DataSet = SQLDataSet3
     ResolveToDataSet = True
     Options = [poAutoRefresh, poUseQuoteChar]
-    Left = 368
+    Left = 352
     Top = 152
   end
   object ClientDataSet3: TClientDataSet
@@ -412,8 +412,8 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DataSetProvider3'
-    Left = 368
-    Top = 216
+    Left = 352
+    Top = 208
     object ClientDataSet3IDACERVO: TIntegerField
       FieldName = 'IDACERVO'
       Required = True
@@ -448,7 +448,7 @@ object DM: TDM
   end
   object DataSource3: TDataSource
     DataSet = ClientDataSet3
-    Left = 368
+    Left = 352
     Top = 272
   end
   object SQLQuery3: TSQLQuery
@@ -463,13 +463,94 @@ object DM: TDM
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 368
+    Left = 352
     Top = 328
     object IntegerField3: TIntegerField
       FieldName = 'IDEDITORA'
       Required = True
     end
     object StringField3: TStringField
+      FieldName = 'RAZAOSOCIAL'
+      Required = True
+      Size = 100
+    end
+  end
+  object SQLDataSet4: TSQLDataSet
+    SchemaName = 'sysdba'
+    Active = True
+    CommandText = 'select * from EMPRESTIMO'
+    DbxCommandType = 'Dbx.SQL'
+    DataSource = DataSource4
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = BIBLIOTECA
+    Left = 440
+    Top = 88
+    object SQLDataSet4IDEMPRESTIMO: TIntegerField
+      FieldName = 'IDEMPRESTIMO'
+      Required = True
+    end
+    object SQLDataSet4DATAEMPRESTIMO: TDateField
+      FieldName = 'DATAEMPRESTIMO'
+      Required = True
+    end
+    object SQLDataSet4IDASSOCIADO: TIntegerField
+      FieldName = 'IDASSOCIADO'
+      Required = True
+    end
+  end
+  object DataSetProvider4: TDataSetProvider
+    DataSet = SQLDataSet4
+    ResolveToDataSet = True
+    Options = [poAutoRefresh, poUseQuoteChar]
+    Left = 440
+    Top = 152
+  end
+  object ClientDataSet4: TClientDataSet
+    Active = True
+    Aggregates = <>
+    AggregatesActive = True
+    Params = <>
+    ProviderName = 'DataSetProvider4'
+    Left = 440
+    Top = 224
+    object ClientDataSet4IDEMPRESTIMO: TIntegerField
+      FieldName = 'IDEMPRESTIMO'
+      Required = True
+    end
+    object ClientDataSet4DATAEMPRESTIMO: TDateField
+      FieldName = 'DATAEMPRESTIMO'
+      Required = True
+    end
+    object ClientDataSet4IDASSOCIADO: TIntegerField
+      FieldName = 'IDASSOCIADO'
+      Required = True
+    end
+  end
+  object DataSource4: TDataSource
+    DataSet = ClientDataSet4
+    Left = 440
+    Top = 280
+  end
+  object SQLQuery4: TSQLQuery
+    SchemaName = 'SYSDBA'
+    GetMetadata = True
+    NumericMapping = True
+    ObjectView = True
+    Active = True
+    DataSource = DataSource4
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT *  FROM EDITORA')
+    SQLConnection = BIBLIOTECA
+    Left = 440
+    Top = 328
+    object SQLQuery4IDEDITORA: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
+    end
+    object SQLQuery4RAZAOSOCIAL: TStringField
       FieldName = 'RAZAOSOCIAL'
       Required = True
       Size = 100

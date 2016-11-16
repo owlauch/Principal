@@ -1,6 +1,11 @@
 object Autor: TAutor
+  AlignWithMargins = True
   Left = 0
   Top = 0
+  Margins.Left = 0
+  Margins.Top = 0
+  Margins.Right = 0
+  Margins.Bottom = 0
   Align = alClient
   BorderStyle = bsNone
   Caption = 'Autor'
@@ -1281,7 +1286,6 @@ object Autor: TAutor
           Margin = 1
           NumGlyphs = 2
           OnClick = BAssociadoClick
-          ExplicitLeft = 8
         end
         object BAutor: TSpeedButton
           AlignWithMargins = True
@@ -1292,6 +1296,13 @@ object Autor: TAutor
           Align = alClient
           Anchors = []
           Caption = 'AUTOR'
+          Enabled = False
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Sylfaen'
+          Font.Style = []
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -1591,10 +1602,9 @@ object Autor: TAutor
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          ParentFont = False
           OnClick = BAutorClick
-          ExplicitTop = 247
-          ExplicitWidth = 10
-          ExplicitHeight = 100
+          ExplicitLeft = 8
         end
         object BEditora: TSpeedButton
           AlignWithMargins = True

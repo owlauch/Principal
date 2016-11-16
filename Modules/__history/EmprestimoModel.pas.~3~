@@ -1,0 +1,23 @@
+unit EmprestimoModel;
+
+interface
+
+uses AssociadoModel, ItemEmprestimoModel, generics.collections;
+
+type TEmprestimoModel = class
+  private
+     fId: Integer;
+     fDataEmprestimo: TDate;
+     fAssociado: TAssociadoModel;
+     fItemsEmprestimo: TList<TItemEmprestimoModel>;
+
+  public
+     property Id: Integer read fId write fId;
+     property DataEmprestimo: TDate read fDataEmprestimo write fDataEmprestimo;
+     property Associado: TAssociadoModel read fAssociado write fAssociado;
+     property ItemsEmprestimo: TList<TItemEmprestimoModel> read fItemsEmprestimo write fItemsEmprestimo;
+end;
+
+implementation
+
+end.

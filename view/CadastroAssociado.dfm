@@ -1383,6 +1383,13 @@
           Align = alClient
           Anchors = []
           Caption = 'ASSOCIADO'
+          Enabled = False
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Sylfaen'
+          Font.Style = [fsBold]
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -1682,6 +1689,7 @@
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          ParentFont = False
           OnClick = BAssociadoClick
           ExplicitLeft = 8
         end

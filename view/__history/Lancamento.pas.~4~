@@ -1,0 +1,32 @@
+unit Lancamento;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, ExtCtrls;
+
+type
+  TLacamento = class(TForm)
+    GridPricipal: TGridPanel;
+    Panel1: TPanel;
+    GridPanel1: TGridPanel;
+    Label1: TLabel;
+    BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
+    BVoltar: TSpeedButton;
+    Panel2: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Lacamento: TLacamento;
+
+implementation
+
+{$R *.dfm}
+
+end.

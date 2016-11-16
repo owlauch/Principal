@@ -1,0 +1,14 @@
+unit EmprestimoDAO;
+
+interface
+  uses EmprestimoModel, DataModule, Dialogs;
+
+  type
+    TEditoraDao = class
+      public
+        procedure inserirEmprestimo(EmprestimoModel:TEmprestimoModel);
+        procedure excluirEmprestimo(id:integer);
+    end;
+implementation
+
+end.

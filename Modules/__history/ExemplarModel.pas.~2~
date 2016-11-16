@@ -1,0 +1,18 @@
+unit ExemplarModel;
+
+interface
+
+uses AcervoModel;
+
+type TExemplarModel = class
+  private
+    fId: Integer;
+    fAcervo: TAcervoModel;
+  public
+    property Id: Integer read GetId write SetId;
+    property Acervo: TAcervoModel read GetAcervo write SetAcervo;
+end;
+
+implementation
+
+end.

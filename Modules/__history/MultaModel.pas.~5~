@@ -1,0 +1,49 @@
+unit MultaModel;
+
+interface
+
+type TMultaModel = class
+  private
+    fDataInicioVigencia: TDate;
+    fValorBase: Real;
+    function GetDataInicioVigencia: TDate;
+
+    function GetValorBase: Real;
+    procedure SetDataInicioVigencia(const Value: TDate);
+    procedure SetValorBase(const Value: Real);public
+    property DataInicioVigencia: TDate read GetDataInicioVigencia write SetDataInicioVigencia;
+    property ValorBase: Real read GetValorBase write SetValorBase;
+end;
+
+
+implementation
+
+{ TMultaModel }
+
+
+function TMultaModel.GetDataInicioVigencia: TDate;
+begin
+
+end;
+
+
+function TMultaModel.GetValorBase: Real;
+begin
+
+end;
+
+
+procedure TMultaModel.SetDataInicioVigencia(const Value: TDate);
+begin
+
+end;
+
+
+procedure TMultaModel.SetValorBase(const Value: Real);
+begin
+
+end;
+
+end.
+
+

@@ -1,0 +1,33 @@
+unit EmprestimoDAO;
+
+interface
+  uses EmprestimoModel, DataModule, Dialogs;
+
+  type
+    TEmprestimoDao = class
+      public
+        procedure inserirEmprestimo(EmprestimoModel:TEmprestimoModel);
+    end;
+implementation
+
+
+
+{ TEmprestimoDao }
+
+procedure TEmprestimoDao.inserirEmprestimo(EmprestimoModel: TEmprestimoModel);
+begin
+  try
+  DM.SQLQuery2.Close;
+  DM.SQLQuery2.SQL.Text:='INSERT INTO EMPRESTIMO(dataemprestimo,) VALUES(:razaosocial)';
+  DM.SQLQuery2.ParamByName('razaosocial').AsString:=EditoraModel.GetRazaosocial;
+  DM.SQLQuery2.ExecSQL;
+  DM.ClientDataSet2.Close;
+  DM.ClientDataSet2.Open;
+  DM.ClientDataSet2.Close;
+  DM.ClientDataSet2.Open;
+  ShowMessageFmt('A editora - %S - foi registrada com sucesso',[editoramodel.GetRazaosocial]);
+  finally
+
+end;
+
+end.

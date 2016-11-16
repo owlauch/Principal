@@ -304,8 +304,7 @@ object Editora: TEditora
             BiDiMode = bdRightToLeft
             Caption = 'Pesquisa'
             ParentBiDiMode = False
-            ExplicitLeft = 32
-            ExplicitTop = 4
+            ExplicitLeft = 31
             ExplicitWidth = 42
             ExplicitHeight = 13
           end
@@ -316,9 +315,6 @@ object Editora: TEditora
             Height = 24
             Align = alClient
             TabOrder = 0
-            ExplicitLeft = 78
-            ExplicitTop = 1
-            ExplicitWidth = 361
             ExplicitHeight = 21
           end
         end
@@ -1609,6 +1605,13 @@ object Editora: TEditora
           Align = alClient
           Anchors = []
           Caption = 'EDITORA'
+          Enabled = False
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Sylfaen'
+          Font.Style = []
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E000000000000000000009FBC865E8E36
@@ -1908,11 +1911,8 @@ object Editora: TEditora
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          ParentFont = False
           OnClick = BEditoraClick
-          ExplicitLeft = 11
-          ExplicitTop = 264
-          ExplicitWidth = 136
-          ExplicitHeight = 46
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True

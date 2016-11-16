@@ -5,22 +5,103 @@ interface
 uses AssociadoModel, AcervoModel;
 
 type TListaEsperaModel = class
-  public
-    vId: Integer;
-    vDataAtendimento: TDate;
-    vDataReserva: TDate;
-    vHoraReserva: TTime;
-    vAssociado: TAssociadoModel;
-    vAcervo: TAcervoModel;
   private
-    property Id: Integer read vId write vId;
-    property DataAtendimento: TDate read vDataAtendimento write vDataAtendimento;
-    property DataReserva: TDate read vDataReserva write vDataReserva;
-    property HoraReserva: TTime read vHoraReserva write vHoraReserva;
-    property Associado: TAssociadoModel read vAssociado write vAssociado;
-    property Acervo: TAcervoModel read vAcervo write vAcervo;
+    fId: Integer;
+    fDataAtendimento: TDate;
+    fDataReserva: TDate;
+    fHoraReserva: TTime;
+    fAssociado: TAssociadoModel;
+    fAcervo: TAcervoModel;
+  public
+    function GetAcervo: TAcervoModel;
+    function GetAssociado: TAssociadoModel;
+    function GetDataAtendimento: TDate;
+    function GetDataReserva: TDate;
+    function GetHoraReserva: TTime;
+    function GetId: Integer;
+    procedure SetAcervo(const Value: TAcervoModel);
+    procedure SetAssociado(const Value: TAssociadoModel);
+    procedure SetDataAtendimento(const Value: TDate);
+    procedure SetDataReserva(const Value: TDate);
+    procedure SetHoraReserva(const Value: TTime);
+    procedure SetId(const Value: Integer);
 end;
 
 implementation
+{ TListaEsperaModel }
+
+
+function TListaEsperaModel.GetAcervo: TAcervoModel;
+begin
+  Result:=Self.fAcervo;
+end;
+
+
+function TListaEsperaModel.GetAssociado: TAssociadoModel;
+begin
+  Result:=Self.fAssociado;
+end;
+
+
+function TListaEsperaModel.GetDataAtendimento: TDate;
+begin
+  Result:=Self.fDataAtendimento;
+end;
+
+
+function TListaEsperaModel.GetDataReserva: TDate;
+begin
+  Result:=Self.fDataReserva;
+end;
+
+
+function TListaEsperaModel.GetHoraReserva: TTime;
+begin
+  Result:=Self.fHoraReserva;
+end;
+
+
+function TListaEsperaModel.GetId: Integer;
+begin
+  Result:=Self.fId;
+end;
+
+
+procedure TListaEsperaModel.SetAcervo(const Value: TAcervoModel);
+begin
+  Self.fAcervo:=Value;
+end;
+
+
+procedure TListaEsperaModel.SetAssociado(const Value: TAssociadoModel);
+begin
+  Self.fAssociado:=Value;
+end;
+
+
+procedure TListaEsperaModel.SetDataAtendimento(const Value: TDate);
+begin
+  Self.fDataAtendimento:=Value;
+end;
+
+
+procedure TListaEsperaModel.SetDataReserva(const Value: TDate);
+begin
+  Self.fDataReserva:=Value;
+end;
+
+
+procedure TListaEsperaModel.SetHoraReserva(const Value: TTime);
+begin
+  Self.fHoraReserva:=Value;
+end;
+
+
+procedure TListaEsperaModel.SetId(const Value: Integer);
+begin
+  Self.fId:=Value;
+end;
 
 end.
+
+

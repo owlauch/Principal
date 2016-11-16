@@ -3,14 +3,44 @@ unit PalavraChaveModel;
 interface
 
 type TPalavraChaveModel = class
-  public
-    vId: Integer;
-    vPalavraChave: String;
   private
-    property Id: Integer read vId write vId;
-    property PalavraChave: String read vPalavraChave write vPalavraChave;
+    fId: Integer;
+    fPalavraChave: String;
+  public
+    function GetId: Integer;
+    function GetPalavraChave: String;
+    procedure SetId(const Value: Integer);
+    procedure SetPalavraChave(const Value: String);
 end;
 
 implementation
 
+{ TPalavraChaveModel }
+
+
+function TPalavraChaveModel.GetId: Integer;
+begin
+  Result:=Self.fId;
+end;
+
+
+function TPalavraChaveModel.GetPalavraChave: String;
+begin
+  Result:=Self.fPalavraChave;
+end;
+
+
+procedure TPalavraChaveModel.SetId(const Value: Integer);
+begin
+  Self.fId:=Value;
+end;
+
+
+procedure TPalavraChaveModel.SetPalavraChave(const Value: String);
+begin
+  Self.fPalavraChave:=Value;
+end;
+
 end.
+
+

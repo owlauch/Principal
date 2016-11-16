@@ -341,7 +341,6 @@ object MenuPrincipal: TMenuPrincipal
           Align = alClient
           Anchors = []
           Caption = 'LAN'#199'AMENTO'
-          Enabled = False
           Glyph.Data = {
             B2130000424DB2130000000000003600000028000000260000002B0000000100
             1800000000007C130000C40E0000C40E00000000000000000000FFFFFFFFFFFF
@@ -503,6 +502,7 @@ object MenuPrincipal: TMenuPrincipal
             00000A0A0AFFFFFFFEFEFEFFFFFFFFFFFFFFFFFF0000}
           Layout = blGlyphRight
           Margin = 1
+          OnClick = BLancamentoClick
           ExplicitLeft = 0
           ExplicitTop = 146
           ExplicitWidth = 71
