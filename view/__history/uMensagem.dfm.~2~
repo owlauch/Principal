@@ -1,0 +1,41 @@
+inherited OKHelpBottomDlg: TOKHelpBottomDlg
+  Caption = 'Sair'
+  ClientHeight = 166
+  ClientWidth = 327
+  ExplicitWidth = 333
+  ExplicitHeight = 195
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Bevel1: TBevel
+    Left = 0
+    Top = 0
+    Width = 327
+    Height = 166
+    Align = alClient
+    ExplicitTop = 13
+    ExplicitWidth = 335
+    ExplicitHeight = 199
+  end
+  object Label1: TLabel [1]
+    Left = 54
+    Top = 56
+    Width = 229
+    Height = 13
+    Caption = 'Voc'#234' tem certeza que deseja Sair do programa?'
+  end
+  inherited OKBtn: TButton
+    Left = 62
+    Top = 101
+    Caption = 'SIM'
+    OnClick = OKBtnClick
+    ExplicitLeft = 62
+    ExplicitTop = 101
+  end
+  inherited CancelBtn: TButton
+    Left = 198
+    Top = 101
+    Caption = 'N'#195'O'
+    ExplicitLeft = 198
+    ExplicitTop = 101
+  end
+end

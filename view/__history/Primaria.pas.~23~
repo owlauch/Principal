@@ -20,7 +20,6 @@ type
     SpeedButtonSair: TSpeedButton;
     procedure BLancamentoClick(Sender: TObject);
     procedure SpeedButtonSairClick(Sender: TObject);
-    procedure BCadastroClick(Sender: TObject);
     //procedure BLancamentoClick(Sender: TObject);
   private
     { Private declarations }
@@ -37,14 +36,6 @@ implementation
 
 uses Principal,CadastroPrincipal;
 
-
-procedure TMenuPrincipal.BCadastroClick(Sender: TObject);
-begin
-  Close;
-  Cadastro:=TCadastro.Create(self);
-  Cadastro.Parent:=SDIAppForm;
-  Cadastro.Show;
-end;
 
 procedure TMenuPrincipal.BLancamentoClick(Sender: TObject);
 begin

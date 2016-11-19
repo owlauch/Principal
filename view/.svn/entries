@@ -220,6 +220,13 @@ file
 
 add
 
+uMensagem.pas
+file
+0
+
+
+add
+
 CadastroPrincipal.dfm
 file
 16
@@ -558,6 +565,13 @@ albathrowz
 843
 
 Lancamento.dfm
+file
+0
+
+
+add
+
+uMensagem.dfm
 file
 0
 

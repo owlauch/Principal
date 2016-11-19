@@ -997,7 +997,7 @@ object MenuPrincipal: TMenuPrincipal
             000000000000000000000000000000000000}
           Margin = 1
           NumGlyphs = 2
-          OnClick = BCadastroClick
+          OnClick = SpeedButtonSairClick
           ExplicitLeft = 11
           ExplicitTop = 14
           ExplicitWidth = 23

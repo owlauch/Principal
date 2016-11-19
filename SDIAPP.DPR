@@ -33,7 +33,8 @@ uses
   Consulta_Principal in 'view\Consulta_Principal.pas' {ConsultaPrincipal},
   Consulta_Acervo in 'view\Consulta_Acervo.pas' {ConsultaAcervo},
   Lancamento in 'view\Lancamento.pas' {lacamento},
-  LancamentoEEmprestimo in 'view\LancamentoEEmprestimo.pas' {LancamentoEmprestimo};
+  LancamentoEEmprestimo in 'view\LancamentoEEmprestimo.pas' {LancamentoEmprestimo},
+  uMensagem in 'view\uMensagem.pas' {uMensagemConfirmacao};
 
 {$R *.RES}
 

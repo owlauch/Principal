@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, Menus, pngimage, Lancamento, uMensagem;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Menus, pngimage, Lancamento;
 
 type
   TMenuPrincipal = class(TForm)
@@ -19,8 +19,6 @@ type
     BConsulta: TSpeedButton;
     SpeedButtonSair: TSpeedButton;
     procedure BLancamentoClick(Sender: TObject);
-    procedure SpeedButtonSairClick(Sender: TObject);
-    procedure BCadastroClick(Sender: TObject);
     //procedure BLancamentoClick(Sender: TObject);
   private
     { Private declarations }
@@ -31,20 +29,11 @@ type
 var
   MenuPrincipal:Tmenuprincipal;
 
-
 implementation
 {$R *.dfm}
 
 uses Principal,CadastroPrincipal;
 
-
-procedure TMenuPrincipal.BCadastroClick(Sender: TObject);
-begin
-  Close;
-  Cadastro:=TCadastro.Create(self);
-  Cadastro.Parent:=SDIAppForm;
-  Cadastro.Show;
-end;
 
 procedure TMenuPrincipal.BLancamentoClick(Sender: TObject);
 begin
@@ -54,11 +43,5 @@ begin
   Lacamento.Show;
 end;
 
-
-procedure TMenuPrincipal.SpeedButtonSairClick(Sender: TObject);
-begin
-  uMensagemConfirmacao:=TuMensagemConfirmacao.Create(self);
-  uMensagemConfirmacao.show;
-end;
 
 end.
