@@ -100,15 +100,6 @@ type
     ClientDataSet4IDASSOCIADO: TIntegerField;
     SQLQuery4IDEDITORA: TIntegerField;
     SQLQuery4RAZAOSOCIAL: TStringField;
-    SQLDSItemEmprestimo: TSQLDataSet;
-    DSPItemEmprestimo: TDataSetProvider;
-    CLDSItemEmprestimo: TClientDataSet;
-    DSItemEmprestimo: TDataSource;
-    SQLQItemEmprestimo: TSQLQuery;
-    IntegerField6: TIntegerField;
-    StringField1: TStringField;
-    SQLDSItemEmprestimoMAX: TIntegerField;
-    CLDSItemEmprestimoMAX: TIntegerField;
 
 
   private
@@ -123,7 +114,6 @@ var
 implementation
 
 {$R *.dfm}
-
 
 
 end.

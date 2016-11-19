@@ -109,6 +109,9 @@ type
     StringField1: TStringField;
     SQLDSItemEmprestimoMAX: TIntegerField;
     CLDSItemEmprestimoMAX: TIntegerField;
+    procedure DSPItemEmprestimoAfterApplyUpdates(Sender: TObject;
+      var OwnerData: OleVariant);
+    procedure DSItemEmprestimoDataChange(Sender: TObject; Field: TField);
 
 
   private
@@ -125,5 +128,15 @@ implementation
 {$R *.dfm}
 
 
+eprocedure TDM.DataSetProvider5AfterApplyUpdates(Sender: TObject;
+  var OwnerData: OleVariant);
+begin
 
-end.
+eprocedure TDM.DSItemEmprestimoDataChange(Sender: TObject; Field: TField);
+begin
+
+end;
+
+nd;
+
+nd.

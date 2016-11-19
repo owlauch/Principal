@@ -894,12 +894,6 @@
                 Column = 1
                 Control = Label3
                 Row = 1
-              end
-              item
-                Column = 0
-                ColumnSpan = 2
-                Control = DateTimePicker1
-                Row = 0
               end>
             RowCollection = <
               item
@@ -916,74 +910,19 @@
             TabOrder = 0
             ExplicitLeft = 7
             ExplicitTop = 20
-            DesignSize = (
-              440
-              317)
             object DBGrid1: TDBGrid
-              Left = 0
-              Top = 66
-              Width = 219
-              Height = 251
+              AlignWithMargins = True
+              Left = 3
+              Top = 69
+              Width = 213
+              Height = 245
               Align = alClient
-              DataSource = DM.DataSource
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
               TitleFont.Height = -11
               TitleFont.Name = 'Tahoma'
               TitleFont.Style = []
-              Columns = <
-                item
-                  Expanded = False
-                  FieldName = 'IDASSOCIADO'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'NOME'
-                  Width = 178
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'EMAIL'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'TELEFONE'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'UF'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'CEP'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'BAIRRO'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'NROENDERECO'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'CIDADE'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'RUA'
-                  Visible = False
-                end>
             end
             object DBGrid2: TDBGrid
               Left = 219
@@ -991,49 +930,12 @@
               Width = 221
               Height = 251
               Align = alClient
-              DataSource = DM.DataSource3
               TabOrder = 1
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
               TitleFont.Height = -11
               TitleFont.Name = 'Tahoma'
               TitleFont.Style = []
-              Columns = <
-                item
-                  Expanded = False
-                  FieldName = 'IDACERVO'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'TITULO'
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'QTDEEXEMPLAR'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'DATAEDICAO'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'LOCALEDICAO'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'ISBN'
-                  Visible = False
-                end
-                item
-                  Expanded = False
-                  FieldName = 'IDEDITORA'
-                  Visible = False
-                end>
             end
             object Label2: TLabel
               Left = 0
@@ -1043,10 +945,11 @@
               Align = alClient
               Alignment = taCenter
               BiDiMode = bdRightToLeftNoAlign
-              Caption = 'ASSOCIADO'
+              Caption = 'Label2'
               ParentBiDiMode = False
-              ExplicitWidth = 60
-              ExplicitHeight = 13
+              ExplicitLeft = 86
+              ExplicitTop = 0
+              ExplicitWidth = 31
             end
             object Label3: TLabel
               Left = 219
@@ -1056,22 +959,12 @@
               Align = alClient
               Alignment = taCenter
               BiDiMode = bdRightToLeftNoAlign
-              Caption = 'ACERVO'
+              Caption = 'Label2'
               ParentBiDiMode = False
-              ExplicitWidth = 41
+              ExplicitLeft = 314
+              ExplicitTop = 47
+              ExplicitWidth = 31
               ExplicitHeight = 13
-            end
-            object DateTimePicker1: TDateTimePicker
-              Left = 179
-              Top = 6
-              Width = 82
-              Height = 21
-              Anchors = []
-              Date = 42693.659664444440000000
-              Time = 42693.659664444440000000
-              TabOrder = 2
-              Visible = False
-              ExplicitLeft = 167
             end
           end
         end
@@ -1206,20 +1099,5 @@
         end
       end
     end
-  end
-  object DBGrid3: TDBGrid
-    Left = 167
-    Top = 354
-    Width = 58
-    Height = 31
-    Align = alCustom
-    DataSource = DM.DSItemEmprestimo
-    TabOrder = 1
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    Visible = False
   end
 end

@@ -43,6 +43,11 @@
         Column = 1
         Control = PanelSeleção
         Row = 0
+      end
+      item
+        Column = 0
+        Control = DBGrid3
+        Row = 1
       end>
     RowCollection = <
       item
@@ -52,12 +57,15 @@
         SizeStyle = ssAuto
       end>
     TabOrder = 0
+    DesignSize = (
+      620
+      410)
     object PanelMenu: TPanel
       AlignWithMargins = True
       Left = 1
       Top = 1
       Width = 154
-      Height = 408
+      Height = 288
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -65,12 +73,13 @@
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitHeight = 408
       object GridPanel1: TGridPanel
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 148
-        Height = 402
+        Height = 282
         Align = alClient
         Color = clGradientInactiveCaption
         ColumnCollection = <
@@ -125,25 +134,27 @@
             Value = 12.500418065862120000
           end>
         TabOrder = 0
+        ExplicitHeight = 402
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
-          Top = 54
+          Top = 39
           Width = 140
-          Height = 43
+          Height = 28
           Align = alClient
           Alignment = taCenter
           Caption = 'LAN'#199'AMENTOS'
           Layout = tlCenter
+          ExplicitTop = 54
           ExplicitWidth = 74
           ExplicitHeight = 13
         end
         object BAcervo: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 103
+          Top = 73
           Width = 140
-          Height = 43
+          Height = 28
           Align = alClient
           Anchors = []
           Caption = 'EMPRESTIMO'
@@ -455,9 +466,9 @@
         object BAssociado: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 152
+          Top = 107
           Width = 140
-          Height = 43
+          Height = 28
           Align = alClient
           Anchors = []
           Caption = 'DEVOLU'#199#195'O'
@@ -763,13 +774,14 @@
           ExplicitLeft = 8
           ExplicitTop = 151
           ExplicitWidth = 129
+          ExplicitHeight = 43
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 4
           Width = 140
-          Height = 44
+          Height = 29
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'
@@ -803,6 +815,7 @@
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          ExplicitHeight = 44
         end
       end
     end
@@ -811,7 +824,7 @@
       Left = 160
       Top = 6
       Width = 454
-      Height = 398
+      Height = 278
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -819,11 +832,12 @@
       Align = alClient
       AutoSize = True
       TabOrder = 1
+      ExplicitHeight = 398
       object GridPanelSlcGeral: TGridPanel
         Left = 1
         Top = 1
         Width = 452
-        Height = 396
+        Height = 276
         Align = alClient
         ColumnCollection = <
           item
@@ -850,6 +864,7 @@
           end>
         TabOrder = 0
         ExplicitLeft = -2
+        ExplicitHeight = 396
         object GroupBoxSeleção: TGroupBox
           Left = 1
           Top = 1
@@ -1077,7 +1092,7 @@
         end
         object GridPanelBotoes: TGridPanel
           Left = 1
-          Top = 345
+          Top = 225
           Width = 450
           Height = 50
           Align = alClient
@@ -1114,6 +1129,7 @@
               Value = 50.000000000000000000
             end>
           TabOrder = 1
+          ExplicitTop = 345
           object BGravar: TSpeedButton
             AlignWithMargins = True
             Left = 271
@@ -1206,20 +1222,20 @@
         end
       end
     end
-  end
-  object DBGrid3: TDBGrid
-    Left = 167
-    Top = 354
-    Width = 58
-    Height = 31
-    Align = alCustom
-    DataSource = DM.DSItemEmprestimo
-    TabOrder = 1
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    Visible = False
+    object DBGrid3: TDBGrid
+      Left = 1
+      Top = 289
+      Width = 154
+      Height = 120
+      Anchors = []
+      DataSource = DM.DSItemEmprestimo
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Visible = False
+    end
   end
 end

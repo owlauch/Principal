@@ -107,8 +107,16 @@ type
     SQLQItemEmprestimo: TSQLQuery;
     IntegerField6: TIntegerField;
     StringField1: TStringField;
-    SQLDSItemEmprestimoMAX: TIntegerField;
-    CLDSItemEmprestimoMAX: TIntegerField;
+    SQLDSItemEmprestimoIDEMPRESTIMO: TIntegerField;
+    SQLDSItemEmprestimoIDACERVO: TIntegerField;
+    SQLDSItemEmprestimoDATADEVOLUCAO: TDateField;
+    SQLDSItemEmprestimoDATAVIGENCIAMULTA: TDateField;
+    CLDSItemEmprestimoIDEMPRESTIMO: TIntegerField;
+    CLDSItemEmprestimoIDACERVO: TIntegerField;
+    CLDSItemEmprestimoDATADEVOLUCAO: TDateField;
+    CLDSItemEmprestimoDATAVIGENCIAMULTA: TDateField;
+    procedure DSPItemEmprestimoAfterApplyUpdates(Sender: TObject;
+      var OwnerData: OleVariant);
 
 
   private
@@ -125,5 +133,10 @@ implementation
 {$R *.dfm}
 
 
+eprocedure TDM.DataSetProvider5AfterApplyUpdates(Sender: TObject;
+  var OwnerData: OleVariant);
+begin
 
-end.
+end;
+
+nd.

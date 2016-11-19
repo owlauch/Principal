@@ -941,7 +941,6 @@
                 item
                   Expanded = False
                   FieldName = 'NOME'
-                  Width = 178
                   Visible = True
                 end
                 item
@@ -1206,20 +1205,5 @@
         end
       end
     end
-  end
-  object DBGrid3: TDBGrid
-    Left = 167
-    Top = 354
-    Width = 58
-    Height = 31
-    Align = alCustom
-    DataSource = DM.DSItemEmprestimo
-    TabOrder = 1
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    Visible = False
   end
 end

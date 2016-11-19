@@ -24,6 +24,7 @@ begin
   DM.ClientDataSet2.Open;
   DM.ClientDataSet2.Close;
   DM.ClientDataSet2.Open;
+  ShowMessageFmt('O emprestimo foi -  - foi registrada com sucesso');
   finally
 
   end;

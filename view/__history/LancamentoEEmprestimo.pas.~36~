@@ -51,23 +51,21 @@ implementation
 
 procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
   var
-    idassociado,iditememp,idacervo: integer;
+    id,id2: integer;
     emprestimoDAO:Temprestimodao;
     emprestimoModel:TEmprestimoModel;
     AssociadoModel:TAssociadoModel;
-    datadevolucao: Tdate;
 
 begin
     emprestimoDao:=TemprestimoDao.Create;
     emprestimoModel:=TEmprestimoModel.Create;
     AssociadoModel:=TAssociadoModel.Create;
-    idassociado:=DBGrid1.Fields[0].AsInteger;
+    id:=DBGrid1.Fields[0].AsInteger;
     AssociadoModel.SetId(id);
     emprestimoModel.SetAssociado(AssociadoModel);
     emprestimodao.inserirEmprestimo(emprestimoModel);
-    iditememp:=DBGrid3.Fields[0].AsInteger;
-    idacervo:=DBgrid2.Fields[0].AsInteger;
-    //datadevolucao:=DateTimePicker1+10;
+    id2:=DBGrid3.Fields[0].AsInteger;
+    ShowMessageFmt('%d',[id2]);
 end;
 
 end.

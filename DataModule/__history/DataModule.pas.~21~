@@ -109,6 +109,9 @@ type
     StringField1: TStringField;
     SQLDSItemEmprestimoMAX: TIntegerField;
     CLDSItemEmprestimoMAX: TIntegerField;
+    procedure DSPItemEmprestimoAfterApplyUpdates(Sender: TObject;
+      var OwnerData: OleVariant);
+    procedure DSItemEmprestimoDataChange(Sender: TObject; Field: TField);
 
 
   private

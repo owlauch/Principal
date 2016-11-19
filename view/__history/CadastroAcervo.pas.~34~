@@ -137,7 +137,6 @@ begin
   menuPrincipal.Show;
 end;
 
-
 procedure TAcervo.ComboEnter(Sender: TObject);
 var
   s: string;
