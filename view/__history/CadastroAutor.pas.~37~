@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls,DataModule, AutorModel;
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls,DataModule;
 
 type
   TAutor = class(TForm)
@@ -56,7 +56,7 @@ var
 
 implementation
 
-uses AutorDAO, CadastroPrincipal, Principal, Primaria,
+uses AutorDAO, AutorModel, CadastroPrincipal, Principal, Primaria,
   CadastroAcervo, CadastroAssociado, CadastroEditora;
 
 {$R *.dfm}
@@ -148,8 +148,7 @@ var
 autordao:tAutordao;
 begin
   autordao:=tAutordao.create;
-  autormodel.SetNome(Editnome.text);
-  autordao.editarAutor(autormodel);
+  autordao.editarAutor
 
 
 end;

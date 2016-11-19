@@ -803,6 +803,7 @@
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          OnClick = BVoltarClick
         end
       end
     end
@@ -849,7 +850,6 @@
             Value = 50.000000000000000000
           end>
         TabOrder = 0
-        ExplicitLeft = -2
         object GroupBoxSeleção: TGroupBox
           Left = 1
           Top = 1
@@ -869,7 +869,7 @@
             BevelOuter = bvNone
             ColumnCollection = <
               item
-                Value = 49.999993497674830000
+                Value = 49.999993497674840000
               end
               item
                 Value = 50.000006502325160000
@@ -914,8 +914,6 @@
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
-            ExplicitLeft = 7
-            ExplicitTop = 20
             DesignSize = (
               440
               317)
@@ -1071,7 +1069,6 @@
               Time = 42693.659664444440000000
               TabOrder = 2
               Visible = False
-              ExplicitLeft = 167
             end
           end
         end

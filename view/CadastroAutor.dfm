@@ -251,6 +251,7 @@ object Autor: TAutor
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
+          OnDblClick = DBGrid1DblClick
           Columns = <
             item
               Expanded = False
@@ -512,6 +513,7 @@ object Autor: TAutor
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = SpeedButton4Click
               ExplicitLeft = 4
               ExplicitTop = 328
               ExplicitWidth = 10

@@ -148,7 +148,7 @@ var
 autordao:tAutordao;
 begin
   autordao:=tAutordao.create;
-  autormodel.SetNome(Editnome.text);
+  autormodel.GetNome:=Editnome;
   autordao.editarAutor(autormodel);
 
 

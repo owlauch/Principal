@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls,DataModule;
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls,DataModule, AutorModel;
 
 type
   TAutor = class(TForm)
@@ -42,6 +42,8 @@ type
     procedure BAssociadoClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,10 +52,11 @@ type
 
 var
   Autor: TAutor;
+  autormodel:tAutorModel;
 
 implementation
 
-uses AutorDAO, AutorModel, CadastroPrincipal, Principal, Primaria,
+uses AutorDAO, CadastroPrincipal, Principal, Primaria,
   CadastroAcervo, CadastroAssociado, CadastroEditora;
 
 {$R *.dfm}
@@ -118,10 +121,36 @@ begin
   menuPrincipal.Show;
 end;
 
+procedure TAutor.DBGrid1DblClick(Sender: TObject);
+var
+id : integer;
+nome : string ;
+autorDao:TAutorDao;
+begin
+  autormodel:=TAutorModel.Create;
+  autorDao:=TAutorDao.Create;
+  id:=DBGrid1.Fields[0].AsInteger;
+  nome:=DBGrid1.Fields[1].AsString;
+  autormodel.SetNome(nome);
+  autormodel.SetId(id);
+  Editnome.text:=autormodel.getnome;
+
+end;
+
 procedure TAutor.SpeedButton2Click(Sender: TObject);
 begin
   EditNome.Clear;
   EditPesquisar.Clear;
 end;
 
+procedure TAutor.SpeedButton4Click(Sender: TObject);
+var
+autordao:tAutordao;
+begin
+  autordao:=tAutordao.create;
+  autordao.editarAutor(autormodel);
+
+
+end;
 end.
+

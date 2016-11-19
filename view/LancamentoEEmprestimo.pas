@@ -31,6 +31,7 @@ type
     DBGrid3: TDBGrid;
 
     procedure BGravarClick(Sender: TObject);
+    procedure BVoltarClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -45,6 +46,8 @@ var
 
 
 implementation
+
+uses CadastroPrincipal, Principal, Primaria;
 
 {$R *.dfm}
 
@@ -68,6 +71,14 @@ begin
     iditememp:=DBGrid3.Fields[0].AsInteger;
     idacervo:=DBgrid2.Fields[0].AsInteger;
     //datadevolucao:=DateTimePicker1+10;
+end;
+
+procedure TLancamentoEmprestimo.BVoltarClick(Sender: TObject);
+begin
+  close;
+  MenuPrincipal:=TMenuPrincipal.Create(self);
+  MenuPrincipal.Parent:=SDIAppForm;
+  menuPrincipal.Show;
 end;
 
 end.

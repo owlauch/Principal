@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, Buttons, ExtCtrls, DataModule, EmprestimoDAO,
-  EmprestimoModel, AssociadoModel, Grids, DBGrids, ItemEmprestimoDAO,DataModule;
+  EmprestimoModel, AssociadoModel, Grids, DBGrids, ItemEmprestimoDAO;
 
 type
   TLancamentoEmprestimo = class(TForm)
@@ -28,6 +28,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     DateTimePicker1: TDateTimePicker;
+    DBGrid3: TDBGrid;
 
     procedure BGravarClick(Sender: TObject);
 
@@ -50,20 +51,23 @@ implementation
 
 procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
   var
-    id,id2: integer;
+    idassociado,iditememp,idacervo: integer;
     emprestimoDAO:Temprestimodao;
     emprestimoModel:TEmprestimoModel;
     AssociadoModel:TAssociadoModel;
+    datadevolucao: Tdate;
 
 begin
     emprestimoDao:=TemprestimoDao.Create;
     emprestimoModel:=TEmprestimoModel.Create;
     AssociadoModel:=TAssociadoModel.Create;
-    id:=DBGrid1.Fields[0].AsInteger;
+    idassociado:=DBGrid1.Fields[0].AsInteger;
     AssociadoModel.SetId(id);
     emprestimoModel.SetAssociado(AssociadoModel);
     emprestimodao.inserirEmprestimo(emprestimoModel);
-    id2:=
+    iditememp:=DBGrid3.Fields[0].AsInteger;
+    idacervo:=DBgrid2.Fields[0].AsInteger;
+    //datadevolucao:=DateTimePicker1+10;
 end;
 
 end.

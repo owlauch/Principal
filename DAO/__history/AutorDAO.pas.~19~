@@ -19,7 +19,7 @@ implementation
 procedure TAutorDao.editarAutor(autormodel: tAutorModel);
 begin
   DM.SQLQuery1.Close;
-  DM.SQLQuery1.SQL.Text:='UPDATE autor SET nome=:nome WHERE idautor=:id';
+  DM.SQLQuery1.SQL.Text:='UPDATE autor SET autor.nome=:nome WHERE autor.idautor=:id';
   DM.SQLQuery1.ParamByName('id').AsInteger:=autormodel.GetId;
   DM.SQLQuery1.ParamByName('nome').AsString:=autormodel.GetNome;
   DM.SQLQuery1.ExecSQL;

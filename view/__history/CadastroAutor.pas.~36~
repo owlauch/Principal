@@ -40,6 +40,10 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
     procedure BAssociadoClick(Sender: TObject);
+    procedure BAutorClick(Sender: TObject);
+    procedure BEditoraClick(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,6 +52,7 @@ type
 
 var
   Autor: TAutor;
+  autormodel:tAutorModel;
 
 implementation
 
@@ -70,6 +75,22 @@ begin
   Associado:=TAssociado.Create(self);
   Associado.Parent:=SDIAppForm;
   Associado.Show;
+end;
+
+procedure TAutor.BAutorClick(Sender: TObject);
+begin
+  Close;
+  Autor:=TAutor.Create(self);
+  Autor.Parent:=SDIAppForm;
+  Autor.Show;
+end;
+
+procedure TAutor.BEditoraClick(Sender: TObject);
+begin
+  close;
+  Editora:=TEditora.Create(self);
+  Editora.Parent:=SDIAppForm;
+  Editora.Show;
 end;
 
 procedure TAutor.BExcluirClick(Sender: TObject);
@@ -100,10 +121,46 @@ begin
   menuPrincipal.Show;
 end;
 
+procedure TAutor.DBGrid1DblClick(Sender: TObject);
+var
+id : integer;
+nome : string ;
+autorDao:TAutorDao;
+begin
+  autormodel:=TAutorModel.Create;
+  autorDao:=TAutorDao.Create;
+  id:=DBGrid1.Fields[0].AsInteger;
+  nome:=DBGrid1.Fields[1].AsString;
+  autormodel.SetNome(nome);
+  autormodel.SetId(id);
+  Editnome.text:=autormodel.getnome;
+  //autorDao.editarAutor(autormodel);
+
+end;
+
 procedure TAutor.SpeedButton2Click(Sender: TObject);
 begin
   EditNome.Clear;
   EditPesquisar.Clear;
 end;
 
+procedure TAutor.SpeedButton4Click(Sender: TObject);
+var
+id : integer;
+nome : string ;
+autormodel:tAutorModel;
+autorDao:TAutorDao;
+begin
+  autormodel:=TAutorModel.Create;
+  autorDao:=TAutorDao.Create;
+  id:=DBGrid1.Fields[0].AsInteger;
+  nome:=DBGrid1.Fields[1].AsString;
+  autormodel.SetNome(nome);
+  autormodel.SetId(id);
+  Editnome.text:=autormodel.getnome;
+  //autorDao.editarAutor(autormodel);
+
+
+end;
 end.
+
