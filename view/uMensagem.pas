@@ -25,6 +25,7 @@ var
 implementation
 
 {$R *.dfm}
+uses CadastroAcervo;
 
 procedure TuMensagemConfirmacao.Button1Click(Sender: TObject);
 begin

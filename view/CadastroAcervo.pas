@@ -35,7 +35,6 @@ type
     Blimpar: TSpeedButton;
     DateTimePickerEdicao: TDateTimePicker;
     ComboBoxQtd: TComboBox;
-    Combo: TComboBox;
     Panel1: TPanel;
     GridPanel2: TGridPanel;
     BAcervo: TSpeedButton;
@@ -45,15 +44,17 @@ type
     BVoltar: TSpeedButton;
     Label7: TLabel;
     SpeedButtonMulta: TSpeedButton;
+    EditEditora: TEdit;
+    EditIDEditora: TEdit;
     procedure BVoltarClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
-    procedure ComboEnter(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
     procedure BAssociadoClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
+    procedure EditEditoraClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,12 +63,12 @@ type
 
 var
   Acervo: TAcervo;
-    id: Integer;
+  idgravareditora,ideditora: Integer;
 
 implementation
 
 uses CadastroPrincipal, Principal, AcervoDAO, AcervoModel,dataModule, Primaria,
-  CadastroAssociado, CadastroAutor, CadastroEditora;
+  CadastroAssociado, CadastroAutor, CadastroEditora, EditoraLista, EditoraModel;
 
 {$R *.dfm}
 
@@ -126,7 +127,7 @@ begin
   AcervoModel.SetDataEdicao(DateTimePickerEdicao.DateTime);
   AcervoModel.SetLocalEdicao(EditLocalEdicao.Text);
   AcervoModel.SetIsbn(EditIsbn.Text);
-  AcervoModel.SetEditora(ID);
+  AcervoModel.SetEditora(ideditora);
   AcervoDao.inserirAcervo(AcervoModel);
 
 end;
@@ -140,23 +141,19 @@ begin
 end;
 
 
-procedure TAcervo.ComboEnter(Sender: TObject);
-var
-  s: string;
+procedure TAcervo.EditEditoraClick(Sender: TObject);
+ var
+  nome: string;
+  editoramodel:teditoramodel;
 begin
-  combo.Items.Clear;
-  with DM.CDSEditora do
-  begin
-    First;
-    while not Eof do
-    begin
-      id := FieldByName('IDEDITORA').AsInteger;
-      s := FieldByName('RAZAOSOCIAL').AsString;
-      combo.Items.AddObject(s, TObject(id)); // typecast necessário
-      Next;
-    end;
-  end;
+  ListaEditora:=TListaEditora.Create(self);
+  ListaEditora.Parent:=SDIAppForm;
+  ListaEditora.Show;
+
+
+
 end;
+
 
 procedure TAcervo.SpeedButtonMultaClick(Sender: TObject);
 begin
