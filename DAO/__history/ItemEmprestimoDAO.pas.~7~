@@ -1,0 +1,37 @@
+unit ItemEmprestimoDAO;
+
+interface
+  uses ItemEmprestimoModel, DataModule, Dialogs, AssociadoModel;
+
+  type
+    TItemEmprestimoDao = class
+    public
+
+    procedure inserirItemEmprestimo(ItemEmprestimoModel:TitemEmprestimoModel);
+end;
+
+implementation
+
+{ TItemEmprestimoDao }
+
+procedure TItemEmprestimoDao.inserirItemEmprestimo(ItemEmprestimoModel: TitemEmprestimoModel);
+begin
+  try
+  DM.SQLQItemEmprestimo.Close;
+  DM.SQLQItemEmprestimo.SQL.Text:='INSERT INTO ITEMEMPRESTIMO(idemprestimo,idacervo,datadevolucao,datavigenciamulta) VALUES(:idemprestimo,:idacervo,:datadevolucao,:datavigenciamulta)';
+  DM.SQLQItemEmprestimo.ParamByName('idemprestimo').Asinteger:=ItemEmprestimoModel.GetIDemprestimo;
+  DM.SQLQItemEmprestimo.ParamByName('idacervo').AsInteger:=ItemEmprestimoModel.GetIDAcervo;
+  DM.SQLQItemEmprestimo.ParamByName('datadevolucao').Asdate:=ItemEmprestimoModel.GetDataDevolucao;
+  DM.SQLQItemEmprestimo.ParamByName('datavigenciamulta').Asdate:=ItemEmprestimoModel.GetDataVigencia.GetDataInicioVigencia;
+  DM.SQLQItemEmprestimo.ExecSQL;
+  DM.CLDSItemEmprestimo.Close;
+  DM.CLDSItemEmprestimo.Open;
+  DM.CLDSItemEmprestimo.Close;
+  DM.CLDSItemEmprestimo.Open;
+  finally
+
+  end;
+
+end;
+
+end.

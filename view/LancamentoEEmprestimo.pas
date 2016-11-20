@@ -23,13 +23,12 @@ type
     GridPanelSlcGeral: TGridPanel;
     GridPanelBotoes: TGridPanel;
     BGravar: TSpeedButton;
-    Blimpar: TSpeedButton;
     DBGrid1: TDBGrid;
     DBGrid2: TDBGrid;
     Label2: TLabel;
     Label3: TLabel;
     DateTimePicker1: TDateTimePicker;
-    DBGrid3: TDBGrid;
+    DBGridIDMax: TDBGrid;
     DBGridMulta: TDBGrid;
 
     procedure BGravarClick(Sender: TObject);
@@ -56,7 +55,7 @@ uses CadastroPrincipal, Principal, Primaria;
 
 procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
   var
-    x: integer;
+    x,y: integer;
     nome:string;
     emprestimoDAO:Temprestimodao;
     emprestimoModel:TEmprestimoModel;
@@ -67,6 +66,15 @@ procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
     data : tdatetime;
 
 begin
+
+dm.SQLQItemEmprestimo.SQL.Clear;
+dm.SQLQItemEmprestimo.SQL.Add('select count(idacervo) from itememprestimo where idacervo=:id');
+dm.SQLQItemEmprestimo.ParamByName('id').AsInteger := ItemEmprestimoModel.GetIDAcervo;
+dm.SQLQItemEmprestimo.Open;
+x := dm.SQLQItemEmprestimo.FieldByName('count').AsInteger;
+ShowMessageFmt('%d',[x]);
+dm.SQLQItemEmprestimo.Close;
+
     Data := Date;
     data := data + 7;
 
@@ -86,17 +94,17 @@ begin
     emprestimoModel.SetDataEmprestimo(data);
     emprestimodao.inserirEmprestimo(emprestimoModel);
 
-    x:=DBGrid3.Fields[0].AsInteger;
-    ItemEmprestimomodel.SetIDemprestimo(x);
+    y:=DBGridIDMax.Fields[0].AsInteger;
+    ShowMessageFmt('%d teste',[y]);
+    ItemEmprestimomodel.SetIDemprestimo(y);
     x:=DBgrid2.Fields[0].AsInteger;
     ItemEmprestimomodel.SetIDAcervo(x);
+    data:=data+7;
     ItemEmprestimomodel.SetDataDevolucao(data);
     data:=DBGridMulta.Fields[0].AsDatetime;
-    dm.DSPMulta.FindComponent('datainiciovigencia');
     multamodel.SetDataInicioVigencia(data);
     ItemEmprestimomodel.SetDataVigencia(multamodel);
     ItemEmprestimoDAO.inserirItemEmprestimo(ItemEmprestimomodel);
-
 end;
 
 procedure TLancamentoEmprestimo.BVoltarClick(Sender: TObject);

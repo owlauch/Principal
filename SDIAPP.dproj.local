@@ -84,5 +84,7 @@
     <File Path="view\uMensagem.dfm"/>
     <File Path="view\CadastroMulta.pas"/>
     <File Path="view\CadastroMulta.dfm"/>
+    <File Path="view\EditoraLista.pas"/>
+    <File Path="view\EditoraLista.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

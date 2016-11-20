@@ -121,7 +121,7 @@ type
     SQLDSMaxitem: TSQLDataSet;
     IntegerField1: TIntegerField;
     DSPMaxitem: TDataSetProvider;
-    CDSMaxitem: TClientDataSet;
+    CLSMaxitem: TClientDataSet;
     IntegerField2: TIntegerField;
     DSMaxitem: TDataSource;
     SQLQMaxitem: TSQLQuery;

@@ -98,7 +98,9 @@ begin
   Autor.Show;
 end;
 
-procedure TAcervo.BEditoraClick(Sender: TObject);
+
+
+Procedure TAcervo.BEditoraClick(Sender: TObject);
 begin
   close;
   Editora:=TEditora.Create(self);
@@ -149,9 +151,6 @@ begin
   ListaEditora:=TListaEditora.Create(self);
   ListaEditora.Parent:=SDIAppForm;
   ListaEditora.Show;
-
-
-
 end;
 
 

@@ -539,7 +539,6 @@ object Acervo: TAcervo
               Anchors = []
               TabOrder = 5
               OnClick = EditEditoraClick
-              ExplicitLeft = 273
             end
           end
         end

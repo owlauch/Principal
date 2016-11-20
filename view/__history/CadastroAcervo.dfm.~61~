@@ -113,6 +113,9 @@ object Acervo: TAcervo
           item
             SizeStyle = ssAbsolute
             Value = 50.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
           end>
         TabOrder = 0
         object DBGrid1: TDBGrid
@@ -348,7 +351,7 @@ object Acervo: TAcervo
               end
               item
                 Column = 4
-                Control = Combo
+                Control = EditEditora
                 Row = 2
               end>
             RowCollection = <
@@ -360,8 +363,14 @@ object Acervo: TAcervo
               end
               item
                 Value = 33.333333333284500000
+              end
+              item
+                SizeStyle = ssAuto
               end>
             TabOrder = 0
+            DesignSize = (
+              432
+              83)
             object Label1: TLabel
               AlignWithMargins = True
               Left = 3
@@ -382,7 +391,7 @@ object Acervo: TAcervo
               Left = 223
               Top = 57
               Width = 44
-              Height = 23
+              Height = 21
               Align = alClient
               BiDiMode = bdRightToLeft
               Caption = 'Editora'
@@ -442,7 +451,7 @@ object Acervo: TAcervo
               Left = 3
               Top = 57
               Width = 44
-              Height = 23
+              Height = 21
               Align = alClient
               BiDiMode = bdRightToLeft
               Caption = 'ISBN'
@@ -475,10 +484,9 @@ object Acervo: TAcervo
               Left = 53
               Top = 57
               Width = 164
-              Height = 23
+              Height = 21
               Align = alClient
               TabOrder = 2
-              ExplicitHeight = 21
             end
             object DateTimePickerEdicao: TDateTimePicker
               AlignWithMargins = True
@@ -523,15 +531,15 @@ object Acervo: TAcervo
                 '19'
                 '20')
             end
-            object Combo: TComboBox
-              AlignWithMargins = True
-              Left = 273
+            object EditEditora: TEdit
+              Left = 281
               Top = 57
-              Width = 156
+              Width = 140
               Height = 21
-              Align = alClient
+              Anchors = []
               TabOrder = 5
-              OnEnter = ComboEnter
+              OnClick = EditEditoraClick
+              ExplicitLeft = 273
             end
           end
         end
@@ -793,6 +801,9 @@ object Acervo: TAcervo
       Anchors = []
       BevelOuter = bvNone
       TabOrder = 1
+      DesignSize = (
+        154
+        408)
       object GridPanel2: TGridPanel
         AlignWithMargins = True
         Left = 3
@@ -2495,6 +2506,15 @@ object Acervo: TAcervo
           ExplicitWidth = 23
           ExplicitHeight = 22
         end
+      end
+      object EditIDEditora: TEdit
+        Left = 15
+        Top = 364
+        Width = 121
+        Height = 21
+        Anchors = []
+        TabOrder = 1
+        Visible = False
       end
     end
   end

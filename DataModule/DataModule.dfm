@@ -1,7 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
   Height = 440
-  Width = 736
+  Width = 735
   object BIBLIOTECA: TSQLConnection
     ConnectionName = 'BIBLIOTECA'
     DriverName = 'FIREBIRD'
@@ -559,15 +559,28 @@ object DM: TDM
   end
   object SQLDSItemEmprestimo: TSQLDataSet
     SchemaName = 'sysdba'
-    CommandText = 'select max(idemprestimo) from emprestimo'
+    Active = True
+    CommandText = 'select * from ITEMEMPRESTIMO'
     DbxCommandType = 'Dbx.SQL'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
     Left = 464
     Top = 88
-    object SQLDSItemEmprestimoMAX: TIntegerField
-      FieldName = 'MAX'
+    object SQLDSItemEmprestimoIDEMPRESTIMO: TIntegerField
+      FieldName = 'IDEMPRESTIMO'
+      Required = True
+    end
+    object SQLDSItemEmprestimoIDACERVO: TIntegerField
+      FieldName = 'IDACERVO'
+      Required = True
+    end
+    object SQLDSItemEmprestimoDATADEVOLUCAO: TDateField
+      FieldName = 'DATADEVOLUCAO'
+      Required = True
+    end
+    object SQLDSItemEmprestimoDATAVIGENCIAMULTA: TDateField
+      FieldName = 'DATAVIGENCIAMULTA'
     end
   end
   object DSPItemEmprestimo: TDataSetProvider
@@ -585,8 +598,21 @@ object DM: TDM
     ProviderName = 'DSPItemEmprestimo'
     Left = 464
     Top = 216
-    object CLDSItemEmprestimoMAX: TIntegerField
-      FieldName = 'MAX'
+    object CLDSItemEmprestimoIDEMPRESTIMO: TIntegerField
+      FieldName = 'IDEMPRESTIMO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object CLDSItemEmprestimoIDACERVO: TIntegerField
+      FieldName = 'IDACERVO'
+      Required = True
+    end
+    object CLDSItemEmprestimoDATADEVOLUCAO: TDateField
+      FieldName = 'DATADEVOLUCAO'
+      Required = True
+    end
+    object CLDSItemEmprestimoDATAVIGENCIAMULTA: TDateField
+      FieldName = 'DATAVIGENCIAMULTA'
     end
   end
   object DSItemEmprestimo: TDataSource
@@ -692,6 +718,68 @@ object DM: TDM
       Required = True
       Precision = 18
       Size = 2
+    end
+  end
+  object SQLDSMaxitem: TSQLDataSet
+    SchemaName = 'sysdba'
+    Active = True
+    CommandText = 'select max(idemprestimo) from emprestimo'
+    DbxCommandType = 'Dbx.SQL'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = BIBLIOTECA
+    Left = 640
+    Top = 88
+    object IntegerField1: TIntegerField
+      FieldName = 'MAX'
+    end
+  end
+  object DSPMaxitem: TDataSetProvider
+    DataSet = SQLDSMaxitem
+    ResolveToDataSet = True
+    UpdateMode = upWhereChanged
+    Left = 640
+    Top = 152
+  end
+  object CDSMaxitem: TClientDataSet
+    Active = True
+    Aggregates = <>
+    AggregatesActive = True
+    Params = <>
+    ProviderName = 'DSPMaxitem'
+    Left = 640
+    Top = 216
+    object IntegerField2: TIntegerField
+      FieldName = 'MAX'
+    end
+  end
+  object DSMaxitem: TDataSource
+    DataSet = CDSMaxitem
+    Left = 640
+    Top = 280
+  end
+  object SQLQMaxitem: TSQLQuery
+    SchemaName = 'SYSDBA'
+    GetMetadata = True
+    NumericMapping = True
+    ObjectView = True
+    Active = True
+    DataSource = DSMaxitem
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT *  FROM EDITORA')
+    SQLConnection = BIBLIOTECA
+    Left = 640
+    Top = 344
+    object IntegerField5: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
+    end
+    object StringField4: TStringField
+      FieldName = 'RAZAOSOCIAL'
+      Required = True
+      Size = 100
     end
   end
 end

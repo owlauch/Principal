@@ -22,7 +22,7 @@ begin
   DM.SQLQEmprestimo.ParamByName('idemprestimo').Asinteger:=ItemEmprestimoModel.GetIDemprestimo;
   DM.SQLQEmprestimo.ParamByName('idacervo').AsInteger:=ItemEmprestimoModel.GetIDAcervo;
   DM.SQLQEmprestimo.ParamByName('datadevolucao').Asdate:=ItemEmprestimoModel.GetDataDevolucao;
-  DM.SQLQEmprestimo.ParamByName('datavigenciamulta').Asdate:=ItemEmprestimoModel.GetDataVigencia;
+  DM.SQLQEmprestimo.ParamByName('datavigenciamulta').Asdate:=ItemEmprestimoModel.GetDataVigencia.GetDataInicioVigencia;
   DM.SQLQEmprestimo.ExecSQL;
   DM.CLDSEmprestimo.Close;
   DM.CLDSEmprestimo.Open;
