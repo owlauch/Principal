@@ -803,6 +803,7 @@
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          OnClick = BVoltarClick
         end
       end
     end
@@ -849,7 +850,6 @@
             Value = 50.000000000000000000
           end>
         TabOrder = 0
-        ExplicitLeft = -2
         object GroupBoxSeleção: TGroupBox
           Left = 1
           Top = 1
@@ -869,7 +869,7 @@
             BevelOuter = bvNone
             ColumnCollection = <
               item
-                Value = 49.999993497674830000
+                Value = 49.999993497674840000
               end
               item
                 Value = 50.000006502325160000
@@ -914,8 +914,6 @@
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
-            ExplicitLeft = 7
-            ExplicitTop = 20
             DesignSize = (
               440
               317)
@@ -925,7 +923,7 @@
               Width = 219
               Height = 251
               Align = alClient
-              DataSource = DM.DataSource
+              DataSource = DM.DSAssociado
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -935,8 +933,54 @@
               Columns = <
                 item
                   Expanded = False
+                  FieldName = 'IDASSOCIADO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
                   FieldName = 'NOME'
+                  Width = 178
                   Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'EMAIL'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'TELEFONE'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'UF'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'CEP'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'BAIRRO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'NROENDERECO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'CIDADE'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'RUA'
+                  Visible = False
                 end>
             end
             object DBGrid2: TDBGrid
@@ -945,7 +989,7 @@
               Width = 221
               Height = 251
               Align = alClient
-              DataSource = DM.DataSource3
+              DataSource = DM.DSAcervo
               TabOrder = 1
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -955,8 +999,38 @@
               Columns = <
                 item
                   Expanded = False
+                  FieldName = 'IDACERVO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
                   FieldName = 'TITULO'
                   Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'QTDEEXEMPLAR'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'DATAEDICAO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'LOCALEDICAO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'ISBN'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'IDEDITORA'
+                  Visible = False
                 end>
             end
             object Label2: TLabel
@@ -995,7 +1069,6 @@
               Time = 42693.659664444440000000
               TabOrder = 2
               Visible = False
-              ExplicitLeft = 167
             end
           end
         end
@@ -1130,5 +1203,20 @@
         end
       end
     end
+  end
+  object DBGrid3: TDBGrid
+    Left = 167
+    Top = 354
+    Width = 58
+    Height = 31
+    Align = alCustom
+    DataSource = DM.DSItemEmprestimo
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
   end
 end

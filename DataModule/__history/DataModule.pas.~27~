@@ -110,14 +110,14 @@ type
     SQLDSItemEmprestimoMAX: TIntegerField;
     CLDSItemEmprestimoMAX: TIntegerField;
     DSPMulta: TDataSetProvider;
-    CLDSMulta: TClientDataSet;
+    CLSMulta: TClientDataSet;
     DSMulta: TDataSource;
     SQLQMulta: TSQLQuery;
     IntegerField4: TIntegerField;
     StringField2: TStringField;
     SQLDSMulta: TSQLDataSet;
-    CLDSMultaDATAINICIOVIGENCIA: TDateField;
-    CLDSMultaVALOR: TFMTBCDField;
+    CLSMultaDATAINICIOVIGENCIA: TDateField;
+    CLSMultaVALOR: TFMTBCDField;
     SQLDSMultaDATAINICIOVIGENCIA: TDateField;
     SQLDSMultaVALOR: TFMTBCDField;
 
