@@ -1207,7 +1207,7 @@
   object DBGrid3: TDBGrid
     Left = 167
     Top = 354
-    Width = 58
+    Width = 66
     Height = 31
     Align = alCustom
     DataSource = DM.DSItemEmprestimo
@@ -1218,5 +1218,26 @@
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     Visible = False
+  end
+  object DBGridMulta: TDBGrid
+    Left = 255
+    Top = 354
+    Width = 74
+    Height = 31
+    Align = alCustom
+    DataSource = DM.DSMulta
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'DATAINICIOVIGENCIA'
+        Visible = True
+      end>
   end
 end

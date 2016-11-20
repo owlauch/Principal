@@ -9,14 +9,14 @@ type TItemEmprestimoModel = class
     fIDemprestimo: integer;
     fIDAcervo: integer;
     fDataDevolucao:Tdate;
-    fDataVigencia:tmultamodel;
+    fDataVigencia:tdate;
   public
     procedure SetDataDevolucao(const Value: Tdate);
-    procedure SetDataVigencia(const Value:tmultamodel);
+    procedure SetDataVigencia(const Value: tdate);
     procedure SetIDAcervo(const Value: integer);
     procedure SetIDemprestimo(const Value: integer);
     function GetDataDevolucao: Tdate;
-    function GetDataVigencia: tmultamodel;
+    function GetDataVigencia: tdate;
     function GetIDAcervo: integer;
     function GetIDemprestimo: integer;
    end;
@@ -29,7 +29,7 @@ begin
 end;
 
 
-function TItemEmprestimoModel.GetDataVigencia: tmultamodel;
+function TItemEmprestimoModel.GetDataVigencia: tdate;
 begin
   Result:=Self.fDataVigencia;
 end;
@@ -53,7 +53,7 @@ begin
 end;
 
 
-procedure TItemEmprestimoModel.SetDataVigencia(const Value: tmultamodel);
+procedure TItemEmprestimoModel.SetDataVigencia(const Value: tdate);
 begin
   Self.fDataVigencia:=Value;
 end;

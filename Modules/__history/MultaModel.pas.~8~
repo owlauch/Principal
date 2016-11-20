@@ -10,7 +10,7 @@ type TMultaModel = class
     function GetDataInicioVigencia: TDate;
     function GetValorBase: Real;
     procedure SetDataInicioVigencia(const Value: TDate);
-    procedure SetValorBase(const Value: Real);
+    procedure SetValorBase(const Value: Real);public
 end;
 
 

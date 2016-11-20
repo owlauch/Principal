@@ -1,0 +1,34 @@
+unit MultaDAO;
+
+interface
+  uses MultaModel, DataModule, Dialogs, AssociadoModel;
+
+  type
+    tMultaDao = class
+    public
+
+    procedure inserirMulta(multaModel:TMultaModel);
+    end;
+implementation
+
+{ tMultaDao }
+
+procedure tMultaDao.inserirMulta(multaModel: TMultaModel);
+begin
+
+  try
+  DM.SQLQEmprestimo.Close;
+  DM.SQLQEmprestimo.SQL.Text:='INSERT INTO Multa(datainiciovigencia,valor) VALUES(:datainiciovigencia,:valor)';
+  DM.SQLQEmprestimo.ParamByName('datainiciovigencia').Asdate:=multaModel.GetDataInicioVigencia;
+  DM.SQLQEmprestimo.ParamByName('valor').AsFloat:=multaModel.GetValorBase;
+  DM.SQLQEmprestimo.ExecSQL;
+  DM.CLDSEmprestimo.Close;
+  DM.CLDSEmprestimo.Open;
+  DM.CLDSEmprestimo.Close;
+  DM.CLDSEmprestimo.Open;
+  finally
+
+  end;
+end;
+
+end.

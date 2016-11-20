@@ -625,7 +625,7 @@ object DM: TDM
     Left = 560
     Top = 152
   end
-  object CLSMulta: TClientDataSet
+  object CLDSMulta: TClientDataSet
     Active = True
     Aggregates = <>
     AggregatesActive = True
@@ -633,11 +633,11 @@ object DM: TDM
     ProviderName = 'DSPMulta'
     Left = 560
     Top = 216
-    object CLSMultaDATAINICIOVIGENCIA: TDateField
+    object CLDSMultaDATAINICIOVIGENCIA: TDateField
       FieldName = 'DATAINICIOVIGENCIA'
       Required = True
     end
-    object CLSMultaVALOR: TFMTBCDField
+    object CLDSMultaVALOR: TFMTBCDField
       FieldName = 'VALOR'
       Required = True
       Precision = 18
@@ -645,7 +645,7 @@ object DM: TDM
     end
   end
   object DSMulta: TDataSource
-    DataSet = CLSMulta
+    DataSet = CLDSMulta
     Left = 560
     Top = 280
   end
