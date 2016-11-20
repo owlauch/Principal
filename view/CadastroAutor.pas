@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls,DataModule, AutorModel;
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls,DataModule, AutorModel,
+  CadastroMulta;
 
 type
   TAutor = class(TForm)
@@ -34,6 +35,7 @@ type
     BAutor: TSpeedButton;
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
+    SpeedButtonMulta: TSpeedButton;
     procedure BgravarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
@@ -44,6 +46,7 @@ type
     procedure BEditoraClick(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure SpeedButtonMultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -153,5 +156,13 @@ begin
 
 
 end;
+procedure TAutor.SpeedButtonMultaClick(Sender: TObject);
+begin
+  close;
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
+end;
+
 end.
 

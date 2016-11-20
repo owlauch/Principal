@@ -6,58 +6,68 @@ uses ExemplarModel, MultaModel;
 
 type TItemEmprestimoModel = class
   private
-    fExemplar: TExemplarModel;
-    fDataDevolucao: TDate;
-    fDataVigenciaMulta: TMultaModel;
+    fIDemprestimo: integer;
+    fIDAcervo: integer;
+    fDataDevolucao:Tdate;
+    fDataVigencia:tdate;
   public
-    function GetDataDevolucao: TDate;
-    function GetDataVigenciaMulta: TMultaModel;
-    function GetExemplar: TExemplarModel;
-    procedure SetDataDevolucao(const Value: TDate);
-    procedure SetDataVigenciaMulta(const Value: TMultaModel);
-    procedure SetExemplar(const Value: TExemplarModel);
-end;
-
+    procedure SetDataDevolucao(const Value: Tdate);
+    procedure SetDataVigencia(const Value: tdate);
+    procedure SetIDAcervo(const Value: integer);
+    procedure SetIDemprestimo(const Value: integer);
+    function GetDataDevolucao: Tdate;
+    function GetDataVigencia: tdate;
+    function GetIDAcervo: integer;
+    function GetIDemprestimo: integer;
+   end;
 implementation
-
 { TItemEmprestimoModel }
 
-
-function TItemEmprestimoModel.GetDataDevolucao: TDate;
+function TItemEmprestimoModel.GetDataDevolucao: Tdate;
 begin
   Result:=Self.fDataDevolucao;
 end;
 
 
-function TItemEmprestimoModel.GetDataVigenciaMulta: TMultaModel;
+function TItemEmprestimoModel.GetDataVigencia: tdate;
 begin
-  Result:=Self.fDataVigenciaMulta;
+  Result:=Self.fDataVigencia;
 end;
 
 
-function TItemEmprestimoModel.GetExemplar: TExemplarModel;
+function TItemEmprestimoModel.GetIDAcervo: integer;
 begin
-  Result:=Self.fExemplar;
+  Result:=Self.fIDAcervo;
 end;
 
 
-procedure TItemEmprestimoModel.SetDataDevolucao(const Value: TDate);
+function TItemEmprestimoModel.GetIDemprestimo: integer;
+begin
+  Result:=Self.fIDemprestimo;
+end;
+
+
+procedure TItemEmprestimoModel.SetDataDevolucao(const Value: Tdate);
 begin
   Self.fDataDevolucao:=Value;
 end;
 
 
-procedure TItemEmprestimoModel.SetDataVigenciaMulta(const Value: TMultaModel);
+procedure TItemEmprestimoModel.SetDataVigencia(const Value: tdate);
 begin
-  Self.fDataVigenciaMulta:=Value;
+  Self.fDataVigencia:=Value;
 end;
 
 
-procedure TItemEmprestimoModel.SetExemplar(const Value: TExemplarModel);
+procedure TItemEmprestimoModel.SetIDAcervo(const Value: integer);
 begin
-  Self.fExemplar:=Value;
+  Self.fIDAcervo:=Value;
+end;
+
+
+procedure TItemEmprestimoModel.SetIDemprestimo(const Value: integer);
+begin
+  Self.fIDemprestimo:=Value;
 end;
 
 end.
-
-

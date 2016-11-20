@@ -12,7 +12,7 @@ type TExemplarModel = class
     function GetAcervo: TAcervoModel;
     function GetId: Integer;
     procedure SetAcervo(const Value: TAcervoModel);
-    procedure SetId(const Value: Integer);public
+    procedure SetId(const Value: Integer);
 end;
 
 implementation

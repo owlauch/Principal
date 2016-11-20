@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/11/03 14:03:37.000.136,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\SDIMAIN.PAS=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Principal.PAS</Transaction>
+    <Transaction>2016/11/03 14:03:37.000.136,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\SDIMAIN.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Principal.dfm</Transaction>
+    <Transaction>2016/11/03 14:33:31.000.161,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.pas=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\Unit1.pas</Transaction>
+    <Transaction>2016/11/03 14:33:31.000.161,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\Unit1.dfm</Transaction>
+    <Transaction>2016/11/03 14:34:10.000.958,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\VCadastro.dfm</Transaction>
+    <Transaction>2016/11/03 14:38:13.000.958,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\VCadastroAssociado.dfm</Transaction>
+    <Transaction>2016/11/03 14:41:20.000.124,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.pas=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroPrincipal.pas</Transaction>
+    <Transaction>2016/11/03 14:41:20.000.124,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroPrincipal.dfm</Transaction>
+    <Transaction>2016/11/03 14:45:19.000.021,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.pas=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAssociado.pas</Transaction>
+    <Transaction>2016/11/03 14:45:19.000.021,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAssociado.dfm</Transaction>
+    <Transaction>2016/11/03 14:46:32.000.536,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAcervo.dfm</Transaction>
+    <Transaction>2016/11/03 14:47:45.000.708,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAutor.dfm</Transaction>
+    <Transaction>2016/11/03 14:49:12.000.350,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroEditora.dfm</Transaction>
+    <Transaction>2016/11/03 18:34:01.000.961,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.pas=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\DataModule\DataModule.pas</Transaction>
+    <Transaction>2016/11/03 18:34:01.000.961,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\DataModule\DataModule.dfm</Transaction>
+    <Transaction>2016/11/03 18:56:47.000.982,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.pas=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\Primaria.pas</Transaction>
+    <Transaction>2016/11/03 18:56:47.000.982,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\Primaria.dfm</Transaction>
+    <Transaction>2016/11/04 14:28:23.000.373,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAutor.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
+    <Transaction>2016/11/04 14:49:21.000.643,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAcervo.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
+    <Transaction>2016/11/04 15:38:28.000.658,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroEditora.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
+    <Transaction>2016/11/10 15:10:57.000.144,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\Consulta_Principal.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
+    <Transaction>2016/11/10 18:25:26.000.729,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\Consulta_Acervo.dfm</Transaction>
+    <Transaction>2016/11/14 12:19:57.000.717,C:\Users\João\Desktop\Projeto Atual\Principal-master\Unit1.dfm=C:\Users\João\Desktop\Projeto Atual\Principal-master\view\Lancamento.dfm</Transaction>
+    <Transaction>2016/11/14 12:29:24.000.948,C:\Users\João\Desktop\Projeto Atual\Principal-master\Unit2.dfm=C:\Users\João\Desktop\Projeto Atual\Principal-master\view\LancamentoEEmprestimo.dfm</Transaction>
+    <Transaction>2016/11/19 13:50:57.528,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\uMensagem.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\OKCNHLP1.dfm</Transaction>
+    <Transaction>2016/11/19 14:01:49.020,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\uMensagem.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="DAO"/>
+    <File Path="DAO\AssociadoDAO.pas"/>
+    <File Path="DAO\AcervoDAO.pas"/>
+    <File Path="DAO\AutorDAO.pas"/>
+    <File Path="DAO\EditoraDAO.pas"/>
+    <File Path="DAO\EmprestimoDAO.pas"/>
+    <File Path="DAO\ExemplarDAO.pas"/>
+    <File Path="DAO\ItemEmprestimoDAO.pas"/>
+    <File Path="DAO\ListaEsperaDAO.pas"/>
+    <File Path="DAO\MultaDAO.pas"/>
+    <File Path="DAO\PalavraChaveDAO.pas"/>
+    <File Path="DataModule"/>
+    <File Path="DataModule\DataModule.pas"/>
+    <File Path="DataModule\DataModule.dfm"/>
+    <File Path="Modules"/>
+    <File Path="Modules\AcervoModel.pas"/>
+    <File Path="Modules\AssociadoModel.pas"/>
+    <File Path="Modules\AutorModel.pas"/>
+    <File Path="Modules\EditoraModel.pas"/>
+    <File Path="Modules\EmprestimoModel.pas"/>
+    <File Path="Modules\ExemplarModel.pas"/>
+    <File Path="Modules\ItemEmprestimoModel.pas"/>
+    <File Path="Modules\ListaEsperaModel.pas"/>
+    <File Path="Modules\MultaModel.pas"/>
+    <File Path="Modules\PalavraChaveModel.pas"/>
+    <File Path="view"/>
+    <File Path="view\CadastroAcervo.pas"/>
+    <File Path="view\CadastroAcervo.dfm"/>
+    <File Path="view\CadastroAssociado.pas"/>
+    <File Path="view\CadastroAssociado.dfm"/>
+    <File Path="view\CadastroAutor.pas"/>
+    <File Path="view\CadastroAutor.dfm"/>
+    <File Path="view\CadastroEditora.pas"/>
+    <File Path="view\CadastroEditora.dfm"/>
+    <File Path="view\CadastroPrincipal.pas"/>
+    <File Path="view\CadastroPrincipal.dfm"/>
+    <File Path="view\Primaria.pas"/>
+    <File Path="view\Primaria.dfm"/>
+    <File Path="view\Principal.PAS"/>
+    <File Path="view\Principal.dfm"/>
+    <File Path="view\Consulta_Principal.pas"/>
+    <File Path="view\Consulta_Principal.dfm"/>
+    <File Path="view\Consulta_Acervo.pas"/>
+    <File Path="view\Consulta_Acervo.dfm"/>
+    <File Path="view\Lancamento.pas"/>
+    <File Path="view\Lancamento.dfm"/>
+    <File Path="view\LancamentoEEmprestimo.pas"/>
+    <File Path="view\LancamentoEEmprestimo.dfm"/>
+    <File Path="view\uMensagem.pas"/>
+    <File Path="view\uMensagem.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

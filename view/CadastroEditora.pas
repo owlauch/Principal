@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule;
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule,
+  CadastroMulta;
 
 type
   TEditora = class(TForm)
@@ -34,6 +35,7 @@ type
     BAutor: TSpeedButton;
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
+    SpeedButtonMulta: TSpeedButton;
     procedure BVoltarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
@@ -42,6 +44,7 @@ type
     procedure BAssociadoClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
+    procedure SpeedButtonMultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -125,6 +128,14 @@ begin
   MenuPrincipal:=TMenuPrincipal.Create(self);
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
+end;
+
+procedure TEditora.SpeedButtonMultaClick(Sender: TObject);
+begin
+  close;
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
 end;
 
 end.
