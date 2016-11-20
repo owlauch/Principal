@@ -76,6 +76,7 @@ begin
     x:=DBGrid1.Fields[0].AsInteger;
     AssociadoModel.SetId(x);
     emprestimoModel.SetAssociado(AssociadoModel);
+    emprestimoModel.SetDataEmprestimo(date:=now());
     emprestimodao.inserirEmprestimo(emprestimoModel);
 
     x:=DBGrid3.Fields[0].AsInteger;

@@ -14,8 +14,6 @@
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  ExplicitWidth = 320
-  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   object GridPricipal: TGridPanel
@@ -131,12 +129,14 @@
           AlignWithMargins = True
           Left = 4
           Top = 54
-          Width = 74
-          Height = 13
+          Width = 140
+          Height = 43
           Align = alClient
           Alignment = taCenter
           Caption = 'LAN'#199'AMENTOS'
           Layout = tlCenter
+          ExplicitWidth = 74
+          ExplicitHeight = 13
         end
         object BAcervo: TSpeedButton
           AlignWithMargins = True
