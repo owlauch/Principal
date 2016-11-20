@@ -55,6 +55,7 @@ type
     procedure BEditoraClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
     procedure EditEditoraClick(Sender: TObject);
+    procedure EditEditoraChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,7 +64,7 @@ type
 
 var
   Acervo: TAcervo;
-  idgravareditora,ideditora: Integer;
+    idgravareditora,ideditora: Integer;
 
 implementation
 
@@ -127,7 +128,7 @@ begin
   AcervoModel.SetDataEdicao(DateTimePickerEdicao.DateTime);
   AcervoModel.SetLocalEdicao(EditLocalEdicao.Text);
   AcervoModel.SetIsbn(EditIsbn.Text);
-  AcervoModel.SetEditora(ideditora);
+  AcervoModel.SetEditora(idgravareditora);
   AcervoDao.inserirAcervo(AcervoModel);
 
 end;
@@ -149,7 +150,8 @@ begin
   ListaEditora:=TListaEditora.Create(self);
   ListaEditora.Parent:=SDIAppForm;
   ListaEditora.Show;
-
+  ideditora:=EditoraLista.ListaEditora.GravarEditora();
+  ideditora:=editoramodel.GetId;
 
 
 end;

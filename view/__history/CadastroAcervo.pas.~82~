@@ -63,7 +63,7 @@ type
 
 var
   Acervo: TAcervo;
-  idgravareditora,ideditora: Integer;
+    idgravareditora,ideditora: Integer;
 
 implementation
 
@@ -127,7 +127,7 @@ begin
   AcervoModel.SetDataEdicao(DateTimePickerEdicao.DateTime);
   AcervoModel.SetLocalEdicao(EditLocalEdicao.Text);
   AcervoModel.SetIsbn(EditIsbn.Text);
-  AcervoModel.SetEditora(ideditora);
+  AcervoModel.SetEditora(idgravareditora);
   AcervoDao.inserirAcervo(AcervoModel);
 
 end;
@@ -140,12 +140,15 @@ begin
   menuPrincipal.Show;
 end;
 
-
 procedure TAcervo.EditEditoraClick(Sender: TObject);
  var
   nome: string;
   editoramodel:teditoramodel;
 begin
+  ideditora:=EditoraLista.ListaEditora.GravarEditora();
+  nome:=EditoraLista.ListaEditora.GravarEditoraNome();
+  ideditora:=editoramodel.GetId;
+  EditEditora.Text:=nome;
   ListaEditora:=TListaEditora.Create(self);
   ListaEditora.Parent:=SDIAppForm;
   ListaEditora.Show;
@@ -153,7 +156,6 @@ begin
 
 
 end;
-
 
 procedure TAcervo.SpeedButtonMultaClick(Sender: TObject);
 begin
