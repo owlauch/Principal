@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,Dialogs, Menus, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids,DataModule,
-  Mask;
+  Mask, CadastroMulta;
 
 type
   TAssociado = class(TForm)
@@ -52,6 +52,7 @@ type
     BAutor: TSpeedButton;
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
+    SpeedButtonMulta: TSpeedButton;
     procedure BVoltarClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
@@ -59,6 +60,7 @@ type
     procedure BAssociadoClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
+    procedure SpeedButtonMultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -82,6 +84,14 @@ begin
   MenuPrincipal:=TMenuPrincipal.Create(self);
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
+end;
+
+procedure TAssociado.SpeedButtonMultaClick(Sender: TObject);
+begin
+  close;
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
 end;
 
 procedure TAssociado.BGravarClick(Sender: TObject);

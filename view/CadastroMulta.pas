@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Mask, Buttons, StdCtrls, Grids, DBGrids, ExtCtrls;
+  Dialogs, Mask, Buttons, StdCtrls, Grids, DBGrids, ExtCtrls, DataModule;
 
 type
   TMulta = class(TForm)
@@ -15,10 +15,7 @@ type
     Pessoal: TGroupBox;
     GridPanelPessoal: TGridPanel;
     Nome: TLabel;
-    DBGrid1: TDBGrid;
     GridPanelFiltro: TGridPanel;
-    Label10: TLabel;
-    EditPesquisar: TEdit;
     PanelMenu: TPanel;
     GridPanel1: TGridPanel;
     Bgravar: TSpeedButton;
@@ -33,8 +30,14 @@ type
     BAutor: TSpeedButton;
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
-    SpeedButton1: TSpeedButton;
+    SpeedButtonMulta: TSpeedButton;
     MaskEdit1: TMaskEdit;
+    DBGrid1: TDBGrid;
+    procedure BAcervoClick(Sender: TObject);
+    procedure BAssociadoClick(Sender: TObject);
+    procedure BAutorClick(Sender: TObject);
+    procedure BEditoraClick(Sender: TObject);
+    procedure BVoltarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,6 +49,47 @@ var
 
 implementation
 
+uses CadastroEditora,CadastroAutor,CadastroAssociado, CadastroAcervo, Primaria, Principal;
+
 {$R *.dfm}
+procedure TMulta.BAcervoClick(Sender: TObject);
+begin
+  Close;
+  Acervo:=TAcervo.Create(self);
+  Acervo.Parent:=SDIAppForm;
+  Acervo.Show;
+end;
+
+procedure TMulta.BAssociadoClick(Sender: TObject);
+begin
+  Close;
+  Associado:=TAssociado.Create(self);
+  Associado.Parent:=SDIAppForm;
+  Associado.Show;
+end;
+
+procedure TMulta.BAutorClick(Sender: TObject);
+begin
+  Close;
+  Autor:=TAutor.Create(self);
+  Autor.Parent:=SDIAppForm;
+  Autor.Show;
+end;
+
+procedure TMulta.BEditoraClick(Sender: TObject);
+begin
+  close;
+  Editora:=TEditora.Create(self);
+  Editora.Parent:=SDIAppForm;
+  Editora.Show;
+end;
+
+procedure TMulta.BVoltarClick(Sender: TObject);
+begin
+  close;
+  MenuPrincipal:=TMenuPrincipal.Create(self);
+  MenuPrincipal.Parent:=SDIAppForm;
+  menuPrincipal.Show;
+end;
 
 end.
