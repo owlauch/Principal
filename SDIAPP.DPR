@@ -34,7 +34,8 @@ uses
   Consulta_Acervo in 'view\Consulta_Acervo.pas' {ConsultaAcervo},
   Lancamento in 'view\Lancamento.pas' {lacamento},
   LancamentoEEmprestimo in 'view\LancamentoEEmprestimo.pas' {LancamentoEmprestimo},
-  uMensagem in 'view\uMensagem.pas' {uMensagemConfirmacao};
+  uMensagem in 'view\uMensagem.pas' {uMensagemConfirmacao},
+  CadastroMulta in 'view\CadastroMulta.pas' {Multa};
 
 {$R *.RES}
 
@@ -52,6 +53,7 @@ begin
   Application.CreateForm(TConsultaAcervo, ConsultaAcervo);
   Application.CreateForm(Tlacamento, lacamento);
   Application.CreateForm(TLancamentoEmprestimo, LancamentoEmprestimo);
+  Application.CreateForm(TMulta, Multa);
   Application.Run;
 end.
- 
+

@@ -8,14 +8,17 @@ interface
       public
         procedure inserirEmprestimo(EmprestimoModel:TEmprestimoModel);
     end;
+
 implementation
 
 { TEmprestimoDao }
 
 procedure TEmprestimoDao.inserirEmprestimo(EmprestimoModel: TEmprestimoModel);
+var
+ teste:string;
 begin
   try
-  DM.SQLQuery2.Close;
+  {*DM.SQLQuery2.Close;
   DM.SQLQuery2.SQL.Text:='INSERT INTO EMPRESTIMO(dataemprestimo,idassociado) VALUES(:dataemprestimo,:idassociado)';
   DM.SQLQuery2.ParamByName('dataemprestimo').AsDate:=EmprestimoModel.GetDataEmprestimo;
   DM.SQLQuery2.ParamByName('idassociado').AsInteger:=EmprestimoModel.GetAssociado.GetId;
@@ -23,8 +26,19 @@ begin
   DM.ClientDataSet2.Close;
   DM.ClientDataSet2.Open;
   DM.ClientDataSet2.Close;
+  DM.ClientDataSet2.Open;}
+  ShowMessageFmt('O Associado - %d',[EmprestimoModel.GetAssociado.GetId]);
+
+  DM.SQLQuery2.Close;
+  DM.SQLDataSet.CommandText:='select nome from associado where idassociado=:id';
+  DM.SQLQuery2.ParamByName('id').Asinteger:=EmprestimoModel.GetAssociado.GetId;
+  DM.SQLQuery2.ExecSQL;
+  DM.SQLQuery2.Close;
+  DM.ClientDataSet2.Close;
   DM.ClientDataSet2.Open;
-  //ShowMessageFmt('A editora - %S - foi registrada com sucesso',[editoramodel.GetRazaosocial]);
+  DM.ClientDataSet2.Close;
+  teste:=(dm.SQLQuery2.FieldByName('nome').Value);
+  ShowMessageFmt('O Associado - %s - efetuo emprestimo com sucesso',[teste]);
   finally
 
   end;

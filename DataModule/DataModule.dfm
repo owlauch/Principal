@@ -13,7 +13,7 @@ object DM: TDM
       'drivername=FIREBIRD'
       'blobsize=-1'
       'commitretain=False'
-      'Database=localhost:C:\BDBIBLIOTECA.FDB'
+      'database=localhost:C:\BDBIBLIOTECA.FDB'
       'localecode=0000'
       'password=masterkey'
       'rolename=RoleName'

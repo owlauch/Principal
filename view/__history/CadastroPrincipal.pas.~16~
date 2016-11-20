@@ -18,7 +18,6 @@ type
     BEditora: TSpeedButton;
     Panel2: TPanel;
     BVoltar: TSpeedButton;
-    SpeedButton1: TSpeedButton;
     procedure BAssociadoClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
