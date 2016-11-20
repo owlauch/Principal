@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule,
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule, EditoraModel,
   CadastroMulta;
 
 type
@@ -45,6 +45,8 @@ type
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
+    procedure BEditarClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,10 +55,11 @@ type
 
 var
   Editora: TEditora;
+  editoramodel:teditoramodel;
 
 implementation
 
-uses CadastroPrincipal, Principal, EditoraDAO, EditoraModel, Primaria,
+uses CadastroPrincipal, Principal, EditoraDAO, Primaria,
   CadastroAcervo, CadastroAssociado, CadastroAutor;
 
 
@@ -84,6 +87,16 @@ begin
   Autor:=TAutor.Create(self);
   Autor.Parent:=SDIAppForm;
   Autor.Show;
+end;
+
+procedure TEditora.BEditarClick(Sender: TObject);
+var
+editoradao:teditoradao;
+begin
+  editoradao:=tEditoradao.create;
+  editoramodel.SetRazaoSocial(EditRazaosocial.text);
+  editoradao.editarEditora(editoramodel);
+
 end;
 
 procedure TEditora.BEditoraClick(Sender: TObject);
@@ -128,6 +141,22 @@ begin
   MenuPrincipal:=TMenuPrincipal.Create(self);
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
+end;
+
+procedure TEditora.DBGrid1DblClick(Sender: TObject);
+var
+id : integer;
+nome : string ;
+editoraDao:TEditoraDao;
+begin
+  editoramodel:=TEditoraModel.Create;
+  editoraDao:=TEditoraDao.Create;
+  id:=DBGrid1.Fields[0].AsInteger;
+  nome:=DBGrid1.Fields[1].AsString;
+  editoramodel.SetRazaoSocial(nome);
+  editoramodel.SetId(id);
+  Editrazaosocial.text:=editoramodel.getrazaosocial;
+
 end;
 
 procedure TEditora.SpeedButtonMultaClick(Sender: TObject);

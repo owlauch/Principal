@@ -18,15 +18,15 @@ var
  teste:string;
 begin
   try
-  {DM.SQLQuery2.Close;
-  DM.SQLQuery2.SQL.Text:='INSERT INTO EMPRESTIMO(dataemprestimo,idassociado) VALUES(:dataemprestimo,:idassociado)';
-  DM.SQLQuery2.ParamByName('dataemprestimo').AsDate:=EmprestimoModel.GetDataEmprestimo;
-  DM.SQLQuery2.ParamByName('idassociado').AsInteger:=EmprestimoModel.GetAssociado.GetId;
-  DM.SQLQuery2.ExecSQL;
-  DM.ClientDataSet2.Close;
-  DM.ClientDataSet2.Open;
-  DM.ClientDataSet2.Close;
-  DM.ClientDataSet2.Open;}
+  DM.SQLQEmprestimo.Close;
+  DM.SQLQEmprestimo.SQL.Text:='INSERT INTO EMPRESTIMO(dataemprestimo,idassociado) VALUES(:dataemprestimo,:idassociado)';
+  DM.SQLQEmprestimo.ParamByName('dataemprestimo').AsDate:=EmprestimoModel.GetDataEmprestimo;
+  DM.SQLQEmprestimo.ParamByName('idassociado').AsInteger:=EmprestimoModel.GetAssociado.GetId;
+  DM.SQLQEmprestimo.ExecSQL;
+  DM.CLDSEmprestimo.Close;
+  DM.CLDSEmprestimo.Open;
+  DM.CLDSEmprestimo.Close;
+  DM.CLDSEmprestimo.Open;
   ShowMessageFmt('O Associado - %s - efetuo emprestimo com sucesso',[EmprestimoModel.GetAssociado.GetNome]);
   finally
 

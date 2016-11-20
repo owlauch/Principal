@@ -249,6 +249,7 @@ object Editora: TEditora
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
+          OnDblClick = DBGrid1DblClick
           Columns = <
             item
               Expanded = False
@@ -509,6 +510,7 @@ object Editora: TEditora
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = BEditarClick
               ExplicitLeft = 348
               ExplicitTop = -3
               ExplicitWidth = 82
