@@ -17,17 +17,17 @@ implementation
 procedure TItemEmprestimoDao.inserirItemEmprestimo(ItemEmprestimoModel: TitemEmprestimoModel);
 begin
   try
-  DM.SQLQuery2.Close;
-  DM.SQLQuery2.SQL.Text:='INSERT INTO ITEMEMPRESTIMO(idemprestimo,idacervo,datadevolucao,datavigenciamulta) VALUES(:idemprestimo,:idacervo,:datadevolucao,:datavigenciamulta)';
-  DM.SQLQuery2.ParamByName('idemprestimo').Asinteger:=ItemEmprestimoModel.GetIDemprestimo;
-  DM.SQLQuery2.ParamByName('idacervo').AsInteger:=ItemEmprestimoModel.GetIDAcervo;
-  DM.SQLQuery2.ParamByName('datadevolucao').Asdate:=ItemEmprestimoModel.GetDataDevolucao;
-  DM.SQLQuery2.ParamByName('datavigenciamulta').Asdate:=ItemEmprestimoModel.GetDataVigencia;
-  DM.SQLQuery2.ExecSQL;
-  DM.ClientDataSet2.Close;
-  DM.ClientDataSet2.Open;
-  DM.ClientDataSet2.Close;
-  DM.ClientDataSet2.Open;
+  DM.SQLQEmprestimo.Close;
+  DM.SQLQEmprestimo.SQL.Text:='INSERT INTO ITEMEMPRESTIMO(idemprestimo,idacervo,datadevolucao,datavigenciamulta) VALUES(:idemprestimo,:idacervo,:datadevolucao,:datavigenciamulta)';
+  DM.SQLQEmprestimo.ParamByName('idemprestimo').Asinteger:=ItemEmprestimoModel.GetIDemprestimo;
+  DM.SQLQEmprestimo.ParamByName('idacervo').AsInteger:=ItemEmprestimoModel.GetIDAcervo;
+  DM.SQLQEmprestimo.ParamByName('datadevolucao').Asdate:=ItemEmprestimoModel.GetDataDevolucao;
+  DM.SQLQEmprestimo.ParamByName('datavigenciamulta').Asdate:=ItemEmprestimoModel.GetDataVigencia;
+  DM.SQLQEmprestimo.ExecSQL;
+  DM.CLDSEmprestimo.Close;
+  DM.CLDSEmprestimo.Open;
+  DM.CLDSEmprestimo.Close;
+  DM.CLDSEmprestimo.Open;
   finally
 
   end;

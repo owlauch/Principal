@@ -923,7 +923,7 @@
               Width = 219
               Height = 251
               Align = alClient
-              DataSource = DM.DataSource
+              DataSource = DM.DSAssociado
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -989,7 +989,7 @@
               Width = 221
               Height = 251
               Align = alClient
-              DataSource = DM.DataSource3
+              DataSource = DM.DSAcervo
               TabOrder = 1
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText

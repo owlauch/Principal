@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, ComCtrls,
-  DBCtrls;
+  DBCtrls, CadastroMulta;
 
 type
   TAcervo = class(TForm)
@@ -44,6 +44,7 @@ type
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
     Label7: TLabel;
+    SpeedButtonMulta: TSpeedButton;
     procedure BVoltarClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
     procedure ComboEnter(Sender: TObject);
@@ -52,6 +53,7 @@ type
     procedure BAssociadoClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
+    procedure SpeedButtonMultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -143,7 +145,7 @@ var
   s: string;
 begin
   combo.Items.Clear;
-  with DM.ClientDataSet2 do
+  with DM.CDSEditora do
   begin
     First;
     while not Eof do
@@ -154,6 +156,14 @@ begin
       Next;
     end;
   end;
+end;
+
+procedure TAcervo.SpeedButtonMultaClick(Sender: TObject);
+begin
+  close;
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
 end;
 
 end.

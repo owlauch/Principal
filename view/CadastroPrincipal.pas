@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, Buttons, StdCtrls, ExtCtrls;
+  Dialogs, Menus, Buttons, StdCtrls, ExtCtrls, CadastroMulta;
 
 type
   TCadastro = class(TForm)
@@ -18,12 +18,13 @@ type
     BEditora: TSpeedButton;
     Panel2: TPanel;
     BVoltar: TSpeedButton;
-    SpeedButton1: TSpeedButton;
+    SpeedButtonMulta: TSpeedButton;
     procedure BAssociadoClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
+    procedure SpeedButtonMultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,5 +81,13 @@ begin
   menuPrincipal.Show;
 end;
 
+
+procedure TCadastro.SpeedButtonMultaClick(Sender: TObject);
+begin
+  close;
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
+end;
 
 end.
