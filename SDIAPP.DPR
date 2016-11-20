@@ -35,7 +35,8 @@ uses
   Lancamento in 'view\Lancamento.pas' {lacamento},
   LancamentoEEmprestimo in 'view\LancamentoEEmprestimo.pas' {LancamentoEmprestimo},
   uMensagem in 'view\uMensagem.pas' {uMensagemConfirmacao},
-  CadastroMulta in 'view\CadastroMulta.pas' {Multa};
+  CadastroMulta in 'view\CadastroMulta.pas' {Multa},
+  EditoraLista in 'view\EditoraLista.pas' {ListaEditora};
 
 {$R *.RES}
 
