@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, Buttons, ExtCtrls, DataModule, EmprestimoDAO,
-  EmprestimoModel, AssociadoModel, Grids, DBGrids, ItemEmprestimoDAO;
+  EmprestimoModel, AssociadoModel, Grids, DBGrids, ItemEmprestimoDAO,
+  ItemEmprestimoModel;
 
 type
   TLancamentoEmprestimo = class(TForm)
@@ -54,23 +55,37 @@ uses CadastroPrincipal, Principal, Primaria;
 
 procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
   var
-    idassociado,iditememp,idacervo: integer;
+    x: integer;
     emprestimoDAO:Temprestimodao;
+    ItemEmprestimoDAO:TItemEmprestimoDao;
     emprestimoModel:TEmprestimoModel;
+    ItemEmprestimomodel:TItemEmprestimoModel;
     AssociadoModel:TAssociadoModel;
-    datadevolucao: Tdate;
+    data : tdatetime;
 
 begin
+    Data := Date;
+    data := data + 7;
+
     emprestimoDao:=TemprestimoDao.Create;
     emprestimoModel:=TEmprestimoModel.Create;
+    ItemEmprestimomodel:=TItemEmprestimoModel.Create;
+    ItemEmprestimoDAO:=TItemEmprestimoDao.Create;
     AssociadoModel:=TAssociadoModel.Create;
-    idassociado:=DBGrid1.Fields[0].AsInteger;
-    AssociadoModel.SetId(id);
+
+    x:=DBGrid1.Fields[0].AsInteger;
+    AssociadoModel.SetId(x);
     emprestimoModel.SetAssociado(AssociadoModel);
     emprestimodao.inserirEmprestimo(emprestimoModel);
-    iditememp:=DBGrid3.Fields[0].AsInteger;
-    idacervo:=DBgrid2.Fields[0].AsInteger;
-    //datadevolucao:=DateTimePicker1+10;
+
+    x:=DBGrid3.Fields[0].AsInteger;
+    ItemEmprestimomodel.SetIDemprestimo(x);
+    x:=DBgrid2.Fields[0].AsInteger;
+    ItemEmprestimomodel.SetIDAcervo(x);
+    ItemEmprestimomodel.SetDataDevolucao(data);
+    ItemEmprestimomodel.SetDataVigencia(data+1);
+    //tItemEmprestimoDAO.inserirItemEmprestimo(ItemEmprestimomodel);
+
 end;
 
 procedure TLancamentoEmprestimo.BVoltarClick(Sender: TObject);

@@ -25,8 +25,8 @@
     <Transaction>2016/11/10 18:25:26.000.729,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\Consulta_Acervo.dfm</Transaction>
     <Transaction>2016/11/14 12:19:57.000.717,C:\Users\João\Desktop\Projeto Atual\Principal-master\Unit1.dfm=C:\Users\João\Desktop\Projeto Atual\Principal-master\view\Lancamento.dfm</Transaction>
     <Transaction>2016/11/14 12:29:24.000.948,C:\Users\João\Desktop\Projeto Atual\Principal-master\Unit2.dfm=C:\Users\João\Desktop\Projeto Atual\Principal-master\view\LancamentoEEmprestimo.dfm</Transaction>
-    <Transaction>2016/11/19 13:50:57.528,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\uMensagem.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\OKCNHLP1.dfm</Transaction>
-    <Transaction>2016/11/19 14:01:49.020,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\uMensagem.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
+    <Transaction>2016/11/19 13:50:57.000.528,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\uMensagem.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\OKCNHLP1.dfm</Transaction>
+    <Transaction>2016/11/19 14:01:49.000.020,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\uMensagem.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="DAO"/>

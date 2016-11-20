@@ -8,6 +8,7 @@ interface
       public
         procedure inserirEmprestimo(EmprestimoModel:TEmprestimoModel);
     end;
+
 implementation
 
 { TEmprestimoDao }
