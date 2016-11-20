@@ -223,16 +223,14 @@ object Multa: TMulta
                 ExplicitHeight = 13
               end
               object MaskEdit1: TMaskEdit
-                Left = 107
+                Left = 103
                 Top = 5
-                Width = 76
+                Width = 83
                 Height = 21
                 Anchors = []
-                EditMask = '!99,99;1;0'
-                MaxLength = 5
+                EditMask = '!R$999,99;0;_'
+                MaxLength = 8
                 TabOrder = 0
-                Text = '  ,  '
-                ExplicitLeft = 106
               end
             end
           end

@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, Buttons, ExtCtrls, DataModule, EmprestimoDAO,
   EmprestimoModel, AssociadoModel, Grids, DBGrids, ItemEmprestimoDAO,
-  ItemEmprestimoModel;
+  ItemEmprestimoModel, MultaModel;
 
 type
   TLancamentoEmprestimo = class(TForm)
@@ -30,6 +30,7 @@ type
     Label3: TLabel;
     DateTimePicker1: TDateTimePicker;
     DBGrid3: TDBGrid;
+    DBGridMulta: TDBGrid;
 
     procedure BGravarClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
@@ -61,6 +62,7 @@ procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
     emprestimoModel:TEmprestimoModel;
     ItemEmprestimoDAO:TItemEmprestimoDao;
     ItemEmprestimomodel:TItemEmprestimoModel;
+    multamodel:tmultamodel;
     AssociadoModel:TAssociadoModel;
     data : tdatetime;
 
@@ -73,6 +75,7 @@ begin
     ItemEmprestimomodel:=TItemEmprestimoModel.Create;
     ItemEmprestimoDAO:=TItemEmprestimoDao.Create;
     AssociadoModel:=TAssociadoModel.Create;
+    multamodel:=TMultaModel.Create;
 
     x:=DBGrid1.Fields[0].AsInteger;
     AssociadoModel.SetId(x);
@@ -88,8 +91,10 @@ begin
     x:=DBgrid2.Fields[0].AsInteger;
     ItemEmprestimomodel.SetIDAcervo(x);
     ItemEmprestimomodel.SetDataDevolucao(data);
-    data:=(dm.SQLQMulta.SQL.Text:=('select max(datainiciovigencia) from multa'));
-    Item
+    data:=DBGridMulta.Fields[0].AsDatetime;
+    dm.DSPMulta.FindComponent('datainiciovigencia');
+    multamodel.SetDataInicioVigencia(data);
+    ItemEmprestimomodel.SetDataVigencia(multamodel);
     ItemEmprestimoDAO.inserirItemEmprestimo(ItemEmprestimomodel);
 
 end;
