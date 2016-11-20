@@ -56,9 +56,10 @@ uses CadastroPrincipal, Principal, Primaria;
 procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
   var
     x: integer;
+    nome:string;
     emprestimoDAO:Temprestimodao;
-    ItemEmprestimoDAO:TItemEmprestimoDao;
     emprestimoModel:TEmprestimoModel;
+    ItemEmprestimoDAO:TItemEmprestimoDao;
     ItemEmprestimomodel:TItemEmprestimoModel;
     AssociadoModel:TAssociadoModel;
     data : tdatetime;
@@ -75,8 +76,11 @@ begin
 
     x:=DBGrid1.Fields[0].AsInteger;
     AssociadoModel.SetId(x);
+    nome:=(dbgrid1.Fields[1].Text);
+    Associadomodel.SetNome(nome);
     emprestimoModel.SetAssociado(AssociadoModel);
-    emprestimoModel.SetDataEmprestimo(date:=now());
+    data:=now();
+    emprestimoModel.SetDataEmprestimo(data);
     emprestimodao.inserirEmprestimo(emprestimoModel);
 
     x:=DBGrid3.Fields[0].AsInteger;
@@ -85,7 +89,7 @@ begin
     ItemEmprestimomodel.SetIDAcervo(x);
     ItemEmprestimomodel.SetDataDevolucao(data);
     ItemEmprestimomodel.SetDataVigencia(data+1);
-    //tItemEmprestimoDAO.inserirItemEmprestimo(ItemEmprestimomodel);
+    ItemEmprestimoDAO.inserirItemEmprestimo(ItemEmprestimomodel);
 
 end;
 

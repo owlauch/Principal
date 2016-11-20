@@ -8,11 +8,14 @@ interface
       public
         procedure inserirEmprestimo(EmprestimoModel:TEmprestimoModel);
     end;
+
 implementation
 
 { TEmprestimoDao }
 
 procedure TEmprestimoDao.inserirEmprestimo(EmprestimoModel: TEmprestimoModel);
+var
+ teste:string;
 begin
   try
   DM.SQLQuery2.Close;
@@ -24,7 +27,14 @@ begin
   DM.ClientDataSet2.Open;
   DM.ClientDataSet2.Close;
   DM.ClientDataSet2.Open;
-  //ShowMessageFmt('A editora - %S - foi registrada com sucesso',[editoramodel.GetRazaosocial]);
+
+  DM.SQLQuery2.Close;
+  DM.SQLQuery2.SQL.text:='select nome from associado where idassociado=:id';
+  DM.SQLQuery2.ParamByName('id').AsDate:=EmprestimoModel.GetAssociado.GetId;
+  DM.SQLQuery2.ExecSQL;
+  DM.ClientDataSet2.Open;
+  teste:=(dm.SQLQuery.FieldByName('nome').Value);
+  ShowMessageFmt('O Associado - %s - efetuo emprestimo com sucesso',[teste]);
   finally
 
   end;
