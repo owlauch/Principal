@@ -359,7 +359,6 @@ object Multa: TMulta
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
               Layout = blGlyphRight
               Margin = 1
-              OnClick = BgravarClick
               ExplicitLeft = 11
               ExplicitTop = 102
               ExplicitWidth = 134

@@ -88,7 +88,8 @@ begin
     x:=DBgrid2.Fields[0].AsInteger;
     ItemEmprestimomodel.SetIDAcervo(x);
     ItemEmprestimomodel.SetDataDevolucao(data);
-    ItemEmprestimomodel.SetDataVigencia(data+1);
+    data:=(dm.SQLQMulta.SQL.Text:=('select max(datainiciovigencia) from multa'));
+    Item
     ItemEmprestimoDAO.inserirItemEmprestimo(ItemEmprestimomodel);
 
 end;

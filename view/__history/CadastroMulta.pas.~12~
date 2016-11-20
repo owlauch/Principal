@@ -4,8 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Mask, Buttons, StdCtrls, Grids, DBGrids, ExtCtrls, DataModule,
-  MultaDAO, MultaModel;
+  Dialogs, Mask, Buttons, StdCtrls, Grids, DBGrids, ExtCtrls, DataModule;
 
 type
   TMulta = class(TForm)
@@ -39,7 +38,6 @@ type
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
-    procedure BgravarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,22 +82,6 @@ begin
   Editora:=TEditora.Create(self);
   Editora.Parent:=SDIAppForm;
   Editora.Show;
-end;
-
-procedure TMulta.BgravarClick(Sender: TObject);
-var
-  multamodel:TMultaModel;
-  multadao:tMultaDao;
-  data:TDateTime;
-begin
-  multadao:=tMultaDao.Create;
-  data:=now();
-  multamodel:=TMultaModel.Create;
-  multamodel.SetValorBase(StrToFloat(MaskEdit1.text));
-  ShowMessageFmt('%f',[StrToFloat(MaskEdit1.text)]);
-  MultaModel.SetDataInicioVigencia(data);
-  multadao.inserirMulta(multamodel);
-
 end;
 
 procedure TMulta.BVoltarClick(Sender: TObject);
