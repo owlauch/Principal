@@ -17,7 +17,7 @@ object SDIAppForm: TSDIAppForm
   TextHeight = 16
   object MainMenu1: TMainMenu
     Left = 280
-    Top = 65528
+    Top = 16
     object Arquivos1: TMenuItem
       Caption = 'Arquivos'
     end

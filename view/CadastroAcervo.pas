@@ -3,7 +3,7 @@ unit CadastroAcervo;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics , AcervoModel, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, ComCtrls,
   DBCtrls, CadastroMulta;
 
@@ -45,7 +45,6 @@ type
     Label7: TLabel;
     SpeedButtonMulta: TSpeedButton;
     EditEditora: TEdit;
-    EditIDEditora: TEdit;
     procedure BVoltarClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
@@ -55,6 +54,8 @@ type
     procedure BEditoraClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
     procedure EditEditoraClick(Sender: TObject);
+    procedure BEditarClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -64,10 +65,11 @@ type
 var
   Acervo: TAcervo;
   idgravareditora,ideditora: Integer;
+  acervomodel:tAcervoModel;
 
 implementation
 
-uses CadastroPrincipal, Principal, AcervoDAO, AcervoModel,dataModule, Primaria,
+uses CadastroPrincipal, Principal, AcervoDAO,dataModule, Primaria,
   CadastroAssociado, CadastroAutor, CadastroEditora, EditoraLista, EditoraModel;
 
 {$R *.dfm}
@@ -96,6 +98,20 @@ begin
   Autor:=TAutor.Create(self);
   Autor.Parent:=SDIAppForm;
   Autor.Show;
+end;
+
+procedure TAcervo.BEditarClick(Sender: TObject);
+var
+acervodao:tAcervodao;
+begin
+  acervodao:=tAcervodao.create;
+  acervomodel.SetTitulo(EditTitulo.text);
+  acervomodel.Setqtdeexemplar(strtoint((ComboBoxQtd.Text)));
+  acervomodel.SetDataEdicao(DateTimePickerEdicao.date);
+  acervomodel.SetLocalEdicao(EditLocalEdicao.text);
+  acervomodel.SetIsbn(EditIsbn.text);
+  acervomodel.SetEditora(ideditora);
+  acervodao.editarAcervo(acervomodel);
 end;
 
 procedure TAcervo.BEditoraClick(Sender: TObject);
@@ -140,6 +156,36 @@ begin
   menuPrincipal.Show;
 end;
 
+
+procedure TAcervo.DBGrid1DblClick(Sender: TObject);
+var
+acervoDao:TAcervoDao;
+begin
+  acervomodel:=TAcervoModel.Create;
+  acervoDao:=TAcervoDao.Create;
+  acervomodel.Setid(DBGrid1.Fields[0].AsInteger);
+  acervomodel.SetTitulo(DBGrid1.Fields[1].AsString);
+  acervomodel.Setqtdeexemplar(DBGrid1.Fields[2].AsInteger);
+  acervomodel.Setdataedicao(DBGrid1.Fields[3].AsDateTime);
+  acervomodel.Setlocaledicao(DBGrid1.Fields[4].AsString);
+  acervomodel.Setisbn(DBGrid1.Fields[5].AsString);
+  acervomodel.Seteditora(DBGrid1.Fields[6].AsInteger);
+  EditTitulo.Text:=acervomodel.GetTitulo;
+  ComboBoxQtd.text:=inttostr(acervomodel.Getqtdeexemplar);
+  DateTimePickerEdicao.Date:=acervomodel.GetDataEdicao;
+  EditLocalEdicao.Text:=acervomodel.GetLocalEdicao;
+  EditIsbn.Text:=acervomodel.GetIsbn;
+  dm.CDSEditora.Open;
+  Dm.SQLQEditora.open;
+  dm.SQLQEditora.SQL.Clear;
+  dm.SQLQEditora.SQL.Add('select * from editora where ideditora=:id');
+  dm.SQLQEditora.ParamByName('id').AsInteger:=acervomodel.GetEditora;
+  dm.SQLQEditora.ExecSQL;
+  Dm.SQLQEditora.open;
+  EditEditora.text:=dm.SQLQEditora.FieldByName('RAZAOSOCIAL').AsString;
+  Dm.SQLQEditora.open;
+
+end;
 
 procedure TAcervo.EditEditoraClick(Sender: TObject);
  var

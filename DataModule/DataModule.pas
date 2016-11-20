@@ -120,6 +120,15 @@ type
     CLDSMultaVALOR: TFMTBCDField;
     SQLDSMultaDATAINICIOVIGENCIA: TDateField;
     SQLDSMultaVALOR: TFMTBCDField;
+    SQLDSEditoraEDIT: TSQLDataSet;
+    DSPEditoraEDIT: TDataSetProvider;
+    CLFSEditoraEDIT: TClientDataSet;
+    IntegerField2: TIntegerField;
+    StringField5: TStringField;
+    DSEditoraEDIT: TDataSource;
+    SQLQEditoraEDIT: TSQLQuery;
+    IntegerField5: TIntegerField;
+    StringField6: TStringField;
 
 
   private

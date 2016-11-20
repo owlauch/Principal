@@ -13,7 +13,7 @@ object DM: TDM
       'drivername=FIREBIRD'
       'blobsize=-1'
       'commitretain=False'
-      'database=localhost:C:\BDBIBLIOTECA.FDB'
+      'Database=C:\BDBIBLIOTECA.FDB'
       'localecode=0000'
       'password=masterkey'
       'rolename=RoleName'
@@ -559,6 +559,7 @@ object DM: TDM
   end
   object SQLDSItemEmprestimo: TSQLDataSet
     SchemaName = 'sysdba'
+    Active = True
     CommandText = 'select max(idemprestimo) from emprestimo'
     DbxCommandType = 'Dbx.SQL'
     MaxBlobSize = -1
@@ -692,6 +693,71 @@ object DM: TDM
       Required = True
       Precision = 18
       Size = 2
+    end
+  end
+  object SQLDSEditoraEDIT: TSQLDataSet
+    SchemaName = 'sysdba'
+    Active = True
+    CommandText = 'select * from EDITORA'
+    DbxCommandType = 'Dbx.SQL'
+    DataSource = DSEditoraEDIT
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = BIBLIOTECA
+    Left = 656
+    Top = 88
+  end
+  object DSPEditoraEDIT: TDataSetProvider
+    DataSet = SQLDSItemEmprestimo
+    ResolveToDataSet = True
+    Options = [poAutoRefresh, poUseQuoteChar]
+    Left = 656
+    Top = 152
+  end
+  object CLFSEditoraEDIT: TClientDataSet
+    Aggregates = <>
+    AggregatesActive = True
+    Params = <>
+    ProviderName = 'DSPEditoraEDIT'
+    Left = 656
+    Top = 216
+    object IntegerField2: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
+    end
+    object StringField5: TStringField
+      FieldName = 'RAZAOSOCIAL'
+      Required = True
+      Size = 100
+    end
+  end
+  object DSEditoraEDIT: TDataSource
+    DataSet = CLFSEditoraEDIT
+    Left = 656
+    Top = 280
+  end
+  object SQLQEditoraEDIT: TSQLQuery
+    SchemaName = 'SYSDBA'
+    GetMetadata = True
+    NumericMapping = True
+    ObjectView = True
+    Active = True
+    DataSource = DSEditoraEDIT
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT *  FROM EDITORA')
+    SQLConnection = BIBLIOTECA
+    Left = 656
+    Top = 344
+    object IntegerField5: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
+    end
+    object StringField6: TStringField
+      FieldName = 'RAZAOSOCIAL'
+      Required = True
+      Size = 100
     end
   end
 end

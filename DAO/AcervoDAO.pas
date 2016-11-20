@@ -7,10 +7,29 @@ uses DataModule,AcervoModel,Dialogs;
      public
       procedure inserirAcervo(AcervoModel:TAcervoModel);
       procedure excluirAcervo(id : integer);
+      procedure editarAcervo(acervomodel : tAcervoModel);
     end;
 implementation
 
 { TAcervoDao }
+
+procedure TAcervoDao.editarAcervo(acervomodel: tAcervoModel);
+begin
+  DM.SQLQAcervo.Close;
+  DM.SQLQAcervo.SQL.Text:='UPDATE acervo SET titulo=:titulo, qtdeexemplar=:qtdeexemplar, dataedicao=:dataedicao, localedicao=:localedicao, isbn=:isbn, ideditora=:ideditora WHERE idacervo=:id';
+  DM.SQLQAcervo.ParamByName('id').AsInteger:=acervomodel.GetId;
+  DM.SQLQAcervo.ParamByName('titulo').AsString:=acervomodel.GetTitulo;
+  DM.SQLQAcervo.ParamByName('qtdeexemplar').AsInteger:=acervomodel.Getqtdeexemplar;
+  DM.SQLQAcervo.ParamByName('dataedicao').AsDate:=acervomodel.Getdataedicao;
+  DM.SQLQAcervo.ParamByName('localedicao').AsString:=acervomodel.Getlocaledicao;
+  DM.SQLQAcervo.ParamByName('isbn').AsString:=acervomodel.Getisbn;
+  DM.SQLQAcervo.ParamByName('ideditora').AsInteger:=acervomodel.GetEditora;
+  DM.SQLQAcervo.ExecSQL;
+  DM.CDSAcervo.Close;
+  DM.CDSAcervo.Open;
+  DM.CDSAcervo.Close;
+  DM.CDSAcervo.Open;
+end;
 
 procedure TAcervoDao.excluirAcervo(id: integer);
 begin

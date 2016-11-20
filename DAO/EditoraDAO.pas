@@ -8,10 +8,24 @@ interface
       public
         procedure inserirEditora(EditoraModel:TEditoraModel);
         procedure excluirEditora(id:integer);
+        procedure editarEditora(editoramodel : teditoraModel);
     end;
 implementation
 
 { TEditoraDao }
+
+procedure TEditoraDao.editarEditora(editoramodel: teditoraModel);
+begin
+  DM.SQLQEditora.Close;
+  DM.SQLQEditora.SQL.Text:='UPDATE editora SET razaosocial=:razaosocial WHERE ideditora=:id';
+  DM.SQLQEditora.ParamByName('id').AsInteger:=editoramodel.GetId;
+  DM.SQLQEditora.ParamByName('razaosocial').AsString:=editoramodel.GetRazaoSocial;
+  DM.SQLQEditora.ExecSQL;
+  DM.CDSEditora.Close;
+  DM.CDSEditora.Open;
+  DM.CDSEditora.Close;
+  DM.CDSEditora.Open;
+end;
 
 procedure TEditoraDao.excluirEditora(id: integer);
 begin

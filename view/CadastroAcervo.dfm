@@ -135,6 +135,7 @@ object Acervo: TAcervo
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
+          OnDblClick = DBGrid1DblClick
           Columns = <
             item
               Expanded = False
@@ -539,7 +540,6 @@ object Acervo: TAcervo
               Anchors = []
               TabOrder = 5
               OnClick = EditEditoraClick
-              ExplicitLeft = 273
             end
           end
         end
@@ -734,6 +734,7 @@ object Acervo: TAcervo
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = BEditarClick
               ExplicitLeft = 4
               ExplicitTop = 328
               ExplicitWidth = 10
@@ -801,9 +802,6 @@ object Acervo: TAcervo
       Anchors = []
       BevelOuter = bvNone
       TabOrder = 1
-      DesignSize = (
-        154
-        408)
       object GridPanel2: TGridPanel
         AlignWithMargins = True
         Left = 3
@@ -2506,15 +2504,6 @@ object Acervo: TAcervo
           ExplicitWidth = 23
           ExplicitHeight = 22
         end
-      end
-      object EditIDEditora: TEdit
-        Left = 15
-        Top = 364
-        Width = 121
-        Height = 21
-        Anchors = []
-        TabOrder = 1
-        Visible = False
       end
     end
   end
