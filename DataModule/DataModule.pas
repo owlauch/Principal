@@ -105,10 +105,6 @@ type
     CLDSItemEmprestimo: TClientDataSet;
     DSItemEmprestimo: TDataSource;
     SQLQItemEmprestimo: TSQLQuery;
-    IntegerField6: TIntegerField;
-    StringField1: TStringField;
-    SQLDSItemEmprestimoMAX: TIntegerField;
-    CLDSItemEmprestimoMAX: TIntegerField;
     DSPMulta: TDataSetProvider;
     CLDSMulta: TClientDataSet;
     DSMulta: TDataSource;
@@ -120,15 +116,23 @@ type
     CLDSMultaVALOR: TFMTBCDField;
     SQLDSMultaDATAINICIOVIGENCIA: TDateField;
     SQLDSMultaVALOR: TFMTBCDField;
-    SQLDSEditoraEDIT: TSQLDataSet;
-    DSPEditoraEDIT: TDataSetProvider;
-    CLFSEditoraEDIT: TClientDataSet;
+    SQLDSMaxitem: TSQLDataSet;
+    IntegerField1: TIntegerField;
+    DSPMaxitem: TDataSetProvider;
+    CDSMaxitem: TClientDataSet;
     IntegerField2: TIntegerField;
-    StringField5: TStringField;
-    DSEditoraEDIT: TDataSource;
-    SQLQEditoraEDIT: TSQLQuery;
+    DSMaxitem: TDataSource;
+    SQLQMaxitem: TSQLQuery;
     IntegerField5: TIntegerField;
-    StringField6: TStringField;
+    StringField4: TStringField;
+    CLDSItemEmprestimoIDEMPRESTIMO: TIntegerField;
+    CLDSItemEmprestimoIDACERVO: TIntegerField;
+    CLDSItemEmprestimoDATADEVOLUCAO: TDateField;
+    CLDSItemEmprestimoDATAVIGENCIAMULTA: TDateField;
+    SQLDSItemEmprestimoIDEMPRESTIMO: TIntegerField;
+    SQLDSItemEmprestimoIDACERVO: TIntegerField;
+    SQLDSItemEmprestimoDATADEVOLUCAO: TDateField;
+    SQLDSItemEmprestimoDATAVIGENCIAMULTA: TDateField;
 
 
   private
