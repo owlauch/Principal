@@ -36,7 +36,8 @@ uses
   LancamentoEEmprestimo in 'view\LancamentoEEmprestimo.pas' {LancamentoEmprestimo},
   uMensagem in 'view\uMensagem.pas' {uMensagemConfirmacao},
   CadastroMulta in 'view\CadastroMulta.pas' {Multa},
-  EditoraLista in 'view\EditoraLista.pas' {ListaEditora};
+  EditoraLista in 'view\EditoraLista.pas' {ListaEditora},
+  LancamentoDevolução in 'view\LancamentoDevolução.pas' {Devolucao};
 
 {$R *.RES}
 
@@ -55,6 +56,7 @@ begin
   Application.CreateForm(Tlacamento, lacamento);
   Application.CreateForm(TLancamentoEmprestimo, LancamentoEmprestimo);
   Application.CreateForm(TMulta, Multa);
+  Application.CreateForm(TDevolucao, Devolucao);
   Application.Run;
 end.
 

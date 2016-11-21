@@ -71,8 +71,6 @@ type
     CDSAcervo: TClientDataSet;
     DSAcervo: TDataSource;
     SQLQAcervo: TSQLQuery;
-    IntegerField3: TIntegerField;
-    StringField3: TStringField;
     SQLDSAcervoIDACERVO: TIntegerField;
     SQLDSAcervoTITULO: TStringField;
     SQLDSAcervoQTDEEXEMPLAR: TSmallintField;
@@ -98,8 +96,6 @@ type
     CLDSEmprestimoIDEMPRESTIMO: TIntegerField;
     CLDSEmprestimoDATAEMPRESTIMO: TDateField;
     CLDSEmprestimoIDASSOCIADO: TIntegerField;
-    SQLQEmprestimoIDEDITORA: TIntegerField;
-    SQLQEmprestimoRAZAOSOCIAL: TStringField;
     SQLDSItemEmprestimo: TSQLDataSet;
     DSPItemEmprestimo: TDataSetProvider;
     CLDSItemEmprestimo: TClientDataSet;

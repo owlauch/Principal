@@ -462,19 +462,10 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQL.Strings = (
-      'SELECT *  FROM EDITORA')
+      'select * from acervo')
     SQLConnection = BIBLIOTECA
     Left = 272
     Top = 344
-    object IntegerField3: TIntegerField
-      FieldName = 'IDEDITORA'
-      Required = True
-    end
-    object StringField3: TStringField
-      FieldName = 'RAZAOSOCIAL'
-      Required = True
-      Size = 100
-    end
   end
   object SQLDStEmprestimo: TSQLDataSet
     SchemaName = 'sysdba'
@@ -547,15 +538,6 @@ object DM: TDM
     SQLConnection = BIBLIOTECA
     Left = 360
     Top = 344
-    object SQLQEmprestimoIDEDITORA: TIntegerField
-      FieldName = 'IDEDITORA'
-      Required = True
-    end
-    object SQLQEmprestimoRAZAOSOCIAL: TStringField
-      FieldName = 'RAZAOSOCIAL'
-      Required = True
-      Size = 100
-    end
   end
   object SQLDSItemEmprestimo: TSQLDataSet
     SchemaName = 'sysdba'

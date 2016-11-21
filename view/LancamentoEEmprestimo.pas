@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, Buttons, ExtCtrls, DataModule, EmprestimoDAO,
   EmprestimoModel, AssociadoModel, Grids, DBGrids, ItemEmprestimoDAO,
-  ItemEmprestimoModel, MultaModel;
+  ItemEmprestimoModel, MultaModel, LancamentoDevolução;
 
 type
   TLancamentoEmprestimo = class(TForm)
@@ -34,6 +34,7 @@ type
 
     procedure BGravarClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
+    procedure BAssociadoClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -49,10 +50,19 @@ var
 
 implementation
 
-uses CadastroPrincipal, Principal, Primaria;
+uses CadastroPrincipal, Principal, Primaria, Lancamento;
 
 {$R *.dfm}
 
+
+
+procedure TLancamentoEmprestimo.BAssociadoClick(Sender: TObject);
+begin
+    close;
+    Devolucao:=TDevolucao.Create(self);
+    Devolucao.Parent:=SDIAppForm;
+    Devolucao.Show;
+end;
 
 procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
   var
@@ -67,8 +77,6 @@ procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
     data : tdatetime;
 
 begin
-    Data := Date;
-    data := data + 7;
 
     emprestimoDao:=TemprestimoDao.Create;
     emprestimoModel:=TEmprestimoModel.Create;
@@ -92,7 +100,6 @@ begin
     ItemEmprestimomodel.SetIDAcervo(x);
     ItemEmprestimomodel.SetDataDevolucao(data);
     data:=DBGridMulta.Fields[0].AsDatetime;
-    dm.DSPMulta.FindComponent('datainiciovigencia');
     multamodel.SetDataInicioVigencia(data);
     ItemEmprestimomodel.SetDataVigencia(multamodel);
     ItemEmprestimoDAO.inserirItemEmprestimo(ItemEmprestimomodel);

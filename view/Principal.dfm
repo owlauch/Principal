@@ -19,12 +19,42 @@ object SDIAppForm: TSDIAppForm
     Left = 280
     Top = 16
     object Arquivos1: TMenuItem
-      Caption = 'Arquivos'
+      Caption = 'Cadastro'
+      object Acervo1: TMenuItem
+        Caption = 'Acervo'
+        OnClick = Acervo1Click
+      end
+      object Associado1: TMenuItem
+        Caption = 'Associado'
+      end
+      object Autor1: TMenuItem
+        Caption = 'Autor'
+        OnClick = Autor1Click
+      end
+      object Editora1: TMenuItem
+        Caption = 'Editora'
+        OnClick = Editora1Click
+      end
+      object ValorMulta1: TMenuItem
+        Caption = 'Valor Multa'
+        OnClick = ValorMulta1Click
+      end
     end
     object Cadastro1: TMenuItem
-      Caption = 'Cadastro'
+      Caption = 'Lan'#231'amento'
+      object Emprestimo1: TMenuItem
+        Caption = 'Emprestimo'
+        OnClick = Emprestimo1Click
+      end
+      object Devoluo1: TMenuItem
+        Caption = 'Devolu'#231#227'o'
+        OnClick = Devoluo1Click
+      end
     end
     object Ajuda1: TMenuItem
+      Caption = 'Consulta'
+    end
+    object Ajuda2: TMenuItem
       Caption = 'Ajuda'
     end
   end

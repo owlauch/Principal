@@ -29,6 +29,7 @@ begin
   DM.CDSAcervo.Open;
   DM.CDSAcervo.Close;
   DM.CDSAcervo.Open;
+  ShowMessageFmt('O titulo %s foi alterado com sucesso',[acervomodel.GetTitulo] );
 end;
 
 procedure TAcervoDao.excluirAcervo(id: integer);
@@ -41,6 +42,7 @@ begin
   DM.CDSAcervo.Open;
   DM.CDSAcervo.Close;
   DM.CDSAcervo.Open;
+  ShowMessage('excluido com sucesso');
 end;
 
 procedure TAcervoDao.inserirAcervo(AcervoModel: TAcervoModel);
@@ -59,7 +61,7 @@ try
   DM.CDSAcervo.Open;
   DM.CDSAcervo.Close;
   DM.CDSAcervo.Open;
-  ShowMessageFmt('O Associado %S Foi Registrado com sucesso',[acervomodel.GetTitulo]);
+  ShowMessageFmt('O Acervo "%S" Foi Registrado com sucesso',[acervomodel.GetTitulo]);
 finally
 
 end;

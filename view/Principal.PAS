@@ -5,7 +5,7 @@ interface
 
 uses Windows, Classes, Graphics, Forms, Controls, Menus,
   Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, ImgList, StdActns,
-  ActnList, ToolWin;
+  ActnList, ToolWin, CadastroAssociado;
 
 type
   TSDIAppForm = class(TForm)
@@ -13,7 +13,22 @@ type
     Arquivos1: TMenuItem;
     Cadastro1: TMenuItem;
     Ajuda1: TMenuItem;
+    Ajuda2: TMenuItem;
+    Acervo1: TMenuItem;
+    Associado1: TMenuItem;
+    Autor1: TMenuItem;
+    Editora1: TMenuItem;
+    ValorMulta1: TMenuItem;
+    Emprestimo1: TMenuItem;
+    Devoluo1: TMenuItem;
     procedure FormCreate(Sender: TObject);
+    procedure Acervo1Click(Sender: TObject);
+    procedure Autor1Click(Sender: TObject);
+    procedure Editora1Click(Sender: TObject);
+    procedure ValorMulta1Click(Sender: TObject);
+    procedure Emprestimo1Click(Sender: TObject);
+    procedure Devoluo1Click(Sender: TObject);
+    procedure Associado(Sender: TObject);
   private
     { Private declarations }
   public
@@ -24,11 +39,55 @@ var
   SDIAppForm: TSDIAppForm;
 
 implementation
-
+uses CadastroAcervo, CadastroAutor, CadastroEditora, CadastroMulta, CadastroPrincipal, Lancamento,
+  LancamentoDevolução, LancamentoEEmprestimo, Primaria;
 
 {$R *.dfm}
-uses Primaria;
 
+
+procedure TSDIAppForm.Acervo1Click(Sender: TObject);
+begin
+  Acervo:=TAcervo.Create(self);
+  Acervo.Parent:=SDIAppForm;
+  Acervo.Show;
+end;
+
+procedure TSDIAppForm.Associado(Sender: TObject);
+begin
+  {Associado:=TAssociado.Create(self);
+  Associado.Parent:=SDIAppForm;
+  Associado.Show;}
+end;
+
+procedure TSDIAppForm.Autor1Click(Sender: TObject);
+begin
+
+  Autor:=TAutor.Create(self);
+  Autor.Parent:=SDIAppForm;
+  Autor.Show;
+end;
+
+procedure TSDIAppForm.Devoluo1Click(Sender: TObject);
+begin
+  Devolucao:=TDevolucao.Create(self);
+  Devolucao.Parent:=SDIAppForm;
+  Devolucao.Show;
+end;
+
+procedure TSDIAppForm.Editora1Click(Sender: TObject);
+begin
+
+  Editora:=TEditora.Create(self);
+  Editora.Parent:=SDIAppForm;
+  Editora.Show;
+end;
+
+procedure TSDIAppForm.Emprestimo1Click(Sender: TObject);
+begin
+  LancamentoEmprestimo:=TLancamentoEmprestimo.Create(self);
+  LancamentoEmprestimo.Parent:=SDIAppForm;
+  LancamentoEmprestimo.Show;
+end;
 
 procedure TSDIAppForm.FormCreate(Sender: TObject);
 begin
@@ -38,5 +97,13 @@ begin
 
 end;
 
+
+procedure TSDIAppForm.ValorMulta1Click(Sender: TObject);
+begin
+
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
+end;
 
 end.
