@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, StdCtrls, ExtCtrls, Principal, Grids, DBGrids, ComCtrls,
-  LancamentoEEmprestimo;
+  LancamentoEEmprestimo, LancamentoDevolução;
 
 type
   Tlacamento = class(TForm)
@@ -18,6 +18,7 @@ type
     Label7: TLabel;
     procedure BVoltarClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
+    procedure BAssociadoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,6 +40,14 @@ begin
   LancamentoEmprestimo.Parent:=SDIAppForm;
   LancamentoEmprestimo.Show;
   LancamentoEmprestimo.DateTimePicker1.Date:=now();
+end;
+
+procedure Tlacamento.BAssociadoClick(Sender: TObject);
+begin
+  close;
+  Devolucao:=TDevolucao.Create(self);
+  Devolucao.Parent:=SDIAppForm;
+  Devolucao.Show;
 end;
 
 procedure Tlacamento.BVoltarClick(Sender: TObject);

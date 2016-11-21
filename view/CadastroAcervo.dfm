@@ -143,52 +143,32 @@ object Acervo: TAcervo
               Visible = False
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'TITULO'
-              Title.Alignment = taCenter
-              Width = 200
+              Width = 320
               Visible = True
             end
             item
-              Alignment = taLeftJustify
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'QTDEEXEMPLAR'
-              Title.Alignment = taCenter
-              Title.Caption = 'QTD'
-              Width = 30
               Visible = True
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'DATAEDICAO'
-              Title.Alignment = taCenter
-              Title.Caption = 'EDI'#199#195'O'
-              Width = 70
-              Visible = True
+              Visible = False
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'LOCALEDICAO'
-              Title.Alignment = taCenter
-              Title.Caption = 'LOCAL'
-              Width = 150
-              Visible = True
+              Visible = False
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'ISBN'
-              Title.Alignment = taCenter
-              Width = 50
-              Visible = True
+              Visible = False
             end
             item
-              Alignment = taCenter
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'IDEDITORA'
               Visible = False
@@ -780,6 +760,7 @@ object Acervo: TAcervo
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = BlimparClick
               ExplicitLeft = 362
               ExplicitTop = -3
               ExplicitWidth = 68
