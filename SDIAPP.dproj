@@ -114,6 +114,9 @@
 			<DCCReference Include="view\EditoraLista.pas">
 				<Form>ListaEditora</Form>
 			</DCCReference>
+			<DCCReference Include="view\LancamentoDevolução.pas">
+				<Form>Devolucao</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

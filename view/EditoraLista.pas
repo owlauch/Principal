@@ -12,12 +12,10 @@ type
     botaoOk: TButton;
     procedure botaoOkClick(Sender: TObject);
 
-
   private
     { Private declarations }
   public
-     function GravarEditora():integer;
-     function GravarEditoraNome(): string;
+
   end;
 
 var
@@ -29,44 +27,10 @@ uses CadastroAcervo;
 
 {$R *.dfm}
 
-
-
-
-function TListaEditora.GravarEditora(): integer;
-  var
-  Editoramodel:tEditoraModel;
-  id:integer;
-  nome: string;
-  begin
-  Editoramodel:=TEditoraModel.Create;
-  Editoramodel.setRazaosocial(DBGrid1.Fields[1].AsString);
-  Editoramodel.setId(DBGrid1.Fields[0].AsInteger);
-  id:=Editoramodel.GetId;
-  result:=id;
-  end;
-
-function TListaEditora.GravarEditoraNome(): string;
-  var
-  Editoramodel:tEditoraModel;
-  nome:string;
-  begin
-  Editoramodel:=TEditoraModel.Create;
-  Editoramodel.setRazaosocial(DBGrid1.Fields[1].AsString);
-  Editoramodel.setId(DBGrid1.Fields[0].AsInteger);
-  nome:=Editoramodel.getrazaosocial;
-  result:=nome;
-  end;
-
-
 procedure TListaEditora.botaoOkClick(Sender: TObject);
-var
-nome: string;
-id:integer;
 begin
-  nome:=DBGrid1.Fields[1].AsString;
-  id:=DBGrid1.Fields[0].AsInteger;
-  cadastroacervo.Acervo.EditEditora.text:=nome;
-  cadastroacervo.ideditora:=id;
+  cadastroacervo.Acervo.EditEditora.text:=DBGrid1.Fields[1].AsString;
+  cadastroacervo.ideditora:=DBGrid1.Fields[0].AsInteger;
  close;
 end;
 

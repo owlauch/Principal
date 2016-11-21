@@ -459,9 +459,6 @@ object Cadastro: TCadastro
           Margin = 1
           NumGlyphs = 2
           OnClick = BAcervoClick
-          ExplicitTop = 85
-          ExplicitWidth = 100
-          ExplicitHeight = 100
         end
         object BAssociado: TSpeedButton
           AlignWithMargins = True

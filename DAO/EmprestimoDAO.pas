@@ -27,7 +27,6 @@ begin
   DM.CLDSEmprestimo.Open;
   DM.CLDSEmprestimo.Close;
   DM.CLDSEmprestimo.Open;
-  ShowMessageFmt('O Associado - %s - efetuo emprestimo com sucesso',[EmprestimoModel.GetAssociado.GetNome]);
   finally
 
   end;

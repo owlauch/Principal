@@ -746,6 +746,7 @@ object lacamento: Tlacamento
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          OnClick = BAssociadoClick
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True

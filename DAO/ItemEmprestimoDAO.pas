@@ -16,7 +16,7 @@ implementation
 
 procedure TItemEmprestimoDao.inserirItemEmprestimo(ItemEmprestimoModel: TitemEmprestimoModel);
 var
-  x:integer;
+  x,y:integer;
 begin
   dm.SQLQItemEmprestimo.SQL.Clear;
   dm.SQLQItemEmprestimo.SQL.Add('select count(idacervo)as qtd_exemplares from itememprestimo where idacervo=:id');
@@ -26,10 +26,16 @@ begin
   dm.SQLQItemEmprestimo.close;
   dm.SQLQItemEmprestimo.open;
   x := dm.SQLQItemEmprestimo.FieldByName('QTD_EXEMPLARES').AsInteger;
-  ShowMessageFmt('%d',[x]);
-  dm.SQLQItemEmprestimo.Close;
-
-  {try
+  dm.SQLQAcervo.SQL.clear;
+  dm.SQLQAcervo.SQL.Add('select qtdeexemplar from acervo where idacervo=:id');
+  dm.SQLQAcervo.ParamByName('id').AsInteger:=ItemEmprestimoModel.GetIDAcervo;
+  dm.SQLQAcervo.close;
+  dm.SQLQAcervo.open;
+  dm.SQLQAcervo.close;
+  dm.SQLQAcervo.open;
+  y := dm.SQLQAcervo.FieldByName('QTDEEXEMPLAR').AsInteger;
+  if (y>x)then
+  try
   DM.CDSMaxitem.close;
   DM.CDSMaxitem.Open;
   DM.CDSMaxitem.close;
@@ -45,9 +51,13 @@ begin
   DM.CLDSItemEmprestimo.Open;
   DM.CLDSItemEmprestimo.Close;
   DM.CLDSItemEmprestimo.Open;
+  ShowMessage('O Associado efetuo emprestimo com sucesso');
   finally
-
-  end;}
+  end
+  else
+  begin
+    ShowMessage('Não há mais exemplares desse acervo para emprestimo');
+  end;
 
 end;
 
