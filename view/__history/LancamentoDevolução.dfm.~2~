@@ -51,6 +51,8 @@
         SizeStyle = ssAuto
       end>
     TabOrder = 0
+    ExplicitWidth = 620
+    ExplicitHeight = 410
     object PanelMenu: TPanel
       AlignWithMargins = True
       Left = 1
@@ -64,6 +66,8 @@
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 154
+      ExplicitHeight = 408
       object GridPanel1: TGridPanel
         AlignWithMargins = True
         Left = 3
@@ -124,6 +128,8 @@
             Value = 12.500418065862120000
           end>
         TabOrder = 0
+        ExplicitWidth = 148
+        ExplicitHeight = 402
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
@@ -134,6 +140,7 @@
           Alignment = taCenter
           Caption = 'LAN'#199'AMENTOS'
           Layout = tlCenter
+          ExplicitTop = 54
           ExplicitWidth = 74
           ExplicitHeight = 13
         end
@@ -823,6 +830,9 @@
       Align = alClient
       AutoSize = True
       TabOrder = 1
+      ExplicitLeft = 160
+      ExplicitWidth = 454
+      ExplicitHeight = 398
       object GridPanelSlcGeral: TGridPanel
         Left = 1
         Top = 1
@@ -853,6 +863,8 @@
             Value = 50.000000000000000000
           end>
         TabOrder = 0
+        ExplicitWidth = 452
+        ExplicitHeight = 396
         object GroupBoxSeleção: TGroupBox
           Left = 1
           Top = 1
@@ -862,6 +874,7 @@
           Anchors = []
           Caption = 'Sele'#231#227'o'
           TabOrder = 0
+          ExplicitWidth = 450
           object GridPanelSelecao: TGridPanel
             AlignWithMargins = True
             Left = 5
@@ -893,43 +906,19 @@
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
+            ExplicitWidth = 440
             object DBGrid1: TDBGrid
               Left = 0
               Top = 66
               Width = 452
               Height = 251
               Align = alClient
-              DataSource = DM.DSEmprestado
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
               TitleFont.Height = -11
               TitleFont.Name = 'Tahoma'
               TitleFont.Style = []
-              Columns = <
-                item
-                  Expanded = False
-                  FieldName = 'DATA'
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'DEVOLUCAO'
-                  Width = 65
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'ASSOCIADO'
-                  Width = 115
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'TITULO'
-                  Width = 175
-                  Visible = True
-                end>
             end
           end
         end
@@ -972,6 +961,8 @@
               Value = 50.000000000000000000
             end>
           TabOrder = 1
+          ExplicitTop = 345
+          ExplicitWidth = 450
           object BGravar: TSpeedButton
             AlignWithMargins = True
             Left = 280

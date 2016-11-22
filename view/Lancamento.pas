@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, StdCtrls, ExtCtrls, Principal, Grids, DBGrids, ComCtrls,
-  LancamentoEEmprestimo, LancamentoDevolução;
+  LancamentoEEmprestimo, LancamentoDevolução, DataModule;
 
 type
   Tlacamento = class(TForm)
@@ -48,6 +48,7 @@ begin
   Devolucao:=TDevolucao.Create(self);
   Devolucao.Parent:=SDIAppForm;
   Devolucao.Show;
+
 end;
 
 procedure Tlacamento.BVoltarClick(Sender: TObject);
