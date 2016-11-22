@@ -26,6 +26,7 @@ object SDIAppForm: TSDIAppForm
       end
       object Associado1: TMenuItem
         Caption = 'Associado'
+        OnClick = Associado1Click
       end
       object Autor1: TMenuItem
         Caption = 'Autor'
