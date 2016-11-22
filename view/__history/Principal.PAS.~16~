@@ -5,7 +5,7 @@ interface
 
 uses Windows, Classes, Graphics, Forms, Controls, Menus,
   Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, ImgList, StdActns,
-  ActnList, ToolWin;
+  ActnList, ToolWin, CadastroAssociado;
 
 type
   TSDIAppForm = class(TForm)
@@ -15,12 +15,12 @@ type
     Ajuda1: TMenuItem;
     Ajuda2: TMenuItem;
     Acervo1: TMenuItem;
+    Associado1: TMenuItem;
     Autor1: TMenuItem;
     Editora1: TMenuItem;
     ValorMulta1: TMenuItem;
     Emprestimo1: TMenuItem;
     Devoluo1: TMenuItem;
-    Associado1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Acervo1Click(Sender: TObject);
     procedure Autor1Click(Sender: TObject);
@@ -28,7 +28,7 @@ type
     procedure ValorMulta1Click(Sender: TObject);
     procedure Emprestimo1Click(Sender: TObject);
     procedure Devoluo1Click(Sender: TObject);
-    procedure Associado1Click(Sender: TObject);
+    procedure Associado(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +40,7 @@ var
 
 implementation
 uses CadastroAcervo, CadastroAutor, CadastroEditora, CadastroMulta, CadastroPrincipal, Lancamento,
-  LancamentoDevolução, LancamentoEEmprestimo, Primaria, CadastroAssociado;
+  LancamentoDevolução, LancamentoEEmprestimo, Primaria;
 
 {$R *.dfm}
 
@@ -52,13 +52,11 @@ begin
   Acervo.Show;
 end;
 
-procedure TSDIAppForm.Associado1Click(Sender: TObject);
-var
-  Associado:TAssociado;
+procedure TSDIAppForm.Associado(Sender: TObject);
 begin
-  Associado:=TAssociado.Create(self);
-  associado.Parent:=SDIAppForm;;
-  Associado.Show;
+  {Associado:=TAssociado.Create(self);
+  Associado.Parent:=SDIAppForm;
+  Associado.Show;}
 end;
 
 procedure TSDIAppForm.Autor1Click(Sender: TObject);

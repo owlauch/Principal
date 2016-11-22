@@ -899,37 +899,13 @@
               Width = 452
               Height = 251
               Align = alClient
-              DataSource = DM.DSEmprestado
+              DataSource = DM.DSItemEmprestimo
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
               TitleFont.Height = -11
               TitleFont.Name = 'Tahoma'
               TitleFont.Style = []
-              Columns = <
-                item
-                  Expanded = False
-                  FieldName = 'DATA'
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'DEVOLUCAO'
-                  Width = 65
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'ASSOCIADO'
-                  Width = 115
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'TITULO'
-                  Width = 175
-                  Visible = True
-                end>
             end
           end
         end

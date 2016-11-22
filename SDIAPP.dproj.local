@@ -30,9 +30,9 @@
     <Transaction>2016/11/20 01:30:21.000.827,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
     <Transaction>2016/11/20 01:39:19.000.056,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\CadastroMulta.pas</Transaction>
     <Transaction>2016/11/20 01:39:19.000.056,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\CadastroMulta.dfm</Transaction>
-    <Transaction>2016/11/21 10:43:43.256,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
-    <Transaction>2016/11/21 10:47:58.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
-    <Transaction>2016/11/21 10:47:58.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
+    <Transaction>2016/11/21 10:43:43.000.256,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
+    <Transaction>2016/11/21 10:47:58.000.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
+    <Transaction>2016/11/21 10:47:58.000.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="DAO"/>
