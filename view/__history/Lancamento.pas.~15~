@@ -1,30 +1,24 @@
-unit LancamentoDevolução;
+unit Lancamento;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Principal, Grids, DBGrids, ComCtrls,
+  LancamentoEEmprestimo, LancamentoDevolução;
 
 type
-  TDevolucao = class(TForm)
+  Tlacamento = class(TForm)
     GridPricipal: TGridPanel;
-    PanelMenu: TPanel;
-    GridPanel1: TGridPanel;
-    Label1: TLabel;
+    Panel1: TPanel;
+    GridPanel2: TGridPanel;
     BAcervo: TSpeedButton;
     BAssociado: TSpeedButton;
     BVoltar: TSpeedButton;
-    PanelSeleção: TPanel;
-    GridPanelSlcGeral: TGridPanel;
-    GroupBoxSeleção: TGroupBox;
-    GridPanelSelecao: TGridPanel;
-    GridPanelBotoes: TGridPanel;
-    BGravar: TSpeedButton;
-    Blimpar: TSpeedButton;
-    DBGrid1: TDBGrid;
+    Label7: TLabel;
     procedure BVoltarClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
+    procedure BAssociadoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,27 +26,38 @@ type
   end;
 
 var
-  Devolucao: TDevolucao;
+  lacamento: Tlacamento;
 
 implementation
-uses Principal, Primaria, LancamentoEEmprestimo;
 
 {$R *.dfm}
+uses primaria;
 
-procedure TDevolucao.BAcervoClick(Sender: TObject);
+procedure Tlacamento.BAcervoClick(Sender: TObject);
 begin
   close;
   LancamentoEmprestimo:=TLancamentoEmprestimo.Create(self);
   LancamentoEmprestimo.Parent:=SDIAppForm;
   LancamentoEmprestimo.Show;
+  LancamentoEmprestimo.DateTimePicker1.Date:=now();
 end;
 
-procedure TDevolucao.BVoltarClick(Sender: TObject);
+procedure Tlacamento.BAssociadoClick(Sender: TObject);
+begin
+  close;
+  Devolucao:=TDevolucao.Create(self);
+  Devolucao.Parent:=SDIAppForm;
+  Devolucao.Show;
+end;
+
+procedure Tlacamento.BVoltarClick(Sender: TObject);
+begin
 begin
   close;
   MenuPrincipal:=TMenuPrincipal.Create(self);
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
+end;
 end;
 
 end.

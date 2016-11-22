@@ -1,0 +1,9 @@
+ select
+  (case COALESCE(itememprestimo.datadevolucao,'') when '' then 'Não Devolvido' else itememprestimo.datadevolucao end) as devolucao,
+ associado.nome associado,
+ acervo.titulo titulo,
+ emprestimo.dataemprestimo Data 
+ from emprestimo 
+ inner join itememprestimo  on emprestimo.idemprestimo=itememprestimo.idemprestimo 
+ inner join associado 		on associado.idassociado=emprestimo.idassociado 
+ inner join acervo 			on acervo.idacervo=itememprestimo.idacervo;

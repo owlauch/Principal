@@ -129,21 +129,6 @@ type
     SQLDSItemEmprestimoIDACERVO: TIntegerField;
     SQLDSItemEmprestimoDATADEVOLUCAO: TDateField;
     SQLDSItemEmprestimoDATAVIGENCIAMULTA: TDateField;
-    SQLDSEmprestado: TSQLDataSet;
-    DSPEmprestado: TDataSetProvider;
-    CDSEmprestado: TClientDataSet;
-    DSEmprestado: TDataSource;
-    SQLQEmprestado: TSQLQuery;
-    IntegerField7: TIntegerField;
-    StringField1: TStringField;
-    SQLDSEmprestadoDEVOLUCAO: TStringField;
-    SQLDSEmprestadoASSOCIADO: TStringField;
-    SQLDSEmprestadoTITULO: TStringField;
-    SQLDSEmprestadoDATA: TDateField;
-    CDSEmprestadoDEVOLUCAO: TStringField;
-    CDSEmprestadoASSOCIADO: TStringField;
-    CDSEmprestadoTITULO: TStringField;
-    CDSEmprestadoDATA: TDateField;
 
 
   private

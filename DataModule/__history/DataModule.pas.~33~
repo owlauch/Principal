@@ -136,14 +136,20 @@ type
     SQLQEmprestado: TSQLQuery;
     IntegerField7: TIntegerField;
     StringField1: TStringField;
-    SQLDSEmprestadoDEVOLUCAO: TStringField;
-    SQLDSEmprestadoASSOCIADO: TStringField;
-    SQLDSEmprestadoTITULO: TStringField;
-    SQLDSEmprestadoDATA: TDateField;
-    CDSEmprestadoDEVOLUCAO: TStringField;
-    CDSEmprestadoASSOCIADO: TStringField;
-    CDSEmprestadoTITULO: TStringField;
-    CDSEmprestadoDATA: TDateField;
+    SQLDSEmprestadoIDEMPRESTIMO: TIntegerField;
+    SQLDSEmprestadoDATAEMPRESTIMO: TDateField;
+    SQLDSEmprestadoIDASSOCIADO: TIntegerField;
+    SQLDSEmprestadoIDEMPRESTIMO_1: TIntegerField;
+    SQLDSEmprestadoIDACERVO: TIntegerField;
+    SQLDSEmprestadoDATADEVOLUCAO: TDateField;
+    SQLDSEmprestadoDATAVIGENCIAMULTA: TDateField;
+    CDSEmprestadoIDEMPRESTIMO: TIntegerField;
+    CDSEmprestadoDATAEMPRESTIMO: TDateField;
+    CDSEmprestadoIDASSOCIADO: TIntegerField;
+    CDSEmprestadoIDEMPRESTIMO_1: TIntegerField;
+    CDSEmprestadoIDACERVO: TIntegerField;
+    CDSEmprestadoDATADEVOLUCAO: TDateField;
+    CDSEmprestadoDATAVIGENCIAMULTA: TDateField;
 
 
   private
