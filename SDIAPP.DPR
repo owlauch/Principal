@@ -37,7 +37,8 @@ uses
   uMensagem in 'view\uMensagem.pas' {uMensagemConfirmacao},
   CadastroMulta in 'view\CadastroMulta.pas' {Multa},
   EditoraLista in 'view\EditoraLista.pas' {ListaEditora},
-  LancamentoDevolução in 'view\LancamentoDevolução.pas' {Devolucao};
+  LancamentoDevolução in 'view\LancamentoDevolução.pas' {Devolucao},
+  DevoluçãoDAO in 'DAO\DevoluçãoDAO.pas';
 
 {$R *.RES}
 

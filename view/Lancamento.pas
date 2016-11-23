@@ -39,7 +39,6 @@ begin
   LancamentoEmprestimo:=TLancamentoEmprestimo.Create(self);
   LancamentoEmprestimo.Parent:=SDIAppForm;
   LancamentoEmprestimo.Show;
-  LancamentoEmprestimo.DateTimePicker1.Date:=now();
 end;
 
 procedure Tlacamento.BAssociadoClick(Sender: TObject);
