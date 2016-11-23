@@ -33,6 +33,10 @@ begin
   dm.SQLQAcervo.open;
   dm.SQLQAcervo.close;
   dm.SQLQAcervo.open;
+  DM.CLDSItemEmprestimo.Close;
+  DM.CLDSItemEmprestimo.Open;
+  DM.CLDSItemEmprestimo.Close;
+  DM.CLDSItemEmprestimo.Open;
   y := dm.SQLQAcervo.FieldByName('QTDEEXEMPLAR').AsInteger;
   if (y>x)then
   try
@@ -51,6 +55,11 @@ begin
   DM.CLDSItemEmprestimo.Open;
   DM.CLDSItemEmprestimo.Close;
   DM.CLDSItemEmprestimo.Open;
+
+  DM.CDSEmprestado.Close;
+  DM.CDSEmprestado.Open;
+  DM.CDSEmprestado.Close;
+  DM.CDSEmprestado.Open;
   ShowMessage('O Associado efetuo emprestimo com sucesso');
   finally
   end

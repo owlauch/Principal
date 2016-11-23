@@ -34,8 +34,8 @@
     <Transaction>2016/11/21 10:47:58.000.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
     <Transaction>2016/11/21 10:47:58.000.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
     <Transaction>2016/11/23 09:36:11.000.250,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
-    <Transaction>2016/11/23 10:12:13.533,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
-    <Transaction>2016/11/23 10:18:58.989,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\DAO\DevoluçãoDAO.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
+    <Transaction>2016/11/23 10:12:13.000.533,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
+    <Transaction>2016/11/23 10:18:58.000.989,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\DAO\DevoluçãoDAO.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="DAO"/>

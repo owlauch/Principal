@@ -62,6 +62,8 @@ begin
     Devolucao:=TDevolucao.Create(self);
     Devolucao.Parent:=SDIAppForm;
     Devolucao.Show;
+    DM.DSItemEmprestimo.Enabled:=FALSE;
+    DM.DSItemEmprestimo.Enabled:=ACTIVE;
 end;
 
 procedure TLancamentoEmprestimo.BGravarClick(Sender: TObject);
@@ -113,5 +115,6 @@ begin
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
 end;
+
 
 end.

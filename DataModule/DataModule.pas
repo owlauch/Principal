@@ -105,8 +105,6 @@ type
     CLDSMulta: TClientDataSet;
     DSMulta: TDataSource;
     SQLQMulta: TSQLQuery;
-    IntegerField4: TIntegerField;
-    StringField2: TStringField;
     SQLDSMulta: TSQLDataSet;
     CLDSMultaDATAINICIOVIGENCIA: TDateField;
     CLDSMultaVALOR: TFMTBCDField;
@@ -137,12 +135,12 @@ type
     IntegerField7: TIntegerField;
     StringField1: TStringField;
     SQLDSEmprestadoIDEMPRESTIMO: TIntegerField;
-    SQLDSEmprestadoDEVOLUCAO: TStringField;
+    SQLDSEmprestadoDATADEVOLUCAO: TDateField;
     SQLDSEmprestadoASSOCIADO: TStringField;
     SQLDSEmprestadoTITULO: TStringField;
     SQLDSEmprestadoDATA: TDateField;
     CDSEmprestadoIDEMPRESTIMO: TIntegerField;
-    CDSEmprestadoDEVOLUCAO: TStringField;
+    CDSEmprestadoDATADEVOLUCAO: TDateField;
     CDSEmprestadoASSOCIADO: TStringField;
     CDSEmprestadoTITULO: TStringField;
     CDSEmprestadoDATA: TDateField;
