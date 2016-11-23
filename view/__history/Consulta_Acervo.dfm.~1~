@@ -2,7 +2,6 @@ object ConsultaAcervo: TConsultaAcervo
   AlignWithMargins = True
   Left = 0
   Top = 0
-  Align = alClient
   BorderStyle = bsNone
   Caption = 'ConsultaAcervo'
   ClientHeight = 385
@@ -49,6 +48,9 @@ object ConsultaAcervo: TConsultaAcervo
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitTop = -26
+    ExplicitWidth = 523
+    ExplicitHeight = 372
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 1
@@ -62,6 +64,8 @@ object ConsultaAcervo: TConsultaAcervo
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 130
+      ExplicitHeight = 370
       object GridPanel1: TGridPanel
         AlignWithMargins = True
         Left = 3
@@ -132,6 +136,8 @@ object ConsultaAcervo: TConsultaAcervo
             Value = 12.500418065862120000
           end>
         TabOrder = 0
+        ExplicitWidth = 124
+        ExplicitHeight = 364
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
@@ -142,6 +148,7 @@ object ConsultaAcervo: TConsultaAcervo
           Alignment = taCenter
           Caption = 'CONSULTAS'
           Layout = tlCenter
+          ExplicitTop = 49
           ExplicitWidth = 59
           ExplicitHeight = 13
         end
@@ -218,7 +225,6 @@ object ConsultaAcervo: TConsultaAcervo
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
-          OnClick = BVoltarClick
           ExplicitWidth = 140
           ExplicitHeight = 44
         end
@@ -271,6 +277,9 @@ object ConsultaAcervo: TConsultaAcervo
       Align = alClient
       AutoSize = True
       TabOrder = 1
+      ExplicitLeft = 136
+      ExplicitWidth = 381
+      ExplicitHeight = 360
     end
   end
 end
