@@ -35,14 +35,17 @@ uses
   Lancamento in 'view\Lancamento.pas' {lacamento},
   LancamentoEEmprestimo in 'view\LancamentoEEmprestimo.pas' {LancamentoEmprestimo},
   uMensagem in 'view\uMensagem.pas' {uMensagemConfirmacao},
-  CadastroMulta in 'view\CadastroMulta.pas' {Multa};
+  CadastroMulta in 'view\CadastroMulta.pas' {Multa},
+  EditoraLista in 'view\EditoraLista.pas' {ListaEditora},
+  LancamentoDevolução in 'view\LancamentoDevolução.pas' {Devolucao},
+  DevoluçãoDAO in 'DAO\DevoluçãoDAO.pas';
 
 {$R *.RES}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TSDIAppForm, SDIAppForm);
-  Application.CreateForm(TCadastro, Cadastro);
+  AApplication.CreateForm(TSDIAppForm, SDIAppForm);
+  AApplication.CreateForm(TCadastro, Cadastro);
   Application.CreateForm(TAssociado, Associado);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TMenuPrincipal, MenuPrincipal);
@@ -54,6 +57,7 @@ begin
   Application.CreateForm(Tlacamento, lacamento);
   Application.CreateForm(TLancamentoEmprestimo, LancamentoEmprestimo);
   Application.CreateForm(TMulta, Multa);
-  Application.Run;
+  Application.CreateForm(TDevolucao, Devolucao);
+  plication.Run;
 end.
 
