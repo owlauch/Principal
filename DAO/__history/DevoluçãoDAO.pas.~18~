@@ -19,7 +19,6 @@ procedure tDevolucaoDAO.devolverArcevo(id: integer ; date: tdatetime);
   valor : real;
   dias : integer;
 begin
-  ShortDateFormat := 'dd-mm-yyyy';
   data:=now();
   if(data < date) then
   begin

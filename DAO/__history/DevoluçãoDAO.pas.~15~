@@ -19,7 +19,6 @@ procedure tDevolucaoDAO.devolverArcevo(id: integer ; date: tdatetime);
   valor : real;
   dias : integer;
 begin
-  ShortDateFormat := 'dd-mm-yyyy';
   data:=now();
   if(data < date) then
   begin
@@ -38,17 +37,17 @@ begin
     ShowMessage('Item devolvido com sucesso');
   end
    else
-   begin
    dias :=DateTimeToFileDate(data-date);
    ShowMessageFmt('%d',[dias]);
    dm.SQLQMulta.Open;
    dm.SQLQMulta.sql.Clear;
-   dm.SQLQMulta.sql.add('SELECT valor from multa where datainiciovigencia=:datainiciovigencia');
-   dm.sqlqmulta.parambyname('datainiciovigencia').asdate:=date;
+   dm.SQLQMulta.Close;
+   dm.SQLQMulta.Open;
+   dm.SQLQMulta.sql.Add('SELECT valor from multa where datainiciovigencia=(select max(datainiciovigencia)from multa)');
+   //valor:=dm.SQLQMulta.
    dm.SQLQMulta.ExecSQL;
    dm.SQLQMulta.Open;
    ShowMessageFmt('O valor da multa para essa devolução é R$%2.f',[valor]);
-   end;
 end;
 
 end.

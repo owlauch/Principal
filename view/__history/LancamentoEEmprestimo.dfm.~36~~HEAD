@@ -1,11 +1,12 @@
-﻿object Devolucao: TDevolucao
+﻿object LancamentoEmprestimo: TLancamentoEmprestimo
+  AlignWithMargins = True
   Left = 0
   Top = 0
   Align = alClient
   BorderStyle = bsNone
-  Caption = 'Devolucao'
-  ClientHeight = 449
-  ClientWidth = 636
+  Caption = 'Emprestimo'
+  ClientHeight = 410
+  ClientWidth = 620
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +19,8 @@
   object GridPricipal: TGridPanel
     Left = 0
     Top = 0
-    Width = 636
-    Height = 449
+    Width = 620
+    Height = 410
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
@@ -55,8 +56,8 @@
       AlignWithMargins = True
       Left = 1
       Top = 1
-      Width = 158
-      Height = 447
+      Width = 154
+      Height = 408
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -68,8 +69,8 @@
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 152
-        Height = 441
+        Width = 148
+        Height = 402
         Align = alClient
         Color = clGradientInactiveCaption
         ColumnCollection = <
@@ -127,9 +128,9 @@
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
-          Top = 58
-          Width = 144
-          Height = 48
+          Top = 54
+          Width = 140
+          Height = 43
           Align = alClient
           Alignment = taCenter
           Caption = 'LAN'#199'AMENTOS'
@@ -140,12 +141,14 @@
         object BAcervo: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 112
-          Width = 144
-          Height = 48
+          Top = 103
+          Width = 140
+          Height = 43
           Align = alClient
           Anchors = []
           Caption = 'EMPRESTIMO'
+          Enabled = False
+          Flat = True
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -445,7 +448,6 @@
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
-          OnClick = BAcervoClick
           ExplicitTop = 85
           ExplicitWidth = 100
           ExplicitHeight = 100
@@ -453,14 +455,12 @@
         object BAssociado: TSpeedButton
           AlignWithMargins = True
           Left = 4
-          Top = 166
-          Width = 144
-          Height = 48
+          Top = 152
+          Width = 140
+          Height = 43
           Align = alClient
           Anchors = []
           Caption = 'DEVOLU'#199#195'O'
-          Enabled = False
-          Flat = True
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -760,17 +760,17 @@
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          OnClick = BAssociadoClick
           ExplicitLeft = 8
           ExplicitTop = 151
           ExplicitWidth = 129
-          ExplicitHeight = 43
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True
           Left = 4
           Top = 4
-          Width = 144
-          Height = 48
+          Width = 140
+          Height = 44
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'
@@ -805,17 +805,15 @@
           Margin = 1
           ParentBiDiMode = False
           OnClick = BVoltarClick
-          ExplicitWidth = 140
-          ExplicitHeight = 44
         end
       end
     end
     object PanelSeleção: TPanel
       AlignWithMargins = True
-      Left = 164
+      Left = 160
       Top = 6
-      Width = 466
-      Height = 437
+      Width = 454
+      Height = 398
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -826,8 +824,8 @@
       object GridPanelSlcGeral: TGridPanel
         Left = 1
         Top = 1
-        Width = 464
-        Height = 435
+        Width = 452
+        Height = 396
         Align = alClient
         ColumnCollection = <
           item
@@ -856,7 +854,7 @@
         object GroupBoxSeleção: TGroupBox
           Left = 1
           Top = 1
-          Width = 462
+          Width = 450
           Height = 340
           Align = alTop
           Anchors = []
@@ -866,19 +864,43 @@
             AlignWithMargins = True
             Left = 5
             Top = 18
-            Width = 452
+            Width = 440
             Height = 317
             Align = alClient
             BevelOuter = bvNone
             ColumnCollection = <
               item
-                Value = 100.000000000000000000
+                Value = 49.999993497674840000
+              end
+              item
+                Value = 50.000006502325160000
               end>
             ControlCollection = <
               item
                 Column = 0
                 Control = DBGrid1
                 Row = 2
+              end
+              item
+                Column = 1
+                Control = DBGrid2
+                Row = 2
+              end
+              item
+                Column = 0
+                Control = Label2
+                Row = 1
+              end
+              item
+                Column = 1
+                Control = Label3
+                Row = 1
+              end
+              item
+                Column = 0
+                ColumnSpan = 2
+                Control = DateTimePicker1
+                Row = 0
               end>
             RowCollection = <
               item
@@ -893,16 +915,16 @@
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
+            DesignSize = (
+              440
+              317)
             object DBGrid1: TDBGrid
-              AlignWithMargins = True
-              Left = 3
-              Top = 69
-              Width = 446
-              Height = 245
+              Left = 0
+              Top = 66
+              Width = 219
+              Height = 251
               Align = alClient
-              DataSource = DM.DSEmprestado
-              DrawingStyle = gdsGradient
-              ReadOnly = True
+              DataSource = DM.DSAssociado
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -912,18 +934,74 @@
               Columns = <
                 item
                   Expanded = False
-                  FieldName = 'IDEMPRESTIMO'
+                  FieldName = 'IDASSOCIADO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'NOME'
+                  Width = 178
                   Visible = True
                 end
                 item
                   Expanded = False
-                  FieldName = 'DATADEVOLUCAO'
-                  Visible = True
+                  FieldName = 'EMAIL'
+                  Visible = False
                 end
                 item
                   Expanded = False
-                  FieldName = 'ASSOCIADO'
-                  Visible = True
+                  FieldName = 'TELEFONE'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'UF'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'CEP'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'BAIRRO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'NROENDERECO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'CIDADE'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'RUA'
+                  Visible = False
+                end>
+            end
+            object DBGrid2: TDBGrid
+              Left = 219
+              Top = 66
+              Width = 221
+              Height = 251
+              Align = alClient
+              DataSource = DM.DSAcervo
+              TabOrder = 1
+              TitleFont.Charset = DEFAULT_CHARSET
+              TitleFont.Color = clWindowText
+              TitleFont.Height = -11
+              TitleFont.Name = 'Tahoma'
+              TitleFont.Style = []
+              Columns = <
+                item
+                  Expanded = False
+                  FieldName = 'IDACERVO'
+                  Visible = False
                 end
                 item
                   Expanded = False
@@ -932,16 +1010,73 @@
                 end
                 item
                   Expanded = False
-                  FieldName = 'DATA'
-                  Visible = True
+                  FieldName = 'QTDEEXEMPLAR'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'DATAEDICAO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'LOCALEDICAO'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'ISBN'
+                  Visible = False
+                end
+                item
+                  Expanded = False
+                  FieldName = 'IDEDITORA'
+                  Visible = False
                 end>
+            end
+            object Label2: TLabel
+              Left = 0
+              Top = 33
+              Width = 219
+              Height = 33
+              Align = alClient
+              Alignment = taCenter
+              BiDiMode = bdRightToLeftNoAlign
+              Caption = 'ASSOCIADO'
+              ParentBiDiMode = False
+              ExplicitWidth = 60
+              ExplicitHeight = 13
+            end
+            object Label3: TLabel
+              Left = 219
+              Top = 33
+              Width = 221
+              Height = 33
+              Align = alClient
+              Alignment = taCenter
+              BiDiMode = bdRightToLeftNoAlign
+              Caption = 'ACERVO'
+              ParentBiDiMode = False
+              ExplicitWidth = 41
+              ExplicitHeight = 13
+            end
+            object DateTimePicker1: TDateTimePicker
+              Left = 179
+              Top = 6
+              Width = 82
+              Height = 21
+              Anchors = []
+              Date = 42693.659664444440000000
+              Time = 42693.659664444440000000
+              TabOrder = 2
+              Visible = False
             end
           end
         end
         object GridPanelBotoes: TGridPanel
           Left = 1
-          Top = 384
-          Width = 462
+          Top = 345
+          Width = 450
           Height = 50
           Align = alClient
           ColumnCollection = <
@@ -963,7 +1098,7 @@
           ControlCollection = <
             item
               Column = 3
-              Control = Devolucao
+              Control = BGravar
               Row = 0
             end
             item
@@ -977,15 +1112,15 @@
               Value = 50.000000000000000000
             end>
           TabOrder = 1
-          object Devolucao: TSpeedButton
+          object BGravar: TSpeedButton
             AlignWithMargins = True
-            Left = 280
+            Left = 271
             Top = 4
-            Width = 86
+            Width = 83
             Height = 44
             Align = alClient
             Anchors = [akLeft, akTop, akRight]
-            Caption = 'DEVOLU'#199#195'O'
+            Caption = 'GRAVAR'
             Glyph.Data = {
               36030000424D3603000000000000360000002800000010000000100000000100
               18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
@@ -1014,8 +1149,8 @@
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
             Layout = blGlyphRight
-            Margin = 0
-            OnClick = DevolucaoClick
+            Margin = 1
+            OnClick = BGravarClick
             ExplicitLeft = 4
             ExplicitTop = 102
             ExplicitWidth = 134
@@ -1023,7 +1158,7 @@
           end
           object Blimpar: TSpeedButton
             AlignWithMargins = True
-            Left = 372
+            Left = 360
             Top = 4
             Width = 86
             Height = 44
@@ -1069,5 +1204,41 @@
         end
       end
     end
+  end
+  object DBGrid3: TDBGrid
+    Left = 167
+    Top = 354
+    Width = 82
+    Height = 31
+    Align = alCustom
+    DataSource = DM.DSMaxitem
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+  end
+  object DBGridMulta: TDBGrid
+    Left = 255
+    Top = 354
+    Width = 74
+    Height = 31
+    Align = alCustom
+    DataSource = DM.DSMulta
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'DATAINICIOVIGENCIA'
+        Visible = True
+      end>
   end
 end

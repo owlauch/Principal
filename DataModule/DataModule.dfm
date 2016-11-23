@@ -13,7 +13,7 @@ object DM: TDM
       'drivername=FIREBIRD'
       'blobsize=-1'
       'commitretain=False'
-      'Database=C:\BDBIBLIOTECA.FDB'
+      'database=C:\BDBIBLIOTECA.FDB'
       'localecode=0000'
       'password=masterkey'
       'rolename=RoleName'
@@ -662,15 +662,6 @@ object DM: TDM
     SQLConnection = BIBLIOTECA
     Left = 536
     Top = 344
-    object IntegerField4: TIntegerField
-      FieldName = 'IDEDITORA'
-      Required = True
-    end
-    object StringField2: TStringField
-      FieldName = 'RAZAOSOCIAL'
-      Required = True
-      Size = 100
-    end
   end
   object SQLDSMulta: TSQLDataSet
     SchemaName = 'sysdba'
@@ -759,14 +750,13 @@ object DM: TDM
     SchemaName = 'sysdba'
     Active = True
     CommandText = 
-      'select itememprestimo.IDEMPRESTIMO,(case COALESCE(itememprestimo' +
-      '.datadevolucao,'#39#39') when '#39#39' then '#39'N'#227'o Devolvido'#39' else itememprest' +
-      'imo.datadevolucao end) as devolucao, associado.nome associado,ac' +
-      'ervo.titulo titulo,emprestimo.dataemprestimo Data from emprestim' +
-      'o inner join itememprestimo on emprestimo.idemprestimo=itemempre' +
-      'stimo.idemprestimo inner join associado on associado.idassociado' +
-      '=emprestimo.idassociado inner join acervo on acervo.idacervo=ite' +
-      'memprestimo.idacervo order by ITEMEMPRESTIMO.IDEMPRESTIMO asc;'
+      'select itememprestimo.IDEMPRESTIMO,datadevolucao, associado.nome' +
+      ' associado,acervo.titulo titulo,emprestimo.dataemprestimo Data f' +
+      'rom emprestimo inner join itememprestimo on emprestimo.idemprest' +
+      'imo=itememprestimo.idemprestimo inner join associado on associad' +
+      'o.idassociado=emprestimo.idassociado inner join acervo on acervo' +
+      '.idacervo=itememprestimo.idacervo order by ITEMEMPRESTIMO.IDEMPR' +
+      'ESTIMO asc;'
     DbxCommandType = 'Dbx.SQL'
     MaxBlobSize = -1
     Params = <>
@@ -777,10 +767,9 @@ object DM: TDM
       FieldName = 'IDEMPRESTIMO'
       Required = True
     end
-    object SQLDSEmprestadoDEVOLUCAO: TStringField
-      FieldName = 'DEVOLUCAO'
+    object SQLDSEmprestadoDATADEVOLUCAO: TDateField
+      FieldName = 'DATADEVOLUCAO'
       Required = True
-      Size = 13
     end
     object SQLDSEmprestadoASSOCIADO: TStringField
       FieldName = 'ASSOCIADO'
@@ -816,10 +805,9 @@ object DM: TDM
       FieldName = 'IDEMPRESTIMO'
       Required = True
     end
-    object CDSEmprestadoDEVOLUCAO: TStringField
-      FieldName = 'DEVOLUCAO'
+    object CDSEmprestadoDATADEVOLUCAO: TDateField
+      FieldName = 'DATADEVOLUCAO'
       Required = True
-      Size = 13
     end
     object CDSEmprestadoASSOCIADO: TStringField
       FieldName = 'ASSOCIADO'

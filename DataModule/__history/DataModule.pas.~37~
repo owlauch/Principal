@@ -135,12 +135,12 @@ type
     IntegerField7: TIntegerField;
     StringField1: TStringField;
     SQLDSEmprestadoIDEMPRESTIMO: TIntegerField;
-    SQLDSEmprestadoDATADEVOLUCAO: TDateField;
+    SQLDSEmprestadoDEVOLUCAO: TStringField;
     SQLDSEmprestadoASSOCIADO: TStringField;
     SQLDSEmprestadoTITULO: TStringField;
     SQLDSEmprestadoDATA: TDateField;
     CDSEmprestadoIDEMPRESTIMO: TIntegerField;
-    CDSEmprestadoDATADEVOLUCAO: TDateField;
+    CDSEmprestadoDEVOLUCAO: TStringField;
     CDSEmprestadoASSOCIADO: TStringField;
     CDSEmprestadoTITULO: TStringField;
     CDSEmprestadoDATA: TDateField;
