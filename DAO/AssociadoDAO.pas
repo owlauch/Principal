@@ -7,11 +7,34 @@ uses DataModule,AssociadoModel,Dialogs;
      public
       procedure inserirAssociado(AssociadoModel:TAssociadoModel);
       procedure excluirAssociado(id : integer);
+      procedure editarAssociado(associadomodel : tAssociadoModel);
     end;
 
 
 implementation
 uses  CadastroAssociado;
+
+procedure TAssociadoDao.editarAssociado(associadomodel: tAssociadoModel);
+begin
+  DM.SQLQAssociado.Close;
+  DM.SQLQAssociado.SQL.Text:='UPDATE associado SET nome=:nome, email=:email, telefone=:telefone, uf=:uf, cep=:cep, bairro=:bairro, nroendereco=:nroendereco, cidade=:cidade, rua=:rua WHERE idassociado=:id';
+  DM.SQLQAssociado.ParamByName('id').AsInteger:=associadomodel.GetId;
+  DM.SQLQAssociado.ParamByName('nome').AsString:=associadomodel.Getnome;
+  DM.SQLQAssociado.ParamByName('email').AsString:=associadomodel.Getemail;
+  DM.SQLQAssociado.ParamByName('telefone').AsString:=associadomodel.Gettelefone;
+  DM.SQLQAssociado.ParamByName('uf').AsString:=associadomodel.Getuf;
+  DM.SQLQAssociado.ParamByName('cep').AsString:=associadomodel.Getcep;
+  DM.SQLQAssociado.ParamByName('bairro').AsString:=associadomodel.Getbairro;
+  DM.SQLQAssociado.ParamByName('nroendereco').AsInteger:=associadomodel.Getnrorua;
+  DM.SQLQAssociado.ParamByName('cidade').AsString:=associadomodel.Getcidade;
+  DM.SQLQAssociado.ParamByName('rua').AsString:=associadomodel.Getrua;
+  DM.SQLQAssociado.ExecSQL;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+  ShowMessageFmt('O Associado %s foi alterado com sucesso',[associadomodel.Getnome] );
+end;
 
 procedure TAssociadoDao.excluirAssociado(id: integer);
 begin

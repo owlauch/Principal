@@ -227,7 +227,9 @@ object Acervo: TAcervo
             Height = 22
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 21
+            OnKeyPress = Edit10KeyPress
+            ExplicitLeft = 80
+            ExplicitTop = 2
           end
         end
         object PainelAcervo: TGroupBox
@@ -450,6 +452,7 @@ object Acervo: TAcervo
               Height = 21
               Align = alClient
               TabOrder = 0
+              OnKeyPress = EditTituloKeyPress
             end
             object EditLocalEdicao: TEdit
               AlignWithMargins = True
@@ -458,7 +461,8 @@ object Acervo: TAcervo
               Width = 206
               Height = 21
               Align = alClient
-              TabOrder = 1
+              TabOrder = 3
+              OnKeyPress = EditLocalEdicaoKeyPress
             end
             object EditIsbn: TEdit
               AlignWithMargins = True
@@ -467,7 +471,8 @@ object Acervo: TAcervo
               Width = 164
               Height = 21
               Align = alClient
-              TabOrder = 2
+              TabOrder = 4
+              OnKeyPress = EditIsbnKeyPress
             end
             object DateTimePickerEdicao: TDateTimePicker
               AlignWithMargins = True
@@ -477,7 +482,7 @@ object Acervo: TAcervo
               Height = 20
               Date = 42682.379632870370000000
               Time = 42682.379632870370000000
-              TabOrder = 3
+              TabOrder = 2
             end
             object ComboBoxQtd: TComboBox
               AlignWithMargins = True
@@ -488,7 +493,7 @@ object Acervo: TAcervo
               Align = alLeft
               BiDiMode = bdLeftToRight
               ParentBiDiMode = False
-              TabOrder = 4
+              TabOrder = 1
               Items.Strings = (
                 '0'
                 '1'

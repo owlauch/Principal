@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,Dialogs, Menus, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids,DataModule,
-  Mask, CadastroMulta;
+  Mask, CadastroMulta,AssociadoModel;
 
 type
   TAssociado = class(TForm)
@@ -61,6 +61,14 @@ type
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
+    procedure EditNameKeyPress(Sender: TObject; var Key: Char);
+    procedure EditCidadeKeyPress(Sender: TObject; var Key: Char);
+    procedure EditBairroKeyPress(Sender: TObject; var Key: Char);
+    procedure EditRuaKeyPress(Sender: TObject; var Key: Char);
+    procedure Edit10KeyPress(Sender: TObject; var Key: Char);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure BEditarClick(Sender: TObject);
+    procedure BLimparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,10 +77,11 @@ type
 
 var
   Associado: TAssociado;
+  associadomodel:tAssociadomodel;
 
 implementation
 
-uses CadastroPrincipal,Principal,AssociadoModel,AssociadoDAO, Primaria,
+uses CadastroPrincipal,Principal,AssociadoDAO, Primaria,
   CadastroAcervo, CadastroAutor, CadastroEditora;
 
 {$R *.dfm}
@@ -84,6 +93,63 @@ begin
   MenuPrincipal:=TMenuPrincipal.Create(self);
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
+end;
+
+procedure TAssociado.DBGrid1DblClick(Sender: TObject);
+var
+associadoDao:TassociadoDao;
+begin
+  associadomodel:=TAssociadoModel.Create;
+  associadoDao:=TAssociadoDao.Create;
+  associadomodel.SetId(DBGrid1.Fields[0].AsInteger);
+  associadomodel.SetNome(DBGrid1.Fields[1].AsString);
+  associadomodel.SetEmail(DBGrid1.Fields[2].AsString);
+  associadomodel.SetTelefone(DBGrid1.Fields[3].AsString);
+  associadomodel.SetUF(DBGrid1.Fields[4].AsString);
+  associadomodel.SetCep(DBGrid1.Fields[5].AsString);
+  associadomodel.SetBairro(DBGrid1.Fields[6].AsString);
+  associadomodel.SetNroRua(DBGrid1.Fields[7].AsInteger);
+  associadomodel.SetCidade(DBGrid1.Fields[8].AsString);
+  associadomodel.SetRua(DBGrid1.Fields[9].AsString);
+  EditName.Text:=associadomodel.GetNome;
+  Editemail.Text:=associadomodel.Getemail;
+  MaskEditTelefone.Text:=associadomodel.Gettelefone;
+  ComboBoxUf.Text:=associadomodel.Getuf;
+  EditCidade.Text:=associadomodel.Getcidade;
+  EditCEP.Text:=associadomodel.Getcep;
+  EditBairro.Text:=associadomodel.Getbairro;
+  EditRua.Text:=associadomodel.Getrua;
+  EditNumero.Text:=inttostr(associadomodel.Getnrorua);
+end;
+
+procedure TAssociado.Edit10KeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditBairroKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditCidadeKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditRuaKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 procedure TAssociado.SpeedButtonMultaClick(Sender: TObject);
@@ -122,6 +188,19 @@ begin
 
 end;
 
+procedure TAssociado.BLimparClick(Sender: TObject);
+begin
+  EditName.Clear;
+  Editemail.Clear;
+  maskedittelefone.Clear;
+  comboboxuf.Clear;
+  Editcidade.Clear;
+  EditCEP.Clear;
+  Editbairro.Clear;
+  Editrua.Clear;
+  Editnumero.Clear;
+end;
+
 procedure TAssociado.BAcervoClick(Sender: TObject);
 begin
   Close;
@@ -144,6 +223,32 @@ begin
   Autor:=TAutor.Create(self);
   Autor.Parent:=SDIAppForm;
   Autor.Show;
+end;
+
+procedure TAssociado.BEditarClick(Sender: TObject);
+var
+  associadodao:tAssociadodao;
+begin
+  associadodao:=tAssociadodao.create;
+  associadomodel.SetNome(EditName.text);
+  associadomodel.Setemail(Editemail.text);
+  associadomodel.Settelefone(maskedittelefone.text);
+  associadomodel.setuf(comboboxuf.text);
+  associadomodel.Setcidade(Editcidade.text);
+  associadomodel.Setcep(EditCEP.text);
+  associadomodel.Setbairro(Editbairro.text);
+  associadomodel.Setrua(Editrua.text);
+  associadomodel.Setnrorua(strtoint(Editnumero.text));
+  associadoDAO.editarAssociado(associadomodel);
+  EditName.Clear;
+  Editemail.Clear;
+  maskedittelefone.Clear;
+  comboboxuf.Clear;
+  Editcidade.Clear;
+  EditCEP.Clear;
+  Editbairro.Clear;
+  Editrua.Clear;
+  Editnumero.Clear;
 end;
 
 procedure TAssociado.BEditoraClick(Sender: TObject);

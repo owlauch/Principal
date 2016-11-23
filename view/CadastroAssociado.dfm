@@ -286,6 +286,7 @@
                 Height = 25
                 Align = alClient
                 TabOrder = 0
+                OnKeyPress = EditNameKeyPress
                 ExplicitHeight = 21
               end
               object MaskEditTelefone: TMaskEdit
@@ -295,11 +296,10 @@
                 Width = 140
                 Height = 25
                 Align = alClient
-                EditMask = '!\(99\)0000-0000;1;_'
+                EditMask = '!\(99\)0000-0000;0;_'
                 MaxLength = 13
                 TabOrder = 2
-                Text = '(  )    -    '
-                ExplicitHeight = 21
+                ExplicitWidth = 139
               end
               object Editemail: TEdit
                 AlignWithMargins = True
@@ -520,6 +520,7 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 1
+                OnKeyPress = EditCidadeKeyPress
               end
               object EditCEP: TEdit
                 AlignWithMargins = True
@@ -531,6 +532,7 @@
                 BevelInner = bvNone
                 BevelKind = bkSoft
                 BevelOuter = bvNone
+                NumbersOnly = True
                 TabOrder = 2
               end
               object EditBairro: TEdit
@@ -544,6 +546,7 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 3
+                OnKeyPress = EditBairroKeyPress
               end
               object EditRua: TEdit
                 AlignWithMargins = True
@@ -556,6 +559,7 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 4
+                OnKeyPress = EditRuaKeyPress
               end
               object EditNumero: TEdit
                 AlignWithMargins = True
@@ -567,6 +571,7 @@
                 BevelInner = bvNone
                 BevelKind = bkSoft
                 BevelOuter = bvNone
+                NumbersOnly = True
                 TabOrder = 5
               end
               object ComboBoxUf: TComboBox
@@ -602,6 +607,7 @@
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
+          OnDblClick = DBGrid1DblClick
           Columns = <
             item
               Expanded = False
@@ -629,37 +635,31 @@
             item
               Expanded = False
               FieldName = 'UF'
-              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'CEP'
-              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'BAIRRO'
-              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'NROENDERECO'
-              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'CIDADE'
-              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'RUA'
-              Width = -1
               Visible = False
             end>
         end
@@ -716,6 +716,7 @@
             Height = 22
             Align = alClient
             TabOrder = 0
+            OnKeyPress = Edit10KeyPress
             ExplicitHeight = 21
           end
         end
@@ -910,6 +911,7 @@
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = BEditarClick
               ExplicitLeft = 4
               ExplicitTop = 328
               ExplicitWidth = 10
@@ -955,6 +957,7 @@
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = BLimparClick
               ExplicitLeft = 59
               ExplicitTop = 328
               ExplicitWidth = 10

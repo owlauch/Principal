@@ -1,0 +1,74 @@
+unit AssociadoDAO;
+
+interface
+uses DataModule,AssociadoModel,Dialogs;
+  type
+    TAssociadoDao=class
+     public
+      procedure inserirAssociado(AssociadoModel:TAssociadoModel);
+      procedure excluirAssociado(id : integer);
+      procedure editarAssociado(associadomodel : tAssociadoModel);
+    end;
+
+
+implementation
+uses  CadastroAssociado;
+
+procedure TAssociadoDao.editarAssociado(associadomodel: tAssociadoModel);
+begin
+  DM.SQLQAssociado.Close;
+  DM.SQLQAssociado.SQL.Text:='UPDATE acervo SET titulo=:titulo, qtdeexemplar=:qtdeexemplar, dataedicao=:dataedicao, localedicao=:localedicao, isbn=:isbn, ideditora=:ideditora WHERE idacervo=:id';
+  DM.SQLQAssociado.ParamByName('id').AsInteger:=acervomodel.GetId;
+  DM.SQLQAcervo.ParamByName('titulo').AsString:=acervomodel.GetTitulo;
+  DM.SQLQAcervo.ParamByName('qtdeexemplar').AsInteger:=acervomodel.Getqtdeexemplar;
+  DM.SQLQAcervo.ParamByName('dataedicao').AsDate:=acervomodel.Getdataedicao;
+  DM.SQLQAcervo.ParamByName('localedicao').AsString:=acervomodel.Getlocaledicao;
+  DM.SQLQAcervo.ParamByName('isbn').AsString:=acervomodel.Getisbn;
+  DM.SQLQAcervo.ParamByName('ideditora').AsInteger:=acervomodel.GetEditora;
+  DM.SQLQAssociado.ExecSQL;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+  ShowMessageFmt('O Associado %s foi alterado com sucesso',[associadomodel.Getnome] );
+end;
+
+procedure TAssociadoDao.excluirAssociado(id: integer);
+begin
+  DM.SQLQAssociado.Close;
+  DM.SQLQAssociado.SQL.Text:='DELETE FROM associado WHERE idassociado=:id';
+  DM.SQLQAssociado.ParamByName('id').AsInteger:=id;
+  DM.SQLQAssociado.ExecSQL;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+end;
+
+procedure TAssociadoDao.inserirAssociado(AssociadoModel: TAssociadoModel);
+
+begin
+try
+  DM.SQLQEmprestimo.Close;
+  DM.SQLQEmprestimo.SQL.Text:='INSERT INTO associado(nome,email,telefone,uf,cep,bairro,nroendereco,cidade,rua) VALUES(:nome,:email,:telefone,:uf,:cep,:bairro,:nroendereco,:cidade,:rua)';
+  DM.SQLQEmprestimo.ParamByName('nome').AsString:=AssociadoModel.GetNome;
+  DM.SQLQEmprestimo.ParamByName('email').AsString:=AssociadoModel.GetEmail;
+  DM.SQLQEmprestimo.ParamByName('telefone').AsString:=AssociadoModel.GetTelefone;
+  DM.SQLQEmprestimo.ParamByName('uf').AsString:=AssociadoModel.GetUf;
+  DM.SQLQEmprestimo.ParamByName('cep').AsString:=AssociadoModel.Getcep;
+  DM.SQLQEmprestimo.ParamByName('bairro').AsString:=AssociadoModel.GetBairro;
+  DM.SQLQEmprestimo.ParamByName('nroendereco').AsInteger:=AssociadoModel.GetNroRua;
+  DM.SQLQEmprestimo.ParamByName('cidade').AsString:=AssociadoModel.GetCidade;
+  DM.SQLQEmprestimo.ParamByName('rua').Asstring:=AssociadoModel.GetRua;
+  DM.SQLQEmprestimo.ExecSQL;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+  DM.CDSAssociado.Close;
+  DM.CDSAssociado.Open;
+  ShowMessageFmt('O Associado %S Foi Registrado com sucesso',[associadomodel.GetNome]);
+finally
+
+end;
+end;
+
+end.
