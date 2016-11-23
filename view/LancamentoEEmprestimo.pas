@@ -28,7 +28,6 @@ type
     DBGrid2: TDBGrid;
     Label2: TLabel;
     Label3: TLabel;
-    DateTimePicker1: TDateTimePicker;
     DBGrid3: TDBGrid;
     DBGridMulta: TDBGrid;
 

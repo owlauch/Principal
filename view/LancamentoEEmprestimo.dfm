@@ -879,27 +879,21 @@
               item
                 Column = 0
                 Control = DBGrid1
-                Row = 2
+                Row = 1
               end
               item
                 Column = 1
                 Control = DBGrid2
-                Row = 2
+                Row = 1
               end
               item
                 Column = 0
                 Control = Label2
-                Row = 1
+                Row = 0
               end
               item
                 Column = 1
                 Control = Label3
-                Row = 1
-              end
-              item
-                Column = 0
-                ColumnSpan = 2
-                Control = DateTimePicker1
                 Row = 0
               end>
             RowCollection = <
@@ -908,23 +902,19 @@
                 Value = 33.000000000000000000
               end
               item
-                SizeStyle = ssAbsolute
-                Value = 33.000000000000000000
-              end
-              item
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
-            DesignSize = (
-              440
-              317)
             object DBGrid1: TDBGrid
-              Left = 0
-              Top = 66
-              Width = 219
-              Height = 251
+              AlignWithMargins = True
+              Left = 3
+              Top = 36
+              Width = 213
+              Height = 278
               Align = alClient
               DataSource = DM.DSAssociado
+              DrawingStyle = gdsGradient
+              ReadOnly = True
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -985,12 +975,15 @@
                 end>
             end
             object DBGrid2: TDBGrid
-              Left = 219
-              Top = 66
-              Width = 221
-              Height = 251
+              AlignWithMargins = True
+              Left = 222
+              Top = 36
+              Width = 215
+              Height = 278
               Align = alClient
               DataSource = DM.DSAcervo
+              DrawingStyle = gdsGradient
+              ReadOnly = True
               TabOrder = 1
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -1036,7 +1029,7 @@
             end
             object Label2: TLabel
               Left = 0
-              Top = 33
+              Top = 0
               Width = 219
               Height = 33
               Align = alClient
@@ -1044,12 +1037,13 @@
               BiDiMode = bdRightToLeftNoAlign
               Caption = 'ASSOCIADO'
               ParentBiDiMode = False
+              ExplicitTop = 33
               ExplicitWidth = 60
               ExplicitHeight = 13
             end
             object Label3: TLabel
               Left = 219
-              Top = 33
+              Top = 0
               Width = 221
               Height = 33
               Align = alClient
@@ -1057,18 +1051,9 @@
               BiDiMode = bdRightToLeftNoAlign
               Caption = 'ACERVO'
               ParentBiDiMode = False
+              ExplicitTop = 33
               ExplicitWidth = 41
               ExplicitHeight = 13
-            end
-            object DateTimePicker1: TDateTimePicker
-              Left = 179
-              Top = 6
-              Width = 82
-              Height = 21
-              Anchors = []
-              Date = 42693.659664444440000000
-              Time = 42693.659664444440000000
-              TabOrder = 2
             end
           end
         end

@@ -1,0 +1,53 @@
+unit Consulta_Acervo_Emprestado;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Consulta_Acervo,
+  Consulta_Acervo_EmAtraso, Consulta_Acervo_Reservado, Consulta_Principal,
+  Principal;
+
+type
+  TEmprestados = class(TForm)
+    GridPricipal: TGridPanel;
+    Panel1: TPanel;
+    GridPanel1: TGridPanel;
+    Label1: TLabel;
+    BEmprestado: TSpeedButton;
+    BVoltar: TSpeedButton;
+    BEmAtraso: TSpeedButton;
+    BReservado: TSpeedButton;
+    Panel2: TPanel;
+    procedure BVoltarClick(Sender: TObject);
+    procedure BReservadoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Emprestados: TEmprestados;
+
+implementation
+
+{$R *.dfm}
+
+procedure TEmprestados.BVoltarClick(Sender: TObject);
+begin
+  close;
+  ConsultaPrincipal:= TConsultaPrincipal.Create(self);
+  ConsultaPrincipal.Parent:=SDIAppForm;
+  ConsultaPrincipal.Show;
+end;
+
+procedure TEmprestados.BReservadoClick(Sender: TObject);
+begin
+  close;
+  Reservado:= TReservado.Create(self);
+  Reservado.Parent:=SDIAppForm;
+  Reservado.Show;
+end;
+
+end.
