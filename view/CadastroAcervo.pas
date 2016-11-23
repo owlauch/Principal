@@ -57,6 +57,10 @@ type
     procedure BEditarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure BlimparClick(Sender: TObject);
+    procedure EditTituloKeyPress(Sender: TObject; var Key: Char);
+    procedure EditLocalEdicaoKeyPress(Sender: TObject; var Key: Char);
+    procedure EditIsbnKeyPress(Sender: TObject; var Key: Char);
+    procedure Edit10KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -200,11 +204,35 @@ begin
   Dm.SQLQEditora.open;
 end;
 
+procedure TAcervo.Edit10KeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
 procedure TAcervo.EditEditoraClick(Sender: TObject);
 begin
   ListaEditora:=TListaEditora.Create(self);
   ListaEditora.Parent:=SDIAppForm;
   ListaEditora.Show;
+end;
+
+procedure TAcervo.EditIsbnKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAcervo.EditLocalEdicaoKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAcervo.EditTituloKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 end.

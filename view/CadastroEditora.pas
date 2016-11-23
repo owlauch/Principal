@@ -47,6 +47,8 @@ type
     procedure SpeedButtonMultaClick(Sender: TObject);
     procedure BEditarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure EditRazaosocialKeyPress(Sender: TObject; var Key: Char);
+    procedure EditPesquisarKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -157,6 +159,18 @@ begin
   editoramodel.SetId(id);
   Editrazaosocial.text:=editoramodel.getrazaosocial;
 
+end;
+
+procedure TEditora.EditPesquisarKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TEditora.EditRazaosocialKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 procedure TEditora.SpeedButtonMultaClick(Sender: TObject);

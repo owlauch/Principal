@@ -176,10 +176,6 @@ object Editora: TEditora
                   Value = 49.998702969284790000
                 end
                 item
-                  SizeStyle = ssAbsolute
-                  Value = 70.000000000000000000
-                end
-                item
                   Value = 50.001297030715220000
                 end>
               ControlCollection = <
@@ -190,7 +186,6 @@ object Editora: TEditora
                 end
                 item
                   Column = 1
-                  ColumnSpan = 2
                   Control = EditRazaosocial
                   Row = 0
                 end>
@@ -200,6 +195,8 @@ object Editora: TEditora
                   Value = 31.000000000000000000
                 end>
               TabOrder = 0
+              ExplicitLeft = 3
+              ExplicitTop = 20
               object Label1: TLabel
                 AlignWithMargins = True
                 Left = 10
@@ -218,16 +215,18 @@ object Editora: TEditora
                 AlignWithMargins = True
                 Left = 73
                 Top = 3
-                Width = 208
+                Width = 173
                 Height = 25
                 Align = alClient
+                Anchors = []
                 BevelInner = bvNone
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 DragMode = dmAutomatic
                 MaxLength = 20
                 TabOrder = 0
-                ExplicitHeight = 21
+                OnKeyPress = EditRazaosocialKeyPress
+                ExplicitWidth = 288
               end
             end
           end
@@ -316,6 +315,7 @@ object Editora: TEditora
             Height = 24
             Align = alClient
             TabOrder = 0
+            OnKeyPress = EditPesquisarKeyPress
             ExplicitHeight = 21
           end
         end
@@ -2271,10 +2271,6 @@ object Editora: TEditora
           Margin = 1
           NumGlyphs = 2
           OnClick = SpeedButtonMultaClick
-          ExplicitLeft = 8
-          ExplicitTop = 312
-          ExplicitWidth = 23
-          ExplicitHeight = 22
         end
       end
     end
