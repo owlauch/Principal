@@ -21,7 +21,6 @@ type
     procedure BLancamentoClick(Sender: TObject);
     procedure SpeedButtonSairClick(Sender: TObject);
     procedure BCadastroClick(Sender: TObject);
-    procedure BConsultaClick(Sender: TObject);
     //procedure BLancamentoClick(Sender: TObject);
   private
     { Private declarations }
@@ -36,7 +35,7 @@ var
 implementation
 {$R *.dfm}
 
-uses Principal,CadastroPrincipal, Consulta_Acervo, Consulta_Principal;
+uses Principal,CadastroPrincipal;
 
 
 procedure TMenuPrincipal.BCadastroClick(Sender: TObject);
@@ -45,14 +44,6 @@ begin
   Cadastro:=TCadastro.Create(self);
   Cadastro.Parent:=SDIAppForm;
   Cadastro.Show;
-end;
-
-procedure TMenuPrincipal.BConsultaClick(Sender: TObject);
-begin
-  close;
-  ConsultaPrincipal:= TConsultaPrincipal.Create(self);
-  ConsultaPrincipal.Parent:=SDIAppForm;
-  ConsultaPrincipal.Show;
 end;
 
 procedure TMenuPrincipal.BLancamentoClick(Sender: TObject);

@@ -2,7 +2,6 @@ object ConsultaPrincipal: TConsultaPrincipal
   AlignWithMargins = True
   Left = 0
   Top = 0
-  Align = alClient
   BorderStyle = bsNone
   Caption = 'Consulta'
   ClientHeight = 411
@@ -483,7 +482,6 @@ object ConsultaPrincipal: TConsultaPrincipal
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
-          OnClick = BVoltarClick
           ExplicitWidth = 140
         end
       end
