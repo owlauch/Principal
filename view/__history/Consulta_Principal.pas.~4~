@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Consulta_Acervo, Principal;
 
 type
   TConsultaPrincipal = class(TForm)
@@ -16,7 +16,6 @@ type
     BVoltar: TSpeedButton;
     Panel2: TPanel;
     procedure BAcervoClick(Sender: TObject);
-    procedure BVoltarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,24 +26,15 @@ var
   ConsultaPrincipal: TConsultaPrincipal;
 
 implementation
-uses Consulta_Acervo, Principal, Primaria;
 
 {$R *.dfm}
 
 procedure TConsultaPrincipal.BAcervoClick(Sender: TObject);
 begin
   close;
-  ConsultaAcervo:= TConsultaAcervo.Create(self);
+   ConsultaAcervo:= TConsultaAcervo.Create(self);
   ConsultaAcervo.Parent:=SDIAppForm;
   ConsultaAcervo.Show;
-end;
-
-procedure TConsultaPrincipal.BVoltarClick(Sender: TObject);
-begin
-  close;
-  MenuPrincipal:=TMenuPrincipal.Create(self);
-  MenuPrincipal.Parent:=SDIAppForm;
-  menuPrincipal.Show;
 end;
 
 end.

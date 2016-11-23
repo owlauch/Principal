@@ -37,7 +37,7 @@ object MenuPrincipal: TMenuPrincipal
         Value = 25.000049173799700000
       end
       item
-        Value = 74.999950826200310000
+        Value = 74.999950826200300000
       end>
     ControlCollection = <
       item
@@ -689,6 +689,7 @@ object MenuPrincipal: TMenuPrincipal
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
+          OnClick = BConsultaClick
           ExplicitTop = 328
           ExplicitWidth = 10
           ExplicitHeight = 100

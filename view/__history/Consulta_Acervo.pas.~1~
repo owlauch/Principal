@@ -18,7 +18,6 @@ type
     Panel2: TPanel;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
-    procedure BVoltarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,16 +28,7 @@ var
   ConsultaAcervo: TConsultaAcervo;
 
 implementation
-uses Consulta_Principal, Principal;
 
 {$R *.dfm}
-
-procedure TConsultaAcervo.BVoltarClick(Sender: TObject);
-begin
-  close;
-  ConsultaPrincipal:= TConsultaPrincipal.Create(self);
-  ConsultaPrincipal.Parent:=SDIAppForm;
-  ConsultaPrincipal.Show;
-end;
 
 end.

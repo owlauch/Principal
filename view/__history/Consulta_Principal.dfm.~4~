@@ -2,7 +2,6 @@ object ConsultaPrincipal: TConsultaPrincipal
   AlignWithMargins = True
   Left = 0
   Top = 0
-  Align = alClient
   BorderStyle = bsNone
   Caption = 'Consulta'
   ClientHeight = 411
@@ -49,6 +48,8 @@ object ConsultaPrincipal: TConsultaPrincipal
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 523
+    ExplicitHeight = 372
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 1
@@ -62,6 +63,8 @@ object ConsultaPrincipal: TConsultaPrincipal
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 130
+      ExplicitHeight = 370
       object GridPanel1: TGridPanel
         AlignWithMargins = True
         Left = 3
@@ -117,6 +120,8 @@ object ConsultaPrincipal: TConsultaPrincipal
             Value = 12.500418065862120000
           end>
         TabOrder = 0
+        ExplicitWidth = 124
+        ExplicitHeight = 364
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
@@ -127,6 +132,7 @@ object ConsultaPrincipal: TConsultaPrincipal
           Alignment = taCenter
           Caption = 'CONSULTAS'
           Layout = tlCenter
+          ExplicitTop = 49
           ExplicitWidth = 59
           ExplicitHeight = 13
         end
@@ -438,7 +444,6 @@ object ConsultaPrincipal: TConsultaPrincipal
           Layout = blGlyphRight
           Margin = 0
           NumGlyphs = 2
-          OnClick = BAcervoClick
           ExplicitLeft = 8
           ExplicitTop = 94
           ExplicitWidth = 116
@@ -483,7 +488,6 @@ object ConsultaPrincipal: TConsultaPrincipal
           Layout = blGlyphRight
           Margin = 1
           ParentBiDiMode = False
-          OnClick = BVoltarClick
           ExplicitWidth = 140
         end
       end
@@ -501,6 +505,9 @@ object ConsultaPrincipal: TConsultaPrincipal
       Align = alClient
       AutoSize = True
       TabOrder = 1
+      ExplicitLeft = 136
+      ExplicitWidth = 381
+      ExplicitHeight = 360
     end
   end
 end
