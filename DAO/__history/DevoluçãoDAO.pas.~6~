@@ -1,0 +1,34 @@
+unit DevoluçãoDAO;
+
+interface
+
+uses DataModule,dialogs;
+  type
+    tDevolucaoDAO = class
+      public
+      procedure devolverArcevo(id :integer);
+    end;
+
+implementation
+
+{ tDevolucaoDAO }
+
+procedure tDevolucaoDAO.devolverArcevo(id: integer);
+begin
+
+  DM.SQLQItemEmprestimo.Close;
+  dm.SQLQItemEmprestimo.SQL.Text:='delete from itememprestimo where idemprestimo=:id';
+  dm.SQLQItemEmprestimo.ParamByName('id').AsInteger:=id;
+  dm.SQLQItemEmprestimo.ExecSQL;
+  DM.ClDSitememprestimo.Close;
+  DM.ClDSitememprestimo.Open;
+  DM.ClDSitememprestimo.Close;
+  DM.ClDSitememprestimo.Open;
+  DM.CDSEmprestado.Close;
+  DM.CDSEmprestado.open;
+  DM.CDSEmprestado.Close;
+  DM.CDSEmprestado.open;
+  ShowMessageFmt('Item devolvido com sucesso');
+end;
+
+end.

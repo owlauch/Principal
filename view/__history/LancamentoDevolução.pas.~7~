@@ -61,12 +61,11 @@ procedure TDevolucao.DevolucaoClick(Sender: TObject);
 var
   id: integer;
   devolucaodao:TDevolucaodao;
-  date:TDate;
+  date:tdatetime;
 begin
   devolucaodao:=TDevolucaodao.Create;
   id:=DBGrid1.Fields[0].AsInteger;
-  ShowMessageFmt('%s',[DateToStr(date)]);
-  date:=StrToDate(DBGrid1.Fields[1].Text);
+  date:=DBGrid1.Fields[1].AsDateTime;
   devolucaodao.devolverArcevo(id,date);
 end;
 

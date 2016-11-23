@@ -13,7 +13,7 @@ object DM: TDM
       'drivername=FIREBIRD'
       'blobsize=-1'
       'commitretain=False'
-      'database=localhost:C:\BDBIBLIOTECA.FDB'
+      'Database=C:\BDBIBLIOTECA.FDB'
       'localecode=0000'
       'password=masterkey'
       'rolename=RoleName'
@@ -759,19 +759,24 @@ object DM: TDM
     SchemaName = 'sysdba'
     Active = True
     CommandText = 
-      'select (case COALESCE(itememprestimo.datadevolucao,'#39#39') when '#39#39' t' +
-      'hen '#39'N'#227'o Devolvido'#39' else itememprestimo.datadevolucao end) as de' +
-      'volucao,associado.nome associado,acervo.titulo titulo,emprestimo' +
-      '.dataemprestimo Data from emprestimo inner join itememprestimo o' +
-      'n emprestimo.idemprestimo=itememprestimo.idemprestimo inner join' +
-      ' associado on associado.idassociado=emprestimo.idassociado inner' +
-      ' join acervo on acervo.idacervo=itememprestimo.idacervo'
+      'select itememprestimo.IDEMPRESTIMO,(case COALESCE(itememprestimo' +
+      '.datadevolucao,'#39#39') when '#39#39' then '#39'N'#227'o Devolvido'#39' else itememprest' +
+      'imo.datadevolucao end) as devolucao, associado.nome associado,ac' +
+      'ervo.titulo titulo,emprestimo.dataemprestimo Data from emprestim' +
+      'o inner join itememprestimo on emprestimo.idemprestimo=itemempre' +
+      'stimo.idemprestimo inner join associado on associado.idassociado' +
+      '=emprestimo.idassociado inner join acervo on acervo.idacervo=ite' +
+      'memprestimo.idacervo order by ITEMEMPRESTIMO.IDEMPRESTIMO asc;'
     DbxCommandType = 'Dbx.SQL'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
     Left = 688
     Top = 88
+    object SQLDSEmprestadoIDEMPRESTIMO: TIntegerField
+      FieldName = 'IDEMPRESTIMO'
+      Required = True
+    end
     object SQLDSEmprestadoDEVOLUCAO: TStringField
       FieldName = 'DEVOLUCAO'
       Required = True
@@ -807,6 +812,10 @@ object DM: TDM
     ProviderName = 'DSPEmprestado'
     Left = 688
     Top = 216
+    object CDSEmprestadoIDEMPRESTIMO: TIntegerField
+      FieldName = 'IDEMPRESTIMO'
+      Required = True
+    end
     object CDSEmprestadoDEVOLUCAO: TStringField
       FieldName = 'DEVOLUCAO'
       Required = True

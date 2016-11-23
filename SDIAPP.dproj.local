@@ -14,8 +14,8 @@
     <Transaction>2016/11/03 14:46:32.000.536,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAcervo.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
     <Transaction>2016/11/03 14:47:45.000.708,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAutor.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
     <Transaction>2016/11/03 14:49:12.000.350,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroEditora.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
-    <Transaction>2016/11/03 18:34:01.000.961,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\DataModule\DataModule.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
     <Transaction>2016/11/03 18:34:01.000.961,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\DataModule\DataModule.pas=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.pas</Transaction>
+    <Transaction>2016/11/03 18:34:01.000.961,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\DataModule\DataModule.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
     <Transaction>2016/11/03 18:56:47.000.982,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\Primaria.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm</Transaction>
     <Transaction>2016/11/03 18:56:47.000.982,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\Primaria.pas=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.pas</Transaction>
     <Transaction>2016/11/04 14:28:23.000.373,C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\Unit1.dfm=C:\Users\Olivir\Desktop\biblioteca\Olivir Joao\view\CadastroAutor.dfm</Transaction>
@@ -34,6 +34,8 @@
     <Transaction>2016/11/21 10:47:58.000.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.dfm=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.dfm</Transaction>
     <Transaction>2016/11/21 10:47:58.000.879,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\view\LancamentoDevolução.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
     <Transaction>2016/11/23 09:36:11.000.250,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
+    <Transaction>2016/11/23 10:12:13.533,=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
+    <Transaction>2016/11/23 10:18:58.989,C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\DAO\DevoluçãoDAO.pas=C:\Users\owlau\OneDrive\Documentos\OlivirJunior\UTFPR\organizar\biblioteca\biblioteca\Principal\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="DAO"/>
@@ -47,6 +49,7 @@
     <File Path="DAO\ListaEsperaDAO.pas"/>
     <File Path="DAO\MultaDAO.pas"/>
     <File Path="DAO\PalavraChaveDAO.pas"/>
+    <File Path="DAO\DevoluçãoDAO.pas"/>
     <File Path="DataModule"/>
     <File Path="DataModule\DataModule.pas"/>
     <File Path="DataModule\DataModule.dfm"/>
