@@ -760,6 +760,7 @@
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          OnClick = BAssociadoClick
           ExplicitLeft = 8
           ExplicitTop = 151
           ExplicitWidth = 129
@@ -878,27 +879,21 @@
               item
                 Column = 0
                 Control = DBGrid1
-                Row = 2
+                Row = 1
               end
               item
                 Column = 1
                 Control = DBGrid2
-                Row = 2
+                Row = 1
               end
               item
                 Column = 0
                 Control = Label2
-                Row = 1
+                Row = 0
               end
               item
                 Column = 1
                 Control = Label3
-                Row = 1
-              end
-              item
-                Column = 0
-                ColumnSpan = 2
-                Control = DateTimePicker1
                 Row = 0
               end>
             RowCollection = <
@@ -907,23 +902,18 @@
                 Value = 33.000000000000000000
               end
               item
-                SizeStyle = ssAbsolute
-                Value = 33.000000000000000000
-              end
-              item
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
-            DesignSize = (
-              440
-              317)
             object DBGrid1: TDBGrid
               Left = 0
-              Top = 66
+              Top = 33
               Width = 219
-              Height = 251
+              Height = 284
               Align = alClient
-              DataSource = DM.DataSource
+              DataSource = DM.DSAssociado
+              DrawingStyle = gdsGradient
+              ReadOnly = True
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -985,11 +975,13 @@
             end
             object DBGrid2: TDBGrid
               Left = 219
-              Top = 66
+              Top = 33
               Width = 221
-              Height = 251
+              Height = 284
               Align = alClient
-              DataSource = DM.DataSource3
+              DataSource = DM.DSAcervo
+              DrawingStyle = gdsGradient
+              ReadOnly = True
               TabOrder = 1
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -1035,7 +1027,7 @@
             end
             object Label2: TLabel
               Left = 0
-              Top = 33
+              Top = 0
               Width = 219
               Height = 33
               Align = alClient
@@ -1043,12 +1035,13 @@
               BiDiMode = bdRightToLeftNoAlign
               Caption = 'ASSOCIADO'
               ParentBiDiMode = False
+              ExplicitTop = 33
               ExplicitWidth = 60
               ExplicitHeight = 13
             end
             object Label3: TLabel
               Left = 219
-              Top = 33
+              Top = 0
               Width = 221
               Height = 33
               Align = alClient
@@ -1056,19 +1049,9 @@
               BiDiMode = bdRightToLeftNoAlign
               Caption = 'ACERVO'
               ParentBiDiMode = False
+              ExplicitTop = 33
               ExplicitWidth = 41
               ExplicitHeight = 13
-            end
-            object DateTimePicker1: TDateTimePicker
-              Left = 179
-              Top = 6
-              Width = 82
-              Height = 21
-              Anchors = []
-              Date = 42693.659664444440000000
-              Time = 42693.659664444440000000
-              TabOrder = 2
-              Visible = False
             end
           end
         end
@@ -1207,10 +1190,10 @@
   object DBGrid3: TDBGrid
     Left = 167
     Top = 354
-    Width = 58
+    Width = 82
     Height = 31
     Align = alCustom
-    DataSource = DM.DSItemEmprestimo
+    DataSource = DM.DSMaxitem
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -1218,5 +1201,26 @@
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     Visible = False
+  end
+  object DBGridMulta: TDBGrid
+    Left = 255
+    Top = 354
+    Width = 74
+    Height = 31
+    Align = alCustom
+    DataSource = DM.DSMulta
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'DATAINICIOVIGENCIA'
+        Visible = True
+      end>
   end
 end

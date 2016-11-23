@@ -901,6 +901,8 @@
               Height = 245
               Align = alClient
               DataSource = DM.DSEmprestado
+              DrawingStyle = gdsGradient
+              ReadOnly = True
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
