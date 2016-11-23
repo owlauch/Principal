@@ -230,6 +230,7 @@ object Autor: TAutor
                 Height = 25
                 Align = alClient
                 TabOrder = 0
+                OnKeyPress = EditNomeKeyPress
                 ExplicitHeight = 21
               end
             end
@@ -320,6 +321,7 @@ object Autor: TAutor
             Height = 22
             Align = alClient
             TabOrder = 0
+            OnKeyPress = EditPesquisarKeyPress
             ExplicitHeight = 21
           end
         end

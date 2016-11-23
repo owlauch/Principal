@@ -47,6 +47,8 @@ type
     procedure SpeedButton4Click(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
+    procedure EditNomeKeyPress(Sender: TObject; var Key: Char);
+    procedure EditPesquisarKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -138,6 +140,18 @@ begin
   autormodel.SetId(id);
   Editnome.text:=autormodel.getnome;
 
+end;
+
+procedure TAutor.EditNomeKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAutor.EditPesquisarKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 procedure TAutor.SpeedButton2Click(Sender: TObject);

@@ -1,0 +1,231 @@
+unit CadastroAssociado;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,Dialogs, Menus, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids,DataModule,
+  Mask, CadastroMulta,AssociadoModel;
+
+type
+  TAssociado = class(TForm)
+    GridPricipal: TGridPanel;
+    PanelMenu: TPanel;
+    GridPanel1: TGridPanel;
+    BGravar: TSpeedButton;
+    BExcluir: TSpeedButton;
+    BEditar: TSpeedButton;
+    PanelVisualEdicao: TPanel;
+    GridPrincipalcadastro: TGridPanel;
+    GridCadastro: TGridPanel;
+    Pessoal: TGroupBox;
+    Endereço: TGroupBox;
+    DBGrid1: TDBGrid;
+    GridPanelPessoal: TGridPanel;
+    GridPanelEndereço: TGridPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    EditCidade: TEdit;
+    EditCEP: TEdit;
+    EditBairro: TEdit;
+    EditRua: TEdit;
+    EditNumero: TEdit;
+    GridPanelFiltro: TGridPanel;
+    Label10: TLabel;
+    Edit10: TEdit;
+    EditName: TEdit;
+    ComboBoxUf: TComboBox;
+    MaskEditTelefone: TMaskEdit;
+    Editemail: TEdit;
+    BLimpar: TSpeedButton;
+    Panel1: TPanel;
+    GridPanel2: TGridPanel;
+    Label11: TLabel;
+    BAcervo: TSpeedButton;
+    BAssociado: TSpeedButton;
+    BAutor: TSpeedButton;
+    BEditora: TSpeedButton;
+    BVoltar: TSpeedButton;
+    SpeedButtonMulta: TSpeedButton;
+    procedure BVoltarClick(Sender: TObject);
+    procedure BGravarClick(Sender: TObject);
+    procedure BExcluirClick(Sender: TObject);
+    procedure BAcervoClick(Sender: TObject);
+    procedure BAssociadoClick(Sender: TObject);
+    procedure BAutorClick(Sender: TObject);
+    procedure BEditoraClick(Sender: TObject);
+    procedure SpeedButtonMultaClick(Sender: TObject);
+    procedure EditNameKeyPress(Sender: TObject; var Key: Char);
+    procedure EditCidadeKeyPress(Sender: TObject; var Key: Char);
+    procedure EditBairroKeyPress(Sender: TObject; var Key: Char);
+    procedure EditRuaKeyPress(Sender: TObject; var Key: Char);
+    procedure Edit10KeyPress(Sender: TObject; var Key: Char);
+    procedure DBGrid1DblClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Associado: TAssociado;
+  associadomodel:tAssociadomodel;
+
+implementation
+
+uses CadastroPrincipal,Principal,AssociadoDAO, Primaria,
+  CadastroAcervo, CadastroAutor, CadastroEditora;
+
+{$R *.dfm}
+
+
+procedure TAssociado.BVoltarClick(Sender: TObject);
+begin
+  close;
+  MenuPrincipal:=TMenuPrincipal.Create(self);
+  MenuPrincipal.Parent:=SDIAppForm;
+  menuPrincipal.Show;
+end;
+
+procedure TAssociado.DBGrid1DblClick(Sender: TObject);
+var
+associadoDao:TassociadoDao;
+aux:string;
+begin
+  associadomodel:=TAssociadoModel.Create;
+  associadoDao:=TAssociadoDao.Create;
+  associadomodel.SetId(DBGrid1.Fields[0].AsInteger);
+  associadomodel.SetNome(DBGrid1.Fields[1].AsString);
+  associadomodel.SetEmail(DBGrid1.Fields[2].AsString);
+  associadomodel.SetTelefone(DBGrid1.Fields[3].AsString);
+  associadomodel.SetUF(DBGrid1.Fields[4].AsString);
+  associadomodel.SetCep(DBGrid1.Fields[5].AsString);
+  associadomodel.SetBairro(DBGrid1.Fields[6].AsString);
+  associadomodel.SetNroRua(DBGrid1.Fields[7].AsInteger);
+  associadomodel.SetCidade(DBGrid1.Fields[8].AsString);
+  associadomodel.SetRua(DBGrid1.Fields[9].AsString);
+  EditName.Text:=associadomodel.GetNome;
+  Editemail.Text:=associadomodel.Getemail;
+  MaskEditTelefone.Text:=associadomodel.Gettelefone;
+  ComboBoxUf.Text:=associadomodel.Getuf;
+  EditCidade.Text:=associadomodel.Getcidade;
+  EditCEP.Text:=associadomodel.Getcep;
+  EditBairro.Text:=associadomodel.Getbairro;
+  EditRua.Text:=associadomodel.Getrua;
+  EditNumero.Text:=associadomodel.Getnrorua;
+end;
+
+procedure TAssociado.Edit10KeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditBairroKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditCidadeKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.EditRuaKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAssociado.SpeedButtonMultaClick(Sender: TObject);
+begin
+  close;
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
+end;
+
+procedure TAssociado.BGravarClick(Sender: TObject);
+var
+  NET:TAssociadoModel;
+  AssociadoDao:TAssociadoDao;
+begin
+  net:=TAssociadoModel.Create;
+  net.setNome(editName.Text);
+  net.SetEmail(Editemail.Text);
+  net.SetTelefone(MaskEditTelefone.Text);
+  net.SetUF(ComboBoxUf.Text);
+  net.SetCep(EditCEP.Text);
+  net.SetBairro(EditBairro.Text);
+  net.SetNroRua(StrToInt(EditNumero.text));
+  net.SetCidade(EditCidade.text);
+  net.SetRua(EditRua.Text);
+  AssociadoDao.inserirAssociado(net);
+  EditName.Clear;
+  Editemail.Clear;
+  MaskEditTelefone.Clear;
+  ComboBoxUf.Clear;
+  EditCEP.Clear;
+  EditBairro.Clear;
+  EditNumero.Clear;
+  EditCidade.Clear;
+  EditRua.Clear;
+
+end;
+
+procedure TAssociado.BAcervoClick(Sender: TObject);
+begin
+  Close;
+  Acervo:=TAcervo.Create(self);
+  Acervo.Parent:=SDIAppForm;
+  Acervo.Show;
+end;
+
+procedure TAssociado.BAssociadoClick(Sender: TObject);
+begin
+  Close;
+  Associado:=TAssociado.Create(self);
+  Associado.Parent:=SDIAppForm;
+  Associado.Show;
+end;
+
+procedure TAssociado.BAutorClick(Sender: TObject);
+begin
+  Close;
+  Autor:=TAutor.Create(self);
+  Autor.Parent:=SDIAppForm;
+  Autor.Show;
+end;
+
+procedure TAssociado.BEditoraClick(Sender: TObject);
+begin
+  close;
+  Editora:=TEditora.Create(self);
+  Editora.Parent:=SDIAppForm;
+  Editora.Show;
+end;
+
+procedure TAssociado.BExcluirClick(Sender: TObject);
+ var
+ id:integer;
+ AssociadoDao:tAssociadoDao;
+begin
+  id:=DBGrid1.Fields[0].AsInteger;
+  AssociadoDao.excluirAssociado(id);
+end;
+
+end.
