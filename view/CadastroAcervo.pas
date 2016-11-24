@@ -61,6 +61,7 @@ type
     procedure EditLocalEdicaoKeyPress(Sender: TObject; var Key: Char);
     procedure EditIsbnKeyPress(Sender: TObject; var Key: Char);
     procedure Edit10KeyPress(Sender: TObject; var Key: Char);
+    procedure Edit10Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -207,6 +208,16 @@ begin
   EditEditora.text:=dm.SQLQEditora.FieldByName('RAZAOSOCIAL').AsString;
   ideditora:=acervomodel.GetEditora;
   Dm.SQLQEditora.open;
+end;
+
+procedure TAcervo.Edit10Change(Sender: TObject);
+begin
+  dm.SQLQAcervo.Close;
+  dm.SQLQAcervo.SQL.Clear;
+  dm.SQLQAcervo.sql.Text:='select * from acervo where acervo.titulo like' + QuotedStr('%'+edit10.Text+'%');
+  dm.SQLQAcervo.Open;
+  dm.CDSAcervo.Active:=false;
+  dm.CDSAcervo.Active:=true;
 end;
 
 procedure TAcervo.Edit10KeyPress(Sender: TObject; var Key: Char);

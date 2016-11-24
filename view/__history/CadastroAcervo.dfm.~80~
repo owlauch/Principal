@@ -143,52 +143,32 @@ object Acervo: TAcervo
               Visible = False
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'TITULO'
-              Title.Alignment = taCenter
-              Width = 200
+              Width = 320
               Visible = True
             end
             item
-              Alignment = taLeftJustify
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'QTDEEXEMPLAR'
-              Title.Alignment = taCenter
-              Title.Caption = 'QTD'
-              Width = 30
               Visible = True
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'DATAEDICAO'
-              Title.Alignment = taCenter
-              Title.Caption = 'EDI'#199#195'O'
-              Width = 70
-              Visible = True
+              Visible = False
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'LOCALEDICAO'
-              Title.Alignment = taCenter
-              Title.Caption = 'LOCAL'
-              Width = 150
-              Visible = True
+              Visible = False
             end
             item
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'ISBN'
-              Title.Alignment = taCenter
-              Width = 50
-              Visible = True
+              Visible = False
             end
             item
-              Alignment = taCenter
-              ButtonStyle = cbsEllipsis
               Expanded = False
               FieldName = 'IDEDITORA'
               Visible = False
@@ -247,6 +227,7 @@ object Acervo: TAcervo
             Height = 22
             Align = alClient
             TabOrder = 0
+            OnKeyPress = Edit10KeyPress
             ExplicitHeight = 21
           end
         end
@@ -470,6 +451,7 @@ object Acervo: TAcervo
               Height = 21
               Align = alClient
               TabOrder = 0
+              OnKeyPress = EditTituloKeyPress
             end
             object EditLocalEdicao: TEdit
               AlignWithMargins = True
@@ -478,7 +460,8 @@ object Acervo: TAcervo
               Width = 206
               Height = 21
               Align = alClient
-              TabOrder = 1
+              TabOrder = 3
+              OnKeyPress = EditLocalEdicaoKeyPress
             end
             object EditIsbn: TEdit
               AlignWithMargins = True
@@ -487,7 +470,8 @@ object Acervo: TAcervo
               Width = 164
               Height = 21
               Align = alClient
-              TabOrder = 2
+              TabOrder = 4
+              OnKeyPress = EditIsbnKeyPress
             end
             object DateTimePickerEdicao: TDateTimePicker
               AlignWithMargins = True
@@ -497,7 +481,7 @@ object Acervo: TAcervo
               Height = 20
               Date = 42682.379632870370000000
               Time = 42682.379632870370000000
-              TabOrder = 3
+              TabOrder = 2
             end
             object ComboBoxQtd: TComboBox
               AlignWithMargins = True
@@ -508,7 +492,7 @@ object Acervo: TAcervo
               Align = alLeft
               BiDiMode = bdLeftToRight
               ParentBiDiMode = False
-              TabOrder = 4
+              TabOrder = 1
               Items.Strings = (
                 '0'
                 '1'
@@ -780,24 +764,11 @@ object Acervo: TAcervo
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = BlimparClick
               ExplicitLeft = 362
               ExplicitTop = -3
               ExplicitWidth = 68
             end
-          end
-          object DBGrid2: TDBGrid
-            Left = -88
-            Top = 0
-            Width = 320
-            Height = 120
-            DataSource = DM.DSEditora
-            TabOrder = 1
-            TitleFont.Charset = DEFAULT_CHARSET
-            TitleFont.Color = clWindowText
-            TitleFont.Height = -11
-            TitleFont.Name = 'Tahoma'
-            TitleFont.Style = []
-            Visible = False
           end
         end
       end

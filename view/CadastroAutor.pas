@@ -49,6 +49,7 @@ type
     procedure SpeedButtonMultaClick(Sender: TObject);
     procedure EditNomeKeyPress(Sender: TObject; var Key: Char);
     procedure EditPesquisarKeyPress(Sender: TObject; var Key: Char);
+    procedure EditPesquisarChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -145,6 +146,16 @@ procedure TAutor.EditNomeKeyPress(Sender: TObject; var Key: Char);
 begin
   if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
   Key := #0;
+end;
+
+procedure TAutor.EditPesquisarChange(Sender: TObject);
+begin
+  dm.SQLQAutor.Close;
+  dm.SQLQAutor.SQL.Clear;
+  dm.SQLQAutor.sql.Text:='select * from Autor where Autor.nome like' + QuotedStr('%'+EditPesquisar.Text+'%');
+  dm.SQLQAutor.Open;
+  dm.CDSAutor.Active:=false;
+  dm.CDSAutor.Active:=true;
 end;
 
 procedure TAutor.EditPesquisarKeyPress(Sender: TObject; var Key: Char);

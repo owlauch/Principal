@@ -50,9 +50,9 @@ end;
 procedure TMenuPrincipal.BConsultaClick(Sender: TObject);
 begin
   close;
-  ConsultaAcervo:= TConsultaAcervo.Create(self);
-  ConsultaAcervo.Parent:=SDIAppForm;
-  ConsultaAcervo.Show;
+  ConsultaPrincipal:= TConsultaPrincipal.Create(self);
+  ConsultaPrincipal.Parent:=SDIAppForm;
+  ConsultaPrincipal.Show;
 end;
 
 procedure TMenuPrincipal.BLancamentoClick(Sender: TObject);

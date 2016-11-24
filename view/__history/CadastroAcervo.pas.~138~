@@ -56,6 +56,12 @@ type
     procedure EditEditoraClick(Sender: TObject);
     procedure BEditarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure BlimparClick(Sender: TObject);
+    procedure EditTituloKeyPress(Sender: TObject; var Key: Char);
+    procedure EditLocalEdicaoKeyPress(Sender: TObject; var Key: Char);
+    procedure EditIsbnKeyPress(Sender: TObject; var Key: Char);
+    procedure Edit10KeyPress(Sender: TObject; var Key: Char);
+    procedure Edit10Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,6 +79,14 @@ uses CadastroPrincipal, Principal, AcervoDAO,dataModule, Primaria,
   CadastroAssociado, CadastroAutor, CadastroEditora, EditoraLista, EditoraModel;
 
 {$R *.dfm}
+procedure TAcervo.SpeedButtonMultaClick(Sender: TObject);
+begin
+  close;
+  Multa:=TMulta.Create(self);
+  Multa.Parent:=SDIAppForm;
+  Multa.Show;
+end;
+
 procedure TAcervo.BVoltarClick(Sender: TObject);
 begin
   close;
@@ -80,6 +94,7 @@ begin
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
 end;
+
 procedure TAcervo.BAcervoClick(Sender: TObject);
 begin
   Close;
@@ -116,6 +131,11 @@ begin
   acervomodel.SetIsbn(EditIsbn.text);
   acervomodel.SetEditora(ideditora);
   acervodao.editarAcervo(acervomodel);
+  EditTitulo.clear;
+  ComboBoxQtd.clear;
+  EditLocalEdicao.clear;
+  EditIsbn.clear;
+  EditEditora.Clear;
 end;
 
 procedure TAcervo.BEditoraClick(Sender: TObject);
@@ -128,12 +148,10 @@ end;
 
 procedure TAcervo.BExcluirClick(Sender: TObject);
 var
- id2:integer;
- AcervoDao:tAcervoDao;
+  AcervoDao:tAcervoDao;
 begin
   AcervoDao:=TAcervoDao.Create;
-  id2:=DBGrid1.Fields[0].AsInteger;
-  AcervoDao.excluirAcervo(id2);
+  AcervoDao.excluirAcervo(DBGrid1.Fields[0].AsInteger);
 end;
 
 procedure TAcervo.BGravarClick(Sender: TObject);
@@ -141,6 +159,7 @@ var
   AcervoDao:TAcervoDao;
 begin
   acervoDao:=TAcervoDao.Create;
+  acervomodel:=TAcervoModel.Create;
   acervomodel.SetTitulo(EditTitulo.Text);
   acervomodel.Setqtdeexemplar(StrToInt(ComboBoxQtd.Text));
   AcervoModel.SetDataEdicao(DateTimePickerEdicao.DateTime);
@@ -148,6 +167,20 @@ begin
   AcervoModel.SetIsbn(EditIsbn.Text);
   AcervoModel.SetEditora(ideditora);
   AcervoDao.inserirAcervo(AcervoModel);
+  EditTitulo.clear;
+  ComboBoxQtd.clear;
+  EditLocalEdicao.clear;
+  EditIsbn.clear;
+  EditEditora.Clear;
+end;
+
+procedure TAcervo.BlimparClick(Sender: TObject);
+begin
+  EditTitulo.clear;
+  ComboBoxQtd.clear;
+  EditLocalEdicao.clear;
+  EditIsbn.clear;
+  EditEditora.Clear;
 end;
 
 procedure TAcervo.DBGrid1DblClick(Sender: TObject);
@@ -173,7 +206,24 @@ begin
   dm.SQLQEditora.ExecSQL;
   Dm.SQLQEditora.open;
   EditEditora.text:=dm.SQLQEditora.FieldByName('RAZAOSOCIAL').AsString;
+  ideditora:=acervomodel.GetEditora;
   Dm.SQLQEditora.open;
+end;
+
+procedure TAcervo.Edit10Change(Sender: TObject);
+begin
+  dm.SQLQAcervo.Close;
+  dm.SQLQAcervo.SQL.Clear;
+  dm.SQLQAcervo.sql.Text:='select * from acervo where acervo.titulo like' + QuotedStr('%'+edit10.Text+'%');
+  dm.SQLQAcervo.Open;
+  dm.CDSAcervo.Active:=false;
+  dm.CDSAcervo.Active:=true;
+end;
+
+procedure TAcervo.Edit10KeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 procedure TAcervo.EditEditoraClick(Sender: TObject);
@@ -183,13 +233,22 @@ begin
   ListaEditora.Show;
 end;
 
-
-procedure TAcervo.SpeedButtonMultaClick(Sender: TObject);
+procedure TAcervo.EditIsbnKeyPress(Sender: TObject; var Key: Char);
 begin
-  close;
-  Multa:=TMulta.Create(self);
-  Multa.Parent:=SDIAppForm;
-  Multa.Show;
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAcervo.EditLocalEdicaoKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAcervo.EditTituloKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 end.
