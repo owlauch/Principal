@@ -878,17 +878,9 @@
               item
                 Column = 0
                 Control = DBGrid1
-                Row = 2
+                Row = 0
               end>
             RowCollection = <
-              item
-                SizeStyle = ssAbsolute
-                Value = 33.000000000000000000
-              end
-              item
-                SizeStyle = ssAbsolute
-                Value = 33.000000000000000000
-              end
               item
                 Value = 100.000000000000000000
               end>
@@ -896,12 +888,16 @@
             object DBGrid1: TDBGrid
               AlignWithMargins = True
               Left = 3
-              Top = 69
+              Top = 3
               Width = 446
-              Height = 245
+              Height = 311
               Align = alClient
+              BorderStyle = bsNone
+              Ctl3D = False
               DataSource = DM.DSEmprestado
               DrawingStyle = gdsGradient
+              Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+              ParentCtl3D = False
               ReadOnly = True
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
@@ -913,7 +909,7 @@
                 item
                   Expanded = False
                   FieldName = 'IDEMPRESTIMO'
-                  Visible = True
+                  Visible = False
                 end
                 item
                   Expanded = False
@@ -923,6 +919,7 @@
                 item
                   Expanded = False
                   FieldName = 'ASSOCIADO'
+                  Width = 130
                   Visible = True
                 end
                 item

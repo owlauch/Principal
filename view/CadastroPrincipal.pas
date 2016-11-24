@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, Buttons, StdCtrls, ExtCtrls, CadastroMulta;
+  Dialogs, Menus, Buttons, StdCtrls, ExtCtrls, CadastroMulta, pngimage;
 
 type
   TCadastro = class(TForm)
@@ -19,6 +19,7 @@ type
     Panel2: TPanel;
     BVoltar: TSpeedButton;
     SpeedButtonMulta: TSpeedButton;
+    Image1: TImage;
     procedure BAssociadoClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);

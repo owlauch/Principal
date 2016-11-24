@@ -1,3 +1,4 @@
+{* Tem como finalidade pegar um objeto (Acervomodel) e gravar, alterar ou excluir no banco}
 unit AcervoDAO;
 
 interface
@@ -12,7 +13,7 @@ uses DataModule,AcervoModel,Dialogs;
 implementation
 
 { TAcervoDao }
-
+{* Tem como finalidade pegar um objeto (Acervomodel) e alterar no banco}
 procedure TAcervoDao.editarAcervo(acervomodel: tAcervoModel);
 begin
   DM.SQLQAcervo.Close;
@@ -34,7 +35,7 @@ begin
   DM.CDSAcervo.Open;
   ShowMessageFmt('O titulo %s foi alterado com sucesso',[acervomodel.GetTitulo] );
 end;
-
+{* Tem como finalidade pegar um objeto (Acervomodel) e exluir no banco}
 procedure TAcervoDao.excluirAcervo(id: integer);
 begin
   DM.SQLQAcervo.Close;
@@ -51,7 +52,7 @@ begin
   DM.CDSAcervo.Open;
   ShowMessage('excluido com sucesso');
 end;
-
+{* Tem como finalidade pegar um objeto (Acervomodel) e inserir no banco}
 procedure TAcervoDao.inserirAcervo(AcervoModel: TAcervoModel);
 begin
 try

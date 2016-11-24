@@ -96,11 +96,6 @@ object Multa: TMulta
           end
           item
             Column = 0
-            Control = GridPanelFiltro
-            Row = 1
-          end
-          item
-            Column = 0
             Control = PanelMenu
             Row = 3
           end
@@ -236,29 +231,6 @@ object Multa: TMulta
             end
           end
         end
-        object GridPanelFiltro: TGridPanel
-          AlignWithMargins = True
-          Left = 3
-          Top = 73
-          Width = 452
-          Height = 24
-          Align = alClient
-          ColumnCollection = <
-            item
-              SizeStyle = ssAbsolute
-              Value = 75.000000000000000000
-            end
-            item
-              Value = 100.000000000000000000
-            end>
-          ControlCollection = <>
-          Padding.Left = 1
-          RowCollection = <
-            item
-              Value = 100.000000000000000000
-            end>
-          TabOrder = 1
-        end
         object PanelMenu: TPanel
           AlignWithMargins = True
           Left = 5
@@ -271,7 +243,7 @@ object Multa: TMulta
           Margins.Bottom = 5
           Align = alClient
           Anchors = []
-          TabOrder = 2
+          TabOrder = 1
           object GridPanel1: TGridPanel
             Left = 1
             Top = 1
@@ -297,23 +269,8 @@ object Multa: TMulta
               end>
             ControlCollection = <
               item
-                Column = 1
-                Control = Bgravar
-                Row = 0
-              end
-              item
-                Column = 2
-                Control = BExcluir
-                Row = 0
-              end
-              item
-                Column = 3
-                Control = SpeedButton4
-                Row = 0
-              end
-              item
                 Column = 4
-                Control = SpeedButton2
+                Control = Bgravar
                 Row = 0
               end>
             ParentBackground = False
@@ -324,9 +281,9 @@ object Multa: TMulta
             TabOrder = 0
             object Bgravar: TSpeedButton
               AlignWithMargins = True
-              Left = 92
+              Left = 356
               Top = 4
-              Width = 82
+              Width = 86
               Height = 30
               Align = alClient
               Anchors = []
@@ -361,142 +318,7 @@ object Multa: TMulta
               Layout = blGlyphRight
               Margin = 1
               OnClick = BgravarClick
-              ExplicitLeft = 11
-              ExplicitTop = 102
-              ExplicitWidth = 134
-              ExplicitHeight = 43
-            end
-            object BExcluir: TSpeedButton
-              AlignWithMargins = True
-              Left = 180
-              Top = 4
-              Width = 82
-              Height = 30
-              Align = alClient
-              Anchors = []
-              Caption = 'EXCLUIR'
-              Glyph.Data = {
-                36030000424D3603000000000000360000002800000010000000100000000100
-                18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE5E8F79EA9E1546BC73F
-                59C03A53BF4C67C297A7DCE1E6F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFC3C9ED5566CC3C52CC757AE88F92EE8F92EE7178E4334DC1405CBEB9C4
-                E7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC5C9EF5160CD5C65E0A1A6F57E86EF5B
-                63E9595DE77D84EE9EA0F4515DD73452BAB9C4E7FFFFFFFFFFFFFFFFFFE8EAF9
-                6571D4616BE3A1ACF5545FEC505CEA4D59E94E59E64C56E65056E69EA2F45460
-                D6405CBFE2E7F5FFFFFFFFFFFFACB0EA4B56DBA2ABF65664F05266EE4D59E94D
-                59E94D59E94D59E94C58E6525AE69FA3F53450C496A6DCFFFFFFFFFFFF7378DD
-                818CEE7E91F75D73F34D59E94D59E94D59E94D59E94D59E94D59E94F5BE97B83
-                F0757BE24C64C4FFFFFFFFFFFF6569DBA1ABF77086F86882F6FFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFF4D59E95C66EA969CF13956BEFFFFFFFFFFFF696EDC
-                AFB9F97F93FA7085F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4D59E95E6A
-                EE969DF13D55C0FFFFFFFFFFFF7C7FE3A5AFF59DABFA778CF0545FEC545FEC54
-                5FEC545FEC545FEC545FEC6377F2818EF4787FE9566BC9FFFFFFFFFFFFB5B5F0
-                7D83EACDD4FC8B9DFA7E93F7758AEE6C84F66C84F66C84F66C84F66379F3A4AF
-                F83E4FD0A0ABE1FFFFFFFFFFFFEBEBFB7978E3A3A7F3D4DBFD879AFA7F91F07A
-                8EF17F94F87E92F9768CF8A8B6F8636EE35868CDE6E8F7FFFFFFFFFFFFFFFFFF
-                CFCFF6706FE1AAADF2D8DCFDAEBAFA91A3FA8B9DFA9CA9FBBAC7FC707BE95462
-                CEC3C9EEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCFCFF67979E28E93EDBEC3F8CC
-                D3F9C4CBF9AAB4F46670E2646ED6C6CAEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFEBEBFBB6B6F07D7FE26A6BDE686BDC7479DEAFB3EBE8E9F9FFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              Layout = blGlyphRight
-              Margin = 1
-              ExplicitLeft = 219
-              ExplicitTop = -3
-              ExplicitWidth = 65
-            end
-            object SpeedButton4: TSpeedButton
-              AlignWithMargins = True
-              Left = 268
-              Top = 4
-              Width = 82
-              Height = 30
-              Align = alClient
-              Anchors = []
-              BiDiMode = bdLeftToRight
-              Caption = 'EDITAR'
-              Glyph.Data = {
-                36030000424D3603000000000000360000002800000010000000100000000100
-                18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
-                FFFFFFFFFFFF18435A2B62894C8ABE70A9CCE3EDF5FFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFDFB493D59D74D196682E668294C7F991C9F941
-                85C92466A6A88265C38452C38452C38452C38452D0A17DFFFFFFFFFFFFD7A175
-                F8F2EDF7F0EA4389AAE0F2FF549AD81A7ABE4998C5478CC3D0D2D7F0E2D8F0E2
-                D8F0E2D8C58B5EFFFFFFFFFFFFD9A47AF9F3EEEBD2BEA7C5D97AB6D590B7D155
-                C9E45BDFF578D0ED519DDDE4F0FAFFFFFFF0E2D8C68C5FFFFFFFFFFFFFDDA87E
-                F9F3EFEBD0BAEBD0BBA7B7B976B9D5C2F6FD63DFF75DE2F879D3F04997DAD4C5
-                B9F0E2D8C68A5CFFFFFFFFFFFFDFAA82F9F3EFEACEB7FFFFFFEBD0BBB1D6E777
-                CBE7C7F7FD5EDCF55AE1F77BD4F14C9ADECAD0D8C88D5FFFFFFFFFFFFFE1AE87
-                FAF4F0EACBB2EACCB3EACCB3EACCB3B0C4BF79D3EEC7F7FD5FDCF55BE2F77AD6
-                F250A0DEAC876BFFFFFFFFFFFFE3B18CFAF6F1EAC9AEFFFFFFEAC9B0FFFFFFFF
-                FFFFC1EBF77DD4EDC4F6FD6CDDF66DCAED63A3D76599C9E5EFF7FFFFFFE5B48F
-                FAF6F2E9C6AAE9C6ACEAC7ACE9C7ADE9C9AEE9C9B0A6C1BE81D5EDB2E3F98BC0
-                E7AED3F6C4E0FC6BA2D4FFFFFFE7B794FBF7F4E9C3A6FFFFFFE8C4A9FFFFFFFF
-                FFFFFFFFFFE8C7ACB1E6F577BEE7B4D2F0E5F3FFACD2EF5996CCFFFFFFE9BA98
-                FBF7F4E9C3A6E9C3A6E9C3A6E9C3A6E9C3A6E9C3A6E9C3A6E9C3A6ADBDB858A5
-                D885B1DB469DD0B1D8EEFFFFFFEBBD9BFBF7F4FFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBF7F4D1976AFFFFFFFFFFFFECBF9E
-                FBF7F49CD5A598D3A194D09D90CE988BCB9387C98E82C6897EC3847AC18076BE
-                7CFBF7F4D49B6FFFFFFFFFFFFFEFC6A8FBF7F4FBF7F4FBF7F4FBF7F4FBF7F4FB
-                F7F4FBF7F4FBF7F4FBF7F4FBF7F4FBF7F4FBF7F4D8A378FFFFFFFFFFFFF7E1D2
-                F1C8ACEDC09FEBBE9DEBBC9AE9BA96E7B793E6B590E4B28CE2AF88E0AC84DDA9
-                80DCA57DE2B696FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              Layout = blGlyphRight
-              Margin = 1
-              ParentBiDiMode = False
-              ExplicitLeft = 4
-              ExplicitTop = 328
-              ExplicitWidth = 10
-              ExplicitHeight = 100
-            end
-            object SpeedButton2: TSpeedButton
-              AlignWithMargins = True
-              Left = 356
-              Top = 4
-              Width = 86
-              Height = 30
-              Align = alClient
-              Anchors = []
-              BiDiMode = bdLeftToRight
-              Caption = 'LIMPAR'
-              Glyph.Data = {
-                36030000424D3603000000000000360000002800000010000000100000000100
-                18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6AA7663787
-                336AA766FFFFFFFFFFFFFEFEFEF8F8F8F1F1F1EBEBEBE6E6E6E5E5E5E6E6E6E8
-                E8E8EAEAEAEDEDEDF1F1F13A99302BDF1A3C9B32FDFDFDFEFEFEFDFDFDF2F2F2
-                E4E4E4D7D7D7CECECECCCCCC9BA5AE3357793356784D9253399E2D399E2E3DE2
-                2C3CA1313DA2326EBB66FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB7C0C933557754
-                94B734679A168A1852E74152E74152E74152E74152E74140AA33FFFFFFFFFFFF
-                FFFFFFFFFFFFBED2DE457B9D3A719F386F9D5F9FC0268E4519921B34A62A66EB
-                5541B13341B13371C466FFFFFFFFFFFFFFFFFFB7C3CF3355774F8DB368ACC848
-                80AC5087B36AAAC85588BB1C991D75EE6443B633FFFFFFFFFFFFFFFFFFFFFFFF
-                C0D5E14A86A85FA1C03F79A34278A766A6C5619DC25E95C174B4D135A2512298
-                115DA454FFFFFFFFFFFFFFFFFFB7C3CF335577336898508CB369ABC867A7C64D
-                80B371B1CE6EA9CD6CA3CE6D6D6DAA99995B5B5BBDD1DDFFFFFFC1D8E44F8FB1
-                6AAEC966A8C55692B84B80AF5D97BF77B9D2669DC87BBAD57E7E7ECEC0C07979
-                795588BB5A8CABFFFFFF7DAEC85496B75498B8599BBA68ABC676BAD26EACCC66
-                9DC883C7DA888888D3CACA83838360A4C663A7C95B90AEFFFFFFFAFCFDEBF3F7
-                D7E6EEBED7E388B5CC5F9CBB64A9C47BBAD5919191D9D4D48D8D8D68ACCE74B8
-                D44C89AABFD5E1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFF5F892BCD196
-                9696DDDCDC94949470B4D680C4DB4E8DAF334882B7BCD0FFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDBDBDB98989888CCDD87CBDD5192B43359
-                993F72B6335290B7C1D7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFC6D1D764A1BF64A0BEC1D9E5B7C7DE335EA05285C9335898FFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFB7C9E03363A5B7C7DEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              Layout = blGlyphRight
-              Margin = 1
-              ParentBiDiMode = False
-              ExplicitLeft = 75
-              ExplicitTop = -3
-              ExplicitWidth = 66
-              ExplicitHeight = 38
+              ExplicitTop = 0
             end
           end
         end
@@ -511,14 +333,16 @@ object Multa: TMulta
           Ctl3D = False
           DataSource = DM.DSMulta
           DrawingStyle = gdsGradient
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           ParentBiDiMode = False
           ParentCtl3D = False
-          TabOrder = 3
+          TabOrder = 2
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
+          OnDblClick = DBGrid1DblClick
         end
       end
     end
@@ -611,7 +435,6 @@ object Multa: TMulta
             Value = 12.500418065862120000
           end>
         TabOrder = 0
-        ExplicitTop = -8
         object Label7: TLabel
           AlignWithMargins = True
           Left = 4

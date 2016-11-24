@@ -912,8 +912,12 @@
               Width = 213
               Height = 278
               Align = alClient
+              BorderStyle = bsNone
+              Ctl3D = False
               DataSource = DM.DSAssociado
               DrawingStyle = gdsGradient
+              Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+              ParentCtl3D = False
               ReadOnly = True
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
@@ -981,8 +985,12 @@
               Width = 215
               Height = 278
               Align = alClient
+              BorderStyle = bsNone
+              Ctl3D = False
               DataSource = DM.DSAcervo
               DrawingStyle = gdsGradient
+              Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiSelect, dgTitleClick, dgTitleHotTrack]
+              ParentCtl3D = False
               ReadOnly = True
               TabOrder = 1
               TitleFont.Charset = DEFAULT_CHARSET

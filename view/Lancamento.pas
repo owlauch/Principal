@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, StdCtrls, ExtCtrls, Principal, Grids, DBGrids, ComCtrls,
-  LancamentoEEmprestimo, LancamentoDevolução, DataModule;
+  LancamentoEEmprestimo, LancamentoDevolução, DataModule, pngimage;
 
 type
   Tlacamento = class(TForm)
@@ -16,6 +16,7 @@ type
     BAssociado: TSpeedButton;
     BVoltar: TSpeedButton;
     Label7: TLabel;
+    Image1: TImage;
     procedure BVoltarClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
     procedure BAssociadoClick(Sender: TObject);

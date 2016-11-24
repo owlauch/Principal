@@ -78,21 +78,17 @@
 			<DCCReference Include="Modules\AutorModel.pas"/>
 			<DCCReference Include="Modules\EditoraModel.pas"/>
 			<DCCReference Include="Modules\EmprestimoModel.pas"/>
-			<DCCReference Include="Modules\ExemplarModel.pas"/>
 			<DCCReference Include="Modules\ItemEmprestimoModel.pas"/>
 			<DCCReference Include="Modules\ListaEsperaModel.pas"/>
 			<DCCReference Include="Modules\MultaModel.pas"/>
-			<DCCReference Include="Modules\PalavraChaveModel.pas"/>
 			<DCCReference Include="DAO\AssociadoDAO.pas"/>
 			<DCCReference Include="DAO\AcervoDAO.pas"/>
 			<DCCReference Include="DAO\AutorDAO.pas"/>
 			<DCCReference Include="DAO\EditoraDAO.pas"/>
 			<DCCReference Include="DAO\EmprestimoDAO.pas"/>
-			<DCCReference Include="DAO\ExemplarDAO.pas"/>
 			<DCCReference Include="DAO\ItemEmprestimoDAO.pas"/>
 			<DCCReference Include="DAO\ListaEsperaDAO.pas"/>
 			<DCCReference Include="DAO\MultaDAO.pas"/>
-			<DCCReference Include="DAO\PalavraChaveDAO.pas"/>
 			<DCCReference Include="view\Consulta_Principal.pas">
 				<Form>ConsultaPrincipal</Form>
 			</DCCReference>

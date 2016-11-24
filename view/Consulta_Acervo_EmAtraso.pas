@@ -15,7 +15,6 @@ type
     BEmprestado: TSpeedButton;
     BVoltar: TSpeedButton;
     BEmAtraso: TSpeedButton;
-    BReservado: TSpeedButton;
     Panel2: TPanel;
     DBGrid1: TDBGrid;
     procedure BVoltarClick(Sender: TObject);

@@ -1,3 +1,4 @@
+{* Tem como finalidade pegar um objeto (Associadomodel) e gravar, alterar ou excluir no banco}
 unit AssociadoDAO;
 
 interface
@@ -13,7 +14,7 @@ uses DataModule,AssociadoModel,Dialogs;
 
 implementation
 uses  CadastroAssociado;
-
+{* Tem como finalidade pegar um objeto (Associadomodel) e alterar no banco}
 procedure TAssociadoDao.editarAssociado(associadomodel: tAssociadoModel);
 begin
   DM.SQLQAssociado.Close;
@@ -39,7 +40,7 @@ begin
   DM.CDSAssociado.Open;
   ShowMessageFmt('O Associado %s foi alterado com sucesso',[associadomodel.Getnome] );
 end;
-
+{* Tem como finalidade pegar um objeto (Associadomodel) e excluir no banco}
 procedure TAssociadoDao.excluirAssociado(id: integer);
 begin
   DM.SQLQAssociado.Close;
@@ -55,9 +56,8 @@ begin
   DM.CDSAssociado.Close;
   DM.CDSAssociado.Open;
 end;
-
+{* Tem como finalidade pegar um objeto (Associadomodel) e inserir no banco}
 procedure TAssociadoDao.inserirAssociado(AssociadoModel: TAssociadoModel);
-
 begin
 try
   DM.SQLQAssociado.Close;

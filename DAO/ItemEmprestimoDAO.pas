@@ -1,3 +1,4 @@
+{* Tem como finalidade pegar um objeto (ItemEmprestimomodel) e gravar no banco}
 unit ItemEmprestimoDAO;
 
 interface
@@ -13,7 +14,7 @@ end;
 implementation
 
 { TItemEmprestimoDao }
-
+{* Tem como finalidade pegar um objeto (ItemEmprestimomodel) e gravar no banco}
 procedure TItemEmprestimoDao.inserirItemEmprestimo(ItemEmprestimoModel: TitemEmprestimoModel);
 var
   x,y:integer;
@@ -55,7 +56,6 @@ begin
   DM.CLDSItemEmprestimo.Open;
   DM.CLDSItemEmprestimo.Close;
   DM.CLDSItemEmprestimo.Open;
-
   DM.CDSEmprestado.Close;
   DM.CDSEmprestado.Open;
   DM.CDSEmprestado.Close;

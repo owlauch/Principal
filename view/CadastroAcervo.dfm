@@ -14,6 +14,8 @@ object Acervo: TAcervo
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  ExplicitWidth = 320
+  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   object GridPricipal: TGridPanel
@@ -128,6 +130,7 @@ object Acervo: TAcervo
           BorderStyle = bsNone
           DataSource = DM.DSAcervo
           DrawingStyle = gdsGradient
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           ReadOnly = True
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
@@ -181,6 +184,7 @@ object Acervo: TAcervo
           Width = 440
           Height = 24
           Align = alClient
+          BevelOuter = bvNone
           ColumnCollection = <
             item
               SizeStyle = ssAbsolute
@@ -208,23 +212,20 @@ object Acervo: TAcervo
           TabOrder = 1
           object Label10: TLabel
             AlignWithMargins = True
-            Left = 6
-            Top = 4
-            Width = 68
-            Height = 16
+            Left = 27
+            Top = 3
+            Width = 46
+            Height = 13
             Align = alClient
             BiDiMode = bdRightToLeft
             Caption = 'Pesquisar'
             ParentBiDiMode = False
-            ExplicitLeft = 28
-            ExplicitWidth = 46
-            ExplicitHeight = 13
           end
           object Edit10: TEdit
-            Left = 78
-            Top = 1
-            Width = 361
-            Height = 22
+            Left = 77
+            Top = 0
+            Width = 363
+            Height = 24
             Align = alClient
             TabOrder = 0
             OnChange = Edit10Change
@@ -523,8 +524,12 @@ object Acervo: TAcervo
               Width = 140
               Height = 21
               Anchors = []
+              Color = clInactiveCaption
+              Ctl3D = True
+              ParentCtl3D = False
+              ReadOnly = True
               TabOrder = 5
-              OnClick = EditEditoraClick
+              OnEnter = EditEditoraClick
             end
           end
         end
@@ -869,6 +874,7 @@ object Acervo: TAcervo
           Top = 103
           Width = 140
           Height = 43
+          Cursor = crNo
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
@@ -1187,6 +1193,7 @@ object Acervo: TAcervo
           Top = 152
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ASSOCIADO'
@@ -1497,6 +1504,7 @@ object Acervo: TAcervo
           Top = 201
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'AUTOR'
@@ -1800,9 +1808,6 @@ object Acervo: TAcervo
           Margin = 1
           NumGlyphs = 2
           OnClick = BAutorClick
-          ExplicitTop = 247
-          ExplicitWidth = 10
-          ExplicitHeight = 100
         end
         object BEditora: TSpeedButton
           AlignWithMargins = True
@@ -1810,6 +1815,7 @@ object Acervo: TAcervo
           Top = 251
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'EDITORA'
@@ -2124,6 +2130,7 @@ object Acervo: TAcervo
           Top = 4
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'
@@ -2167,14 +2174,12 @@ object Acervo: TAcervo
           AlignWithMargins = True
           Left = 4
           Top = 54
-          Width = 140
-          Height = 43
+          Width = 61
+          Height = 13
           Align = alClient
           Alignment = taCenter
           Caption = 'CADASTROS'
           Layout = tlCenter
-          ExplicitWidth = 61
-          ExplicitHeight = 13
         end
         object SpeedButtonMulta: TSpeedButton
           AlignWithMargins = True
@@ -2182,6 +2187,7 @@ object Acervo: TAcervo
           Top = 301
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'VALOR MULTA'

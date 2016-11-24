@@ -1,3 +1,4 @@
+{* Tem como finalidade pegar um id e uma data e excluir no banco}
 unit DevoluçãoDAO;
 
 interface
@@ -12,7 +13,8 @@ uses DataModule,dialogs,sysutils,dateutils;
 implementation
 
 { tDevolucaoDAO }
-
+{* Tem como finalidade pegar um id e uma data e excluir no banco,
+ observando se foi entregue na data correta e fazendo o calculo da multa}
 procedure tDevolucaoDAO.devolverArcevo(id: integer ; date: tdatetime);
 var
   data:tdate;
