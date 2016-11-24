@@ -21,6 +21,9 @@ begin
   DM.SQLQEditora.ParamByName('id').AsInteger:=editoramodel.GetId;
   DM.SQLQEditora.ParamByName('razaosocial').AsString:=editoramodel.GetRazaoSocial;
   DM.SQLQEditora.ExecSQL;
+  DM.SQLQEditora.SQL.clear;
+  DM.SQLQEditora.SQL.Text:='select * from editora';
+  DM.SQLQEditora.ExecSQL;
   DM.CDSEditora.Close;
   DM.CDSEditora.Open;
   DM.CDSEditora.Close;
@@ -32,6 +35,9 @@ begin
   DM.SQLQEditora.Close;
   DM.SQLQEditora.SQL.Text:='DELETE FROM EDITORA WHERE ideditora=:id';
   DM.SQLQEditora.ParamByName('id').AsInteger:=id;
+  DM.SQLQEditora.ExecSQL;
+  DM.SQLQEditora.SQL.clear;
+  DM.SQLQEditora.SQL.Text:='select * from editora';
   DM.SQLQEditora.ExecSQL;
   DM.CDSEditora.Close;
   DM.CDSEditora.Open;
@@ -45,6 +51,9 @@ begin
   DM.SQLQEditora.Close;
   DM.SQLQEditora.SQL.Text:='INSERT INTO Editora(razaosocial) VALUES(:razaosocial)';
   DM.SQLQEditora.ParamByName('razaosocial').AsString:=EditoraModel.GetRazaosocial;
+  DM.SQLQEditora.ExecSQL;
+  DM.SQLQEditora.SQL.clear;
+  DM.SQLQEditora.SQL.Text:='select * from editora';
   DM.SQLQEditora.ExecSQL;
   DM.CDSEditora.Close;
   DM.CDSEditora.Open;

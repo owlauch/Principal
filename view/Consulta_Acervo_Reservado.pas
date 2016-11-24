@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, Consulta_Acervo, Grids, DBGrids;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Consulta_Acervo, Grids, DBGrids,
+  Primaria;
 
 type
   TReservado = class(TForm)
@@ -47,9 +48,9 @@ end;
 procedure TReservado.BVoltarClick(Sender: TObject);
 begin
   close;
-  ConsultaPrincipal:= TConsultaPrincipal.Create(self);
-  ConsultaPrincipal.Parent:=SDIAppForm;
-  ConsultaPrincipal.Show;
+  MenuPrincipal:=TMenuPrincipal.Create(self);
+  MenuPrincipal.Parent:=SDIAppForm;
+  menuPrincipal.Show;
 end;
 
 procedure TReservado.BEmAtrasoClick(Sender: TObject);

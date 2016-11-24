@@ -56,7 +56,6 @@ procedure TAcervoDao.inserirAcervo(AcervoModel: TAcervoModel);
 begin
 try
   DM.SQLQAcervo.Close;
-  DM.SQLQAcervo.SQL.Clear;
   DM.SQLQAcervo.SQL.Text:='INSERT INTO acervo(titulo,qtdeexemplar,dataedicao,localedicao,isbn,ideditora) VALUES(:titulo,:qtdeexemplar,:dataedicao,:localedicao,:isbn,:ideditora)';
   DM.SQLQAcervo.ParamByName('titulo').AsString:=AcervoModel.GetTitulo;
   DM.SQLQAcervo.ParamByName('qtdeexemplar').AsInteger:=AcervoModel.Getqtdeexemplar;
@@ -64,6 +63,7 @@ try
   DM.SQLQAcervo.ParamByName('localedicao').AsString:=AcervoModel.GetLocalEdicao;
   DM.SQLQAcervo.ParamByName('isbn').AsString:=AcervoModel.GetIsbn;
   DM.SQLQAcervo.ParamByName('IDEDITORA').AsINTEGER:=AcervoModel.GetEditora;
+  DM.SQLQAcervo.ExecSQL;
   DM.SQLQAcervo.ExecSQL;
   DM.SQLQAcervo.SQL.clear;
   DM.SQLQAcervo.SQL.Text:='select * from ACERVO';

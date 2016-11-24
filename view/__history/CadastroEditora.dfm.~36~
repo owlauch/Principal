@@ -1,9 +1,9 @@
-﻿object Associado: TAssociado
+object Editora: TEditora
   Left = 0
   Top = 0
   Align = alClient
   BorderStyle = bsNone
-  Caption = 'Associado'
+  Caption = 'Editora'
   ClientHeight = 410
   ClientWidth = 620
   Color = clBtnFace
@@ -112,7 +112,7 @@
         RowCollection = <
           item
             SizeStyle = ssAbsolute
-            Value = 205.000000000000000000
+            Value = 70.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
@@ -131,7 +131,7 @@
           Left = 3
           Top = 3
           Width = 440
-          Height = 199
+          Height = 64
           Align = alClient
           BevelOuter = bvNone
           ColumnCollection = <
@@ -143,39 +143,27 @@
               Column = 0
               Control = Pessoal
               Row = 0
-            end
-            item
-              Column = 0
-              Control = Endereço
-              Row = 1
             end>
           RowCollection = <
             item
               SizeStyle = ssAbsolute
-              Value = 90.000000000000000000
-            end
-            item
-              SizeStyle = ssAbsolute
-              Value = 110.000000000000000000
-            end
-            item
-              SizeStyle = ssAuto
+              Value = 60.000000000000000000
             end>
           TabOrder = 0
           object Pessoal: TGroupBox
             Left = 0
             Top = 0
             Width = 440
-            Height = 90
+            Height = 60
             Align = alClient
-            Caption = 'Pessoal'
+            Caption = 'Editora'
             TabOrder = 0
             object GridPanelPessoal: TGridPanel
               AlignWithMargins = True
               Left = 5
               Top = 18
               Width = 430
-              Height = 67
+              Height = 37
               Align = alClient
               Alignment = taRightJustify
               BevelOuter = bvNone
@@ -188,10 +176,6 @@
                   Value = 49.998702969284790000
                 end
                 item
-                  SizeStyle = ssAbsolute
-                  Value = 70.000000000000000000
-                end
-                item
                   Value = 50.001297030715220000
                 end>
               ControlCollection = <
@@ -201,36 +185,11 @@
                   Row = 0
                 end
                 item
-                  Column = 0
-                  Control = Label2
-                  Row = 1
-                end
-                item
-                  Column = 2
-                  Control = Label3
-                  Row = 1
-                end
-                item
                   Column = 1
-                  ColumnSpan = 2
-                  Control = EditName
-                  Row = 0
-                end
-                item
-                  Column = 3
-                  Control = MaskEditTelefone
-                  Row = 1
-                end
-                item
-                  Column = 2
-                  Control = Editemail
+                  Control = EditRazaosocial
                   Row = 0
                 end>
               RowCollection = <
-                item
-                  SizeStyle = ssAbsolute
-                  Value = 31.000000000000000000
-                end
                 item
                   SizeStyle = ssAbsolute
                   Value = 31.000000000000000000
@@ -238,349 +197,28 @@
               TabOrder = 0
               object Label1: TLabel
                 AlignWithMargins = True
-                Left = 40
+                Left = 10
                 Top = 3
-                Width = 27
+                Width = 57
                 Height = 25
                 Align = alRight
                 BiDiMode = bdRightToLeft
-                Caption = 'Nome'
+                Caption = 'Raz'#227'oSocial'
                 DragMode = dmAutomatic
                 ParentBiDiMode = False
                 Layout = tlCenter
                 ExplicitHeight = 13
               end
-              object Label2: TLabel
+              object EditRazaosocial: TEdit
                 AlignWithMargins = True
-                Left = 39
-                Top = 34
-                Width = 28
+                Left = 73
+                Top = 3
+                Width = 179
                 Height = 25
-                Align = alRight
-                BiDiMode = bdRightToLeft
-                Caption = 'E-Mail'
-                DragMode = dmAutomatic
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitHeight = 13
-              end
-              object Label3: TLabel
-                AlignWithMargins = True
-                Left = 239
-                Top = 34
-                Width = 42
-                Height = 25
-                Align = alRight
-                BiDiMode = bdRightToLeft
-                Caption = 'Telefone'
-                DragMode = dmAutomatic
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitHeight = 13
-              end
-              object EditName: TEdit
-                AlignWithMargins = True
-                Left = 73
-                Top = 3
-                Width = 208
-                Height = 25
-                Align = alClient
-                TabOrder = 0
-                ExplicitHeight = 21
-              end
-              object MaskEditTelefone: TMaskEdit
-                AlignWithMargins = True
-                Left = 287
-                Top = 34
-                Width = 140
-                Height = 25
-                Align = alClient
-                EditMask = '!\(99\)0000-0000;1;_'
-                MaxLength = 13
-                TabOrder = 2
-                Text = '(  )    -    '
-                ExplicitHeight = 21
-              end
-              object Editemail: TEdit
-                AlignWithMargins = True
-                Left = 73
-                Top = 34
-                Width = 138
-                Height = 21
-                Align = alClient
-                TabOrder = 1
-              end
-            end
-          end
-          object Endereço: TGroupBox
-            Left = 0
-            Top = 90
-            Width = 440
-            Height = 110
-            Align = alClient
-            Anchors = []
-            Caption = 'Endere'#231'o'
-            TabOrder = 1
-            object GridPanelEndereço: TGridPanel
-              AlignWithMargins = True
-              Left = 5
-              Top = 18
-              Width = 430
-              Height = 87
-              Align = alTop
-              BevelOuter = bvNone
-              ColumnCollection = <
-                item
-                  SizeStyle = ssAbsolute
-                  Value = 70.000000000000000000
-                end
-                item
-                  Value = 49.999999072786520000
-                end
-                item
-                  SizeStyle = ssAbsolute
-                  Value = 70.000000000000000000
-                end
-                item
-                  Value = 50.000000927213470000
-                end>
-              ControlCollection = <
-                item
-                  Column = 0
-                  Control = Label4
-                  Row = 0
-                end
-                item
-                  Column = 2
-                  Control = Label5
-                  Row = 0
-                end
-                item
-                  Column = 2
-                  Control = Label6
-                  Row = 1
-                end
-                item
-                  Column = 2
-                  Control = Label7
-                  Row = 2
-                end
-                item
-                  Column = 0
-                  Control = Label8
-                  Row = 1
-                end
-                item
-                  Column = 0
-                  Control = Label9
-                  Row = 2
-                end
-                item
-                  Column = 3
-                  Control = EditCidade
-                  Row = 0
-                end
-                item
-                  Column = 1
-                  Control = EditCEP
-                  Row = 1
-                end
-                item
-                  Column = 3
-                  Control = EditBairro
-                  Row = 1
-                end
-                item
-                  Column = 1
-                  Control = EditRua
-                  Row = 2
-                end
-                item
-                  Column = 3
-                  Control = EditNumero
-                  Row = 2
-                end
-                item
-                  Column = 1
-                  Control = ComboBoxUf
-                  Row = 0
-                end>
-              RowCollection = <
-                item
-                  SizeStyle = ssAbsolute
-                  Value = 27.000000000000000000
-                end
-                item
-                  SizeStyle = ssAbsolute
-                  Value = 27.000000000000000000
-                end
-                item
-                  SizeStyle = ssAbsolute
-                  Value = 27.000000000000000000
-                end>
-              TabOrder = 0
-              object Label4: TLabel
-                AlignWithMargins = True
-                Left = 3
-                Top = 3
-                Width = 64
-                Height = 21
-                Align = alClient
-                BiDiMode = bdRightToLeft
-                Caption = 'UF'
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitLeft = 54
-                ExplicitWidth = 13
-                ExplicitHeight = 13
-              end
-              object Label5: TLabel
-                AlignWithMargins = True
-                Left = 217
-                Top = 3
-                Width = 64
-                Height = 21
-                Align = alClient
-                BiDiMode = bdRightToLeft
-                Caption = 'Cidade'
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitLeft = 248
-                ExplicitWidth = 33
-                ExplicitHeight = 13
-              end
-              object Label6: TLabel
-                AlignWithMargins = True
-                Left = 217
-                Top = 30
-                Width = 64
-                Height = 21
-                Align = alClient
-                BiDiMode = bdRightToLeft
-                Caption = 'Bairro'
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitLeft = 253
-                ExplicitWidth = 28
-                ExplicitHeight = 13
-              end
-              object Label7: TLabel
-                AlignWithMargins = True
-                Left = 217
-                Top = 57
-                Width = 64
-                Height = 21
-                Align = alClient
-                BiDiMode = bdRightToLeft
-                Caption = 'N'#186
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitLeft = 269
-                ExplicitWidth = 12
-                ExplicitHeight = 13
-              end
-              object Label8: TLabel
-                AlignWithMargins = True
-                Left = 3
-                Top = 30
-                Width = 64
-                Height = 21
-                Align = alClient
-                BiDiMode = bdRightToLeft
-                Caption = 'CEP'
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitLeft = 48
-                ExplicitWidth = 19
-                ExplicitHeight = 13
-              end
-              object Label9: TLabel
-                AlignWithMargins = True
-                Left = 3
-                Top = 57
-                Width = 64
-                Height = 21
-                Align = alClient
-                BiDiMode = bdRightToLeft
-                Caption = 'Rua'
-                ParentBiDiMode = False
-                Layout = tlCenter
-                ExplicitLeft = 48
-                ExplicitWidth = 19
-                ExplicitHeight = 13
-              end
-              object EditCidade: TEdit
-                AlignWithMargins = True
-                Left = 287
-                Top = 3
-                Width = 140
-                Height = 21
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                TabOrder = 1
-              end
-              object EditCEP: TEdit
-                AlignWithMargins = True
-                Left = 73
-                Top = 30
-                Width = 138
-                Height = 21
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                TabOrder = 2
-              end
-              object EditBairro: TEdit
-                AlignWithMargins = True
-                Left = 287
-                Top = 30
-                Width = 140
-                Height = 21
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                TabOrder = 3
-              end
-              object EditRua: TEdit
-                AlignWithMargins = True
-                Left = 73
-                Top = 57
-                Width = 138
-                Height = 21
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                TabOrder = 4
-              end
-              object EditNumero: TEdit
-                AlignWithMargins = True
-                Left = 287
-                Top = 57
-                Width = 140
-                Height = 21
-                Align = alClient
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                TabOrder = 5
-              end
-              object ComboBoxUf: TComboBox
-                AlignWithMargins = True
-                Left = 73
-                Top = 3
-                Width = 69
-                Height = 21
                 Align = alLeft
                 TabOrder = 0
-                Items.Strings = (
-                  'PR'
-                  'SC'
-                  'SP')
+                ExplicitLeft = 70
+                ExplicitTop = 0
               end
             end
           end
@@ -588,12 +226,12 @@
         object DBGrid1: TDBGrid
           AlignWithMargins = True
           Left = 3
-          Top = 238
+          Top = 103
           Width = 440
-          Height = 99
+          Height = 234
           Align = alClient
           Anchors = []
-          DataSource = DM.DataSource
+          DataSource = DM.DSEditora
           DrawingStyle = gdsGradient
           ReadOnly = True
           TabOrder = 1
@@ -602,74 +240,27 @@
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
+          OnDblClick = DBGrid1DblClick
           Columns = <
             item
               Expanded = False
-              FieldName = 'IDASSOCIADO'
+              FieldName = 'IDEDITORA'
               Visible = False
             end
             item
               Expanded = False
-              FieldName = 'NOME'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'EMAIL'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'TELEFONE'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'UF'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'CEP'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'BAIRRO'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'NROENDERECO'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'CIDADE'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'RUA'
-              Width = 100
+              FieldName = 'RAZAOSOCIAL'
               Visible = True
             end>
         end
         object GridPanelFiltro: TGridPanel
           AlignWithMargins = True
           Left = 3
-          Top = 208
+          Top = 73
           Width = 440
           Height = 24
           Align = alClient
+          BevelOuter = bvNone
           ColumnCollection = <
             item
               SizeStyle = ssAbsolute
@@ -686,7 +277,7 @@
             end
             item
               Column = 1
-              Control = Edit10
+              Control = EditPesquisar
               Row = 0
             end>
           Padding.Left = 1
@@ -697,25 +288,26 @@
           TabOrder = 2
           object Label10: TLabel
             AlignWithMargins = True
-            Left = 6
-            Top = 4
+            Left = 5
+            Top = 3
             Width = 68
-            Height = 16
+            Height = 18
             Align = alClient
             BiDiMode = bdRightToLeft
             Caption = 'Pesquisa'
             ParentBiDiMode = False
-            ExplicitLeft = 32
+            ExplicitLeft = 31
             ExplicitWidth = 42
             ExplicitHeight = 13
           end
-          object Edit10: TEdit
-            Left = 78
-            Top = 1
-            Width = 361
-            Height = 22
+          object EditPesquisar: TEdit
+            Left = 77
+            Top = 0
+            Width = 363
+            Height = 24
             Align = alClient
             TabOrder = 0
+            OnKeyPress = EditPesquisarKeyPress
             ExplicitHeight = 21
           end
         end
@@ -741,19 +333,19 @@
             Color = clGradientInactiveCaption
             ColumnCollection = <
               item
-                Value = 20.317922116757750000
+                Value = 19.999852038191900000
               end
               item
-                Value = 20.182307760688830000
+                Value = 19.999779363981380000
               end
               item
-                Value = 20.025192868486150000
+                Value = 19.999987795354480000
               end
               item
-                Value = 19.842984588355640000
+                Value = 20.000174189278500000
               end
               item
-                Value = 19.631592665711630000
+                Value = 20.000206613193740000
               end>
             ControlCollection = <
               item
@@ -784,9 +376,9 @@
             TabOrder = 0
             object BGravar: TSpeedButton
               AlignWithMargins = True
-              Left = 91
+              Left = 90
               Top = 4
-              Width = 81
+              Width = 80
               Height = 30
               Align = alClient
               Anchors = []
@@ -828,7 +420,7 @@
             end
             object BExcluir: TSpeedButton
               AlignWithMargins = True
-              Left = 178
+              Left = 176
               Top = 4
               Width = 80
               Height = 30
@@ -865,16 +457,16 @@
               Layout = blGlyphRight
               Margin = 1
               OnClick = BExcluirClick
-              ExplicitLeft = 0
-              ExplicitTop = 146
-              ExplicitWidth = 71
-              ExplicitHeight = 41
+              ExplicitLeft = 4
+              ExplicitTop = 151
+              ExplicitWidth = 134
+              ExplicitHeight = 43
             end
             object BEditar: TSpeedButton
               AlignWithMargins = True
-              Left = 264
+              Left = 262
               Top = 4
-              Width = 79
+              Width = 80
               Height = 30
               Align = alClient
               Anchors = []
@@ -910,16 +502,16 @@
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
-              ExplicitLeft = 4
-              ExplicitTop = 328
-              ExplicitWidth = 10
-              ExplicitHeight = 100
+              OnClick = BEditarClick
+              ExplicitLeft = 348
+              ExplicitTop = -3
+              ExplicitWidth = 82
             end
             object BLimpar: TSpeedButton
               AlignWithMargins = True
-              Left = 349
+              Left = 348
               Top = 4
-              Width = 81
+              Width = 82
               Height = 30
               Align = alClient
               Anchors = []
@@ -955,6 +547,7 @@
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
+              OnClick = BLimparClick
               ExplicitLeft = 59
               ExplicitTop = 328
               ExplicitWidth = 10
@@ -1072,9 +665,15 @@
           Top = 103
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -1374,10 +973,8 @@
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          ParentFont = False
           OnClick = BAcervoClick
-          ExplicitTop = 85
-          ExplicitWidth = 100
-          ExplicitHeight = 100
         end
         object BAssociado: TSpeedButton
           AlignWithMargins = True
@@ -1385,16 +982,10 @@
           Top = 152
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ASSOCIADO'
-          Enabled = False
-          Flat = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'Sylfaen'
-          Font.Style = [fsBold]
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -1694,9 +1285,10 @@
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
-          ParentFont = False
           OnClick = BAssociadoClick
-          ExplicitLeft = 8
+          ExplicitTop = 166
+          ExplicitWidth = 10
+          ExplicitHeight = 100
         end
         object BAutor: TSpeedButton
           AlignWithMargins = True
@@ -1704,6 +1296,7 @@
           Top = 201
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'AUTOR'
@@ -2017,9 +1610,17 @@
           Top = 251
           Width = 140
           Height = 44
+          Cursor = crNo
           Align = alClient
           Anchors = []
           Caption = 'EDITORA'
+          Enabled = False
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Sylfaen'
+          Font.Style = []
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E000000000000000000009FBC865E8E36
@@ -2319,11 +1920,8 @@
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          ParentFont = False
           OnClick = BEditoraClick
-          ExplicitLeft = 11
-          ExplicitTop = 264
-          ExplicitWidth = 136
-          ExplicitHeight = 46
         end
         object BVoltar: TSpeedButton
           AlignWithMargins = True
@@ -2372,6 +1970,7 @@
           Top = 301
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'VALOR MULTA'
@@ -2675,10 +2274,6 @@
           Margin = 1
           NumGlyphs = 2
           OnClick = SpeedButtonMultaClick
-          ExplicitLeft = 8
-          ExplicitTop = 312
-          ExplicitWidth = 23
-          ExplicitHeight = 22
         end
       end
     end

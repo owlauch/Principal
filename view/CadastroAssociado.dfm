@@ -546,7 +546,6 @@
                 BevelKind = bkSoft
                 BevelOuter = bvNone
                 TabOrder = 3
-                OnKeyPress = EditBairroKeyPress
               end
               object EditRua: TEdit
                 AlignWithMargins = True
@@ -612,60 +611,52 @@
             item
               Expanded = False
               FieldName = 'IDASSOCIADO'
-              Visible = False
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'NOME'
-              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'EMAIL'
-              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'TELEFONE'
-              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'UF'
-              Width = -1
-              Visible = False
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'CEP'
-              Width = -1
-              Visible = False
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'BAIRRO'
-              Width = -1
-              Visible = False
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'NROENDERECO'
-              Width = -1
-              Visible = False
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'CIDADE'
-              Width = -1
-              Visible = False
+              Visible = True
             end
             item
               Expanded = False
               FieldName = 'RUA'
-              Visible = False
+              Visible = True
             end>
         end
         object GridPanelFiltro: TGridPanel
@@ -721,6 +712,7 @@
             Height = 22
             Align = alClient
             TabOrder = 0
+            OnChange = Edit10Change
             OnKeyPress = Edit10KeyPress
             ExplicitHeight = 21
           end

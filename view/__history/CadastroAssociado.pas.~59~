@@ -9,22 +9,19 @@ uses
 type
   TAssociado = class(TForm)
     GridPricipal: TGridPanel;
-    PanelMenu: TPanel;
-    GridPanel1: TGridPanel;
-    BGravar: TSpeedButton;
-    BExcluir: TSpeedButton;
-    BEditar: TSpeedButton;
     PanelVisualEdicao: TPanel;
     GridPrincipalcadastro: TGridPanel;
     GridCadastro: TGridPanel;
     Pessoal: TGroupBox;
-    Endereço: TGroupBox;
-    DBGrid1: TDBGrid;
     GridPanelPessoal: TGridPanel;
-    GridPanelEndereço: TGridPanel;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    EditName: TEdit;
+    MaskEditTelefone: TMaskEdit;
+    Editemail: TEdit;
+    Endereço: TGroupBox;
+    GridPanelEndereço: TGridPanel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -36,13 +33,16 @@ type
     EditBairro: TEdit;
     EditRua: TEdit;
     EditNumero: TEdit;
+    ComboBoxUf: TComboBox;
+    DBGrid1: TDBGrid;
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
     Edit10: TEdit;
-    EditName: TEdit;
-    ComboBoxUf: TComboBox;
-    MaskEditTelefone: TMaskEdit;
-    Editemail: TEdit;
+    PanelMenu: TPanel;
+    GridPanel1: TGridPanel;
+    BGravar: TSpeedButton;
+    BExcluir: TSpeedButton;
+    BEditar: TSpeedButton;
     BLimpar: TSpeedButton;
     Panel1: TPanel;
     GridPanel2: TGridPanel;
@@ -63,10 +63,12 @@ type
     procedure SpeedButtonMultaClick(Sender: TObject);
     procedure EditNameKeyPress(Sender: TObject; var Key: Char);
     procedure EditCidadeKeyPress(Sender: TObject; var Key: Char);
-    procedure EditBairroKeyPress(Sender: TObject; var Key: Char);
     procedure EditRuaKeyPress(Sender: TObject; var Key: Char);
     procedure Edit10KeyPress(Sender: TObject; var Key: Char);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure BEditarClick(Sender: TObject);
+    procedure BLimparClick(Sender: TObject);
+    procedure Edit10Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -117,7 +119,18 @@ begin
   EditCEP.Text:=associadomodel.Getcep;
   EditBairro.Text:=associadomodel.Getbairro;
   EditRua.Text:=associadomodel.Getrua;
-  EditNumero.Text:=associadomodel.Getnrorua.Asinteger;
+  EditNumero.Text:=inttostr(associadomodel.Getnrorua);
+end;
+
+procedure TAssociado.Edit10Change(Sender: TObject);
+begin
+  dm.SQLQAssociado.Close;
+  dm.SQLQAssociado.SQL.Clear;
+  dm.SQLQAssociado.sql.Text:='select * from associado where associado.nome like' + QuotedStr('%'+edit10.Text+'%');
+  dm.SQLDSAssociado.Open;
+  dm.SQLQAssociado.Close;
+  dm.SQLqAssociado.Open;
+  dm.SQLQAssociado.Close;
 end;
 
 procedure TAssociado.Edit10KeyPress(Sender: TObject; var Key: Char);
@@ -126,11 +139,7 @@ begin
   Key := #0;
 end;
 
-procedure TAssociado.EditBairroKeyPress(Sender: TObject; var Key: Char);
-begin
-  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
-  Key := #0;
-end;
+
 
 procedure TAssociado.EditCidadeKeyPress(Sender: TObject; var Key: Char);
 begin
@@ -186,6 +195,19 @@ begin
 
 end;
 
+procedure TAssociado.BLimparClick(Sender: TObject);
+begin
+  EditName.Clear;
+  Editemail.Clear;
+  maskedittelefone.Clear;
+  comboboxuf.Clear;
+  Editcidade.Clear;
+  EditCEP.Clear;
+  Editbairro.Clear;
+  Editrua.Clear;
+  Editnumero.Clear;
+end;
+
 procedure TAssociado.BAcervoClick(Sender: TObject);
 begin
   Close;
@@ -208,6 +230,32 @@ begin
   Autor:=TAutor.Create(self);
   Autor.Parent:=SDIAppForm;
   Autor.Show;
+end;
+
+procedure TAssociado.BEditarClick(Sender: TObject);
+var
+  associadodao:tAssociadodao;
+begin
+  associadodao:=tAssociadodao.create;
+  associadomodel.SetNome(EditName.text);
+  associadomodel.Setemail(Editemail.text);
+  associadomodel.Settelefone(maskedittelefone.text);
+  associadomodel.setuf(comboboxuf.text);
+  associadomodel.Setcidade(Editcidade.text);
+  associadomodel.Setcep(EditCEP.text);
+  associadomodel.Setbairro(Editbairro.text);
+  associadomodel.Setrua(Editrua.text);
+  associadomodel.Setnrorua(strtoint(Editnumero.text));
+  associadoDAO.editarAssociado(associadomodel);
+  EditName.Clear;
+  Editemail.Clear;
+  maskedittelefone.Clear;
+  comboboxuf.Clear;
+  Editcidade.Clear;
+  EditCEP.Clear;
+  Editbairro.Clear;
+  Editrua.Clear;
+  Editnumero.Clear;
 end;
 
 procedure TAssociado.BEditoraClick(Sender: TObject);
