@@ -1,10 +1,10 @@
-object EmAtraso: TEmAtraso
+object Emprestados: TEmprestados
   AlignWithMargins = True
   Left = 0
   Top = 0
   Align = alClient
   BorderStyle = bsNone
-  Caption = 'EmAtraso'
+  Caption = 'Emprestados'
   ClientHeight = 410
   ClientWidth = 620
   Color = clBtnFace
@@ -47,6 +47,9 @@ object EmAtraso: TEmAtraso
     RowCollection = <
       item
         Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = ssAuto
       end>
     TabOrder = 0
     object Panel1: TPanel
@@ -144,6 +147,8 @@ object EmAtraso: TEmAtraso
           Align = alClient
           Anchors = []
           Caption = 'EMPRESTADO'
+          Enabled = False
+          Flat = True
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -443,7 +448,6 @@ object EmAtraso: TEmAtraso
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
-          OnClick = BEmprestadoClick
           ExplicitLeft = 8
           ExplicitTop = 128
           ExplicitWidth = 125
@@ -489,6 +493,9 @@ object EmAtraso: TEmAtraso
           Margin = 1
           ParentBiDiMode = False
           OnClick = BVoltarClick
+          ExplicitLeft = 8
+          ExplicitTop = 54
+          ExplicitHeight = 43
         end
         object BEmAtraso: TSpeedButton
           AlignWithMargins = True
@@ -499,8 +506,6 @@ object EmAtraso: TEmAtraso
           Align = alClient
           Anchors = []
           Caption = 'EM ATRASO'
-          Enabled = False
-          Flat = True
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -800,6 +805,7 @@ object EmAtraso: TEmAtraso
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          OnClick = BEmAtrasoClick
           ExplicitLeft = 8
           ExplicitTop = 176
           ExplicitWidth = 23
@@ -821,22 +827,37 @@ object EmAtraso: TEmAtraso
       AutoSize = True
       TabOrder = 1
       object DBGrid1: TDBGrid
-        Left = 1
-        Top = 1
-        Width = 452
-        Height = 396
+        AlignWithMargins = True
+        Left = 4
+        Top = 4
+        Width = 446
+        Height = 390
         Align = alClient
+        Anchors = []
         BorderStyle = bsNone
         Ctl3D = False
-        DataSource = DM.DSAcervoAtrasado
+        DataSource = DM.DSAcervoEmprestado
         DrawingStyle = gdsGradient
         ParentCtl3D = False
+        ReadOnly = True
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'QTD'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TITULO'
+            Width = 350
+            Visible = True
+          end>
       end
     end
   end
