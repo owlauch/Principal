@@ -144,6 +144,30 @@ type
     CDSEmprestadoASSOCIADO: TStringField;
     CDSEmprestadoTITULO: TStringField;
     CDSEmprestadoDATA: TDateField;
+    SQLDSAcervoEmprestado: TSQLDataSet;
+    DSPAcervoEmprestado: TDataSetProvider;
+    CDSAcervoEmprestado: TClientDataSet;
+    DSAcervoEmprestado: TDataSource;
+    SQLQAcervoEmprestado: TSQLQuery;
+    IntegerField6: TIntegerField;
+    StringField7: TStringField;
+    SQLDSAcervoEmprestadoQTD: TIntegerField;
+    SQLDSAcervoEmprestadoTITULO: TStringField;
+    CDSAcervoEmprestadoQTD: TIntegerField;
+    CDSAcervoEmprestadoTITULO: TStringField;
+    SQLDSAcervoAtrasado: TSQLDataSet;
+    DSPAcervoAtrasado: TDataSetProvider;
+    CDSAcervoAtrasado: TClientDataSet;
+    DSAcervoAtrasado: TDataSource;
+    SQLQAcervoAtrasado: TSQLQuery;
+    IntegerField8: TIntegerField;
+    StringField5: TStringField;
+    SQLDSAcervoAtrasadoQTD: TIntegerField;
+    SQLDSAcervoAtrasadoTITULO: TStringField;
+    SQLDSAcervoAtrasadoDEVOLUCAO: TDateField;
+    CDSAcervoAtrasadoQTD: TIntegerField;
+    CDSAcervoAtrasadoTITULO: TStringField;
+    CDSAcervoAtrasadoDEVOLUCAO: TDateField;
 
 
   private

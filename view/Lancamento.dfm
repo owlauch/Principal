@@ -128,6 +128,7 @@ object lacamento: Tlacamento
           Top = 103
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'EMPRESTIMO'
@@ -444,6 +445,7 @@ object lacamento: Tlacamento
           Top = 152
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'DEVOLU'#199#195'O'
@@ -754,6 +756,7 @@ object lacamento: Tlacamento
           Top = 4
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'

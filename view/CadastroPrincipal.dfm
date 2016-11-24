@@ -156,6 +156,7 @@ object Cadastro: TCadastro
           Top = 103
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
@@ -466,6 +467,7 @@ object Cadastro: TCadastro
           Top = 152
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ASSOCIADO'
@@ -779,6 +781,7 @@ object Cadastro: TCadastro
           Top = 201
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'AUTOR'
@@ -1092,6 +1095,7 @@ object Cadastro: TCadastro
           Top = 251
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'EDITORA'
@@ -1402,6 +1406,7 @@ object Cadastro: TCadastro
           Top = 4
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'
@@ -1443,6 +1448,7 @@ object Cadastro: TCadastro
           Top = 301
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'VALOR MULTA'

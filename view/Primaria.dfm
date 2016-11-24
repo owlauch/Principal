@@ -37,7 +37,7 @@ object MenuPrincipal: TMenuPrincipal
         Value = 25.000049173799700000
       end
       item
-        Value = 74.999950826200300000
+        Value = 74.999950826200310000
       end>
     ControlCollection = <
       item
@@ -179,6 +179,7 @@ object MenuPrincipal: TMenuPrincipal
           Top = 102
           Width = 134
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'CADASTRO'
@@ -338,6 +339,7 @@ object MenuPrincipal: TMenuPrincipal
           Top = 151
           Width = 134
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'LAN'#199'AMENTO'
@@ -514,6 +516,7 @@ object MenuPrincipal: TMenuPrincipal
           Top = 200
           Width = 134
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           BiDiMode = bdLeftToRight
@@ -700,9 +703,11 @@ object MenuPrincipal: TMenuPrincipal
           Top = 4
           Width = 134
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'SAIR'
+          Flat = True
           Glyph.Data = {
             6E240000424D6E24000000000000360000002800000051000000260000000100
             18000000000038240000C40E0000C40E00000000000000000000FFFFFF525654

@@ -228,8 +228,7 @@ object Acervo: TAcervo
             Align = alClient
             TabOrder = 0
             OnKeyPress = Edit10KeyPress
-            ExplicitLeft = 80
-            ExplicitTop = 2
+            ExplicitHeight = 21
           end
         end
         object PainelAcervo: TGroupBox

@@ -14,7 +14,7 @@ type
     GridPanel1: TGridPanel;
     Bgravar: TSpeedButton;
     BExcluir: TSpeedButton;
-    SpeedButton4: TSpeedButton;
+    BEditar: TSpeedButton;
     PanelVisualEdicao: TPanel;
     GridPrincipalcadastro: TGridPanel;
     GridCadastro: TGridPanel;
@@ -26,7 +26,7 @@ type
     Label10: TLabel;
     EditPesquisar: TEdit;
     EditNome: TEdit;
-    SpeedButton2: TSpeedButton;
+    BLimpar: TSpeedButton;
     Panel1: TPanel;
     GridPanel2: TGridPanel;
     Label7: TLabel;
@@ -39,12 +39,12 @@ type
     procedure BgravarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
-    procedure SpeedButton2Click(Sender: TObject);
+    procedure BLimparClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
     procedure BAssociadoClick(Sender: TObject);
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
-    procedure SpeedButton4Click(Sender: TObject);
+    procedure BEditarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
     procedure EditNomeKeyPress(Sender: TObject; var Key: Char);
@@ -109,13 +109,13 @@ end;
 
 Procedure TAutor.BgravarClick(Sender: TObject);
 var
-autormodel:tAutorModel;
-autorDAO:tAutorDAO;
+  autormodel:tAutorModel;
+  autorDAO:tAutorDAO;
 begin
- autormodel:=TAutorModel.Create;
- autormodel.setNome(EditNome.Text);
- autordao.inserirAutor(autormodel);
- EditNome.Clear;
+  autormodel:=TAutorModel.Create;
+  autormodel.setNome(EditNome.Text);
+  autordao.inserirAutor(autormodel);
+  EditNome.Clear;
 end;
 
 procedure TAutor.BVoltarClick(Sender: TObject);
@@ -139,7 +139,6 @@ begin
   autormodel.SetNome(nome);
   autormodel.SetId(id);
   Editnome.text:=autormodel.getnome;
-
 end;
 
 procedure TAutor.EditNomeKeyPress(Sender: TObject; var Key: Char);
@@ -154,22 +153,26 @@ begin
   Key := #0;
 end;
 
-procedure TAutor.SpeedButton2Click(Sender: TObject);
+procedure TAutor.BLimparClick(Sender: TObject);
 begin
   EditNome.Clear;
   EditPesquisar.Clear;
 end;
 
-procedure TAutor.SpeedButton4Click(Sender: TObject);
+procedure TAutor.BEditarClick(Sender: TObject);
 var
-autordao:tAutordao;
+  autordao:tAutordao;
+  autormodel:TAutorModel;
 begin
   autordao:=tAutordao.create;
-  autormodel.SetNome(Editnome.text);
+  autormodel:=TAutorModel.Create;
+  autormodel.SetNome(EditNome.text);
+  autormodel.SetId(DBGrid1.Fields[0].asinteger);
   autordao.editarAutor(autormodel);
-
-
+  EditNome.Clear;
+  EditPesquisar.Clear;
 end;
+
 procedure TAutor.SpeedButtonMultaClick(Sender: TObject);
 begin
   close;

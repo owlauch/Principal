@@ -374,12 +374,12 @@ object Autor: TAutor
               end
               item
                 Column = 3
-                Control = SpeedButton4
+                Control = BEditar
                 Row = 0
               end
               item
                 Column = 4
-                Control = SpeedButton2
+                Control = BLimpar
                 Row = 0
               end>
             ParentBackground = False
@@ -475,7 +475,7 @@ object Autor: TAutor
               ExplicitTop = -3
               ExplicitWidth = 65
             end
-            object SpeedButton4: TSpeedButton
+            object BEditar: TSpeedButton
               AlignWithMargins = True
               Left = 262
               Top = 4
@@ -515,13 +515,13 @@ object Autor: TAutor
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
-              OnClick = SpeedButton4Click
+              OnClick = BEditarClick
               ExplicitLeft = 4
               ExplicitTop = 328
               ExplicitWidth = 10
               ExplicitHeight = 100
             end
-            object SpeedButton2: TSpeedButton
+            object BLimpar: TSpeedButton
               AlignWithMargins = True
               Left = 348
               Top = 4
@@ -561,7 +561,7 @@ object Autor: TAutor
               Layout = blGlyphRight
               Margin = 1
               ParentBiDiMode = False
-              OnClick = SpeedButton2Click
+              OnClick = BLimparClick
               ExplicitLeft = 75
               ExplicitTop = -3
               ExplicitWidth = 66
