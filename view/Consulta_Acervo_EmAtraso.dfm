@@ -49,8 +49,6 @@ object EmAtraso: TEmAtraso
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 574
-    ExplicitHeight = 385
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 1
@@ -64,8 +62,6 @@ object EmAtraso: TEmAtraso
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 143
-      ExplicitHeight = 383
       object GridPanel1: TGridPanel
         AlignWithMargins = True
         Left = 3
@@ -131,8 +127,6 @@ object EmAtraso: TEmAtraso
             Value = 12.500418065862120000
           end>
         TabOrder = 0
-        ExplicitWidth = 137
-        ExplicitHeight = 377
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
@@ -143,7 +137,6 @@ object EmAtraso: TEmAtraso
           Alignment = taCenter
           Caption = 'CONSULTAS'
           Layout = tlCenter
-          ExplicitTop = 50
           ExplicitWidth = 59
           ExplicitHeight = 13
         end
@@ -1143,9 +1136,6 @@ object EmAtraso: TEmAtraso
       Align = alClient
       AutoSize = True
       TabOrder = 1
-      ExplicitLeft = 149
-      ExplicitWidth = 419
-      ExplicitHeight = 373
       object DBGrid1: TDBGrid
         AlignWithMargins = True
         Left = 4
@@ -1153,6 +1143,7 @@ object EmAtraso: TEmAtraso
         Width = 446
         Height = 390
         Align = alClient
+        DataSource = DM.DSAcervoAtrasado
         DrawingStyle = gdsGradient
         ReadOnly = True
         TabOrder = 0
@@ -1161,6 +1152,23 @@ object EmAtraso: TEmAtraso
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'QTD'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TITULO'
+            Width = 175
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DEVOLUCAO'
+            Visible = True
+          end>
       end
     end
   end

@@ -22,7 +22,6 @@ type
     GridPanelSelecao: TGridPanel;
     GridPanelBotoes: TGridPanel;
     Devolucao: TSpeedButton;
-    Blimpar: TSpeedButton;
     DBGrid1: TDBGrid;
     procedure BVoltarClick(Sender: TObject);
     procedure BAcervoClick(Sender: TObject);
@@ -67,7 +66,6 @@ begin
   devolucaodao:=TDevolucaodao.Create;
   id:=DBGrid1.Fields[0].AsInteger;
   date:=DBGrid1.Fields[1].asDateTime;
-  ShowMessageFmt('%s',[DateToStr(date)]);
   devolucaodao.devolverArcevo(id,date);
 
 

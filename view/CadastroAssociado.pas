@@ -9,22 +9,19 @@ uses
 type
   TAssociado = class(TForm)
     GridPricipal: TGridPanel;
-    PanelMenu: TPanel;
-    GridPanel1: TGridPanel;
-    BGravar: TSpeedButton;
-    BExcluir: TSpeedButton;
-    BEditar: TSpeedButton;
     PanelVisualEdicao: TPanel;
     GridPrincipalcadastro: TGridPanel;
     GridCadastro: TGridPanel;
     Pessoal: TGroupBox;
-    Endereço: TGroupBox;
-    DBGrid1: TDBGrid;
     GridPanelPessoal: TGridPanel;
-    GridPanelEndereço: TGridPanel;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    EditName: TEdit;
+    MaskEditTelefone: TMaskEdit;
+    Editemail: TEdit;
+    Endereço: TGroupBox;
+    GridPanelEndereço: TGridPanel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -36,13 +33,16 @@ type
     EditBairro: TEdit;
     EditRua: TEdit;
     EditNumero: TEdit;
+    ComboBoxUf: TComboBox;
+    DBGrid1: TDBGrid;
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
     Edit10: TEdit;
-    EditName: TEdit;
-    ComboBoxUf: TComboBox;
-    MaskEditTelefone: TMaskEdit;
-    Editemail: TEdit;
+    PanelMenu: TPanel;
+    GridPanel1: TGridPanel;
+    BGravar: TSpeedButton;
+    BExcluir: TSpeedButton;
+    BEditar: TSpeedButton;
     BLimpar: TSpeedButton;
     Panel1: TPanel;
     GridPanel2: TGridPanel;
@@ -130,8 +130,13 @@ end;
 
 procedure TAssociado.EditBairroKeyPress(Sender: TObject; var Key: Char);
 begin
-  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
-  Key := #0;
+  dm.SQLQAssociado.Close;
+  dm.SQLQAssociado.SQL.Clear;
+  dm.SQLQAssociado.sql.Text:='select * from associado where associado.nome like' + QuotedStr('%'+edit10.Text+'%');
+  dm.SQLDSAssociado.Open;
+  dm.SQLQAssociado.Close;
+  dm.SQLDSAssociado.Open;
+  dm.SQLQAssociado.Close;
 end;
 
 procedure TAssociado.EditCidadeKeyPress(Sender: TObject; var Key: Char);

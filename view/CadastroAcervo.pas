@@ -166,6 +166,11 @@ begin
   AcervoModel.SetIsbn(EditIsbn.Text);
   AcervoModel.SetEditora(ideditora);
   AcervoDao.inserirAcervo(AcervoModel);
+  EditTitulo.clear;
+  ComboBoxQtd.clear;
+  EditLocalEdicao.clear;
+  EditIsbn.clear;
+  EditEditora.Clear;
 end;
 
 procedure TAcervo.BlimparClick(Sender: TObject);

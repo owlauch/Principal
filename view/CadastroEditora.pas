@@ -21,7 +21,6 @@ type
     Pessoal: TGroupBox;
     GridPanelPessoal: TGridPanel;
     Label1: TLabel;
-    EditRazaosocial: TEdit;
     DBGrid1: TDBGrid;
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
@@ -36,6 +35,7 @@ type
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
     SpeedButtonMulta: TSpeedButton;
+    EditRazaosocial: TEdit;
     procedure BVoltarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
@@ -98,6 +98,7 @@ begin
   editoradao:=tEditoradao.create;
   editoramodel.SetRazaoSocial(EditRazaosocial.text);
   editoradao.editarEditora(editoramodel);
+  EditRazaosocial.Clear;
 
 end;
 
@@ -117,6 +118,7 @@ begin
   editoraDao:=TEditoraDao.Create;
   id:=DBGrid1.Fields[0].AsInteger;
   Editoradao.excluirEditora(id);
+  EditRazaosocial.Clear;
 end;
 
 procedure TEditora.BGravarClick(Sender: TObject);

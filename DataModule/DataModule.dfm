@@ -1,7 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
   Height = 440
-  Width = 779
+  Width = 1021
   object BIBLIOTECA: TSQLConnection
     ConnectionName = 'BIBLIOTECA'
     DriverName = 'FIREBIRD'
@@ -13,7 +13,7 @@ object DM: TDM
       'drivername=FIREBIRD'
       'blobsize=-1'
       'commitretain=False'
-      'database=C:\BDBIBLIOTECA.FDB'
+      'Database=C:\BDBIBLIOTECA.FDB'
       'localecode=0000'
       'password=masterkey'
       'rolename=RoleName'
@@ -29,7 +29,6 @@ object DM: TDM
   end
   object SQLDSAssociado: TSQLDataSet
     SchemaName = 'sysdba'
-    Active = True
     CommandText = 'select * from ASSOCIADO'
     DbxCommandType = 'Dbx.SQL'
     DataSource = DSAssociado
@@ -96,6 +95,7 @@ object DM: TDM
     Active = True
     Aggregates = <>
     AggregatesActive = True
+    Filtered = True
     Params = <>
     ProviderName = 'DSPAssociado'
     Left = 24
@@ -151,7 +151,6 @@ object DM: TDM
   end
   object SQLQAssociado: TSQLQuery
     SchemaName = 'SYSDBA'
-    GetMetadata = True
     NumericMapping = True
     ObjectView = True
     Active = True
@@ -159,7 +158,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQL.Strings = (
-      'SELECT *  FROM ASSOCIADO')
+      'select * from associado')
     SQLConnection = BIBLIOTECA
     Left = 24
     Top = 344
@@ -476,7 +475,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 336
+    Left = 328
     Top = 88
     object SQLDStEmprestimoIDEMPRESTIMO: TIntegerField
       FieldName = 'IDEMPRESTIMO'
@@ -495,7 +494,7 @@ object DM: TDM
     DataSet = SQLDStEmprestimo
     ResolveToDataSet = True
     Options = [poAutoRefresh, poUseQuoteChar]
-    Left = 336
+    Left = 328
     Top = 152
   end
   object CLDSEmprestimo: TClientDataSet
@@ -504,7 +503,7 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DSPEmprestimo'
-    Left = 336
+    Left = 328
     Top = 216
     object CLDSEmprestimoIDEMPRESTIMO: TIntegerField
       FieldName = 'IDEMPRESTIMO'
@@ -521,7 +520,7 @@ object DM: TDM
   end
   object DSEmprestimo: TDataSource
     DataSet = CLDSEmprestimo
-    Left = 336
+    Left = 328
     Top = 280
   end
   object SQLQEmprestimo: TSQLQuery
@@ -536,7 +535,7 @@ object DM: TDM
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 336
+    Left = 328
     Top = 344
   end
   object SQLDSItemEmprestimo: TSQLDataSet
@@ -547,7 +546,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 440
+    Left = 432
     Top = 88
     object SQLDSItemEmprestimoIDEMPRESTIMO: TIntegerField
       FieldName = 'IDEMPRESTIMO'
@@ -569,7 +568,7 @@ object DM: TDM
     DataSet = SQLDSItemEmprestimo
     ResolveToDataSet = True
     Options = [poAutoRefresh, poUseQuoteChar]
-    Left = 440
+    Left = 432
     Top = 152
   end
   object CLDSItemEmprestimo: TClientDataSet
@@ -578,7 +577,7 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DSPItemEmprestimo'
-    Left = 440
+    Left = 432
     Top = 216
     object CLDSItemEmprestimoIDEMPRESTIMO: TIntegerField
       FieldName = 'IDEMPRESTIMO'
@@ -599,7 +598,7 @@ object DM: TDM
   end
   object DSItemEmprestimo: TDataSource
     DataSet = CLDSItemEmprestimo
-    Left = 440
+    Left = 432
     Top = 280
   end
   object SQLQItemEmprestimo: TSQLQuery
@@ -614,14 +613,14 @@ object DM: TDM
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 440
+    Left = 432
     Top = 344
   end
   object DSPMulta: TDataSetProvider
     DataSet = SQLDSMulta
     ResolveToDataSet = True
     Options = [poAutoRefresh, poUseQuoteChar]
-    Left = 536
+    Left = 528
     Top = 152
   end
   object CLDSMulta: TClientDataSet
@@ -630,7 +629,7 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DSPMulta'
-    Left = 536
+    Left = 528
     Top = 216
     object CLDSMultaDATAINICIOVIGENCIA: TDateField
       FieldName = 'DATAINICIOVIGENCIA'
@@ -645,7 +644,7 @@ object DM: TDM
   end
   object DSMulta: TDataSource
     DataSet = CLDSMulta
-    Left = 536
+    Left = 528
     Top = 280
   end
   object SQLQMulta: TSQLQuery
@@ -660,7 +659,7 @@ object DM: TDM
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 536
+    Left = 528
     Top = 344
   end
   object SQLDSMulta: TSQLDataSet
@@ -671,7 +670,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 536
+    Left = 528
     Top = 88
     object SQLDSMultaDATAINICIOVIGENCIA: TDateField
       FieldName = 'DATAINICIOVIGENCIA'
@@ -692,7 +691,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 616
+    Left = 608
     Top = 88
     object IntegerField1: TIntegerField
       FieldName = 'MAX'
@@ -702,7 +701,7 @@ object DM: TDM
     DataSet = SQLDSMaxitem
     ResolveToDataSet = True
     UpdateMode = upWhereChanged
-    Left = 616
+    Left = 608
     Top = 152
   end
   object CDSMaxitem: TClientDataSet
@@ -711,7 +710,7 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DSPMaxitem'
-    Left = 616
+    Left = 608
     Top = 216
     object IntegerField2: TIntegerField
       FieldName = 'MAX'
@@ -719,7 +718,7 @@ object DM: TDM
   end
   object DSMaxitem: TDataSource
     DataSet = CDSMaxitem
-    Left = 616
+    Left = 608
     Top = 280
   end
   object SQLQMaxitem: TSQLQuery
@@ -734,7 +733,7 @@ object DM: TDM
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 616
+    Left = 608
     Top = 344
     object IntegerField5: TIntegerField
       FieldName = 'IDEDITORA'
@@ -761,7 +760,7 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = BIBLIOTECA
-    Left = 688
+    Left = 704
     Top = 88
     object SQLDSEmprestadoIDEMPRESTIMO: TIntegerField
       FieldName = 'IDEMPRESTIMO'
@@ -790,7 +789,7 @@ object DM: TDM
     DataSet = SQLDSEmprestado
     ResolveToDataSet = True
     UpdateMode = upWhereChanged
-    Left = 688
+    Left = 704
     Top = 152
   end
   object CDSEmprestado: TClientDataSet
@@ -799,7 +798,7 @@ object DM: TDM
     AggregatesActive = True
     Params = <>
     ProviderName = 'DSPEmprestado'
-    Left = 688
+    Left = 704
     Top = 216
     object CDSEmprestadoIDEMPRESTIMO: TIntegerField
       FieldName = 'IDEMPRESTIMO'
@@ -826,7 +825,7 @@ object DM: TDM
   end
   object DSEmprestado: TDataSource
     DataSet = CDSEmprestado
-    Left = 688
+    Left = 704
     Top = 280
   end
   object SQLQEmprestado: TSQLQuery
@@ -841,13 +840,170 @@ object DM: TDM
     SQL.Strings = (
       'SELECT *  FROM EDITORA')
     SQLConnection = BIBLIOTECA
-    Left = 688
+    Left = 704
     Top = 344
     object IntegerField7: TIntegerField
       FieldName = 'IDEDITORA'
       Required = True
     end
     object StringField1: TStringField
+      FieldName = 'RAZAOSOCIAL'
+      Required = True
+      Size = 100
+    end
+  end
+  object SQLDSAcervoEmprestado: TSQLDataSet
+    SchemaName = 'sysdba'
+    CommandText = 
+      'Select count(acervo.idacervo)as qtd, max(acervo.titulo) Titulo f' +
+      'rom itememprestimo '#13#10'inner join acervo on  acervo.idacervo=ITEME' +
+      'MPRESTIMO.IDACERVO group by acervo.idacervo;'
+    DbxCommandType = 'Dbx.SQL'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = BIBLIOTECA
+    Left = 816
+    Top = 88
+    object SQLDSAcervoEmprestadoQTD: TIntegerField
+      FieldName = 'QTD'
+      Required = True
+    end
+    object SQLDSAcervoEmprestadoTITULO: TStringField
+      FieldName = 'TITULO'
+      Size = 100
+    end
+  end
+  object DSPAcervoEmprestado: TDataSetProvider
+    DataSet = SQLDSAcervoEmprestado
+    ResolveToDataSet = True
+    UpdateMode = upWhereChanged
+    Left = 816
+    Top = 152
+  end
+  object CDSAcervoEmprestado: TClientDataSet
+    Active = True
+    Aggregates = <>
+    AggregatesActive = True
+    Params = <>
+    ProviderName = 'DSPAcervoEmprestado'
+    Left = 816
+    Top = 216
+    object CDSAcervoEmprestadoQTD: TIntegerField
+      FieldName = 'QTD'
+      Required = True
+    end
+    object CDSAcervoEmprestadoTITULO: TStringField
+      FieldName = 'TITULO'
+      Size = 100
+    end
+  end
+  object DSAcervoEmprestado: TDataSource
+    DataSet = CDSAcervoEmprestado
+    Left = 816
+    Top = 280
+  end
+  object SQLQAcervoEmprestado: TSQLQuery
+    SchemaName = 'SYSDBA'
+    GetMetadata = True
+    NumericMapping = True
+    ObjectView = True
+    Active = True
+    DataSource = DSAcervoEmprestado
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT *  FROM EDITORA')
+    SQLConnection = BIBLIOTECA
+    Left = 816
+    Top = 344
+    object IntegerField6: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
+    end
+    object StringField7: TStringField
+      FieldName = 'RAZAOSOCIAL'
+      Required = True
+      Size = 100
+    end
+  end
+  object SQLDSAcervoAtrasado: TSQLDataSet
+    SchemaName = 'sysdba'
+    Active = True
+    CommandText = 
+      'select'#13#10#9' count(acervo.idacervo)as qtd,'#13#10'     max(acervo.titulo)' +
+      ' titulo,'#13#10'     max(ITEMEMPRESTIMO.DATADEVOLUCAO)as Devolucao '#13#10' ' +
+      '    from ItemEmprestimo'#13#10#9' inner join acervo '#13#10'     on acervo.id' +
+      'acervo=ITEMEMPRESTIMO.IDACERVO where ITEMEMPRESTIMO.DATADEVOLUCA' +
+      'O<CURRENT_date '#13#10'     group by acervo.idacervo;'
+    DbxCommandType = 'Dbx.SQL'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = BIBLIOTECA
+    Left = 920
+    Top = 88
+    object SQLDSAcervoAtrasadoQTD: TIntegerField
+      FieldName = 'QTD'
+      Required = True
+    end
+    object SQLDSAcervoAtrasadoTITULO: TStringField
+      FieldName = 'TITULO'
+      Size = 100
+    end
+    object SQLDSAcervoAtrasadoDEVOLUCAO: TDateField
+      FieldName = 'DEVOLUCAO'
+    end
+  end
+  object DSPAcervoAtrasado: TDataSetProvider
+    DataSet = SQLDSAcervoAtrasado
+    ResolveToDataSet = True
+    UpdateMode = upWhereChanged
+    Left = 920
+    Top = 152
+  end
+  object CDSAcervoAtrasado: TClientDataSet
+    Active = True
+    Aggregates = <>
+    AggregatesActive = True
+    Params = <>
+    ProviderName = 'DSPAcervoAtrasado'
+    Left = 920
+    Top = 216
+    object CDSAcervoAtrasadoQTD: TIntegerField
+      FieldName = 'QTD'
+      Required = True
+    end
+    object CDSAcervoAtrasadoTITULO: TStringField
+      FieldName = 'TITULO'
+      Size = 100
+    end
+    object CDSAcervoAtrasadoDEVOLUCAO: TDateField
+      FieldName = 'DEVOLUCAO'
+    end
+  end
+  object DSAcervoAtrasado: TDataSource
+    DataSet = CDSAcervoAtrasado
+    Left = 920
+    Top = 280
+  end
+  object SQLQAcervoAtrasado: TSQLQuery
+    SchemaName = 'SYSDBA'
+    GetMetadata = True
+    NumericMapping = True
+    ObjectView = True
+    Active = True
+    DataSource = DSAcervoAtrasado
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT *  FROM EDITORA')
+    SQLConnection = BIBLIOTECA
+    Left = 920
+    Top = 344
+    object IntegerField8: TIntegerField
+      FieldName = 'IDEDITORA'
+      Required = True
+    end
+    object StringField5: TStringField
       FieldName = 'RAZAOSOCIAL'
       Required = True
       Size = 100

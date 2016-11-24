@@ -232,7 +232,6 @@ object Multa: TMulta
                 MaxLength = 5
                 TabOrder = 0
                 Text = '  ,  '
-                ExplicitLeft = 106
               end
             end
           end
@@ -507,7 +506,13 @@ object Multa: TMulta
           Width = 458
           Height = 279
           Align = alClient
+          BiDiMode = bdLeftToRight
+          BorderStyle = bsNone
+          Ctl3D = False
           DataSource = DM.DSMulta
+          DrawingStyle = gdsGradient
+          ParentBiDiMode = False
+          ParentCtl3D = False
           TabOrder = 3
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -606,6 +611,7 @@ object Multa: TMulta
             Value = 12.500418065862120000
           end>
         TabOrder = 0
+        ExplicitTop = -8
         object Label7: TLabel
           AlignWithMargins = True
           Left = 4

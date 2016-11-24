@@ -195,8 +195,6 @@ object Editora: TEditora
                   Value = 31.000000000000000000
                 end>
               TabOrder = 0
-              ExplicitLeft = 3
-              ExplicitTop = 20
               object Label1: TLabel
                 AlignWithMargins = True
                 Left = 10
@@ -215,18 +213,12 @@ object Editora: TEditora
                 AlignWithMargins = True
                 Left = 73
                 Top = 3
-                Width = 173
+                Width = 179
                 Height = 25
-                Align = alClient
-                Anchors = []
-                BevelInner = bvNone
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                DragMode = dmAutomatic
-                MaxLength = 20
+                Align = alLeft
                 TabOrder = 0
-                OnKeyPress = EditRazaosocialKeyPress
-                ExplicitWidth = 288
+                ExplicitLeft = 70
+                ExplicitTop = 0
               end
             end
           end
@@ -673,9 +665,15 @@ object Editora: TEditora
           Top = 103
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
           Glyph.Data = {
             C6240000424DC624000000000000360000002800000050000000270000000100
             18000000000090240000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -975,6 +973,7 @@ object Editora: TEditora
           Layout = blGlyphRight
           Margin = 1
           NumGlyphs = 2
+          ParentFont = False
           OnClick = BAcervoClick
         end
         object BAssociado: TSpeedButton
@@ -983,6 +982,7 @@ object Editora: TEditora
           Top = 152
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ASSOCIADO'
@@ -1296,6 +1296,7 @@ object Editora: TEditora
           Top = 201
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'AUTOR'
@@ -1609,6 +1610,7 @@ object Editora: TEditora
           Top = 251
           Width = 140
           Height = 44
+          Cursor = crNo
           Align = alClient
           Anchors = []
           Caption = 'EDITORA'
@@ -1968,6 +1970,7 @@ object Editora: TEditora
           Top = 301
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'VALOR MULTA'
