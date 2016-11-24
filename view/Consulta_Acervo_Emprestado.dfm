@@ -833,31 +833,17 @@ object Emprestados: TEmprestados
         Width = 446
         Height = 390
         Align = alClient
-        Anchors = []
         BorderStyle = bsNone
         Ctl3D = False
         DataSource = DM.DSAcervoEmprestado
         DrawingStyle = gdsGradient
         ParentCtl3D = False
-        ReadOnly = True
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'QTD'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'TITULO'
-            Width = 350
-            Visible = True
-          end>
       end
     end
   end

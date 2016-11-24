@@ -156,19 +156,18 @@ type
     CDSAcervoAtrasado: TClientDataSet;
     DSAcervoAtrasado: TDataSource;
     SQLQAcervoAtrasado: TSQLQuery;
+    IntegerField8: TIntegerField;
+    StringField5: TStringField;
     SQLDSAcervoAtrasadoQTD: TIntegerField;
     SQLDSAcervoAtrasadoTITULO: TStringField;
     SQLDSAcervoAtrasadoDEVOLUCAO: TDateField;
+    CDSAcervoAtrasadoQTD: TIntegerField;
+    CDSAcervoAtrasadoTITULO: TStringField;
+    CDSAcervoAtrasadoDEVOLUCAO: TDateField;
     SQLQAcervoEmprestadoQTDS: TIntegerField;
     SQLQAcervoEmprestadoTITULO: TStringField;
     CDSAcervoEmprestadoQTDS: TIntegerField;
     CDSAcervoEmprestadoTITULO: TStringField;
-    SQLQAcervoAtrasadoQTD: TIntegerField;
-    SQLQAcervoAtrasadoTITULO: TStringField;
-    SQLQAcervoAtrasadoDEVOLUCAO: TDateField;
-    CDSAcervoAtrasadoQTD: TIntegerField;
-    CDSAcervoAtrasadoTITULO: TStringField;
-    CDSAcervoAtrasadoDEVOLUCAO: TDateField;
 
 
   private
