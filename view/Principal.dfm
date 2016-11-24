@@ -56,6 +56,14 @@ object SDIAppForm: TSDIAppForm
     end
     object Ajuda1: TMenuItem
       Caption = 'Consulta'
+      object Emprestados1: TMenuItem
+        Caption = 'Acervo Emprestado'
+        OnClick = Emprestados1Click
+      end
+      object AcervoemAtraso1: TMenuItem
+        Caption = 'Acervo em Atraso'
+        OnClick = AcervoemAtraso1Click
+      end
     end
     object Ajuda2: TMenuItem
       Caption = 'Ajuda'

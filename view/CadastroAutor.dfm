@@ -243,8 +243,12 @@ object Autor: TAutor
           Width = 440
           Height = 234
           Align = alClient
+          BorderStyle = bsNone
+          Ctl3D = False
           DataSource = DM.DSAutor
           DrawingStyle = gdsGradient
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          ParentCtl3D = False
           ReadOnly = True
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
@@ -275,6 +279,7 @@ object Autor: TAutor
           Width = 440
           Height = 24
           Align = alClient
+          BevelOuter = bvNone
           ColumnCollection = <
             item
               SizeStyle = ssAbsolute
@@ -302,23 +307,23 @@ object Autor: TAutor
           TabOrder = 2
           object Label10: TLabel
             AlignWithMargins = True
-            Left = 6
-            Top = 4
+            Left = 5
+            Top = 3
             Width = 68
-            Height = 16
+            Height = 18
             Align = alClient
             BiDiMode = bdRightToLeft
             Caption = 'Pesquisar'
             ParentBiDiMode = False
-            ExplicitLeft = 28
+            ExplicitLeft = 27
             ExplicitWidth = 46
             ExplicitHeight = 13
           end
           object EditPesquisar: TEdit
-            Left = 78
-            Top = 1
-            Width = 361
-            Height = 22
+            Left = 77
+            Top = 0
+            Width = 363
+            Height = 24
             Align = alClient
             TabOrder = 0
             OnChange = EditPesquisarChange
@@ -680,6 +685,7 @@ object Autor: TAutor
           Top = 103
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
@@ -983,9 +989,6 @@ object Autor: TAutor
           Margin = 1
           NumGlyphs = 2
           OnClick = BAcervoClick
-          ExplicitTop = 85
-          ExplicitWidth = 100
-          ExplicitHeight = 100
         end
         object BAssociado: TSpeedButton
           AlignWithMargins = True
@@ -993,6 +996,7 @@ object Autor: TAutor
           Top = 152
           Width = 140
           Height = 43
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ASSOCIADO'
@@ -1622,6 +1626,7 @@ object Autor: TAutor
           Top = 251
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'EDITORA'
@@ -1932,6 +1937,7 @@ object Autor: TAutor
           Top = 4
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'
@@ -1973,6 +1979,7 @@ object Autor: TAutor
           Top = 301
           Width = 140
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'VALOR MULTA'

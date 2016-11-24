@@ -16,13 +16,9 @@ type
     Pessoal: TGroupBox;
     GridPanelPessoal: TGridPanel;
     Nome: TLabel;
-    GridPanelFiltro: TGridPanel;
     PanelMenu: TPanel;
     GridPanel1: TGridPanel;
     Bgravar: TSpeedButton;
-    BExcluir: TSpeedButton;
-    SpeedButton4: TSpeedButton;
-    SpeedButton2: TSpeedButton;
     Panel1: TPanel;
     GridPanel2: TGridPanel;
     Label7: TLabel;
@@ -40,6 +36,7 @@ type
     procedure BEditoraClick(Sender: TObject);
     procedure BVoltarClick(Sender: TObject);
     procedure BgravarClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,6 +45,7 @@ type
 
 var
   Multa: TMulta;
+  multaModel:TMultaModel;
 
 implementation
 
@@ -92,14 +90,25 @@ var
   multadao:tMultaDao;
   data:TDateTime;
 begin
-  multadao:=tMultaDao.Create;
   data:=now();
-  multamodel:=TMultaModel.Create;
-  multamodel.SetValorBase(StrToFloat(MaskEdit1.text));
-  ShowMessageFmt('%f',[StrToFloat(MaskEdit1.text)]);
-  MultaModel.SetDataInicioVigencia(data);
-  multadao.inserirMulta(multamodel);
+if (((DBGrid1.Fields[0]).AsDateTime)=data) then
 
+  if Trim(MaskEdit1.Text)<>'00,00' then
+    begin
+      multadao:=tMultaDao.Create;
+      data:=now();
+      multamodel:=TMultaModel.Create;
+      multamodel.SetValorBase(StrToFloat(MaskEdit1.text));
+      ShowMessageFmt('%f',[StrToFloat(MaskEdit1.text)]);
+      MultaModel.SetDataInicioVigencia(data);
+      multadao.inserirMulta(multamodel);
+    end
+  else
+    begin
+    ShowMessage('Digite um valor diferente de R$00,00');
+    end
+else
+  ShowMessage('O Valor pode ser alterado Uma vez ao dia');
 end;
 
 procedure TMulta.BVoltarClick(Sender: TObject);
@@ -108,6 +117,13 @@ begin
   MenuPrincipal:=TMenuPrincipal.Create(self);
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
+end;
+
+procedure TMulta.DBGrid1DblClick(Sender: TObject);
+begin
+   multamodel:=TMultaModel.Create;
+   multamodel.SetDataInicioVigencia((DBGrid1.Fields[0]).AsDateTime);
+   multamodel.SetValorBase((DBGrid1.Fields[1]).AsFloat);
 end;
 
 end.

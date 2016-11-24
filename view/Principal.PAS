@@ -21,6 +21,8 @@ type
     Emprestimo1: TMenuItem;
     Devoluo1: TMenuItem;
     Associado1: TMenuItem;
+    Emprestados1: TMenuItem;
+    AcervoemAtraso1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Acervo1Click(Sender: TObject);
     procedure Autor1Click(Sender: TObject);
@@ -29,6 +31,8 @@ type
     procedure Emprestimo1Click(Sender: TObject);
     procedure Devoluo1Click(Sender: TObject);
     procedure Associado1Click(Sender: TObject);
+    procedure Emprestados1Click(Sender: TObject);
+    procedure AcervoemAtraso1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +44,7 @@ var
 
 implementation
 uses CadastroAcervo, CadastroAutor, CadastroEditora, CadastroMulta, CadastroPrincipal, Lancamento,
-  LancamentoDevolução, LancamentoEEmprestimo, Primaria, CadastroAssociado;
+  LancamentoDevolução, LancamentoEEmprestimo, Primaria, CadastroAssociado, Consulta_Acervo_EmAtraso, Consulta_Acervo_Emprestado;
 
 {$R *.dfm}
 
@@ -50,6 +54,13 @@ begin
   Acervo:=TAcervo.Create(self);
   Acervo.Parent:=SDIAppForm;
   Acervo.Show;
+end;
+
+procedure TSDIAppForm.AcervoemAtraso1Click(Sender: TObject);
+begin
+  EmAtraso:= TEmAtraso.Create(self);
+  EmAtraso.Parent:=SDIAppForm;
+  EmAtraso.Show;
 end;
 
 procedure TSDIAppForm.Associado1Click(Sender: TObject);
@@ -82,6 +93,13 @@ begin
   Editora:=TEditora.Create(self);
   Editora.Parent:=SDIAppForm;
   Editora.Show;
+end;
+
+procedure TSDIAppForm.Emprestados1Click(Sender: TObject);
+begin
+  Emprestados:= TEmprestados.Create(self);
+  Emprestados.Parent:=SDIAppForm;
+  Emprestados.Show;
 end;
 
 procedure TSDIAppForm.Emprestimo1Click(Sender: TObject);

@@ -96,11 +96,16 @@ procedure TEditora.BEditarClick(Sender: TObject);
 var
 editoradao:teditoradao;
 begin
+
+if Trim(EditRazaosocial.Text)<>EmptyStr then
+begin
   editoradao:=tEditoradao.create;
   editoramodel.SetRazaoSocial(EditRazaosocial.text);
   editoradao.editarEditora(editoramodel);
   EditRazaosocial.Clear;
-
+end
+  else
+    ShowMessage('De um duplo click na Editora');
 end;
 
 procedure TEditora.BEditoraClick(Sender: TObject);
@@ -126,12 +131,17 @@ procedure TEditora.BGravarClick(Sender: TObject);
   var
   Editoramodel:tEditoraModel;
   EditoraDAO:tEditoraDAO;
+begin
+  if Trim(EditRazaosocial.Text)<>EmptyStr then
   begin
   EditoraDAO:=tEditoraDAO.Create;
   Editoramodel:=TEditoraModel.Create;
   Editoramodel.setRazaosocial(EditRazaosocial.Text);
   Editoradao.inserirEditora(Editoramodel);
   EditRazaosocial.Clear;
+  end
+  else
+    ShowMessage('Digite a Razão Social da editora');
 end;
 
 procedure TEditora.BLimparClick(Sender: TObject);

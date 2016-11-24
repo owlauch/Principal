@@ -1,8 +1,10 @@
+{*guardar as variaveis do Objeto com funcões e parametros
+  para, pegar registro ou registrar nas variaveis}
 unit AcervoModel;
 
 interface
 
-uses AutorModel, EditoraModel, PalavraChaveModel, generics.collections;
+uses AutorModel, EditoraModel, generics.collections;
 
 type TAcervoModel = class
   private
@@ -15,7 +17,6 @@ type TAcervoModel = class
     flocalEdicao:string;
     fAutor: TAutorModel;
     fEditora: integer;
-    fPalavraChave: TList<TPalavraChaveModel>;
 
   public
     function GetAutor: TAutorModel;
@@ -25,7 +26,6 @@ type TAcervoModel = class
     function GetEditora: integer;
     function GetId: Integer;
     function GetIsbn: string;
-    function GetPalavraChave: TList<TPalavraChaveModel>;
     function GetPrazoEntrega: Integer;
     function GetTitulo: string;
     procedure SetAutor(const Value: TAutorModel);
@@ -35,7 +35,6 @@ type TAcervoModel = class
     procedure SetEditora(const Value: Integer);
     procedure SetId(const Value: Integer);
     procedure SetIsbn(const Value: string);
-    procedure SetPalavraChave(const Value: TList<TPalavraChaveModel>);
     procedure SetPrazoEntrega(const Value: Integer);
     procedure SetTitulo(const Value: string);
 
@@ -73,11 +72,6 @@ end;
 function TAcervoModel.GetLocalEdicao: String;
 begin
  result:=self.flocalEdicao;
-end;
-
-function TAcervoModel.GetPalavraChave: TList<TPalavraChaveModel>;
-begin
-  result:=self.fPalavraChave;
 end;
 
 function TAcervoModel.GetPrazoEntrega: Integer;
@@ -123,11 +117,6 @@ end;
 procedure TAcervoModel.SetLocalEdicao(const Value: String);
 begin
   self.flocalEdicao:=value;
-end;
-
-procedure TAcervoModel.SetPalavraChave(const Value: TList<TPalavraChaveModel>);
-begin
-   self.fPalavraChave:=value;
 end;
 
 procedure TAcervoModel.SetPrazoEntrega(const Value: Integer);

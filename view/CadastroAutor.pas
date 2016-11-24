@@ -113,10 +113,15 @@ var
   autormodel:tAutorModel;
   autorDAO:tAutorDAO;
 begin
+  if Trim(editnome.Text)<>EmptyStr then
+  begin
   autormodel:=TAutorModel.Create;
   autormodel.setNome(EditNome.Text);
   autordao.inserirAutor(autormodel);
   EditNome.Clear;
+  end
+  else
+  ShowMessage('Digite um Nome para o Autor');
 end;
 
 procedure TAutor.BVoltarClick(Sender: TObject);
@@ -175,6 +180,8 @@ var
   autordao:tAutordao;
   autormodel:TAutorModel;
 begin
+    if Trim(editnome.Text)<>EmptyStr then
+  begin
   autordao:=tAutordao.create;
   autormodel:=TAutorModel.Create;
   autormodel.SetNome(EditNome.text);
@@ -182,6 +189,9 @@ begin
   autordao.editarAutor(autormodel);
   EditNome.Clear;
   EditPesquisar.Clear;
+  end
+  else
+    ShowMessage('De um duplo click no autor desejado');
 end;
 
 procedure TAutor.SpeedButtonMultaClick(Sender: TObject);

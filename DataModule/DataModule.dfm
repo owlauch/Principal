@@ -928,7 +928,6 @@ object DM: TDM
   end
   object SQLDSAcervoAtrasado: TSQLDataSet
     SchemaName = 'sysdba'
-    Active = True
     CommandText = 
       'select'#13#10#9' count(acervo.idacervo)as qtd,'#13#10'     max(acervo.titulo)' +
       ' titulo,'#13#10'     max(ITEMEMPRESTIMO.DATADEVOLUCAO)as Devolucao '#13#10' ' +
@@ -954,7 +953,7 @@ object DM: TDM
     end
   end
   object DSPAcervoAtrasado: TDataSetProvider
-    DataSet = SQLDSAcervoAtrasado
+    DataSet = SQLQAcervoAtrasado
     ResolveToDataSet = True
     UpdateMode = upWhereChanged
     Left = 904
@@ -995,18 +994,29 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQL.Strings = (
-      'SELECT *  FROM EDITORA')
+      'select'
+      #9' count(acervo.idacervo)as qtd,'
+      '     max(acervo.titulo) titulo,'
+      '     max(ITEMEMPRESTIMO.DATADEVOLUCAO)as Devolucao '
+      '     from ItemEmprestimo'
+      #9' inner join acervo '
+      
+        '     on acervo.idacervo=ITEMEMPRESTIMO.IDACERVO where ITEMEMPRES' +
+        'TIMO.DATADEVOLUCAO<CURRENT_date '
+      '     group by acervo.idacervo;')
     SQLConnection = BIBLIOTECA
     Left = 904
     Top = 56
-    object IntegerField8: TIntegerField
-      FieldName = 'IDEDITORA'
+    object SQLQAcervoAtrasadoQTD: TIntegerField
+      FieldName = 'QTD'
       Required = True
     end
-    object StringField5: TStringField
-      FieldName = 'RAZAOSOCIAL'
-      Required = True
+    object SQLQAcervoAtrasadoTITULO: TStringField
+      FieldName = 'TITULO'
       Size = 100
+    end
+    object SQLQAcervoAtrasadoDEVOLUCAO: TDateField
+      FieldName = 'DEVOLUCAO'
     end
   end
 end

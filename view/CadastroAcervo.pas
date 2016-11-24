@@ -122,7 +122,10 @@ end;
 procedure TAcervo.BEditarClick(Sender: TObject);
 var
   acervodao:tAcervodao;
-begin
+Begin
+if Trim(EditTitulo.Text)<> EmptyStr then
+
+  begin
   acervodao:=tAcervodao.create;
   acervomodel.SetTitulo(EditTitulo.text);
   acervomodel.Setqtdeexemplar(strtoint((ComboBoxQtd.Text)));
@@ -136,7 +139,10 @@ begin
   EditLocalEdicao.clear;
   EditIsbn.clear;
   EditEditora.Clear;
-end;
+  end
+else
+  ShowMessage('De um duplo click em um Acervo Listado na dela ');
+End;
 
 procedure TAcervo.BEditoraClick(Sender: TObject);
 begin
@@ -149,6 +155,7 @@ end;
 procedure TAcervo.BExcluirClick(Sender: TObject);
 var
   AcervoDao:tAcervoDao;
+  teste:integer;
 begin
   AcervoDao:=TAcervoDao.Create;
   AcervoDao.excluirAcervo(DBGrid1.Fields[0].AsInteger);
@@ -158,6 +165,9 @@ procedure TAcervo.BGravarClick(Sender: TObject);
 var
   AcervoDao:TAcervoDao;
 begin
+
+if Trim(EditTitulo.Text)<> EmptyStr then
+  begin
   acervoDao:=TAcervoDao.Create;
   acervomodel:=TAcervoModel.Create;
   acervomodel.SetTitulo(EditTitulo.Text);
@@ -172,6 +182,9 @@ begin
   EditLocalEdicao.clear;
   EditIsbn.clear;
   EditEditora.Clear;
+end
+else
+  ShowMessage('Porfavor preencha todos os campos');
 end;
 
 procedure TAcervo.BlimparClick(Sender: TObject);

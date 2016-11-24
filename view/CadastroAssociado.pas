@@ -171,6 +171,8 @@ var
   NET:TAssociadoModel;
   AssociadoDao:TAssociadoDao;
 begin
+if Trim(editname.Text)<>EmptyStr then
+begin
   net:=TAssociadoModel.Create;
   net.setNome(editName.Text);
   net.SetEmail(Editemail.Text);
@@ -191,6 +193,9 @@ begin
   EditNumero.Clear;
   EditCidade.Clear;
   EditRua.Clear;
+end
+  else
+    ShowMessage('Porfavor insira algum valor');
 
 end;
 
@@ -235,6 +240,8 @@ procedure TAssociado.BEditarClick(Sender: TObject);
 var
   associadodao:tAssociadodao;
 begin
+if Trim(editName.Text)<>EmptyStr then
+begin
   associadodao:=tAssociadodao.create;
   associadomodel.SetNome(EditName.text);
   associadomodel.Setemail(Editemail.text);
@@ -255,7 +262,11 @@ begin
   Editbairro.Clear;
   Editrua.Clear;
   Editnumero.Clear;
+end
+  else
+  ShowMessage('De um duplo click no associado desejado');
 end;
+
 
 procedure TAssociado.BEditoraClick(Sender: TObject);
 begin

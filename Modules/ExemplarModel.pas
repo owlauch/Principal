@@ -1,3 +1,5 @@
+{*guardar as variaveis do Objeto com funcões e parametros
+  para, pegar registro ou registrar nas variaveis}
 unit ExemplarModel;
 
 interface
