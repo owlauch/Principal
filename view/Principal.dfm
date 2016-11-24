@@ -2,10 +2,10 @@ object SDIAppForm: TSDIAppForm
   Left = 197
   Top = 111
   Caption = 'Menu'
-  ClientHeight = 351
+  ClientHeight = 441
   ClientWidth = 628
   Color = clBtnFace
-  Constraints.MinHeight = 410
+  Constraints.MinHeight = 500
   Constraints.MinWidth = 620
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

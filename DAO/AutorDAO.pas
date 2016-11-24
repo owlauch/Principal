@@ -19,9 +19,13 @@ implementation
 procedure TAutorDao.editarAutor(autormodel: tAutorModel);
 begin
   DM.SQLQAutor.Close;
+  DM.SQLQAutor.SQL.Clear;
   DM.SQLQAutor.SQL.Text:='UPDATE autor SET nome=:nome WHERE idautor=:id';
   DM.SQLQAutor.ParamByName('id').AsInteger:=autormodel.GetId;
   DM.SQLQAutor.ParamByName('nome').AsString:=autormodel.GetNome;
+  DM.SQLQAutor.ExecSQL;
+  DM.SQLQAutor.SQL.Clear;
+  DM.SQLQAutor.SQL.Text:='SELECT * FROM autor';
   DM.SQLQAutor.ExecSQL;
   DM.CDSAutor.Close;
   DM.CDSAutor.Open;
@@ -37,6 +41,9 @@ begin
   DM.SQLQAutor.SQL.Text:='DELETE FROM AUTOR WHERE idautor=:id';
   DM.SQLQAutor.ParamByName('id').AsInteger:=id;
   DM.SQLQAutor.ExecSQL;
+  DM.SQLQAutor.SQL.Clear;
+  DM.SQLQAutor.SQL.Text:='SELECT * FROM autor';
+  DM.SQLQAutor.ExecSQL;
   DM.CDSAutor.Close;
   DM.CDSAutor.Open;
   DM.CDSAutor.Close;
@@ -50,6 +57,9 @@ begin
   DM.SQLQAutor.Close;
   DM.SQLQAutor.SQL.Text:='INSERT INTO Autor(nome) VALUES(:nome)';
   DM.SQLQAutor.ParamByName('nome').AsString:=AutorModel.GetNome;
+  DM.SQLQAutor.ExecSQL;
+  DM.SQLQAutor.SQL.Clear;
+  DM.SQLQAutor.SQL.Text:='SELECT * FROM autor';
   DM.SQLQAutor.ExecSQL;
   DM.CDSAutor.Close;
   DM.CDSAutor.Open;

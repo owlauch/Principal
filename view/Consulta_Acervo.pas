@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Primaria;
 
 type
   TConsultaAcervo = class(TForm)
@@ -47,9 +47,9 @@ end;
 procedure TConsultaAcervo.BVoltarClick(Sender: TObject);
 begin
   close;
-  ConsultaPrincipal:= TConsultaPrincipal.Create(self);
-  ConsultaPrincipal.Parent:=SDIAppForm;
-  ConsultaPrincipal.Show;
+  MenuPrincipal:=TMenuPrincipal.Create(self);
+  MenuPrincipal.Parent:=SDIAppForm;
+  menuPrincipal.Show;
 end;
 
 procedure TConsultaAcervo.BEmAtrasoClick(Sender: TObject);

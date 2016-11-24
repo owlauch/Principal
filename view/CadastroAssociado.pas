@@ -63,12 +63,12 @@ type
     procedure SpeedButtonMultaClick(Sender: TObject);
     procedure EditNameKeyPress(Sender: TObject; var Key: Char);
     procedure EditCidadeKeyPress(Sender: TObject; var Key: Char);
-    procedure EditBairroKeyPress(Sender: TObject; var Key: Char);
     procedure EditRuaKeyPress(Sender: TObject; var Key: Char);
     procedure Edit10KeyPress(Sender: TObject; var Key: Char);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure BEditarClick(Sender: TObject);
     procedure BLimparClick(Sender: TObject);
+    procedure Edit10Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -122,22 +122,23 @@ begin
   EditNumero.Text:=inttostr(associadomodel.Getnrorua);
 end;
 
+procedure TAssociado.Edit10Change(Sender: TObject);
+begin
+  dm.SQLQAssociado.Close;
+  dm.SQLQAssociado.SQL.Clear;
+  dm.SQLQAssociado.sql.Text:='select * from associado where associado.nome like' + QuotedStr('%'+edit10.Text+'%');
+  dm.SQLQAssociado.Open;
+  dm.CDSAssociado.Active:=false;
+  dm.CDSAssociado.Active:=true;
+end;
+
 procedure TAssociado.Edit10KeyPress(Sender: TObject; var Key: Char);
 begin
   if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
   Key := #0;
 end;
 
-procedure TAssociado.EditBairroKeyPress(Sender: TObject; var Key: Char);
-begin
-  dm.SQLQAssociado.Close;
-  dm.SQLQAssociado.SQL.Clear;
-  dm.SQLQAssociado.sql.Text:='select * from associado where associado.nome like' + QuotedStr('%'+edit10.Text+'%');
-  dm.SQLDSAssociado.Open;
-  dm.SQLQAssociado.Close;
-  dm.SQLDSAssociado.Open;
-  dm.SQLQAssociado.Close;
-end;
+
 
 procedure TAssociado.EditCidadeKeyPress(Sender: TObject; var Key: Char);
 begin

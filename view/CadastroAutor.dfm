@@ -321,6 +321,7 @@ object Autor: TAutor
             Height = 22
             Align = alClient
             TabOrder = 0
+            OnChange = EditPesquisarChange
             OnKeyPress = EditPesquisarKeyPress
             ExplicitHeight = 21
           end

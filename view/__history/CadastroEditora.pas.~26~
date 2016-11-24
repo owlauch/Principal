@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule,
+  Dialogs, Grids, DBGrids, StdCtrls, Buttons, ExtCtrls, DataModule, EditoraModel,
   CadastroMulta;
 
 type
@@ -21,7 +21,6 @@ type
     Pessoal: TGroupBox;
     GridPanelPessoal: TGridPanel;
     Label1: TLabel;
-    EditRazaosocial: TEdit;
     DBGrid1: TDBGrid;
     GridPanelFiltro: TGridPanel;
     Label10: TLabel;
@@ -36,6 +35,7 @@ type
     BEditora: TSpeedButton;
     BVoltar: TSpeedButton;
     SpeedButtonMulta: TSpeedButton;
+    EditRazaosocial: TEdit;
     procedure BVoltarClick(Sender: TObject);
     procedure BExcluirClick(Sender: TObject);
     procedure BGravarClick(Sender: TObject);
@@ -45,6 +45,10 @@ type
     procedure BAutorClick(Sender: TObject);
     procedure BEditoraClick(Sender: TObject);
     procedure SpeedButtonMultaClick(Sender: TObject);
+    procedure BEditarClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure EditRazaosocialKeyPress(Sender: TObject; var Key: Char);
+    procedure EditPesquisarKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -53,10 +57,11 @@ type
 
 var
   Editora: TEditora;
+  editoramodel:teditoramodel;
 
 implementation
 
-uses CadastroPrincipal, Principal, EditoraDAO, EditoraModel, Primaria,
+uses CadastroPrincipal, Principal, EditoraDAO, Primaria,
   CadastroAcervo, CadastroAssociado, CadastroAutor;
 
 
@@ -86,6 +91,17 @@ begin
   Autor.Show;
 end;
 
+procedure TEditora.BEditarClick(Sender: TObject);
+var
+editoradao:teditoradao;
+begin
+  editoradao:=tEditoradao.create;
+  editoramodel.SetRazaoSocial(EditRazaosocial.text);
+  editoradao.editarEditora(editoramodel);
+  EditRazaosocial.Clear;
+
+end;
+
 procedure TEditora.BEditoraClick(Sender: TObject);
 begin
   close;
@@ -102,6 +118,7 @@ begin
   editoraDao:=TEditoraDao.Create;
   id:=DBGrid1.Fields[0].AsInteger;
   Editoradao.excluirEditora(id);
+  EditRazaosocial.Clear;
 end;
 
 procedure TEditora.BGravarClick(Sender: TObject);
@@ -128,6 +145,34 @@ begin
   MenuPrincipal:=TMenuPrincipal.Create(self);
   MenuPrincipal.Parent:=SDIAppForm;
   menuPrincipal.Show;
+end;
+
+procedure TEditora.DBGrid1DblClick(Sender: TObject);
+var
+id : integer;
+nome : string ;
+editoraDao:TEditoraDao;
+begin
+  editoramodel:=TEditoraModel.Create;
+  editoraDao:=TEditoraDao.Create;
+  id:=DBGrid1.Fields[0].AsInteger;
+  nome:=DBGrid1.Fields[1].AsString;
+  editoramodel.SetRazaoSocial(nome);
+  editoramodel.SetId(id);
+  Editrazaosocial.text:=editoramodel.getrazaosocial;
+
+end;
+
+procedure TEditora.EditPesquisarKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TEditora.EditRazaosocialKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 procedure TEditora.SpeedButtonMultaClick(Sender: TObject);

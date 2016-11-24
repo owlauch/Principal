@@ -14,6 +14,8 @@ object ConsultaAcervo: TConsultaAcervo
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  ExplicitWidth = 320
+  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   object GridPricipal: TGridPanel
@@ -49,6 +51,8 @@ object ConsultaAcervo: TConsultaAcervo
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 574
+    ExplicitHeight = 385
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 1
@@ -62,6 +66,8 @@ object ConsultaAcervo: TConsultaAcervo
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 143
+      ExplicitHeight = 383
       object GridPanel1: TGridPanel
         AlignWithMargins = True
         Left = 3
@@ -127,18 +133,18 @@ object ConsultaAcervo: TConsultaAcervo
             Value = 12.500418065862120000
           end>
         TabOrder = 0
+        ExplicitWidth = 137
+        ExplicitHeight = 377
         object Label1: TLabel
           AlignWithMargins = True
           Left = 4
           Top = 54
-          Width = 140
-          Height = 43
+          Width = 59
+          Height = 13
           Align = alClient
           Alignment = taCenter
           Caption = 'CONSULTAS'
           Layout = tlCenter
-          ExplicitWidth = 59
-          ExplicitHeight = 13
         end
         object BEmprestado: TSpeedButton
           AlignWithMargins = True
@@ -1138,6 +1144,9 @@ object ConsultaAcervo: TConsultaAcervo
       Align = alClient
       AutoSize = True
       TabOrder = 1
+      ExplicitLeft = 149
+      ExplicitWidth = 419
+      ExplicitHeight = 373
     end
   end
 end

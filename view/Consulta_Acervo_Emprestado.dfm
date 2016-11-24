@@ -47,6 +47,9 @@ object Emprestados: TEmprestados
     RowCollection = <
       item
         Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = ssAuto
       end>
     TabOrder = 0
     object Panel1: TPanel
@@ -1139,34 +1142,129 @@ object Emprestados: TEmprestados
       Align = alClient
       AutoSize = True
       TabOrder = 1
-      object DBGrid1: TDBGrid
-        AlignWithMargins = True
-        Left = 4
-        Top = 4
-        Width = 446
-        Height = 390
+      object GPBusca: TGridPanel
+        Left = 1
+        Top = 1
+        Width = 452
+        Height = 396
         Align = alClient
-        DataSource = DM.DSAcervoEmprestado
-        DrawingStyle = gdsGradient
-        ReadOnly = True
-        TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
-        Columns = <
+        Caption = 'GPBusca'
+        ColumnCollection = <
           item
-            Expanded = False
-            FieldName = 'QTD'
-            Visible = True
+            Value = 100.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = DBGrid1
+            Row = 1
           end
           item
-            Expanded = False
-            FieldName = 'TITULO'
-            Width = 350
-            Visible = True
+            Column = 0
+            Control = GridPanel2
+            Row = 0
           end>
+        RowCollection = <
+          item
+            SizeStyle = ssAbsolute
+            Value = 33.000000000000000000
+          end
+          item
+            Value = 100.000000000000000000
+          end>
+        TabOrder = 0
+        ExplicitLeft = 200
+        ExplicitTop = 256
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+        object DBGrid1: TDBGrid
+          AlignWithMargins = True
+          Left = 4
+          Top = 37
+          Width = 444
+          Height = 355
+          Align = alClient
+          Anchors = []
+          DataSource = DM.DSAcervoEmprestado
+          DrawingStyle = gdsGradient
+          ReadOnly = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'QTD'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'TITULO'
+              Width = 350
+              Visible = True
+            end>
+        end
+        object GridPanel2: TGridPanel
+          Left = 1
+          Top = 1
+          Width = 450
+          Height = 33
+          Align = alClient
+          Caption = 'GridPanel2'
+          ColumnCollection = <
+            item
+              SizeStyle = ssAbsolute
+              Value = 100.000000000000000000
+            end
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Buscar
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = EditBusca
+              Row = 0
+            end>
+          RowCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          TabOrder = 1
+          ExplicitWidth = 1
+          object Buscar: TLabel
+            AlignWithMargins = True
+            Left = 4
+            Top = 4
+            Width = 94
+            Height = 25
+            Align = alLeft
+            Alignment = taRightJustify
+            BiDiMode = bdLeftToRight
+            Caption = 'Buscar'
+            ParentBiDiMode = False
+            Layout = tlCenter
+            ExplicitWidth = 32
+            ExplicitHeight = 13
+          end
+          object EditBusca: TEdit
+            AlignWithMargins = True
+            Left = 104
+            Top = 4
+            Width = 342
+            Height = 25
+            Align = alClient
+            TabOrder = 0
+            ExplicitHeight = 21
+          end
+        end
       end
     end
   end

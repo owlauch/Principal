@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids, DataModule, Primaria;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids, DataModule;
 
 type
   TEmAtraso = class(TForm)
@@ -47,9 +47,9 @@ end;
 procedure TEmAtraso.BVoltarClick(Sender: TObject);
 begin
   close;
-  MenuPrincipal:=TMenuPrincipal.Create(self);
-  MenuPrincipal.Parent:=SDIAppForm;
-  menuPrincipal.Show;
+  ConsultaPrincipal:= TConsultaPrincipal.Create(self);
+  ConsultaPrincipal.Parent:=SDIAppForm;
+  ConsultaPrincipal.Show;
 end;
 
 procedure TEmAtraso.BReservadoClick(Sender: TObject);

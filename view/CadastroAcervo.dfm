@@ -227,6 +227,7 @@ object Acervo: TAcervo
             Height = 22
             Align = alClient
             TabOrder = 0
+            OnChange = Edit10Change
             OnKeyPress = Edit10KeyPress
             ExplicitHeight = 21
           end

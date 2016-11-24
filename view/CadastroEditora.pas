@@ -49,6 +49,7 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure EditRazaosocialKeyPress(Sender: TObject; var Key: Char);
     procedure EditPesquisarKeyPress(Sender: TObject; var Key: Char);
+    procedure EditPesquisarChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -161,6 +162,16 @@ begin
   editoramodel.SetId(id);
   Editrazaosocial.text:=editoramodel.getrazaosocial;
 
+end;
+
+procedure TEditora.EditPesquisarChange(Sender: TObject);
+begin
+  dm.SQLQEditora.Close;
+  dm.SQLQEditora.SQL.Clear;
+  dm.SQLQEditora.sql.Text:='select * from Editora where Editora.razaosocial like' + QuotedStr('%'+EditPesquisar.Text+'%');
+  dm.SQLQEditora.Open;
+  dm.CDSEditora.Active:=false;
+  dm.CDSEditora.Active:=true;
 end;
 
 procedure TEditora.EditPesquisarKeyPress(Sender: TObject; var Key: Char);

@@ -56,6 +56,11 @@ type
     procedure EditEditoraClick(Sender: TObject);
     procedure BEditarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure BlimparClick(Sender: TObject);
+    procedure EditTituloKeyPress(Sender: TObject; var Key: Char);
+    procedure EditLocalEdicaoKeyPress(Sender: TObject; var Key: Char);
+    procedure EditIsbnKeyPress(Sender: TObject; var Key: Char);
+    procedure Edit10KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -117,16 +122,19 @@ procedure TAcervo.BEditarClick(Sender: TObject);
 var
   acervodao:tAcervodao;
 begin
-  acervomodel:=TAcervoModel.Create;
   acervodao:=tAcervodao.create;
   acervomodel.SetTitulo(EditTitulo.text);
-  ShowMessageFmt('%s',[acervomodel.getTitulo]);
   acervomodel.Setqtdeexemplar(strtoint((ComboBoxQtd.Text)));
   acervomodel.SetDataEdicao(DateTimePickerEdicao.date);
   acervomodel.SetLocalEdicao(EditLocalEdicao.text);
   acervomodel.SetIsbn(EditIsbn.text);
   acervomodel.SetEditora(ideditora);
   acervodao.editarAcervo(acervomodel);
+  EditTitulo.clear;
+  ComboBoxQtd.clear;
+  EditLocalEdicao.clear;
+  EditIsbn.clear;
+  EditEditora.Clear;
 end;
 
 procedure TAcervo.BEditoraClick(Sender: TObject);
@@ -158,6 +166,20 @@ begin
   AcervoModel.SetIsbn(EditIsbn.Text);
   AcervoModel.SetEditora(ideditora);
   AcervoDao.inserirAcervo(AcervoModel);
+  EditTitulo.clear;
+  ComboBoxQtd.clear;
+  EditLocalEdicao.clear;
+  EditIsbn.clear;
+  EditEditora.Clear;
+end;
+
+procedure TAcervo.BlimparClick(Sender: TObject);
+begin
+  EditTitulo.clear;
+  ComboBoxQtd.clear;
+  EditLocalEdicao.clear;
+  EditIsbn.clear;
+  EditEditora.Clear;
 end;
 
 procedure TAcervo.DBGrid1DblClick(Sender: TObject);
@@ -183,7 +205,14 @@ begin
   dm.SQLQEditora.ExecSQL;
   Dm.SQLQEditora.open;
   EditEditora.text:=dm.SQLQEditora.FieldByName('RAZAOSOCIAL').AsString;
+  ideditora:=acervomodel.GetEditora;
   Dm.SQLQEditora.open;
+end;
+
+procedure TAcervo.Edit10KeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 procedure TAcervo.EditEditoraClick(Sender: TObject);
@@ -191,6 +220,24 @@ begin
   ListaEditora:=TListaEditora.Create(self);
   ListaEditora.Parent:=SDIAppForm;
   ListaEditora.Show;
+end;
+
+procedure TAcervo.EditIsbnKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAcervo.EditLocalEdicaoKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
+end;
+
+procedure TAcervo.EditTituloKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not(Key in ['A' .. 'Z', 'a' .. 'z', ' ', '.', '-', #8])) then
+  Key := #0;
 end;
 
 end.

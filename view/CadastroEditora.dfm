@@ -217,8 +217,7 @@ object Editora: TEditora
                 Height = 25
                 Align = alLeft
                 TabOrder = 0
-                ExplicitLeft = 70
-                ExplicitTop = 0
+                ExplicitHeight = 21
               end
             end
           end
@@ -307,6 +306,7 @@ object Editora: TEditora
             Height = 24
             Align = alClient
             TabOrder = 0
+            OnChange = EditPesquisarChange
             OnKeyPress = EditPesquisarKeyPress
             ExplicitHeight = 21
           end
