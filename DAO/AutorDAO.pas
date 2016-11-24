@@ -1,3 +1,4 @@
+{* Tem como finalidade pegar um objeto (Autoromodel) e gravar, alterar ou excluir no banco}
 unit AutorDAO;
 
 interface
@@ -13,9 +14,7 @@ type
 implementation
 
 { TAutorDao }
-
-
-
+{* Tem como finalidade pegar um objeto (Autormodel) e alterar no banco}
 procedure TAutorDao.editarAutor(autormodel: tAutorModel);
 begin
   DM.SQLQAutor.Close;
@@ -34,7 +33,7 @@ begin
   ShowMessage('Alteração efetuada com sucesso');
 
 end;
-
+{* Tem como finalidade pegar um objeto (Autormodel) e excluir no banco}
 procedure TAutorDao.excluirAutor(id: integer);
 begin
   DM.SQLQAutor.Close;
@@ -50,7 +49,7 @@ begin
   DM.CDSAutor.Open;
 
 end;
-
+{* Tem como finalidade pegar um objeto (Autormodel) e inserir no banco}
 procedure TAutorDao.inserirAutor(AutorModel: TAutorModel);
 begin
   try

@@ -1,8 +1,10 @@
+{*guardar as variaveis do Objeto com funcões e parametros
+  para, pegar registro ou registrar nas variaveis}
 unit ItemEmprestimoModel;
 
 interface
 
-uses ExemplarModel, MultaModel;
+uses  MultaModel;
 
 type TItemEmprestimoModel = class
   private

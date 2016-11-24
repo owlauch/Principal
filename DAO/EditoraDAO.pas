@@ -1,3 +1,4 @@
+{* Tem como finalidade pegar um objeto (Editoramodel) e gravar, alterar ou excluir no banco}
 unit EditoraDAO;
 
 interface
@@ -13,7 +14,7 @@ interface
 implementation
 
 { TEditoraDao }
-
+{* Tem como finalidade pegar um objeto (Editoramodel) e alterar no banco}
 procedure TEditoraDao.editarEditora(editoramodel: teditoraModel);
 begin
   DM.SQLQEditora.Close;
@@ -29,7 +30,7 @@ begin
   DM.CDSEditora.Close;
   DM.CDSEditora.Open;
 end;
-
+{* Tem como finalidade pegar um objeto (Editoramodel) e excluir no banco}
 procedure TEditoraDao.excluirEditora(id: integer);
 begin
   DM.SQLQEditora.Close;
@@ -44,7 +45,7 @@ begin
   DM.CDSEditora.Close;
   DM.CDSEditora.Open;
 end;
-
+{* Tem como finalidade pegar um objeto (Editoramodel) e inserir no banco}
 procedure TEditoraDao.inserirEditora(EditoraModel: TEditoraModel);
 begin
   try

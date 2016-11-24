@@ -230,8 +230,12 @@ object Editora: TEditora
           Height = 234
           Align = alClient
           Anchors = []
+          BorderStyle = bsNone
+          Ctl3D = False
           DataSource = DM.DSEditora
           DrawingStyle = gdsGradient
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          ParentCtl3D = False
           ReadOnly = True
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET

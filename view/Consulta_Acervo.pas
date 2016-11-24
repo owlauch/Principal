@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, Primaria;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Primaria, pngimage;
 
 type
   TConsultaAcervo = class(TForm)
@@ -16,7 +16,7 @@ type
     BVoltar: TSpeedButton;
     Panel2: TPanel;
     BEmAtraso: TSpeedButton;
-    BReservado: TSpeedButton;
+    Image1: TImage;
     procedure BVoltarClick(Sender: TObject);
     procedure BEmprestadoClick(Sender: TObject);
     procedure BEmAtrasoClick(Sender: TObject);

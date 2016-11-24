@@ -1,3 +1,4 @@
+{* Tem como finalidade pegar um objeto (Emprestimomodel) e gravar no banco}
 unit EmprestimoDAO;
 
 interface
@@ -12,7 +13,7 @@ interface
 implementation
 
 { TEmprestimoDao }
-
+{* Tem como finalidade pegar um objeto (Emprestimomodel) e gravar no banco}
 procedure TEmprestimoDao.inserirEmprestimo(EmprestimoModel: TEmprestimoModel);
 var
  teste:string;

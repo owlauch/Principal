@@ -15,13 +15,8 @@ type
     BEmprestado: TSpeedButton;
     BVoltar: TSpeedButton;
     BEmAtraso: TSpeedButton;
-    BReservado: TSpeedButton;
     Panel2: TPanel;
     DBGrid1: TDBGrid;
-    GPBusca: TGridPanel;
-    GridPanel2: TGridPanel;
-    Buscar: TLabel;
-    EditBusca: TEdit;
     procedure BVoltarClick(Sender: TObject);
     procedure BReservadoClick(Sender: TObject);
     procedure BEmAtrasoClick(Sender: TObject);
