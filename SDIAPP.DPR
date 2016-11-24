@@ -38,7 +38,10 @@ uses
   CadastroMulta in 'view\CadastroMulta.pas' {Multa},
   EditoraLista in 'view\EditoraLista.pas' {ListaEditora},
   LancamentoDevolução in 'view\LancamentoDevolução.pas' {Devolucao},
-  DevoluçãoDAO in 'DAO\DevoluçãoDAO.pas';
+  DevoluçãoDAO in 'DAO\DevoluçãoDAO.pas',
+  Consulta_Acervo_Emprestado in 'view\Consulta_Acervo_Emprestado.pas' {Emprestados},
+  Consulta_Acervo_EmAtraso in 'view\Consulta_Acervo_EmAtraso.pas' {EmAtraso},
+  Consulta_Acervo_Reservado in 'view\Consulta_Acervo_Reservado.pas' {Reservado};
 
 {$R *.RES}
 
@@ -58,6 +61,9 @@ begin
   Application.CreateForm(TLancamentoEmprestimo, LancamentoEmprestimo);
   Application.CreateForm(TMulta, Multa);
   Application.CreateForm(TDevolucao, Devolucao);
+  Application.CreateForm(TEmprestados, Emprestados);
+  Application.CreateForm(TEmAtraso, EmAtraso);
+  Application.CreateForm(TReservado, Reservado);
   Application.Run;
 end.
 

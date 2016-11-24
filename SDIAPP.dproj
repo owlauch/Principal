@@ -118,6 +118,15 @@
 				<Form>Devolucao</Form>
 			</DCCReference>
 			<DCCReference Include="DAO\DevoluçãoDAO.pas"/>
+			<DCCReference Include="view\Consulta_Acervo_Emprestado.pas">
+				<Form>Emprestados</Form>
+			</DCCReference>
+			<DCCReference Include="view\Consulta_Acervo_EmAtraso.pas">
+				<Form>EmAtraso</Form>
+			</DCCReference>
+			<DCCReference Include="view\Consulta_Acervo_Reservado.pas">
+				<Form>Reservado</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

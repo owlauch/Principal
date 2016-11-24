@@ -27,6 +27,7 @@ begin
   DM.CDSAutor.Open;
   DM.CDSAutor.Close;
   DM.CDSAutor.Open;
+  ShowMessage('Alteração efetuada com sucesso');
 
 end;
 

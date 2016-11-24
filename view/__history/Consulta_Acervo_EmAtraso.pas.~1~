@@ -1,0 +1,33 @@
+unit Consulta_Acervo_EmAtraso;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, ExtCtrls;
+
+type
+  TEmAtraso = class(TForm)
+    GridPricipal: TGridPanel;
+    Panel1: TPanel;
+    GridPanel1: TGridPanel;
+    Label1: TLabel;
+    BAssociado: TSpeedButton;
+    BVoltar: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Panel2: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  EmAtraso: TEmAtraso;
+
+implementation
+
+{$R *.dfm}
+
+end.

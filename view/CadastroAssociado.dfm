@@ -299,7 +299,7 @@
                 EditMask = '!\(99\)0000-0000;0;_'
                 MaxLength = 13
                 TabOrder = 2
-                ExplicitWidth = 139
+                ExplicitHeight = 21
               end
               object Editemail: TEdit
                 AlignWithMargins = True
@@ -617,44 +617,49 @@
             item
               Expanded = False
               FieldName = 'NOME'
-              Width = 141
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'EMAIL'
-              Width = 160
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'TELEFONE'
-              Width = 100
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'UF'
+              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'CEP'
+              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'BAIRRO'
+              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'NROENDERECO'
+              Width = -1
               Visible = False
             end
             item
               Expanded = False
               FieldName = 'CIDADE'
+              Width = -1
               Visible = False
             end
             item

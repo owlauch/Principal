@@ -2,7 +2,7 @@ unit DevoluçãoDAO;
 
 interface
 
-uses DataModule,dialogs,sysutils;
+uses DataModule,dialogs,sysutils,dateutils;
   type
     tDevolucaoDAO = class
       public
@@ -14,12 +14,11 @@ implementation
 { tDevolucaoDAO }
 
 procedure tDevolucaoDAO.devolverArcevo(id: integer ; date: tdatetime);
- var
-  data : tdatetime;
-  valor : real;
-  dias : integer;
+var
+  data:tdate;
+  dias: integer;
+  valor:real;
 begin
-  ShortDateFormat := 'dd-mm-yyyy';
   data:=now();
   if(data < date) then
   begin
@@ -39,15 +38,27 @@ begin
   end
    else
    begin
-   dias :=DateTimeToFileDate(data-date);
-   ShowMessageFmt('%d',[dias]);
+   dias:=(daysbetween(data,date));
    dm.SQLQMulta.Open;
    dm.SQLQMulta.sql.Clear;
-   dm.SQLQMulta.sql.add('SELECT valor from multa where datainiciovigencia=:datainiciovigencia');
-   dm.sqlqmulta.parambyname('datainiciovigencia').asdate:=date;
+   dm.SQLQMulta.sql.add('select * from multa where datainiciovigencia=(select max(datainiciovigencia)from multa)');   ShowMessage(FloatToStr(valor));
    dm.SQLQMulta.ExecSQL;
    dm.SQLQMulta.Open;
-   ShowMessageFmt('O valor da multa para essa devolução é R$%2.f',[valor]);
+   valor:=dm.SQLQMulta.FieldByName('valor').AsFloat;
+   ShowMessageFmt('O valor da multa para essa devolução é R$%0.2f',[valor*dias]);
+   DM.SQLQItemEmprestimo.Close;
+   dm.SQLQItemEmprestimo.SQL.Text:='delete from itememprestimo where idemprestimo=:id';
+   dm.SQLQItemEmprestimo.ParamByName('id').AsInteger:=id;
+   dm.SQLQItemEmprestimo.ExecSQL;
+   DM.ClDSitememprestimo.Close;
+   DM.ClDSitememprestimo.Open;
+   DM.ClDSitememprestimo.Close;
+   DM.ClDSitememprestimo.Open;
+   DM.CDSEmprestado.Close;
+   DM.CDSEmprestado.open;
+   DM.CDSEmprestado.Close;
+   DM.CDSEmprestado.open;
+   ShowMessage('Item devolvido com sucesso');
    end;
 end;
 

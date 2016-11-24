@@ -23,12 +23,10 @@ type
     GridPanelSlcGeral: TGridPanel;
     GridPanelBotoes: TGridPanel;
     BGravar: TSpeedButton;
-    Blimpar: TSpeedButton;
     DBGrid1: TDBGrid;
     DBGrid2: TDBGrid;
     Label2: TLabel;
     Label3: TLabel;
-    DateTimePicker1: TDateTimePicker;
     DBGrid3: TDBGrid;
     DBGridMulta: TDBGrid;
 
@@ -98,9 +96,10 @@ begin
 
     x:=DBGrid3.Fields[0].AsInteger;
     ItemEmprestimomodel.SetIDemprestimo(x);
+    ShowMessage(IntToStr(x));
     x:=DBgrid2.Fields[0].AsInteger;
     ItemEmprestimomodel.SetIDAcervo(x);
-    ItemEmprestimomodel.SetDataDevolucao(data);
+    ItemEmprestimomodel.SetDataDevolucao(data+7);
     data:=DBGridMulta.Fields[0].AsDatetime;
     multamodel.SetDataInicioVigencia(data);
     ItemEmprestimomodel.SetDataVigencia(multamodel);

@@ -136,6 +136,7 @@ object ConsultaPrincipal: TConsultaPrincipal
           Top = 104
           Width = 120
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           Anchors = []
           Caption = 'ACERVO'
@@ -450,6 +451,7 @@ object ConsultaPrincipal: TConsultaPrincipal
           Top = 4
           Width = 120
           Height = 44
+          Cursor = crHandPoint
           Align = alClient
           BiDiMode = bdRightToLeft
           Caption = 'VOLTAR'

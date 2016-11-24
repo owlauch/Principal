@@ -901,6 +901,8 @@
               Height = 245
               Align = alClient
               DataSource = DM.DSEmprestado
+              DrawingStyle = gdsGradient
+              ReadOnly = True
               TabOrder = 0
               TitleFont.Charset = DEFAULT_CHARSET
               TitleFont.Color = clWindowText
@@ -960,13 +962,8 @@
             end>
           ControlCollection = <
             item
-              Column = 3
-              Control = Devolucao
-              Row = 0
-            end
-            item
               Column = 4
-              Control = Blimpar
+              Control = Devolucao
               Row = 0
             end>
           RowCollection = <
@@ -977,13 +974,13 @@
           TabOrder = 1
           object Devolucao: TSpeedButton
             AlignWithMargins = True
-            Left = 280
+            Left = 372
             Top = 4
             Width = 86
             Height = 44
             Align = alClient
             Anchors = [akLeft, akTop, akRight]
-            Caption = 'DEVOLU'#199#195'O'
+            Caption = 'DEVOLVER'
             Glyph.Data = {
               36030000424D3603000000000000360000002800000010000000100000000100
               18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
@@ -1018,51 +1015,6 @@
             ExplicitTop = 102
             ExplicitWidth = 134
             ExplicitHeight = 102934
-          end
-          object Blimpar: TSpeedButton
-            AlignWithMargins = True
-            Left = 372
-            Top = 4
-            Width = 86
-            Height = 44
-            Align = alClient
-            Anchors = []
-            BiDiMode = bdLeftToRight
-            Caption = 'LIMPAR'
-            Glyph.Data = {
-              36030000424D3603000000000000360000002800000010000000100000000100
-              18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
-              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6AA7663787
-              336AA766FFFFFFFFFFFFFEFEFEF8F8F8F1F1F1EBEBEBE6E6E6E5E5E5E6E6E6E8
-              E8E8EAEAEAEDEDEDF1F1F13A99302BDF1A3C9B32FDFDFDFEFEFEFDFDFDF2F2F2
-              E4E4E4D7D7D7CECECECCCCCC9BA5AE3357793356784D9253399E2D399E2E3DE2
-              2C3CA1313DA2326EBB66FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB7C0C933557754
-              94B734679A168A1852E74152E74152E74152E74152E74140AA33FFFFFFFFFFFF
-              FFFFFFFFFFFFBED2DE457B9D3A719F386F9D5F9FC0268E4519921B34A62A66EB
-              5541B13341B13371C466FFFFFFFFFFFFFFFFFFB7C3CF3355774F8DB368ACC848
-              80AC5087B36AAAC85588BB1C991D75EE6443B633FFFFFFFFFFFFFFFFFFFFFFFF
-              C0D5E14A86A85FA1C03F79A34278A766A6C5619DC25E95C174B4D135A2512298
-              115DA454FFFFFFFFFFFFFFFFFFB7C3CF335577336898508CB369ABC867A7C64D
-              80B371B1CE6EA9CD6CA3CE6D6D6DAA99995B5B5BBDD1DDFFFFFFC1D8E44F8FB1
-              6AAEC966A8C55692B84B80AF5D97BF77B9D2669DC87BBAD57E7E7ECEC0C07979
-              795588BB5A8CABFFFFFF7DAEC85496B75498B8599BBA68ABC676BAD26EACCC66
-              9DC883C7DA888888D3CACA83838360A4C663A7C95B90AEFFFFFFFAFCFDEBF3F7
-              D7E6EEBED7E388B5CC5F9CBB64A9C47BBAD5919191D9D4D48D8D8D68ACCE74B8
-              D44C89AABFD5E1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFF5F892BCD196
-              9696DDDCDC94949470B4D680C4DB4E8DAF334882B7BCD0FFFFFFFFFFFFFFFFFF
-              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDBDBDB98989888CCDD87CBDD5192B43359
-              993F72B6335290B7C1D7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-              FFFFC6D1D764A1BF64A0BEC1D9E5B7C7DE335EA05285C9335898FFFFFFFFFFFF
-              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-              FFB7C9E03363A5B7C7DEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-            Layout = blGlyphRight
-            Margin = 1
-            ParentBiDiMode = False
-            ExplicitLeft = 362
-            ExplicitTop = -3
-            ExplicitWidth = 68
-            ExplicitHeight = 22
           end
         end
       end
